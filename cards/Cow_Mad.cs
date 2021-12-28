@@ -9,54 +9,52 @@ using Resources = boneSigils.Artwork.Resources;
 
 namespace boneSigils.cards
 {
-	public static class BellTurtle
+	public static class Cow_Mad
 	{
 		public static void AddCard()
 		{
 
 			List<CardMetaCategory> metaCategories = new List<CardMetaCategory>();
 			metaCategories.Add(CardMetaCategory.TraderOffer);
+			metaCategories.Add(CardMetaCategory.ChoiceNode);
 
 			List<Tribe> Tribes = new List<Tribe>();
-			Tribes.Add(Tribe.Reptile);
+			Tribes.Add(Tribe.Hooved);
 
 			List<Ability> Abilities = new List<Ability>();
+			Abilities.Add(Ability.Evolve);
 
 			List<Trait> Traits = new List<Trait>();
 
 			List<AbilityIdentifier> customAbilities = new List<AbilityIdentifier>();
-			customAbilities.Add(AbilityIdentifier.GetAbilityIdentifier("extraVoid.inscryption.voidSigils", "Resistant"));
+			customAbilities.Add(AbilityIdentifier.GetAbilityIdentifier("extraVoid.inscryption.voidSigils", "Blight"));
 
 			List<SpecialTriggeredAbility> specialAbilities = new List<SpecialTriggeredAbility>();
-			specialAbilities.Add(SpecialTriggeredAbility.BellProximity);
 
 			List<CardAppearanceBehaviour.Appearance> appearanceBehaviour = new List<CardAppearanceBehaviour.Appearance>();
-			appearanceBehaviour.Add(CardAppearanceBehaviour.Appearance.GoldEmission);
 
-			Texture2D DefaultTexture = SigilUtils.LoadTextureFromResource(Resources.Void_Tortoise_Bell);
+			Texture2D DefaultTexture = SigilUtils.GetTextureFromPath("Artwork/void_cow_mad.png");
 
-			Texture2D eTexture = SigilUtils.LoadTextureFromResource(Resources.Void_Tortoise_Bell_e);
+			Texture2D eTexture = SigilUtils.GetTextureFromPath("Artwork/void_cow_mad_e.png");
 
-			IceCubeIdentifier iceCubeId = new IceCubeIdentifier("Void_Tortoise_Bell_Broken", null);
+			IceCubeIdentifier iceCubeId = new IceCubeIdentifier("Void_Cow_Skul");
+			EvolveIdentifier evolveId = new EvolveIdentifier("Void_Cow_Skul", 2);
+			TailIdentifier tail = null;
 
-
-			Texture2D tailTexture = SigilUtils.LoadTextureFromResource(Resources.Void_Tortoise_Bell_alt);
-			TailIdentifier tail = new TailIdentifier("Void_Scrap", tailTexture, null);
-
-			NewCard.Add(name: "Void_Tortoise_Bell",
-				displayedName: "Bell Turtle",
-				baseAttack: 0,
-				baseHealth: 3,
+			NewCard.Add(name: "void_cow_mad",
+				displayedName: "The Mad Bull",
+				baseAttack: 3,
+				baseHealth: 4,
 				metaCategories,
-				cardComplexity: CardComplexity.Simple,
+				cardComplexity: CardComplexity.Intermediate,
 				temple: CardTemple.Nature,
-				description: "A gift from the trapper, made of clockwork and gold.",
+				description: "The Mad Bull, out for bones with not much time left.",
 				hideAttackAndHealth: false,
 				bloodCost: 0,
 				bonesCost: 5,
 				energyCost: 0,
 				gemsCost: null,
-				specialStatIcon: SpecialStatIcon.Bell,
+				specialStatIcon: SpecialStatIcon.None,
 				Tribes,
 				Traits,
 				specialAbilities,
@@ -77,7 +75,7 @@ namespace boneSigils.cards
 				eTexture,
 				animatedPortrait: null,
 				decals: null,
-				evolveId: null,
+				evolveId,
 				iceCubeId,
 				tail);
 		}

@@ -9,21 +9,23 @@ using Resources = boneSigils.Artwork.Resources;
 
 namespace boneSigils.cards
 {
-	public static class BellTurtleBroken
+	public static class Dragon
 	{
 		public static void AddCard()
 		{
 
 			List<CardMetaCategory> metaCategories = new List<CardMetaCategory>();
+			metaCategories.Add(CardMetaCategory.TraderOffer);
 			metaCategories.Add(CardMetaCategory.ChoiceNode);
 
 			List<Tribe> Tribes = new List<Tribe>();
 			Tribes.Add(Tribe.Reptile);
 
 			List<Ability> Abilities = new List<Ability>();
-			Abilities.Add(Ability.DeathShield);
+			Abilities.Add(Ability.Deathtouch);
 
 			List<Trait> Traits = new List<Trait>();
+			Traits.Add(Trait.KillsSurvivors);
 
 			List<AbilityIdentifier> customAbilities = new List<AbilityIdentifier>();
 
@@ -31,23 +33,25 @@ namespace boneSigils.cards
 
 			List<CardAppearanceBehaviour.Appearance> appearanceBehaviour = new List<CardAppearanceBehaviour.Appearance>();
 
-			Texture2D DefaultTexture = SigilUtils.LoadTextureFromResource(Resources.Void_Tortoise_Bell_Broken);
+			Texture2D DefaultTexture = SigilUtils.GetTextureFromPath("Artwork/Void_Dragon.png");
 
-			Texture2D eTexture = SigilUtils.LoadTextureFromResource(Resources.Void_Tortoise_Bell_Broken_e);
+			Texture2D eTexture = SigilUtils.GetTextureFromPath("Artwork/Void_Dragon_e.png");
 
-			EvolveIdentifier evolveID = new EvolveIdentifier("Void_Tortoise_Bell", 1, null);
+			IceCubeIdentifier iceCubeId = null;
+			EvolveIdentifier evolveId = null;
+			TailIdentifier tail = null;
 
-			NewCard.Add(name: "Void_Tortoise_Bell_Broken",
-				displayedName: "Broken Bell Turtle",
-				baseAttack: 0,
-				baseHealth: 1,
+			NewCard.Add(name: "Void_Dragon",
+				displayedName: "Komodo Dragon",
+				baseAttack: 3,
+				baseHealth: 8,
 				metaCategories,
-				cardComplexity: CardComplexity.Simple,
+				cardComplexity: CardComplexity.Intermediate,
 				temple: CardTemple.Nature,
-				description: "A broken bell turtle, left out in the wild. Poor thing. Seems like it has two hits left...",
+				description: "The largest and toughest of the reptiles, with a poisonous bite that can kill anything.",
 				hideAttackAndHealth: false,
-				bloodCost: 0,
-				bonesCost: 2,
+				bloodCost: 1,
+				bonesCost: 10,
 				energyCost: 0,
 				gemsCost: null,
 				specialStatIcon: SpecialStatIcon.None,
@@ -71,9 +75,9 @@ namespace boneSigils.cards
 				eTexture,
 				animatedPortrait: null,
 				decals: null,
-				evolveID,
-				iceCubeId: null,
-				tailId: null);
+				evolveId,
+				iceCubeId,
+				tail);
 		}
 	}
 }

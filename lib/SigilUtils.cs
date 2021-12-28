@@ -8,7 +8,7 @@ using static System.IO.File;
 
 namespace boneSigils
 {
-	public static class SigilUtils
+	public class SigilUtils
 	{
 		public static AbilityInfo CreateInfoWithDefaultSettings(
 			string rulebookName, string rulebookDescription, bool withDialogue = false, int powerLevel = 0
@@ -46,14 +46,15 @@ namespace boneSigils
 			);
 		}
 
+
 		public static Texture2D GetTextureFromPath(string path)
 		{
-			byte[] imgBytes = File.ReadAllBytes(Path.Combine(boneSigils.Plugin.Directory, path));
+			byte[] imgBytes = File.ReadAllBytes(Path.Combine(Plugin.Directory, path));
 			Texture2D tex = new Texture2D(2, 2);
 			tex.LoadImage(imgBytes);
-
 			return tex;
 		}
+
 
 		public static Texture2D LoadTextureFromResource(byte[] resourceFile)
 		{

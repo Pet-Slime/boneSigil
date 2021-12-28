@@ -26,9 +26,9 @@ namespace boneSigils.cards
 			List<CardAppearanceBehaviour.Appearance> appearanceBehaviour = new List<CardAppearanceBehaviour.Appearance>();
 			appearanceBehaviour.Add(CardAppearanceBehaviour.Appearance.RareCardBackground);
 
-			Texture2D DefaultTexture = SigilUtils.LoadTextureFromResource(Resources.void_steak);
+			Texture2D DefaultTexture = SigilUtils.GetTextureFromPath("Artwork/Void_Steak.png");
 
-			Texture2D eTexture = SigilUtils.LoadTextureFromResource(Resources.void_steak);
+			Texture2D eTexture = SigilUtils.GetTextureFromPath("Artwork/Void_Steak.png");
 
 			NewCard.Add(name: "Void_Steak",
 				displayedName: "Fresh Steak",

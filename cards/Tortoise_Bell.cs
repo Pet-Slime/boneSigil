@@ -9,50 +9,54 @@ using Resources = boneSigils.Artwork.Resources;
 
 namespace boneSigils.cards
 {
-	public static class MurderOfCrows
+	public static class Tortoise_Bell
 	{
 		public static void AddCard()
 		{
 
 			List<CardMetaCategory> metaCategories = new List<CardMetaCategory>();
-			metaCategories.Add(CardMetaCategory.Rare);
+			metaCategories.Add(CardMetaCategory.TraderOffer);
 
 			List<Tribe> Tribes = new List<Tribe>();
-			Tribes.Add(Tribe.Bird);
+			Tribes.Add(Tribe.Reptile);
 
 			List<Ability> Abilities = new List<Ability>();
-			Abilities.Add(Ability.Flying);
 
 			List<Trait> Traits = new List<Trait>();
 
-			List<GemType> gemCost = new List<GemType>();
-
 			List<AbilityIdentifier> customAbilities = new List<AbilityIdentifier>();
+			customAbilities.Add(AbilityIdentifier.GetAbilityIdentifier("extraVoid.inscryption.voidSigils", "Resistant"));
 
 			List<SpecialTriggeredAbility> specialAbilities = new List<SpecialTriggeredAbility>();
-			specialAbilities.Add(MurderOfCrowsSpecialAbility.specialAbility);
+			specialAbilities.Add(SpecialTriggeredAbility.BellProximity);
 
 			List<CardAppearanceBehaviour.Appearance> appearanceBehaviour = new List<CardAppearanceBehaviour.Appearance>();
-			appearanceBehaviour.Add(CardAppearanceBehaviour.Appearance.RareCardBackground);
+			appearanceBehaviour.Add(CardAppearanceBehaviour.Appearance.GoldEmission);
 
-			Texture2D DefaultTexture = SigilUtils.GetTextureFromPath("Artwork/Void_Murder_of_Crows.png");
+			Texture2D DefaultTexture = SigilUtils.GetTextureFromPath("Artwork/Void_Tortoise_Bell.png");
 
-			Texture2D eTexture = SigilUtils.GetTextureFromPath("Artwork/Void_Murder_of_Crows_e.png");
+			Texture2D eTexture = SigilUtils.GetTextureFromPath("Artwork/Void_Tortoise_Bell_e.png");
 
-			NewCard.Add(name: "void_murder_of_crows",
-				displayedName: "Murder of Crows",
-				baseAttack: 2,
-				baseHealth: 2,
+			IceCubeIdentifier iceCubeId = new IceCubeIdentifier("Void_Tortoise_Bell_Broken", null);
+
+
+			Texture2D tailTexture = SigilUtils.GetTextureFromPath("Artwork/Void_Tortoise_Bell_alt.png");
+			TailIdentifier tail = new TailIdentifier("Void_Scrap", tailTexture, null);
+
+			NewCard.Add(name: "Void_Tortoise_Bell",
+				displayedName: "Bell Turtle",
+				baseAttack: 0,
+				baseHealth: 3,
 				metaCategories,
-				cardComplexity: CardComplexity.Advanced,
+				cardComplexity: CardComplexity.Simple,
 				temple: CardTemple.Nature,
-				description: "A flock of black clouds swam and then leave, with the only thing remaining are bones",
+				description: "A gift from the trapper, made of clockwork and gold.",
 				hideAttackAndHealth: false,
 				bloodCost: 0,
-				bonesCost: 6,
+				bonesCost: 5,
 				energyCost: 0,
-				gemCost,
-				specialStatIcon: SpecialStatIcon.None,
+				gemsCost: null,
+				specialStatIcon: SpecialStatIcon.Bell,
 				Tribes,
 				Traits,
 				specialAbilities,
@@ -74,8 +78,8 @@ namespace boneSigils.cards
 				animatedPortrait: null,
 				decals: null,
 				evolveId: null,
-				iceCubeId: null,
-				tailId: null);
+				iceCubeId,
+				tail);
 		}
 	}
 }

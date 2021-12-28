@@ -9,13 +9,14 @@ using Resources = boneSigils.Artwork.Resources;
 
 namespace boneSigils.cards
 {
-	public static class MurderOfCrows
+	public static class Vulture
 	{
 		public static void AddCard()
 		{
 
 			List<CardMetaCategory> metaCategories = new List<CardMetaCategory>();
-			metaCategories.Add(CardMetaCategory.Rare);
+			metaCategories.Add(CardMetaCategory.ChoiceNode);
+			metaCategories.Add(CardMetaCategory.TraderOffer);
 
 			List<Tribe> Tribes = new List<Tribe>();
 			Tribes.Add(Tribe.Bird);
@@ -24,35 +25,37 @@ namespace boneSigils.cards
 			Abilities.Add(Ability.Flying);
 
 			List<Trait> Traits = new List<Trait>();
-
-			List<GemType> gemCost = new List<GemType>();
+			Traits.Add(Trait.KillsSurvivors);
 
 			List<AbilityIdentifier> customAbilities = new List<AbilityIdentifier>();
 
-			List<SpecialTriggeredAbility> specialAbilities = new List<SpecialTriggeredAbility>();
-			specialAbilities.Add(MurderOfCrowsSpecialAbility.specialAbility);
+			List <SpecialTriggeredAbility> specialAbilities = new List<SpecialTriggeredAbility>();
+			specialAbilities.Add(SpecialTriggeredAbility.Lammergeier);
 
 			List<CardAppearanceBehaviour.Appearance> appearanceBehaviour = new List<CardAppearanceBehaviour.Appearance>();
-			appearanceBehaviour.Add(CardAppearanceBehaviour.Appearance.RareCardBackground);
 
-			Texture2D DefaultTexture = SigilUtils.GetTextureFromPath("Artwork/Void_Murder_of_Crows.png");
+			Texture2D DefaultTexture = SigilUtils.GetTextureFromPath("Artwork/Void_Vulture.png");
 
-			Texture2D eTexture = SigilUtils.GetTextureFromPath("Artwork/Void_Murder_of_Crows_e.png");
+			Texture2D eTexture = SigilUtils.GetTextureFromPath("Artwork/Void_Vulture_e.png");
 
-			NewCard.Add(name: "void_murder_of_crows",
-				displayedName: "Murder of Crows",
-				baseAttack: 2,
-				baseHealth: 2,
+			IceCubeIdentifier iceCubeId = null;
+			EvolveIdentifier evolveId = null;
+			TailIdentifier tail = null;
+
+			NewCard.Add(name: "Void_Vulture",
+				displayedName: "Bearded Vulture",
+				baseAttack: 0,
+				baseHealth: 4,
 				metaCategories,
 				cardComplexity: CardComplexity.Advanced,
 				temple: CardTemple.Nature,
-				description: "A flock of black clouds swam and then leave, with the only thing remaining are bones",
+				description: "A Vulture that consumes bone.",
 				hideAttackAndHealth: false,
 				bloodCost: 0,
-				bonesCost: 6,
+				bonesCost: 9,
 				energyCost: 0,
-				gemCost,
-				specialStatIcon: SpecialStatIcon.None,
+				gemsCost: null,
+				specialStatIcon: SpecialStatIcon.Bones,
 				Tribes,
 				Traits,
 				specialAbilities,
@@ -73,9 +76,9 @@ namespace boneSigils.cards
 				eTexture,
 				animatedPortrait: null,
 				decals: null,
-				evolveId: null,
-				iceCubeId: null,
-				tailId: null);
+				evolveId,
+				iceCubeId,
+				tail);
 		}
 	}
 }

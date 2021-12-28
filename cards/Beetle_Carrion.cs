@@ -9,7 +9,7 @@ using Resources = boneSigils.Artwork.Resources;
 
 namespace boneSigils.cards
 {
-	public static class MurderOfCrows
+	public static class Beetle_Carrion
 	{
 		public static void AddCard()
 		{
@@ -18,40 +18,42 @@ namespace boneSigils.cards
 			metaCategories.Add(CardMetaCategory.Rare);
 
 			List<Tribe> Tribes = new List<Tribe>();
-			Tribes.Add(Tribe.Bird);
+			Tribes.Add(Tribe.Insect);
 
 			List<Ability> Abilities = new List<Ability>();
-			Abilities.Add(Ability.Flying);
+			Abilities.Add(Ability.CorpseEater);
 
 			List<Trait> Traits = new List<Trait>();
 
-			List<GemType> gemCost = new List<GemType>();
-
 			List<AbilityIdentifier> customAbilities = new List<AbilityIdentifier>();
+			customAbilities.Add(AbilityIdentifier.GetAbilityIdentifier("extraVoid.inscryption.voidSigils", "Thick Shell"));
 
 			List<SpecialTriggeredAbility> specialAbilities = new List<SpecialTriggeredAbility>();
-			specialAbilities.Add(MurderOfCrowsSpecialAbility.specialAbility);
 
 			List<CardAppearanceBehaviour.Appearance> appearanceBehaviour = new List<CardAppearanceBehaviour.Appearance>();
 			appearanceBehaviour.Add(CardAppearanceBehaviour.Appearance.RareCardBackground);
 
-			Texture2D DefaultTexture = SigilUtils.GetTextureFromPath("Artwork/Void_Murder_of_Crows.png");
+			Texture2D DefaultTexture = SigilUtils.GetTextureFromPath("Artwork/Void_Beetle.png");
 
-			Texture2D eTexture = SigilUtils.GetTextureFromPath("Artwork/Void_Murder_of_Crows_e.png");
+			Texture2D eTexture = SigilUtils.GetTextureFromPath("Artwork/Void_Beetle_e.png");
 
-			NewCard.Add(name: "void_murder_of_crows",
-				displayedName: "Murder of Crows",
+			IceCubeIdentifier iceCubeId = null;
+
+			TailIdentifier tail = null;
+
+			NewCard.Add(name: "Void_Beetle",
+				displayedName: "Carrion Beetle",
 				baseAttack: 2,
-				baseHealth: 2,
+				baseHealth: 4,
 				metaCategories,
 				cardComplexity: CardComplexity.Advanced,
 				temple: CardTemple.Nature,
-				description: "A flock of black clouds swam and then leave, with the only thing remaining are bones",
+				description: "A hard shell and a taste of flesh, they can find any fresh corpse.",
 				hideAttackAndHealth: false,
 				bloodCost: 0,
-				bonesCost: 6,
+				bonesCost: 10,
 				energyCost: 0,
-				gemCost,
+				gemsCost: null,
 				specialStatIcon: SpecialStatIcon.None,
 				Tribes,
 				Traits,
@@ -74,8 +76,8 @@ namespace boneSigils.cards
 				animatedPortrait: null,
 				decals: null,
 				evolveId: null,
-				iceCubeId: null,
-				tailId: null);
+				iceCubeId,
+				tail);
 		}
 	}
 }

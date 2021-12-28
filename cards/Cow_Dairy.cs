@@ -9,7 +9,7 @@ using Resources = boneSigils.Artwork.Resources;
 
 namespace boneSigils.cards
 {
-	public static class MurderOfCrows
+	public static class Cow_Dairy
 	{
 		public static void AddCard()
 		{
@@ -18,40 +18,42 @@ namespace boneSigils.cards
 			metaCategories.Add(CardMetaCategory.Rare);
 
 			List<Tribe> Tribes = new List<Tribe>();
-			Tribes.Add(Tribe.Bird);
+			Tribes.Add(Tribe.Hooved);
 
 			List<Ability> Abilities = new List<Ability>();
-			Abilities.Add(Ability.Flying);
+			Abilities.Add(Ability.TripleBlood);
 
 			List<Trait> Traits = new List<Trait>();
-
-			List<GemType> gemCost = new List<GemType>();
+			Traits.Add(Trait.Goat);
 
 			List<AbilityIdentifier> customAbilities = new List<AbilityIdentifier>();
+			customAbilities.Add(AbilityIdentifier.GetAbilityIdentifier("extraVoid.inscryption.voidSigils", "Nutritious"));
 
 			List<SpecialTriggeredAbility> specialAbilities = new List<SpecialTriggeredAbility>();
-			specialAbilities.Add(MurderOfCrowsSpecialAbility.specialAbility);
+			specialAbilities.Add(DairyCowSpecialAbility.specialAbility);
 
 			List<CardAppearanceBehaviour.Appearance> appearanceBehaviour = new List<CardAppearanceBehaviour.Appearance>();
 			appearanceBehaviour.Add(CardAppearanceBehaviour.Appearance.RareCardBackground);
 
-			Texture2D DefaultTexture = SigilUtils.GetTextureFromPath("Artwork/Void_Murder_of_Crows.png");
+			Texture2D DefaultTexture = SigilUtils.GetTextureFromPath("Artwork/Void_Dairy_Cow.png");
 
-			Texture2D eTexture = SigilUtils.GetTextureFromPath("Artwork/Void_Murder_of_Crows_e.png");
+			Texture2D eTexture = SigilUtils.GetTextureFromPath("Artwork/Void_Dairy_Cow_e.png");
 
-			NewCard.Add(name: "void_murder_of_crows",
-				displayedName: "Murder of Crows",
-				baseAttack: 2,
-				baseHealth: 2,
+			IceCubeIdentifier iceCubeId = new IceCubeIdentifier("Void_Cow_Skul");
+
+			NewCard.Add(name: "void_dairy_cow",
+				displayedName: "Cow",
+				baseAttack: 0,
+				baseHealth: 3,
 				metaCategories,
-				cardComplexity: CardComplexity.Advanced,
+				cardComplexity: CardComplexity.Simple,
 				temple: CardTemple.Nature,
-				description: "A flock of black clouds swam and then leave, with the only thing remaining are bones",
+				description: "A cow fit for slaughter",
 				hideAttackAndHealth: false,
 				bloodCost: 0,
-				bonesCost: 6,
+				bonesCost: 3,
 				energyCost: 0,
-				gemCost,
+				gemsCost: null,
 				specialStatIcon: SpecialStatIcon.None,
 				Tribes,
 				Traits,
@@ -74,7 +76,7 @@ namespace boneSigils.cards
 				animatedPortrait: null,
 				decals: null,
 				evolveId: null,
-				iceCubeId: null,
+				iceCubeId,
 				tailId: null);
 		}
 	}

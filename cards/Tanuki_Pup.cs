@@ -7,7 +7,7 @@ using Resources = boneSigils.Artwork.Resources;
 
 namespace boneSigils.cards
 {
-	public static class TanukiPup
+	public static class Tanuki_Pup
 	{
 		public static void AddCard()
 		{
@@ -30,10 +30,11 @@ namespace boneSigils.cards
 			Tribes.Add(Tribe.Canine);
 
 			List<Ability> Abilities = new List<Ability>();
-			Abilities.Add(Ability.Evolve);
 			Abilities.Add(Ability.BoneDigger);
+			Abilities.Add(Ability.Evolve);
 
 			List<AbilityIdentifier> customAbilities = new List<AbilityIdentifier>();
+			customAbilities.Add(AbilityIdentifier.GetAbilityIdentifier("extraVoid.inscryption.voidSigils", "Ignite"));
 
 			if (!BepInEx.Bootstrap.Chainloader.PluginInfos.ContainsKey(Plugin.StarterdeckGUID))
 			{
@@ -49,9 +50,9 @@ namespace boneSigils.cards
 
 			List<CardAppearanceBehaviour.Appearance> appearanceBehaviour = new List<CardAppearanceBehaviour.Appearance>();
 
-			Texture2D DefaultTexture = SigilUtils.LoadTextureFromResource(Resources.void_tanuki_pup);
+			Texture2D DefaultTexture = SigilUtils.GetTextureFromPath("Artwork/Void_Tanuki_Pup.png");
 
-			Texture2D eTexture = SigilUtils.LoadTextureFromResource(Resources.void_tanuki_pup_e);
+			Texture2D eTexture = SigilUtils.GetTextureFromPath("Artwork/Void_Tanuki_Pup_e.png");
 
 			NewCard.Add(name: "Void_Tanuki_pup",
 				displayedName: "Tanuki Pup",

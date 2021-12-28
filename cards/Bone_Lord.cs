@@ -9,7 +9,7 @@ using Resources = boneSigils.Artwork.Resources;
 
 namespace boneSigils.cards
 {
-	public static class MurderOfCrows
+	public static class Bone_Lord
 	{
 		public static void AddCard()
 		{
@@ -18,40 +18,42 @@ namespace boneSigils.cards
 			metaCategories.Add(CardMetaCategory.Rare);
 
 			List<Tribe> Tribes = new List<Tribe>();
-			Tribes.Add(Tribe.Bird);
 
 			List<Ability> Abilities = new List<Ability>();
-			Abilities.Add(Ability.Flying);
+			Abilities.Add(Ability.BoneDigger);
+			Abilities.Add(Ability.DrawCopyOnDeath);
 
 			List<Trait> Traits = new List<Trait>();
-
-			List<GemType> gemCost = new List<GemType>();
+			Traits.Add(Trait.Undead);
 
 			List<AbilityIdentifier> customAbilities = new List<AbilityIdentifier>();
 
 			List<SpecialTriggeredAbility> specialAbilities = new List<SpecialTriggeredAbility>();
-			specialAbilities.Add(MurderOfCrowsSpecialAbility.specialAbility);
 
 			List<CardAppearanceBehaviour.Appearance> appearanceBehaviour = new List<CardAppearanceBehaviour.Appearance>();
 			appearanceBehaviour.Add(CardAppearanceBehaviour.Appearance.RareCardBackground);
 
-			Texture2D DefaultTexture = SigilUtils.GetTextureFromPath("Artwork/Void_Murder_of_Crows.png");
+			Texture2D DefaultTexture = SigilUtils.GetTextureFromPath("Artwork/void_horn.png");
 
-			Texture2D eTexture = SigilUtils.GetTextureFromPath("Artwork/Void_Murder_of_Crows_e.png");
+			Texture2D eTexture = SigilUtils.GetTextureFromPath("Artwork/void_horn_e.png");
 
-			NewCard.Add(name: "void_murder_of_crows",
-				displayedName: "Murder of Crows",
-				baseAttack: 2,
-				baseHealth: 2,
+			IceCubeIdentifier iceCubeId = null;
+
+			TailIdentifier tail = null;
+
+			NewCard.Add(name: "Void_Bone_Lord",
+				displayedName: "The Bone Lord",
+				baseAttack: 7,
+				baseHealth: 7,
 				metaCategories,
 				cardComplexity: CardComplexity.Advanced,
 				temple: CardTemple.Nature,
-				description: "A flock of black clouds swam and then leave, with the only thing remaining are bones",
+				description: "The Lord of Bones has decided to get his hands dirty this time.",
 				hideAttackAndHealth: false,
-				bloodCost: 0,
-				bonesCost: 6,
+				bloodCost: 2,
+				bonesCost: 10,
 				energyCost: 0,
-				gemCost,
+				gemsCost: null,
 				specialStatIcon: SpecialStatIcon.None,
 				Tribes,
 				Traits,
@@ -74,8 +76,8 @@ namespace boneSigils.cards
 				animatedPortrait: null,
 				decals: null,
 				evolveId: null,
-				iceCubeId: null,
-				tailId: null);
+				iceCubeId,
+				tail);
 		}
 	}
 }

@@ -30,9 +30,9 @@ namespace boneSigils.cards
 
 			List<CardAppearanceBehaviour.Appearance> appearanceBehaviour = new List<CardAppearanceBehaviour.Appearance>();
 
-			Texture2D DefaultTexture = SigilUtils.LoadTextureFromResource(Resources.void_wasp);
+			Texture2D DefaultTexture = SigilUtils.GetTextureFromPath("Artwork/Void_Wasp.png");
 
-			Texture2D eTexture = SigilUtils.LoadTextureFromResource(Resources.void_wasp_e);
+			Texture2D eTexture = SigilUtils.GetTextureFromPath("Artwork/Void_Wasp_e.png");
 
 			NewCard.Add(name: "Void_Wasp",
 				displayedName: "Wasp Swarm",

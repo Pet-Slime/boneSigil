@@ -9,49 +9,50 @@ using Resources = boneSigils.Artwork.Resources;
 
 namespace boneSigils.cards
 {
-	public static class MurderOfCrows
+	public static class Bat
 	{
 		public static void AddCard()
 		{
 
 			List<CardMetaCategory> metaCategories = new List<CardMetaCategory>();
-			metaCategories.Add(CardMetaCategory.Rare);
+			metaCategories.Add(CardMetaCategory.TraderOffer);
+			metaCategories.Add(CardMetaCategory.ChoiceNode);
 
 			List<Tribe> Tribes = new List<Tribe>();
-			Tribes.Add(Tribe.Bird);
 
 			List<Ability> Abilities = new List<Ability>();
-			Abilities.Add(Ability.Flying);
 
 			List<Trait> Traits = new List<Trait>();
-
-			List<GemType> gemCost = new List<GemType>();
+			Traits.Add(Trait.Blind);
 
 			List<AbilityIdentifier> customAbilities = new List<AbilityIdentifier>();
+			customAbilities.Add(AbilityIdentifier.GetAbilityIdentifier("extraVoid.inscryption.voidSigils", "BloodGuzzler"));
 
 			List<SpecialTriggeredAbility> specialAbilities = new List<SpecialTriggeredAbility>();
-			specialAbilities.Add(MurderOfCrowsSpecialAbility.specialAbility);
 
 			List<CardAppearanceBehaviour.Appearance> appearanceBehaviour = new List<CardAppearanceBehaviour.Appearance>();
-			appearanceBehaviour.Add(CardAppearanceBehaviour.Appearance.RareCardBackground);
 
-			Texture2D DefaultTexture = SigilUtils.GetTextureFromPath("Artwork/Void_Murder_of_Crows.png");
+			Texture2D DefaultTexture = SigilUtils.GetTextureFromPath("Artwork/Void_Bat.png");
 
-			Texture2D eTexture = SigilUtils.GetTextureFromPath("Artwork/Void_Murder_of_Crows_e.png");
+			Texture2D eTexture = SigilUtils.GetTextureFromPath("Artwork/Void_Bat_e.png");
 
-			NewCard.Add(name: "void_murder_of_crows",
-				displayedName: "Murder of Crows",
-				baseAttack: 2,
-				baseHealth: 2,
+			IceCubeIdentifier iceCubeId = null;
+
+			TailIdentifier tail = null;
+
+			NewCard.Add(name: "Void_Bat",
+				displayedName: "Vampire Bat",
+				baseAttack: 3,
+				baseHealth: 5,
 				metaCategories,
 				cardComplexity: CardComplexity.Advanced,
 				temple: CardTemple.Nature,
-				description: "A flock of black clouds swam and then leave, with the only thing remaining are bones",
+				description: "A bat that seeks the blood...",
 				hideAttackAndHealth: false,
-				bloodCost: 0,
-				bonesCost: 6,
+				bloodCost: 2,
+				bonesCost: 7,
 				energyCost: 0,
-				gemCost,
+				gemsCost: null,
 				specialStatIcon: SpecialStatIcon.None,
 				Tribes,
 				Traits,
@@ -74,8 +75,8 @@ namespace boneSigils.cards
 				animatedPortrait: null,
 				decals: null,
 				evolveId: null,
-				iceCubeId: null,
-				tailId: null);
+				iceCubeId,
+				tail);
 		}
 	}
 }

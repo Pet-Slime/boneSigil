@@ -9,13 +9,14 @@ using Resources = boneSigils.Artwork.Resources;
 
 namespace boneSigils.cards
 {
-	public static class MurderOfCrows
+	public static class Owl_Familiar
 	{
 		public static void AddCard()
 		{
 
 			List<CardMetaCategory> metaCategories = new List<CardMetaCategory>();
-			metaCategories.Add(CardMetaCategory.Rare);
+			metaCategories.Add(CardMetaCategory.TraderOffer);
+			metaCategories.Add(CardMetaCategory.ChoiceNode);
 
 			List<Tribe> Tribes = new List<Tribe>();
 			Tribes.Add(Tribe.Bird);
@@ -25,33 +26,35 @@ namespace boneSigils.cards
 
 			List<Trait> Traits = new List<Trait>();
 
-			List<GemType> gemCost = new List<GemType>();
-
 			List<AbilityIdentifier> customAbilities = new List<AbilityIdentifier>();
+			customAbilities.Add(AbilityIdentifier.GetAbilityIdentifier("extraVoid.inscryption.voidSigils", "Bone Picker"));
+			customAbilities.Add(AbilityIdentifier.GetAbilityIdentifier("extraVoid.inscryption.voidSigils", "Familiar"));
 
 			List<SpecialTriggeredAbility> specialAbilities = new List<SpecialTriggeredAbility>();
-			specialAbilities.Add(MurderOfCrowsSpecialAbility.specialAbility);
 
 			List<CardAppearanceBehaviour.Appearance> appearanceBehaviour = new List<CardAppearanceBehaviour.Appearance>();
-			appearanceBehaviour.Add(CardAppearanceBehaviour.Appearance.RareCardBackground);
 
-			Texture2D DefaultTexture = SigilUtils.GetTextureFromPath("Artwork/Void_Murder_of_Crows.png");
+			Texture2D DefaultTexture = SigilUtils.GetTextureFromPath("Artwork/Void_Owl_Familiar.png");
 
-			Texture2D eTexture = SigilUtils.GetTextureFromPath("Artwork/Void_Murder_of_Crows_e.png");
+			Texture2D eTexture = SigilUtils.GetTextureFromPath("Artwork/Void_Owl_Familiar_e.png");
 
-			NewCard.Add(name: "void_murder_of_crows",
-				displayedName: "Murder of Crows",
-				baseAttack: 2,
-				baseHealth: 2,
+			IceCubeIdentifier iceCubeId = null;
+			EvolveIdentifier evolveId = null;
+			TailIdentifier tail = null;
+
+			NewCard.Add(name: "Void_Owl_Familiar",
+				displayedName: "Owl Familar",
+				baseAttack: 1,
+				baseHealth: 1,
 				metaCategories,
-				cardComplexity: CardComplexity.Advanced,
+				cardComplexity: CardComplexity.Simple,
 				temple: CardTemple.Nature,
-				description: "A flock of black clouds swam and then leave, with the only thing remaining are bones",
+				description: "A small owl, who helps out allies when they can.",
 				hideAttackAndHealth: false,
 				bloodCost: 0,
-				bonesCost: 6,
+				bonesCost: 3,
 				energyCost: 0,
-				gemCost,
+				gemsCost: null,
 				specialStatIcon: SpecialStatIcon.None,
 				Tribes,
 				Traits,
@@ -73,9 +76,9 @@ namespace boneSigils.cards
 				eTexture,
 				animatedPortrait: null,
 				decals: null,
-				evolveId: null,
-				iceCubeId: null,
-				tailId: null);
+				evolveId,
+				iceCubeId,
+				tail);
 		}
 	}
 }

@@ -30,9 +30,9 @@ namespace boneSigils.cards
 			List<CardAppearanceBehaviour.Appearance> appearanceBehaviour = new List<CardAppearanceBehaviour.Appearance>();
 			appearanceBehaviour.Add(CardAppearanceBehaviour.Appearance.TerrainBackground);
 
-			Texture2D DefaultTexture = SigilUtils.LoadTextureFromResource(Resources.Void_Screws);
+			Texture2D DefaultTexture = SigilUtils.GetTextureFromPath("Artwork/Void_Screws.png");
 
-			Texture2D eTexture = SigilUtils.LoadTextureFromResource(Resources.Void_Screws);
+			Texture2D eTexture = SigilUtils.GetTextureFromPath("Artwork/Void_Screws.png");
 
 			IceCubeIdentifier iceCubeId = null;
 

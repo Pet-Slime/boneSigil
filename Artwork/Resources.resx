@@ -130,58 +130,10 @@
   <data name="ability_pupate_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>ability_pupate_3.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="void_dairy_cow" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>void_dairy_cow.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="void_dairy_cow_e" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>void_dairy_cow_e.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="void_feather" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>void_feather.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="void_murder_of_crows" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>void_murder_of_crows.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="void_murder_of_crows_e" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>void_murder_of_crows_e.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="void_pileofbones" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>void_pileofbones.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="Void_Screws" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Void_Screws.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="void_steak" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>void_steak.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="void_steak_ability" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>void_steak_ability.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="void_tanuki_pup" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>void_tanuki_pup.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="void_tanuki_pup_e" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>void_tanuki_pup_e.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="Void_Tortoise_Bell" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Void_Tortoise_Bell.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="Void_Tortoise_Bell_alt" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Void_Tortoise_Bell_alt.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="Void_Tortoise_Bell_Broken" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Void_Tortoise_Bell_Broken.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="Void_Tortoise_Bell_Broken_e" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Void_Tortoise_Bell_Broken_e.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="Void_Tortoise_Bell_e" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Void_Tortoise_Bell_e.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="void_wasp" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>void_wasp.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="void_wasp_e" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>void_wasp_e.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>
