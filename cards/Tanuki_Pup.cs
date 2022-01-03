@@ -1,5 +1,4 @@
-﻿
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using DiskCardGame;
 using UnityEngine;
 using APIPlugin;
@@ -34,12 +33,11 @@ namespace boneSigils.cards
 			Abilities.Add(Ability.Evolve);
 
 			List<AbilityIdentifier> customAbilities = new List<AbilityIdentifier>();
-			customAbilities.Add(AbilityIdentifier.GetAbilityIdentifier("extraVoid.inscryption.voidSigils", "Ignite"));
 
 			if (!BepInEx.Bootstrap.Chainloader.PluginInfos.ContainsKey(Plugin.StarterdeckGUID))
 			{
 				Plugin.Log.LogMessage("Did not find side decks, tanuki pup now costs 1");
-				cost = 1;
+				cost = 0;
 
 			}
 			else
@@ -50,7 +48,11 @@ namespace boneSigils.cards
 
 			List<CardAppearanceBehaviour.Appearance> appearanceBehaviour = new List<CardAppearanceBehaviour.Appearance>();
 
+			IceCubeIdentifier iceCubeId = new IceCubeIdentifier("Void_Tanuki_pup");
+
 			Texture2D DefaultTexture = SigilUtils.GetTextureFromPath("Artwork/Void_Tanuki_Pup.png");
+
+			Texture2D pixelTexture = SigilUtils.GetTextureFromPath("Artwork/pixelportrait_tanuki.png");
 
 			Texture2D eTexture = SigilUtils.GetTextureFromPath("Artwork/Void_Tanuki_Pup_e.png");
 
@@ -84,12 +86,12 @@ namespace boneSigils.cards
 				DefaultTexture,
 				altTex: null,
 				titleGraphic: null,
-				pixelTex: null,
+				pixelTexture,
 				eTexture,
 				animatedPortrait: null,
 				decals: null,
 				evolveId: new EvolveIdentifier("Void_Tanuki", 3, null),
-				iceCubeId: null,
+				iceCubeId,
 				tailId: null);
 		}
 	}

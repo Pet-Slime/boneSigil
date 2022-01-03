@@ -27,12 +27,15 @@ namespace boneSigils.cards
 			List<AbilityIdentifier> customAbilities = new List<AbilityIdentifier>();
 			customAbilities.Add(AbilityIdentifier.GetAbilityIdentifier("extraVoid.inscryption.voidSigils", "Multi-Strike"));
 
-
 			List<CardAppearanceBehaviour.Appearance> appearanceBehaviour = new List<CardAppearanceBehaviour.Appearance>();
 
 			Texture2D DefaultTexture = SigilUtils.GetTextureFromPath("Artwork/Void_Wasp.png");
 
 			Texture2D eTexture = SigilUtils.GetTextureFromPath("Artwork/Void_Wasp_e.png");
+
+			IceCubeIdentifier iceCubeId = null;
+			EvolveIdentifier evolveId = null;
+			TailIdentifier tail = new TailIdentifier("Void_Wasp", null);
 
 			NewCard.Add(name: "Void_Wasp",
 				displayedName: "Wasp Swarm",
@@ -68,9 +71,9 @@ namespace boneSigils.cards
 				eTexture,
 				animatedPortrait: null,
 				decals: null,
-				evolveId: null,
-				iceCubeId: null,
-				tailId: null);
+				evolveId,
+				iceCubeId,
+				tail);
 		}
 	}
 }

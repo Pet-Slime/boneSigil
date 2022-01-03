@@ -52,8 +52,16 @@ namespace boneSigils
 		public override IEnumerator OnResolveOnBoard()
 		{
 			yield return base.PreSuccessfulTriggerSequence();
-			yield return base.CreateDrawnCard();
-			yield return base.LearnAbility(0f);
+			bool flag = Singleton<ViewManager>.Instance.CurrentView != this.DrawCardView;
+			if (flag)
+			{
+				yield return new WaitForSeconds(0.2f);
+				Singleton<ViewManager>.Instance.SwitchToView(this.DrawCardView, false, false);
+				yield return new WaitForSeconds(0.2f);
+			}
+			yield return Singleton<CardSpawner>.Instance.SpawnCardToHand(this.CardToDraw, base.Card.TemporaryMods, 0.25f, null);
+			yield return new WaitForSeconds(0.45f);
+			yield return base.LearnAbility(0.1f);
 			yield break;
 		}
 

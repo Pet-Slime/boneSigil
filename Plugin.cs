@@ -1,12 +1,9 @@
 using BepInEx;
 using BepInEx.Logging;
 using System.Collections.Generic;
-using DiskCardGame;
 using HarmonyLib;
-using UnityEngine;
-using APIPlugin;
-using Resources = boneSigils.Artwork.Resources;
 using boneSigils.cards;
+using BepInEx.Configuration;
 
 
 namespace boneSigils
@@ -19,7 +16,7 @@ namespace boneSigils
 	{
 		public const string APIGUID = "cyantist.inscryption.api";
 		public const string SigilGUID = "extraVoid.inscryption.voidSigils";
-		public const string StarterdeckGUID = "zorro.inscryption.infiniscryption.sidedecks";
+		public const string StarterdeckGUID = "zorro.inscryption.infiniscryption.kayceestarters";
 		public const string PluginGuid = "extraVoid.inscryption.void_bone_pack";
 		private const string PluginName = "Void Bone Pack";
 		private const string PluginVersion = "2.0.0";
@@ -27,8 +24,16 @@ namespace boneSigils
 		public static string Directory;
 		internal static ManualLogSource Log;
 
+
+		internal static ConfigEntry<bool> configVanillaTweaks;
+
+
 		private void Awake()
 		{
+
+			configVanillaTweaks = Config.Bind("Vanilla Tweaks", "Should they exist?", true, "Turn on or off the vanilla tweaks that the bone pack does.");
+
+
 			Log = base.Logger;
 			Directory = this.Info.Location.Replace("boneSigils.dll", "");
 
@@ -93,8 +98,10 @@ namespace boneSigils
 
 		private void Start()
 		{
-			Vanilla_Tweaks.AddCard();
+			if (configVanillaTweaks.Value)
+            {
+				Vanilla_Tweaks.AddCard();
+			}
 		}
-
 	}
 }
