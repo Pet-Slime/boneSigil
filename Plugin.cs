@@ -25,13 +25,21 @@ namespace boneSigils
 		internal static ManualLogSource Log;
 
 
-		internal static ConfigEntry<bool> configVanillaTweaks;
+		internal static ConfigEntry<bool> configVanillaTweaks; 
+		internal static ConfigEntry<bool> configBullRush; 
+		internal static ConfigEntry<bool> configCrabRush;
+		internal static ConfigEntry<bool> configBeetleRush;
+		internal static ConfigEntry<bool> configReptileKing;
 
 
 		private void Awake()
 		{
 
 			configVanillaTweaks = Config.Bind("Vanilla Tweaks", "Should they exist?", true, "Turn on or off the vanilla tweaks that the bone pack does.");
+			configBullRush = Config.Bind("Encounters", "Bull Rush", true, "Turn on or off the encounter.");
+			configCrabRush = Config.Bind("Encounters", "Crab Stall", true, "Turn on or off the encounter.");
+			configBeetleRush = Config.Bind("Encounters", "Beetle Rush", true, "Turn on or off the encounter.");
+			configReptileKing = Config.Bind("Encounters", "Reptile King", true, "Turn on or off the encounter.");
 
 
 			Log = base.Logger;
@@ -94,8 +102,6 @@ namespace boneSigils
 			WaspSwarm.AddCard();
 			Wolf.AddCard();
 			Wolverine.AddCard();
-
-			
 		}
 
 		private void Start()
@@ -105,9 +111,23 @@ namespace boneSigils
 				Vanilla_Tweaks.AddCard();
 			}
 			//Encounters
-			boneSigils.Encounters.BeetleRush.AddEncounter();
-			boneSigils.Encounters.Crabs.AddEncounter();
-			boneSigils.Encounters.Bulls.AddEncounter();
+
+			if (configBeetleRush.Value)
+			{
+				boneSigils.Encounters.BeetleRush.AddEncounter();
+			}
+			if (configBullRush.Value)
+			{
+				boneSigils.Encounters.Bulls.AddEncounter();
+			}
+			if (configCrabRush.Value)
+			{
+				boneSigils.Encounters.Crabs.AddEncounter();
+			}
+			if (configReptileKing.Value)
+			{
+				boneSigils.Encounters.ReptileKing.AddEncounter();
+			}
 		}
 	}
 }

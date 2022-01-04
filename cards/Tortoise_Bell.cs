@@ -28,6 +28,7 @@ namespace boneSigils.cards
 
 			List<CardAppearanceBehaviour.Appearance> appearanceBehaviour = new List<CardAppearanceBehaviour.Appearance>();
 			appearanceBehaviour.Add(CardAppearanceBehaviour.Appearance.GoldEmission);
+			appearanceBehaviour.Add(CardAppearanceBehaviour.Appearance.TerrainBackground);
 
 			Texture2D DefaultTexture = SigilUtils.GetTextureFromPath("Artwork/Void_Tortoise_Bell.png");
 

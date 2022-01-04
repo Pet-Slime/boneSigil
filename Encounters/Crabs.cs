@@ -15,7 +15,7 @@ namespace boneSigils.Encounters
 		public static void AddEncounter()
 		{
             //Name of the encounter
-            string name = "CrabRush";
+            string name = "CrabStall";
 
             //Vanilla region names are: Forest, Wetlands, and Alpine
             string regionName = "Wetlands";
@@ -49,17 +49,17 @@ namespace boneSigils.Encounters
             difficultyMod.Add(new EncounterBlueprintData.TurnModBlueprint { overlockCards = CardLoader.GetCardByName("Void_Crab_Fiddler"), applyAtDifficulty = 17, turn = 5 });
 
             NewEncounter.Add(
-                        name: name,
-                        regionName: regionName,
-                        turnMods: difficultyMod,
-                        dominantTribes: dominate,
-                        redundantAbilities: redundant,
+                        name,
+                        regionName,
+                        difficultyMod,
+                        dominate,
+                        redundant,
                         unlockedCardPrerequisites: null,
-                        regionSpecific: regionLocked,
+                        regionLocked,
                         minDifficulty: 1,
                         maxDifficulty: 30,
-                        randomReplacementCards: randomReplacements,
-                        turns: turns,
+                        randomReplacements,
+                        turns,
                         regular: true,
                         bossPrep: false,
                         oldPreviewDifficulty: 0);

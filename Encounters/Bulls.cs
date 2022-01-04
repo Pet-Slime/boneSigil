@@ -46,17 +46,17 @@ namespace boneSigils.Encounters
             difficultyMod.Add(new EncounterBlueprintData.TurnModBlueprint { overlockCards = CardLoader.GetCardByName("void_cow_wild"), applyAtDifficulty = 18, turn = 5 });
 
             NewEncounter.Add(
-                        name: name,
-                        regionName: regionName,
-                        turnMods: difficultyMod,
-                        dominantTribes: dominate,
-                        redundantAbilities: redundant,
+                        name,
+                        regionName,
+                        difficultyMod,
+                        dominate,
+                        redundant,
                         unlockedCardPrerequisites: null,
-                        regionSpecific: regionLocked,
+                        regionLocked,
                         minDifficulty: 1,
                         maxDifficulty: 30,
-                        randomReplacementCards: randomReplacements,
-                        turns: turns,
+                        randomReplacements,
+                        turns,
                         regular: true,
                         bossPrep: false,
                         oldPreviewDifficulty: 0);
