@@ -1,11 +1,7 @@
-﻿using BepInEx;
-using BepInEx.Logging;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using DiskCardGame;
-using HarmonyLib;
 using UnityEngine;
 using APIPlugin;
-using Resources = boneSigils.Artwork.Resources;
 
 namespace boneSigils.cards
 {
@@ -25,7 +21,7 @@ namespace boneSigils.cards
 			Abilities.Add(ability_drawwasp.ability);
 
 			List<AbilityIdentifier> customAbilities = new List<AbilityIdentifier>();
-			customAbilities.Add(AbilityIdentifier.GetAbilityIdentifier("extraVoid.inscryption.voidSigils", "Multi-Strike"));
+			customAbilities.Add(AbilityIdentifier.GetID("extraVoid.inscryption.voidSigils", "Multi-Strike"));
 
 			List<CardAppearanceBehaviour.Appearance> appearanceBehaviour = new List<CardAppearanceBehaviour.Appearance>();
 

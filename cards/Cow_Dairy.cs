@@ -1,11 +1,7 @@
-﻿using BepInEx;
-using BepInEx.Logging;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using DiskCardGame;
-using HarmonyLib;
 using UnityEngine;
 using APIPlugin;
-using Resources = boneSigils.Artwork.Resources;
 
 namespace boneSigils.cards
 {
@@ -27,7 +23,7 @@ namespace boneSigils.cards
 			Traits.Add(Trait.Goat);
 
 			List<AbilityIdentifier> customAbilities = new List<AbilityIdentifier>();
-			customAbilities.Add(AbilityIdentifier.GetAbilityIdentifier("extraVoid.inscryption.voidSigils", "Nutritious"));
+			customAbilities.Add(AbilityIdentifier.GetID("extraVoid.inscryption.voidSigils", "Nutritious"));
 
 			List<SpecialTriggeredAbility> specialAbilities = new List<SpecialTriggeredAbility>();
 			specialAbilities.Add(DairyCowSpecialAbility.specialAbility);

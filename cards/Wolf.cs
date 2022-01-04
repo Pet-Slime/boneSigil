@@ -1,11 +1,7 @@
-﻿using BepInEx;
-using BepInEx.Logging;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using DiskCardGame;
-using HarmonyLib;
 using UnityEngine;
 using APIPlugin;
-using Resources = boneSigils.Artwork.Resources;
 
 namespace boneSigils.cards
 {
@@ -26,8 +22,8 @@ namespace boneSigils.cards
 			List<Trait> Traits = new List<Trait>();
 
 			List<AbilityIdentifier> customAbilities = new List<AbilityIdentifier>();
-			customAbilities.Add(AbilityIdentifier.GetAbilityIdentifier("extraVoid.inscryption.voidSigils", "Tribal Tutor"));
-			customAbilities.Add(AbilityIdentifier.GetAbilityIdentifier("org.memez4life.inscryption.customsigils", "Tribe Attack"));
+			customAbilities.Add(AbilityIdentifier.GetID("extraVoid.inscryption.voidSigils", "Tribal Tutor"));
+			customAbilities.Add(AbilityIdentifier.GetID("org.memez4life.inscryption.customsigils", "Tribe Attack"));
 
 			List<SpecialTriggeredAbility> specialAbilities = new List<SpecialTriggeredAbility>();
 

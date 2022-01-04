@@ -2,7 +2,6 @@
 using DiskCardGame;
 using UnityEngine;
 using APIPlugin;
-using Resources = boneSigils.Artwork.Resources;
 
 namespace boneSigils.cards
 {
@@ -33,18 +32,6 @@ namespace boneSigils.cards
 			Abilities.Add(Ability.Evolve);
 
 			List<AbilityIdentifier> customAbilities = new List<AbilityIdentifier>();
-
-			if (!BepInEx.Bootstrap.Chainloader.PluginInfos.ContainsKey(Plugin.StarterdeckGUID))
-			{
-				Plugin.Log.LogMessage("Did not find side decks, tanuki pup now costs 1");
-				cost = 0;
-
-			}
-			else
-			{
-				Plugin.Log.LogMessage("Found side decks, setting tanuki pup cost to 0");
-			}
-
 
 			List<CardAppearanceBehaviour.Appearance> appearanceBehaviour = new List<CardAppearanceBehaviour.Appearance>();
 

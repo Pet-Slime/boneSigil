@@ -94,6 +94,8 @@ namespace boneSigils
 			WaspSwarm.AddCard();
 			Wolf.AddCard();
 			Wolverine.AddCard();
+
+			
 		}
 
 		private void Start()
@@ -102,6 +104,10 @@ namespace boneSigils
             {
 				Vanilla_Tweaks.AddCard();
 			}
+			//Encounters
+			boneSigils.Encounters.BeetleRush.AddEncounter();
+			boneSigils.Encounters.Crabs.AddEncounter();
+			boneSigils.Encounters.Bulls.AddEncounter();
 		}
 	}
 }

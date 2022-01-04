@@ -1,11 +1,7 @@
-﻿using BepInEx;
-using BepInEx.Logging;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using DiskCardGame;
-using HarmonyLib;
 using UnityEngine;
 using APIPlugin;
-using Resources = boneSigils.Artwork.Resources;
 
 namespace boneSigils.cards
 {
@@ -26,7 +22,7 @@ namespace boneSigils.cards
 			Traits.Add(Trait.Bear);
 
 			List<AbilityIdentifier> customAbilities = new List<AbilityIdentifier>();
-			customAbilities.Add(AbilityIdentifier.GetAbilityIdentifier("extraVoid.inscryption.voidSigils", "Lure"));
+			customAbilities.Add(AbilityIdentifier.GetID("extraVoid.inscryption.voidSigils", "Lure"));
 
 			List<SpecialTriggeredAbility> specialAbilities = new List<SpecialTriggeredAbility>();
 

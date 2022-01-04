@@ -1,11 +1,5 @@
-﻿using BepInEx;
-using BepInEx.Logging;
-using System.Collections.Generic;
-using DiskCardGame;
-using HarmonyLib;
-using UnityEngine;
+﻿using DiskCardGame;
 using APIPlugin;
-using Resources = boneSigils.Artwork.Resources;
 
 namespace boneSigils.cards
 {
@@ -20,7 +14,9 @@ namespace boneSigils.cards
 				CardInfo info = cards[index];
 				if (info.name == "Rattler")
 				{
+					Ability newAbility = AbilityIdentifier.GetID("extraVoid.inscryption.voidSigils", "Toxin (Sickening)").id;
 					info.bonesCost = 5;
+					info.DefaultAbilities.Add(newAbility);
 				}
 				if (info.name == "RatKing")
 				{
@@ -45,6 +41,7 @@ namespace boneSigils.cards
 					info.bonesCost = 5;
 					info.cost = 1;
 				}
+
 			}
 		}
 	}

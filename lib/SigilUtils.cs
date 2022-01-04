@@ -65,7 +65,7 @@ namespace boneSigils
 
 		public static AbilityIdentifier GetAbilityId(string rulebookName)
 		{
-			return AbilityIdentifier.GetAbilityIdentifier(boneSigils.Plugin.PluginGuid, rulebookName);
+			return AbilityIdentifier.GetID(boneSigils.Plugin.PluginGuid, rulebookName);
 		}
 
 		public static string GetFullPathOfFile(string fileToLookFor)

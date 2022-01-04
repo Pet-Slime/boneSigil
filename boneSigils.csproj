@@ -21,7 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Reference Include="API, version=1.12.1.0">
+    <Reference Include="API">
       <HintPath>lib\API.dll</HintPath>
     </Reference>
     <Reference Include="Assembly-CSharp">

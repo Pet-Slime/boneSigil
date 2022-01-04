@@ -1,11 +1,7 @@
-﻿using BepInEx;
-using BepInEx.Logging;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using DiskCardGame;
-using HarmonyLib;
 using UnityEngine;
 using APIPlugin;
-using Resources = boneSigils.Artwork.Resources;
 
 namespace boneSigils.cards
 {

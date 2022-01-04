@@ -44,7 +44,7 @@ namespace boneSigils
             var OPCards = Singleton<BoardManager>.Instance.GetSlots(false);
             var PLCards = Singleton<BoardManager>.Instance.GetSlots(true);
 
-            Ability Pathetic = APIPlugin.AbilityIdentifier.GetAbilityIdentifier("extraVoid.inscryption.voidSigils", "Pathetic Sacrifice").id;
+            Ability Pathetic = APIPlugin.AbilityIdentifier.GetID("extraVoid.inscryption.voidSigils", "Pathetic Sacrifice").id;
 
 
             crows.Anim.StrongNegationEffect();
