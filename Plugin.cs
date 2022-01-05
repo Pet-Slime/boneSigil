@@ -30,6 +30,7 @@ namespace boneSigils
 		internal static ConfigEntry<bool> configCrabRush;
 		internal static ConfigEntry<bool> configBeetleRush;
 		internal static ConfigEntry<bool> configReptileKing;
+		internal static ConfigEntry<bool> configBeaverStall;
 
 
 		private void Awake()
@@ -40,6 +41,7 @@ namespace boneSigils
 			configCrabRush = Config.Bind("Encounters", "Crab Stall", true, "Turn on or off the encounter.");
 			configBeetleRush = Config.Bind("Encounters", "Beetle Rush", true, "Turn on or off the encounter.");
 			configReptileKing = Config.Bind("Encounters", "Reptile King", true, "Turn on or off the encounter.");
+			configBeaverStall = Config.Bind("Encounters", "Beaver Stall", true, "Turn on or off the encounter.");
 
 
 			Log = base.Logger;
@@ -127,6 +129,10 @@ namespace boneSigils
 			if (configReptileKing.Value)
 			{
 				boneSigils.Encounters.ReptileKing.AddEncounter();
+			}
+			if (configBeaverStall.Value)
+			{
+				boneSigils.Encounters.BeaverStall.AddEncounter();
 			}
 		}
 	}

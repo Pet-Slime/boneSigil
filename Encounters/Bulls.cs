@@ -35,71 +35,73 @@ namespace boneSigils.Encounters
             List<List<EncounterBlueprintData.CardBlueprint>> turns = new List<List<EncounterBlueprintData.CardBlueprint>>();
 
             List<EncounterBlueprintData.CardBlueprint> turn_1 = new List<EncounterBlueprintData.CardBlueprint>();
-            turn_1.Add(new EncounterBlueprintData.CardBlueprint
-            {
-                card = CardLoader.GetCardByName("void_dairy_cow")
-            });
-            turn_1.Add(new EncounterBlueprintData.CardBlueprint
-            {
-                card = CardLoader.GetCardByName("ElkCub"),
-                difficultyReplace = true,
-                difficultyReq = 18,
-                replacement = CardLoader.GetCardByName("void_dairy_cow"),
-                randomReplaceChance = 25
-            });
+                turn_1.Add(new EncounterBlueprintData.CardBlueprint
+                {
+                    card = CardLoader.GetCardByName("void_dairy_cow")
+                });
+                turn_1.Add(new EncounterBlueprintData.CardBlueprint
+                {
+                    card = CardLoader.GetCardByName("void_cow_mad"),
+                    difficultyReplace = true,
+                    difficultyReq = 18,
+                    replacement = CardLoader.GetCardByName("void_cow_wild"),
+                    randomReplaceChance = 25
+                });
 
             List<EncounterBlueprintData.CardBlueprint> turn_2 = new List<EncounterBlueprintData.CardBlueprint>();
-            turn_2.Add(new EncounterBlueprintData.CardBlueprint
-            {
-                card = CardLoader.GetCardByName("void_cow_mad"),
-                difficultyReplace = true,
-                difficultyReq = 18,
-                replacement = CardLoader.GetCardByName("Void_Crab_Fiddler"),
-                randomReplaceChance = 25
-            });
+                turn_2.Add(new EncounterBlueprintData.CardBlueprint
+                {
+                    card = CardLoader.GetCardByName("void_dairy_cow"),
+                    randomReplaceChance = 25
+                });
 
             List<EncounterBlueprintData.CardBlueprint> turn_3 = new List<EncounterBlueprintData.CardBlueprint>();
-            turn_3.Add(new EncounterBlueprintData.CardBlueprint
-            {
-                card = CardLoader.GetCardByName("Rabbit"),
-                difficultyReplace = true,
-                difficultyReq = 13,
-                replacement = CardLoader.GetCardByName("void_dairy_cow"),
-                randomReplaceChance = 25
-            });
-            turn_3.Add(new EncounterBlueprintData.CardBlueprint
-            {
-                card = CardLoader.GetCardByName("Rabbit"),
-                difficultyReplace = true,
-                difficultyReq = 18,
-                replacement = CardLoader.GetCardByName("void_cow_mad"),
-                randomReplaceChance = 25
-            });
+                turn_3.Add(new EncounterBlueprintData.CardBlueprint
+                {
+                    card = CardLoader.GetCardByName("void_dairy_cow"),
+                    randomReplaceChance = 25
+                });
 
             List<EncounterBlueprintData.CardBlueprint> turn_4 = new List<EncounterBlueprintData.CardBlueprint>();
-            turn_4.Add(new EncounterBlueprintData.CardBlueprint
-            {
-                card = CardLoader.GetCardByName("void_dairy_cow"),
-                difficultyReplace = true,
-                difficultyReq = 18,
-                replacement = CardLoader.GetCardByName("void_cow_mad"),
-                randomReplaceChance = 25
-            });
+                turn_4.Add(new EncounterBlueprintData.CardBlueprint
+                {
+                    card = CardLoader.GetCardByName("void_cow_mad"),
+                    difficultyReplace = true,
+                    difficultyReq = 13,
+                    replacement = CardLoader.GetCardByName("void_cow_wild"),
+                    randomReplaceChance = 25
+                });
 
             List<EncounterBlueprintData.CardBlueprint> turn_5 = new List<EncounterBlueprintData.CardBlueprint>();
-            turn_5.Add(new EncounterBlueprintData.CardBlueprint
-            {
-                card = CardLoader.GetCardByName("void_cow_wild"),
-                difficultyReplace = true,
-                difficultyReq = 18,
-                replacement = CardLoader.GetCardByName("void_cow_wild"),
-                randomReplaceChance = 25
-            });
+               turn_5.Add(new EncounterBlueprintData.CardBlueprint
+               {
+                   card = CardLoader.GetCardByName("void_dairy_cow"),
+                   randomReplaceChance = 25
+               });
+
+            List<EncounterBlueprintData.CardBlueprint> turn_6 = new List<EncounterBlueprintData.CardBlueprint>();
+                turn_6.Add(new EncounterBlueprintData.CardBlueprint
+                {
+                    card = CardLoader.GetCardByName("void_dairy_cow"),
+                    randomReplaceChance = 25
+                });
+
+            List<EncounterBlueprintData.CardBlueprint> turn_7 = new List<EncounterBlueprintData.CardBlueprint>();
+                turn_7.Add(new EncounterBlueprintData.CardBlueprint
+                {
+                    card = CardLoader.GetCardByName("void_cow_mad"),
+                    difficultyReplace = true,
+                    difficultyReq = 18,
+                    replacement = CardLoader.GetCardByName("void_cow_wild"),
+                    randomReplaceChance = 25
+                });
             turns.Add(turn_1);
             turns.Add(turn_2);
             turns.Add(turn_3);
             turns.Add(turn_4);
             turns.Add(turn_5);
+            turns.Add(turn_6);
+            turns.Add(turn_7);
 
             NewEncounter.Add(
                         name,

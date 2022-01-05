@@ -39,8 +39,8 @@ namespace boneSigils.Encounters
                     card = CardLoader.GetCardByName("void_beetle_larva"), 
                     difficultyReplace = true,
                     difficultyReq = 13,
-                    replacement = CardLoader.GetCardByName("void_scarab_jewel"),
-                    randomReplaceChance = 25
+                    replacement = CardLoader.GetCardByName("Void_Scarab_Jewel"),
+                    randomReplaceChance = 10
                 });
                 turn_1.Add(new EncounterBlueprintData.CardBlueprint
                 {
@@ -48,39 +48,27 @@ namespace boneSigils.Encounters
                     difficultyReplace = true,
                     difficultyReq = 18,
                     replacement = CardLoader.GetCardByName("Void_Rino_beetle"),
-                    randomReplaceChance = 25
+                    randomReplaceChance = 10
                 });
 
             List<EncounterBlueprintData.CardBlueprint> turn_2 = new List<EncounterBlueprintData.CardBlueprint>();
                 turn_2.Add(new EncounterBlueprintData.CardBlueprint
                 {
-                    card = CardLoader.GetCardByName("Bee"),
+                    card = CardLoader.GetCardByName("void_beetle_larva"),
                     difficultyReplace = true,
                     difficultyReq = 18,
-                    replacement = CardLoader.GetCardByName("void_scarab_jewel"),
-                    randomReplaceChance = 25
+                    replacement = CardLoader.GetCardByName("Void_Scarab_Jewel"),
+                    randomReplaceChance = 10
                 });
-                turn_2.Add(new EncounterBlueprintData.CardBlueprint
-                {
-                    card = CardLoader.GetCardByName("Bee"),
-                    difficultyReplace = true,
-                    difficultyReq = 18,
-                    replacement = CardLoader.GetCardByName("void_scarab_jewel"),
-                    randomReplaceChance = 25
-                });
+
 
             List<EncounterBlueprintData.CardBlueprint> turn_3 = new List<EncounterBlueprintData.CardBlueprint>();
                 turn_3.Add(new EncounterBlueprintData.CardBlueprint { 
                     card = CardLoader.GetCardByName("void_beetle_larva"), 
                     difficultyReplace = true, 
                     difficultyReq = 13, 
-                    replacement = CardLoader.GetCardByName("Void_Beetle_Bombardier") 
-                });
-                turn_3.Add(new EncounterBlueprintData.CardBlueprint {
-                    card = CardLoader.GetCardByName("void_beetle_larva"),
-                    difficultyReplace = true,
-                    difficultyReq = 18,
-                    replacement = CardLoader.GetCardByName("Void_Rino_beetle")
+                    replacement = CardLoader.GetCardByName("Void_Beetle_Bombardier"),
+                    randomReplaceChance = 10
                 });
 
             List<EncounterBlueprintData.CardBlueprint> turn_4 = new List<EncounterBlueprintData.CardBlueprint>();
@@ -88,14 +76,64 @@ namespace boneSigils.Encounters
                 {
                     card = CardLoader.GetCardByName("void_beetle_larva"),
                     difficultyReplace = true,
+                    difficultyReq = 13,
+                    replacement = CardLoader.GetCardByName("Void_Beetle_Bombardier"),
+                    randomReplaceChance = 10
+                });
+                turn_4.Add(new EncounterBlueprintData.CardBlueprint
+                {
+                    card = CardLoader.GetCardByName("void_beetle_larva"),
+                    difficultyReplace = true,
                     difficultyReq = 18,
-                    replacement = CardLoader.GetCardByName("Void_Rino_beetle")
+                    replacement = CardLoader.GetCardByName("Void_Rino_beetle"),
+                    randomReplaceChance = 10
+                });
+
+            List<EncounterBlueprintData.CardBlueprint> turn_5 = new List<EncounterBlueprintData.CardBlueprint>();
+                turn_5.Add(new EncounterBlueprintData.CardBlueprint
+                {
+                    card = CardLoader.GetCardByName("void_beetle_larva"),
+                    difficultyReplace = true,
+                    difficultyReq = 18,
+                    replacement = CardLoader.GetCardByName("Void_Rino_beetle"),
+                    randomReplaceChance = 10
+                });
+
+            List<EncounterBlueprintData.CardBlueprint> turn_6 = new List<EncounterBlueprintData.CardBlueprint>();
+                turn_6.Add(new EncounterBlueprintData.CardBlueprint
+                {
+                    card = CardLoader.GetCardByName("void_beetle_larva"),
+                    difficultyReplace = true,
+                    difficultyReq = 13,
+                    replacement = CardLoader.GetCardByName("Void_Scarab_Jewel"),
+                    randomReplaceChance = 10
+                });
+
+            List<EncounterBlueprintData.CardBlueprint> turn_7 = new List<EncounterBlueprintData.CardBlueprint>();
+                turn_7.Add(new EncounterBlueprintData.CardBlueprint
+                {
+                    card = CardLoader.GetCardByName("void_beetle_larva"),
+                    difficultyReplace = true,
+                    difficultyReq = 18,
+                    replacement = CardLoader.GetCardByName("Void_Rino_beetle"),
+                    randomReplaceChance = 10
+                });
+                turn_7.Add(new EncounterBlueprintData.CardBlueprint
+                {
+                    card = CardLoader.GetCardByName("void_beetle_larva"),
+                    difficultyReplace = true,
+                    difficultyReq = 13,
+                    replacement = CardLoader.GetCardByName("Void_Scarab_Jewel"),
+                    randomReplaceChance = 10
                 });
 
             turns.Add(turn_1);
             turns.Add(turn_2);
             turns.Add(turn_3);
             turns.Add(turn_4);
+            turns.Add(turn_5);
+            turns.Add(turn_6);
+            turns.Add(turn_7);
 
 
 
