@@ -11,19 +11,38 @@ namespace boneSigils.cards
 		{
 
 			List<CardMetaCategory> metaCategories = new List<CardMetaCategory>();
-			metaCategories.Add(CardMetaCategory.TraderOffer);
-			metaCategories.Add(CardMetaCategory.ChoiceNode);
+			if (!BepInEx.Bootstrap.Chainloader.PluginInfos.ContainsKey(Plugin.StarterdeckGUID))
+			{
+				Plugin.Log.LogMessage("Did not find side decks, adding Undead Axolotl to the default pools");
+				metaCategories.Add(CardMetaCategory.ChoiceNode);
+				metaCategories.Add(CardMetaCategory.TraderOffer);
+
+			}
+			else
+			{
+				Plugin.Log.LogMessage("Found side decks, removing Undead Axolotl from the default pools");
+			}
 
 			List<Tribe> Tribes = new List<Tribe>();
 			Tribes.Add(Tribe.Reptile);
 
 			List<Ability> Abilities = new List<Ability>();
-			Abilities.Add(Ability.QuadrupleBones);
 
-			List<Trait> Traits = new List<Trait>();
+			List<Trait> Traits = new List<Trait> { (Trait)5103 };
 			Traits.Add(Trait.Undead);
 
 			List<AbilityIdentifier> customAbilities = new List<AbilityIdentifier>();
+			if (!BepInEx.Bootstrap.Chainloader.PluginInfos.ContainsKey(Plugin.StarterdeckGUID))
+			{
+				Plugin.Log.LogMessage("Found side decks, giving Undead Axolotl Bone Prince 3");
+				customAbilities.Add(AbilityIdentifier.GetID("org.memez4life.inscryption.customsigils", "Bone prince 3"));
+			}
+			else
+			{
+				Plugin.Log.LogMessage("Did not find side decks, giving Undead Axolotl quad bones");
+				Abilities.Add(Ability.QuadrupleBones);
+			}
+
 			customAbilities.Add(AbilityIdentifier.GetID("extraVoid.inscryption.voidSigils", "Pathetic Sacrifice"));
 
 			List<SpecialTriggeredAbility> specialAbilities = new List<SpecialTriggeredAbility>();

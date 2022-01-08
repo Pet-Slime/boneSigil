@@ -39,7 +39,7 @@ namespace boneSigils.cards
 
 			NewCard.Add(name: "Void_Salmon",
 				displayedName: "Undead Salmon",
-				baseAttack: 3,
+				baseAttack: 2,
 				baseHealth: 1,
 				metaCategories,
 				cardComplexity: CardComplexity.Advanced,

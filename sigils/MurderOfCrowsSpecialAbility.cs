@@ -13,10 +13,6 @@ namespace boneSigils
         public SpecialTriggeredAbility SpecialAbility => specialAbility;
         public static SpecialTriggeredAbility specialAbility;
 
-
-
-
-
         public static void AddMurderAbility()
         {
             StatIconInfo iconInfo = new StatIconInfo();
@@ -57,8 +53,7 @@ namespace boneSigils
                 if (!target.Info.HasTrait(Trait.Giant) &&
                     slot != crows.Slot &&
                     !target.Info.HasTrait(Trait.Terrain) &&
-                    !target.Info.HasTrait(Trait.Pelt) &&
-                    !target.Info.HasAbility(Pathetic))
+                    !target.Info.HasTrait(Trait.Pelt))
                 {
                     target.Anim.LightNegationEffect();
                     crows.Anim.PlaySacrificeParticles();
@@ -66,11 +61,8 @@ namespace boneSigils
                     yield return new WaitForSeconds(0.2f);
                     yield return target.Die(false, target, true);
                     yield return new WaitForSeconds(0.3f);
-                    if (slot.Card == null)
-                    {
-                        PlayableCard murdered = CardSpawner.SpawnPlayableCard(CardLoader.GetCardByName("Void_PileOfBones"));
-                        yield return Singleton<BoardManager>.Instance.ResolveCardOnBoard(murdered, slot);
-                    }
+                    PlayableCard murdered = CardSpawner.SpawnPlayableCard(CardLoader.GetCardByName("Void_PileOfBones"));
+                    yield return Singleton<BoardManager>.Instance.ResolveCardOnBoard(murdered, slot);
 
                 }
             }
@@ -81,8 +73,7 @@ namespace boneSigils
                 if (!target.Info.HasTrait(Trait.Giant) &&
                     slot != crows.Slot &&
                     !target.Info.HasTrait(Trait.Terrain) &&
-                    !target.Info.HasTrait(Trait.Pelt) &&
-                    !target.Info.HasAbility(Pathetic))
+                    !target.Info.HasTrait(Trait.Pelt))
                 {
                     target.Anim.LightNegationEffect();
                     crows.Anim.PlaySacrificeParticles();
@@ -90,11 +81,9 @@ namespace boneSigils
                     yield return new WaitForSeconds(0.2f);
                     yield return target.Die(false, target, true);
                     yield return new WaitForSeconds(0.3f);
-                    if (slot.Card == null)
-                    {
+                    
                         PlayableCard murdered = CardSpawner.SpawnPlayableCard(CardLoader.GetCardByName("Void_PileOfBones"));
                         yield return Singleton<BoardManager>.Instance.ResolveCardOnBoard(murdered, slot);
-                    }
                 }
                 yield break;
             }

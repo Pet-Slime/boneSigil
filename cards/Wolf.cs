@@ -47,7 +47,7 @@ namespace boneSigils.cards
 				description: "The hurt wolf calls for aid!",
 				hideAttackAndHealth: false,
 				bloodCost: 0,
-				bonesCost: 3,
+				bonesCost: 4,
 				energyCost: 0,
 				gemsCost: null,
 				specialStatIcon: SpecialStatIcon.None,

@@ -16,7 +16,7 @@ namespace boneSigils
 	{
 		public const string APIGUID = "cyantist.inscryption.api";
 		public const string SigilGUID = "extraVoid.inscryption.voidSigils";
-		public const string StarterdeckGUID = "zorro.inscryption.infiniscryption.kayceestarters";
+		public const string StarterdeckGUID = "zorro.inscryption.infiniscryption.sidedecks";
 		public const string PluginGuid = "extraVoid.inscryption.void_bone_pack";
 		private const string PluginName = "Void Bone Pack";
 		private const string PluginVersion = "2.0.0";

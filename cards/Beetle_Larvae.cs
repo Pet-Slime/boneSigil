@@ -39,7 +39,7 @@ namespace boneSigils.cards
 			TailIdentifier tail = null;
 
 			NewCard.Add(name: "void_beetle_larva",
-				displayedName: "Rhino Beetle",
+				displayedName: "Beetle Larva",
 				baseAttack: 1,
 				baseHealth: 3,
 				metaCategories,

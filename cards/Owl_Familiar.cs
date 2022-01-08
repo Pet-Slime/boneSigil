@@ -18,7 +18,6 @@ namespace boneSigils.cards
 			Tribes.Add(Tribe.Bird);
 
 			List<Ability> Abilities = new List<Ability>();
-			Abilities.Add(Ability.Flying);
 
 			List<Trait> Traits = new List<Trait>();
 

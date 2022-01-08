@@ -16,7 +16,6 @@ namespace boneSigils.cards
 			Tribes.Add(Tribe.Hooved);
 
 			List<Ability> Abilities = new List<Ability>();
-			Abilities.Add(Ability.QuadrupleBones);
 
 			List<Trait> Traits = new List<Trait>();
 			Traits.Add(Trait.Terrain);
