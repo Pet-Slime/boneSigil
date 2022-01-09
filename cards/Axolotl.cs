@@ -32,17 +32,8 @@ namespace boneSigils.cards
 			Traits.Add(Trait.Undead);
 
 			List<AbilityIdentifier> customAbilities = new List<AbilityIdentifier>();
-			if (!BepInEx.Bootstrap.Chainloader.PluginInfos.ContainsKey(Plugin.StarterdeckGUID))
-			{
-				Plugin.Log.LogMessage("Found side decks, giving Undead Axolotl Bone Prince 3");
-				customAbilities.Add(AbilityIdentifier.GetID("org.memez4life.inscryption.customsigils", "Bone prince 3"));
-			}
-			else
-			{
-				Plugin.Log.LogMessage("Did not find side decks, giving Undead Axolotl quad bones");
-				Abilities.Add(Ability.QuadrupleBones);
-			}
 
+			customAbilities.Add(AbilityIdentifier.GetID("org.memez4life.inscryption.customsigils", "Bone prince 3"));
 			customAbilities.Add(AbilityIdentifier.GetID("extraVoid.inscryption.voidSigils", "Pathetic Sacrifice"));
 
 			List<SpecialTriggeredAbility> specialAbilities = new List<SpecialTriggeredAbility>();
