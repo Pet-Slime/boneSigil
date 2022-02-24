@@ -45,7 +45,7 @@ namespace boneSigils.cards
 				temple: CardTemple.Nature,
 				description: "A crab with long, easy to grab legs",
 				hideAttackAndHealth: false,
-				bloodCost: 0,
+				bloodCost: 1,
 				bonesCost: 5,
 				energyCost: 0,
 				gemsCost: null,

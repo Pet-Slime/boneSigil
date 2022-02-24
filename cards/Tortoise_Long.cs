@@ -38,9 +38,9 @@ namespace boneSigils.cards
 			TailIdentifier tail = null;
 
 			NewCard.Add(name: "void_tortoise_long",
-				displayedName: "Spotted Tortoise",
-				baseAttack: 1,
-				baseHealth: 10,
+				displayedName: "Giant Tortoise",
+				baseAttack: 2,
+				baseHealth: 8,
 				metaCategories,
 				cardComplexity: CardComplexity.Simple,
 				temple: CardTemple.Nature,

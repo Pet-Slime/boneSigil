@@ -22,7 +22,8 @@ namespace boneSigils.cards
 			Traits.Add(Trait.Blind);
 
 			List<AbilityIdentifier> customAbilities = new List<AbilityIdentifier>();
-			customAbilities.Add(AbilityIdentifier.GetID("extraVoid.inscryption.voidSigils", "BloodGuzzler"));
+			customAbilities.Add(AbilityIdentifier.GetID("extraVoid.inscryption.voidSigils", "Grazing"));
+			customAbilities.Add(AbilityIdentifier.GetID("extraVoid.inscryption.voidSigils", "Possessor"));
 
 			List<SpecialTriggeredAbility> specialAbilities = new List<SpecialTriggeredAbility>();
 
@@ -37,15 +38,15 @@ namespace boneSigils.cards
 			TailIdentifier tail = null;
 
 			NewCard.Add(name: "Void_Bat",
-				displayedName: "Vampire Bat",
-				baseAttack: 3,
+				displayedName: "Spectral Bat",
+				baseAttack: 4,
 				baseHealth: 5,
 				metaCategories,
 				cardComplexity: CardComplexity.Advanced,
 				temple: CardTemple.Nature,
-				description: "A bat that seeks the blood...",
+				description: "Rarely seen, this bat haunts the shadows.",
 				hideAttackAndHealth: false,
-				bloodCost: 2,
+				bloodCost: 1,
 				bonesCost: 7,
 				energyCost: 0,
 				gemsCost: null,

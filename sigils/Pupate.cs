@@ -61,7 +61,7 @@ namespace boneSigils
             {
 				string cardName = list[UnityEngine.Random.Range(0, (list.Count))];
 				CardInfo cardinfo = CardLoader.GetCardByName(cardName);
-
+				bool evolveInheritsInfoMods = this.EvolveInheritsInfoMods;
 				if (this.EvolveInheritsInfoMods)
 				{
 					foreach (CardModificationInfo cardModificationInfo in base.Card.Info.Mods.FindAll((CardModificationInfo x) => !x.nonCopyable))
@@ -75,7 +75,7 @@ namespace boneSigils
 					}
 				}
 				yield return base.PreSuccessfulTriggerSequence();
-				yield return base.Card.TransformIntoCard(cardinfo, new Action(this.RemoveTemporaryModsWithEvolve));
+				yield return TransformIntoCard(cardinfo, new Action(this.RemoveTemporaryModsWithEvolve));
 				yield return new WaitForSeconds(this.PostTransformWait);
 				yield return base.LearnAbility(0.5f);
 
@@ -130,5 +130,22 @@ namespace boneSigils
 			}
 		}
 
+		public IEnumerator TransformIntoCard(CardInfo evolvedInfo, Action onTransformedCallback = null, Action preTransformCallback = null)
+		{
+			Singleton<ViewManager>.Instance.SwitchToView(View.Board, false, false);
+			yield return new WaitForSeconds(0.15f);
+			base.Card.Anim.PlayTransformAnimation();
+			yield return new WaitForSeconds(0.15f);
+			if (preTransformCallback != null)
+			{
+				preTransformCallback();
+			}
+			base.Card.SetInfo(evolvedInfo);
+			if (onTransformedCallback != null)
+			{
+				onTransformedCallback();
+			}
+			yield break;
+		}
 	}
 }

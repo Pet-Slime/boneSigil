@@ -38,7 +38,7 @@ namespace boneSigils.cards
 			TailIdentifier tail = null;
 
 			NewCard.Add(name: "Void_Wolverine",
-				displayedName: "Hunry Wolverine",
+				displayedName: "Hungry Wolverine",
 				baseAttack: 0,
 				baseHealth: 4,
 				metaCategories,

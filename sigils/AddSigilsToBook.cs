@@ -18,25 +18,11 @@ namespace boneSigils
 			for (int index = 0; index < ability.Count; index++)
 			{
 				AbilityInfo info = ability[index];
-				if (info.ability == Ability.GainGemBlue)
+				if (info.ability == Ability.BoneDigger)
 				{
-					info.metaCategories.Add(AbilityMetaCategory.Part1Rulebook);
-				}
-				if (info.ability == Ability.GainGemOrange)
-				{
-					info.metaCategories.Add(AbilityMetaCategory.Part1Rulebook);
-				}
-				if (info.ability == Ability.GainGemGreen)
-				{
-					info.metaCategories.Add(AbilityMetaCategory.Part1Rulebook);
-				}
-				if (info.ability == Ability.SwapStats)
-				{
-					info.metaCategories.Add(AbilityMetaCategory.Part1Rulebook);
+					info.powerLevel = -2;
 				}
 			}
 		}
 	}
-
-
 }

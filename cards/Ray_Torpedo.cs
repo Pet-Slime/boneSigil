@@ -5,53 +5,59 @@ using APIPlugin;
 
 namespace boneSigils.cards
 {
-	public static class Vulture
+	public static class Ray_Torpedo
 	{
 		public static void AddCard()
 		{
-
+			var BloodCost = 2;
+			var energycost = 0;
+			if (BepInEx.Bootstrap.Chainloader.PluginInfos.ContainsKey("extraVoid.inscryption.LifeCost"))
+			{
+				Plugin.Log.LogMessage("Found Life cost API, Adjusting Ray's Cost");
+				BloodCost = 0;
+				energycost = -8;
+			}
 			List<CardMetaCategory> metaCategories = new List<CardMetaCategory>();
-			metaCategories.Add(CardMetaCategory.ChoiceNode);
 			metaCategories.Add(CardMetaCategory.TraderOffer);
+			metaCategories.Add(CardMetaCategory.ChoiceNode);
 
 			List<Tribe> Tribes = new List<Tribe>();
-			Tribes.Add(Tribe.Bird);
 
 			List<Ability> Abilities = new List<Ability>();
-			Abilities.Add(Ability.Flying);
 
 			List<Trait> Traits = new List<Trait>();
-			Traits.Add(Trait.KillsSurvivors);
 
 			List<AbilityIdentifier> customAbilities = new List<AbilityIdentifier>();
+			customAbilities.Add(AbilityIdentifier.GetID("extraVoid.inscryption.voidSigils", "Zapper"));
+			customAbilities.Add(AbilityIdentifier.GetID("extraVoid.inscryption.voidSigils", "Electric"));
 
 			List<SpecialTriggeredAbility> specialAbilities = new List<SpecialTriggeredAbility>();
-			specialAbilities.Add(SpecialTriggeredAbility.Lammergeier);
 
 			List<CardAppearanceBehaviour.Appearance> appearanceBehaviour = new List<CardAppearanceBehaviour.Appearance>();
 
-			Texture2D DefaultTexture = SigilUtils.GetTextureFromPath("Artwork/Void_Vulture.png");
+			Texture2D DefaultTexture = SigilUtils.GetTextureFromPath("Artwork/void_torpedoRay.png");
 
-			Texture2D eTexture = SigilUtils.GetTextureFromPath("Artwork/Void_Vulture_e.png");
+			Texture2D eTexture = SigilUtils.GetTextureFromPath("Artwork/void_torpedoRay_e.png");
 
 			IceCubeIdentifier iceCubeId = null;
-			EvolveIdentifier evolveId = null;
-			TailIdentifier tail = null;
 
-			NewCard.Add(name: "Void_Vulture",
-				displayedName: "Bearded Vulture",
-				baseAttack: 0,
-				baseHealth: 4,
+			Texture2D tailTexture = SigilUtils.GetTextureFromPath("Artwork/Void_Angler_Alt.png");
+			TailIdentifier tail = new TailIdentifier("Void_Angler_Lure", tailTexture, null);
+
+			NewCard.Add(name: "void_torpedoRay",
+				displayedName: "Torpedo Ray",
+				baseAttack: 3,
+				baseHealth: 3,
 				metaCategories,
-				cardComplexity: CardComplexity.Advanced,
+				cardComplexity: CardComplexity.Simple,
 				temple: CardTemple.Nature,
-				description: "A Vulture that consumes bone.",
+				description: "A shocking Discovery!",
 				hideAttackAndHealth: false,
-				bloodCost: 0,
-				bonesCost: 9,
-				energyCost: 0,
+				bloodCost: BloodCost,
+				bonesCost: 3,
+				energyCost: energycost,
 				gemsCost: null,
-				specialStatIcon: SpecialStatIcon.Bones,
+				specialStatIcon: SpecialStatIcon.None,
 				Tribes,
 				Traits,
 				specialAbilities,
@@ -72,7 +78,7 @@ namespace boneSigils.cards
 				eTexture,
 				animatedPortrait: null,
 				decals: null,
-				evolveId,
+				evolveId: null,
 				iceCubeId,
 				tail);
 		}

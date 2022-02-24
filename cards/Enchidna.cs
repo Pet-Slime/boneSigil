@@ -5,53 +5,59 @@ using APIPlugin;
 
 namespace boneSigils.cards
 {
-	public static class Vulture
+	public static class Enchidna
 	{
 		public static void AddCard()
 		{
+			var bloodcost = 2;
+			var energycost = 0;
+			if (BepInEx.Bootstrap.Chainloader.PluginInfos.ContainsKey("extraVoid.inscryption.LifeCost"))
+			{
+				Plugin.Log.LogMessage("Found Life cost API, Adjusting Enchidna's Cost");
 
+				bloodcost = 0;
+				energycost = -8;
+			}
 			List<CardMetaCategory> metaCategories = new List<CardMetaCategory>();
-			metaCategories.Add(CardMetaCategory.ChoiceNode);
 			metaCategories.Add(CardMetaCategory.TraderOffer);
+			metaCategories.Add(CardMetaCategory.ChoiceNode);
 
 			List<Tribe> Tribes = new List<Tribe>();
-			Tribes.Add(Tribe.Bird);
 
 			List<Ability> Abilities = new List<Ability>();
-			Abilities.Add(Ability.Flying);
+			Abilities.Add(Ability.Sharp);
 
 			List<Trait> Traits = new List<Trait>();
-			Traits.Add(Trait.KillsSurvivors);
 
 			List<AbilityIdentifier> customAbilities = new List<AbilityIdentifier>();
+			customAbilities.Add(AbilityIdentifier.GetID("extraVoid.inscryption.voidSigils", "Electric"));
 
 			List<SpecialTriggeredAbility> specialAbilities = new List<SpecialTriggeredAbility>();
-			specialAbilities.Add(SpecialTriggeredAbility.Lammergeier);
 
 			List<CardAppearanceBehaviour.Appearance> appearanceBehaviour = new List<CardAppearanceBehaviour.Appearance>();
 
-			Texture2D DefaultTexture = SigilUtils.GetTextureFromPath("Artwork/Void_Vulture.png");
+			Texture2D DefaultTexture = SigilUtils.GetTextureFromPath("Artwork/void_enchidna.png");
 
-			Texture2D eTexture = SigilUtils.GetTextureFromPath("Artwork/Void_Vulture_e.png");
+			Texture2D eTexture = SigilUtils.GetTextureFromPath("Artwork/void_enchidna_e.png");
 
 			IceCubeIdentifier iceCubeId = null;
-			EvolveIdentifier evolveId = null;
+
 			TailIdentifier tail = null;
 
-			NewCard.Add(name: "Void_Vulture",
-				displayedName: "Bearded Vulture",
-				baseAttack: 0,
+			NewCard.Add(name: "Void_Enchidna",
+				displayedName: "Enchidna",
+				baseAttack: 2,
 				baseHealth: 4,
 				metaCategories,
-				cardComplexity: CardComplexity.Advanced,
+				cardComplexity: CardComplexity.Simple,
 				temple: CardTemple.Nature,
-				description: "A Vulture that consumes bone.",
+				description: "One of the few mammals to use Electroreception.",
 				hideAttackAndHealth: false,
-				bloodCost: 0,
-				bonesCost: 9,
-				energyCost: 0,
+				bloodCost: bloodcost,
+				bonesCost: 3,
+				energyCost: energycost,
 				gemsCost: null,
-				specialStatIcon: SpecialStatIcon.Bones,
+				specialStatIcon: SpecialStatIcon.None,
 				Tribes,
 				Traits,
 				specialAbilities,
@@ -72,7 +78,7 @@ namespace boneSigils.cards
 				eTexture,
 				animatedPortrait: null,
 				decals: null,
-				evolveId,
+				evolveId: null,
 				iceCubeId,
 				tail);
 		}

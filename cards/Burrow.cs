@@ -39,8 +39,8 @@ namespace boneSigils.cards
 			TailIdentifier tail = new TailIdentifier("Void_Scrap", DefaultTexture, null);
 
 			NewCard.Add(name: "Void_burrow",
-				displayedName: "Burrow Trap",
-				baseAttack: 0,
+				displayedName: "Strange Mole",
+				baseAttack: 1,
 				baseHealth: 5,
 				metaCategories,
 				cardComplexity: CardComplexity.Simple,

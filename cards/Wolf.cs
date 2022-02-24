@@ -37,7 +37,7 @@ namespace boneSigils.cards
 			EvolveIdentifier evolveId = null;
 			TailIdentifier tail = null;
 
-			NewCard.Add(name: "void_wolf",
+			NewCard.Add(name: "Void_Wolf",
 				displayedName: "Hurt Wolf",
 				baseAttack: 1,
 				baseHealth: 1,

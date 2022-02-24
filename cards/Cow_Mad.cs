@@ -38,7 +38,7 @@ namespace boneSigils.cards
 			TailIdentifier tail = null;
 
 			NewCard.Add(name: "void_cow_mad",
-				displayedName: "The Mad Bull",
+				displayedName: "The Dying Bull",
 				baseAttack: 3,
 				baseHealth: 4,
 				metaCategories,

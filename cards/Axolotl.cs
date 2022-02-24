@@ -16,7 +16,6 @@ namespace boneSigils.cards
 				Plugin.Log.LogMessage("Did not find side decks, adding Undead Axolotl to the default pools");
 				metaCategories.Add(CardMetaCategory.ChoiceNode);
 				metaCategories.Add(CardMetaCategory.TraderOffer);
-
 			}
 			else
 			{
@@ -42,6 +41,7 @@ namespace boneSigils.cards
 
 			Texture2D DefaultTexture = SigilUtils.GetTextureFromPath("Artwork/void_undeadAxolotle.png");
 
+			Texture2D pixelTexture = SigilUtils.GetTextureFromPath("Artwork/pixelportrait_axol.png");
 			Texture2D eTexture = SigilUtils.GetTextureFromPath("Artwork/void_undeadAxolotle_e.png");
 
 			IceCubeIdentifier iceCubeId = null;
@@ -78,13 +78,15 @@ namespace boneSigils.cards
 				DefaultTexture,
 				altTex: null,
 				titleGraphic: null,
-				pixelTex: null,
+				pixelTex: pixelTexture,
 				eTexture,
 				animatedPortrait: null,
 				decals: null,
 				evolveId: null,
 				iceCubeId,
 				tail);
+
+
 		}
 	}
 }

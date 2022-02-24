@@ -9,6 +9,7 @@ namespace boneSigils.cards
 	{
 		public static void AddCard()
 		{
+			
 
 			List<CardMetaCategory> metaCategories = new List<CardMetaCategory>();
 			metaCategories.Add(CardMetaCategory.TraderOffer);

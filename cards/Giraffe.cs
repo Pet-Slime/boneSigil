@@ -73,6 +73,7 @@ namespace boneSigils.cards
 				evolveId,
 				iceCubeId,
 				tail);
+
 		}
 	}
 }

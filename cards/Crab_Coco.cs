@@ -45,7 +45,7 @@ namespace boneSigils.cards
 				temple: CardTemple.Nature,
 				description: "The Coconut crab has a thick shell, and sharp claws to boot",
 				hideAttackAndHealth: false,
-				bloodCost: 0,
+				bloodCost: 1,
 				bonesCost: 6,
 				energyCost: 0,
 				gemsCost: null,

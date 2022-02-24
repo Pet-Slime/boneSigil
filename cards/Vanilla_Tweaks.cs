@@ -8,7 +8,6 @@ namespace boneSigils.cards
 		public static void AddCard()
 		{
 			var cards = ScriptableObjectLoader<CardInfo>.AllData;
-
 			for (int index = 0; index < cards.Count; index++)
 			{
 				CardInfo info = cards[index];
@@ -16,6 +15,7 @@ namespace boneSigils.cards
 				{
 					Ability newAbility = AbilityIdentifier.GetID("extraVoid.inscryption.voidSigils", "Toxin (Sickening)").id;
 					info.bonesCost = 5;
+					info.abilities.Clear();
 					info.DefaultAbilities.Add(newAbility);
 				}
 				if (info.name == "RatKing")
@@ -25,7 +25,7 @@ namespace boneSigils.cards
 				}
 				if (info.name == "Opossum")
 				{
-					info.bonesCost = 1;
+					info.abilities.Clear();
 					info.abilities.Add(Ability.BoneDigger);
 				}
 				if (info.name == "Coyote")
@@ -41,7 +41,6 @@ namespace boneSigils.cards
 					info.bonesCost = 5;
 					info.cost = 1;
 				}
-
 			}
 		}
 	}

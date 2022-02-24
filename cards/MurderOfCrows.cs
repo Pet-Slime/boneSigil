@@ -38,7 +38,7 @@ namespace boneSigils.cards
 			NewCard.Add(name: "void_murder_of_crows",
 				displayedName: "Murder of Crows",
 				baseAttack: 2,
-				baseHealth: 2,
+				baseHealth: 3,
 				metaCategories,
 				cardComplexity: CardComplexity.Advanced,
 				temple: CardTemple.Nature,

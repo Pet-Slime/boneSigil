@@ -40,7 +40,7 @@ namespace boneSigils.cards
 			NewCard.Add(name: "Void_Dragon",
 				displayedName: "Komodo Dragon",
 				baseAttack: 3,
-				baseHealth: 8,
+				baseHealth: 5,
 				metaCategories,
 				cardComplexity: CardComplexity.Intermediate,
 				temple: CardTemple.Nature,
