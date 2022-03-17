@@ -12,6 +12,7 @@ namespace boneSigils.cards
 		{
 			string name = "void_Cow_Mad";
 			string displayName = "The Dying Bull";
+			string description = "The Mad Bull, out for bones with not much time left.";
 			int baseAttack = 3;
 			int baseHealth = 4;
 			int bloodCost = 0;
@@ -53,8 +54,9 @@ namespace boneSigils.cards
 				boneCost: boneCost,
 				energyCost: energyCost
 				);
-			newCard.SetIceCube("Void_Cow_Skul");
-			newCard.SetEvolve("Void_Cow_Skul", 2);
+			newCard.SetIceCube("void_Cow_Skul");
+			newCard.SetEvolve("void_Cow_Skul", 2);
+			newCard.description = description;
 			CardManager.Add(newCard);
 		}
 	}

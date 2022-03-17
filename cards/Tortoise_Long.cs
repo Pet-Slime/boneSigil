@@ -12,6 +12,7 @@ namespace boneSigils.cards
 		{
 			string name = "void_Tortoise_Long";
 			string displayName = "Giant Tortoise";
+			string description = "A giant tortoise, with a neck that could stretch.";
 			int baseAttack = 2;
 			int baseHealth = 8;
 			int bloodCost = 1;
@@ -50,6 +51,7 @@ namespace boneSigils.cards
 				boneCost: boneCost,
 				energyCost: energyCost
 				);
+			newCard.description = description;
 			CardManager.Add(newCard);
 		}
 	}

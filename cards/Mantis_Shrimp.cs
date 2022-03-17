@@ -12,6 +12,7 @@ namespace boneSigils.cards
 		{
 			string name = "void_Shrimp_Mantis";
 			string displayName = "Mantis Shrimp";
+			string description = "A shrimp with a deadly punch, one that can boil water with the force of it.";
 			int baseAttack = 3;
 			int baseHealth = 1;
 			int bloodCost = 0;
@@ -49,6 +50,7 @@ namespace boneSigils.cards
 				boneCost: boneCost,
 				energyCost: energyCost
 				);
+			newCard.description = description;
 			CardManager.Add(newCard);
 		}
 	}

@@ -12,6 +12,7 @@ namespace boneSigils.cards
 		{
 			string name = "void_Tortoise_Spiny";
 			string displayName = "Spiny Turtle";
+			string description = "A hard shell with spikes to boot.";
 			int baseAttack = 1;
 			int baseHealth = 6;
 			int bloodCost = 1;
@@ -50,6 +51,7 @@ namespace boneSigils.cards
 				boneCost: boneCost,
 				energyCost: energyCost
 				);
+			newCard.description = description;
 			CardManager.Add(newCard);
 		}
 	}

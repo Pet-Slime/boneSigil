@@ -12,6 +12,7 @@ namespace boneSigils.cards
 		{
 			string name = "void_Rabbit";
 			string displayName = "Beast of Caerbannog";
+			string description = "Some call it Tim.";
 			int baseAttack = 1;
 			int baseHealth = 1;
 			int bloodCost = 0;
@@ -48,6 +49,7 @@ namespace boneSigils.cards
 				boneCost: boneCost,
 				energyCost: energyCost
 				);
+			newCard.description = description;
 			CardManager.Add(newCard);
 		}
 	}

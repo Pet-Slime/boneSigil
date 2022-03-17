@@ -11,6 +11,7 @@ namespace boneSigils.cards
 		{
 			string name = "Void_Scarab_Jewel";
 			string displayName = "Jeweled Scarab";
+			string description = "The blue jewel on it's back shines bright.";
 			int baseAttack = 1;
 			int baseHealth = 5;
 			int bloodCost = 0;
@@ -31,10 +32,6 @@ namespace boneSigils.cards
 			List<Trait> Traits = new List<Trait>();
 			Traits.Add(Trait.Gem);
 
-			List<SpecialTriggeredAbility> specialAbilities = new List<SpecialTriggeredAbility>();
-
-			List<CardAppearanceBehaviour.Appearance> appearanceBehaviour = new List<CardAppearanceBehaviour.Appearance>();
-
 			Texture2D DefaultTexture = SigilUtils.GetTextureFromPath("Artwork/void_scarab_jewel.png");
 			Texture2D eTexture = SigilUtils.GetTextureFromPath("Artwork/void_scarab_jewel_e.png");
 
@@ -54,6 +51,7 @@ namespace boneSigils.cards
 				boneCost: boneCost,
 				energyCost: energyCost
 				);
+			newCard.description = description;
 			CardManager.Add(newCard);
 		}
 	}

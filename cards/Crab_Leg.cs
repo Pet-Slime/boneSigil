@@ -12,6 +12,7 @@ namespace boneSigils.cards
 		{
 			string name = "void_Crab_Leg";
 			string displayName = "Crab Leg";
+			string description = "The leg of a crab.";
 			int baseAttack = 0;
 			int baseHealth = 2;
 			int bloodCost = 0;
@@ -46,6 +47,7 @@ namespace boneSigils.cards
 				boneCost: boneCost,
 				energyCost: energyCost
 				);
+			newCard.description = description;
 			CardManager.Add(newCard);
 		}
 	}

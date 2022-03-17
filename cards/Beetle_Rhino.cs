@@ -12,6 +12,7 @@ namespace boneSigils.cards
 		{
 			string name = "Void_Rhino_beetle";
 			string displayName = "Rhino Beetle";
+			string description = "A large insect that can push more than it's weight with the horn it has.";
 			int baseAttack = 2;
 			int baseHealth = 4;
 			int bloodCost = 0;
@@ -52,6 +53,7 @@ namespace boneSigils.cards
 				boneCost: boneCost,
 				energyCost: energyCost
 				);
+			newCard.description = description;
 			CardManager.Add(newCard);
 		}
 	}

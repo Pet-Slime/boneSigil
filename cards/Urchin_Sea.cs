@@ -12,6 +12,7 @@ namespace boneSigils.cards
 		{
 			string name = "void_Urchin_Sea";
 			string displayName = "Sea Urchin";
+			string description = "Becareful where you step when going over water.";
 			int baseAttack = 1;
 			int baseHealth = 1;
 			int bloodCost = 0;
@@ -48,6 +49,7 @@ namespace boneSigils.cards
 				boneCost: boneCost,
 				energyCost: energyCost
 				);
+			newCard.description = description;
 			CardManager.Add(newCard);
 		}
 	}

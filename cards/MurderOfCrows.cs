@@ -11,6 +11,7 @@ namespace boneSigils.cards
 		{
 			string name = "void_Crows_Murder";
 			string displayName = "Murder of Crows";
+			string description = "A flock of black clouds swam and then leave, with the only thing remaining are bones.";
 			int baseAttack = 2;
 			int baseHealth = 3;
 			int bloodCost = 0;
@@ -29,9 +30,6 @@ namespace boneSigils.cards
 			List<Trait> Traits = new List<Trait>();
 
 			List<GemType> gemCost = new List<GemType>();
-
-			List<CardAppearanceBehaviour.Appearance> appearanceBehaviour = new List<CardAppearanceBehaviour.Appearance>();
-			appearanceBehaviour.Add(CardAppearanceBehaviour.Appearance.RareCardBackground);
 
 			Texture2D DefaultTexture = SigilUtils.GetTextureFromPath("Artwork/Void_Murder_of_Crows.png");
 			Texture2D eTexture = SigilUtils.GetTextureFromPath("Artwork/Void_Murder_of_Crows_e.png");
@@ -53,7 +51,8 @@ namespace boneSigils.cards
 				energyCost: energyCost
 				);
 			newCard.AddSpecialAbilities(MurderOfCrowsSpecialAbility.specialAbility);
-			newCard.SetRare();
+			newCard.appearanceBehaviour.Add(CardAppearanceBehaviour.Appearance.RareCardBackground);
+			newCard.description = description;
 			CardManager.Add(newCard);
 		}
 	}

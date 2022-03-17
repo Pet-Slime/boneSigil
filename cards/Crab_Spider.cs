@@ -12,6 +12,7 @@ namespace boneSigils.cards
 		{
 			string name = "void_Crab_Spider";
 			string displayName = "Spider Crab";
+			string description = "A crab with long, easy to grab legs.";
 			int baseAttack = 2;
 			int baseHealth = 2;
 			int bloodCost = 1;
@@ -48,7 +49,8 @@ namespace boneSigils.cards
 				boneCost: boneCost,
 				energyCost: energyCost
 				);
-			newCard.SetTail("void_crab_leg");
+			newCard.SetTail("void_Crab_Leg");
+			newCard.description = description;
 			CardManager.Add(newCard);
 		}
 	}

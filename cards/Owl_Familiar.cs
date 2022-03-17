@@ -13,6 +13,7 @@ namespace boneSigils.cards
 		{
 			string name = "void_Owl_Familiar";
 			string displayName = "Owl Familar";
+			string description = "A small owl, who helps out allies when they can.";
 			int baseAttack = 1;
 			int baseHealth = 1;
 			int bloodCost = 0;
@@ -49,6 +50,7 @@ namespace boneSigils.cards
 				boneCost: boneCost,
 				energyCost: energyCost
 				);
+			newCard.description = description;
 			CardManager.Add(newCard);
 		}
 	}

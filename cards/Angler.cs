@@ -27,6 +27,7 @@ namespace boneSigils.cards
 		{
 			string name = "Void_Angler";
 			string displayName = "Black Seadevil";
+			string description = "A light in the dark ocean, it isn't friendly.";
 			int baseAttack = 2;
 			int baseHealth = 1;
 			int bloodCost = 0;
@@ -69,10 +70,8 @@ namespace boneSigils.cards
 				boneCost: boneCost,
 				energyCost: energyCost
 				);
-
+			newCard.description = description;
 			newCard.SetTail("Void_Angler_Lure", SigilUtils.GetTextureFromPath("Artwork/void_angler_alt.png"));
-
-
 			CardManager.Add(newCard);
 		}
 	}

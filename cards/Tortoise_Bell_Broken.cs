@@ -11,6 +11,7 @@ namespace boneSigils.cards
 		{
 			string name = "void_Tortoise_Bell_Broken";
 			string displayName = "Broken Bell Turtle";
+			string description = "A broken bell turtle, left out in the wild. Poor thing. Seems like it has two hits left...";
 			int baseAttack = 1;
 			int baseHealth = 1;
 			int bloodCost = 0;
@@ -47,6 +48,7 @@ namespace boneSigils.cards
 				boneCost: boneCost,
 				energyCost: energyCost
 				);
+			newCard.description = description;
 			newCard.SetEvolve("void_Tortoise_Bell", 1, null);
 			CardManager.Add(newCard);
 		}

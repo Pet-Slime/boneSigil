@@ -12,6 +12,7 @@ namespace boneSigils.cards
 		{
 			string name = "void_Steak";
 			string displayName = "Fresh Steak";
+			string description = "Mhm, steak.";
 			int baseAttack = 0;
 			int baseHealth = 1;
 			int bloodCost = 0;
@@ -47,7 +48,8 @@ namespace boneSigils.cards
 				boneCost: boneCost,
 				energyCost: energyCost
 				);
-			newCard.SetRare();
+			newCard.description = description;
+			newCard.AddAppearances(CardAppearanceBehaviour.Appearance.RareCardBackground);
 			CardManager.Add(newCard);
 		}
 	}

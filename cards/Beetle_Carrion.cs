@@ -10,8 +10,9 @@ namespace boneSigils.cards
 		public static readonly Ability CustomAbility1 = InscryptionAPI.Guid.GuidManager.GetEnumValue<Ability>("extraVoid.inscryption.voidSigils", "Thick Shell");
 		public static void AddCard()
 		{
-			string name = "Void_Beetle_Carrion";
+			string name = "void_Beetle_Carrion";
 			string displayName = "Carrion Beetle";
+			string description = "A hard shell and a taste of flesh, they can find any fresh corpse.";
 			int baseAttack = 2;
 			int baseHealth = 4;
 			int bloodCost = 0;
@@ -29,10 +30,6 @@ namespace boneSigils.cards
 			Abilities.Add(CustomAbility1);
 
 			List<Trait> Traits = new List<Trait>();
-
-			List<SpecialTriggeredAbility> specialAbilities = new List<SpecialTriggeredAbility>();
-
-			List<CardAppearanceBehaviour.Appearance> appearanceBehaviour = new List<CardAppearanceBehaviour.Appearance>();
 
 			Texture2D DefaultTexture = SigilUtils.GetTextureFromPath("Artwork/Void_Beetle.png");
 			Texture2D eTexture = SigilUtils.GetTextureFromPath("Artwork/Void_Beetle_e.png");
@@ -53,9 +50,8 @@ namespace boneSigils.cards
 				boneCost: boneCost,
 				energyCost: energyCost
 				);
-
-			newCard.SetRare();
-			
+			newCard.appearanceBehaviour.Add(CardAppearanceBehaviour.Appearance.RareCardBackground);
+			newCard.description = description;
 			CardManager.Add(newCard);
 		}
 	}

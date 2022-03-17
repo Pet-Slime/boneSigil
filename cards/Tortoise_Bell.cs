@@ -12,6 +12,7 @@ namespace boneSigils.cards
 		{
 			string name = "void_Tortoise_Bell";
 			string displayName = "Bell Turtle";
+			string description = "A gift from the trapper, made of clockwork and gold.";
 			int baseAttack = 0;
 			int baseHealth = 3;
 			int bloodCost = 0;
@@ -49,6 +50,7 @@ namespace boneSigils.cards
 				boneCost: boneCost,
 				energyCost: energyCost
 				);
+			newCard.description = description;
 			newCard.SetIceCube("void_Tortoise_Bell_Broken");
 			newCard.SetTail("void_Scrap", tailTexture);
 			newCard.SetTerrain();

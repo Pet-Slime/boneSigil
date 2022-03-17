@@ -5,13 +5,14 @@ using InscryptionAPI.Card;
 
 namespace boneSigils.cards
 {
-	public static class Burrow
+	public static class Mole
 	{
 		public static readonly Ability CustomAbility1 = InscryptionAPI.Guid.GuidManager.GetEnumValue<Ability>("extraVoid.inscryption.voidSigils", "Frightful");
 		public static void AddCard()
 		{
-			string name = "Void_burrow";
+			string name = "void_Mole";
 			string displayName = "Strange Mole";
+			string description = "Another one of the trapper's toys.";
 			int baseAttack = 1;
 			int baseHealth = 5;
 			int bloodCost = 0;
@@ -54,9 +55,8 @@ namespace boneSigils.cards
 				boneCost: boneCost,
 				energyCost: energyCost
 				);
-
+			newCard.description = description;
 			newCard.SetTail("Void_Scrap");
-
 			CardManager.Add(newCard);
 		}
 	}

@@ -30,6 +30,9 @@ namespace boneSigils.cards
 			card.bonesCost = 5;
 			card.cost = 1;
 
+
+			Plugin.Log.LogMessage("Vanilla config fired 2");
+
 		}
 	}
 }

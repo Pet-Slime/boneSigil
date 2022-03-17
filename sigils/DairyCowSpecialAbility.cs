@@ -11,7 +11,12 @@ namespace boneSigils
 
         public static SpecialTriggeredAbility specialAbility;
 
-        public readonly static SpecialTriggeredAbility TestSpecialAbility = SpecialTriggeredAbilityManager.Add(Plugin.PluginGuid, "Fresh Steak", typeof(DairyCowSpecialAbility)).Id;
+        public static void addDairySpecial()
+        {
+            SpecialTriggeredAbility DairySpecialAbility = SpecialTriggeredAbilityManager.Add(Plugin.PluginGuid, "Fresh Steak", typeof(DairyCowSpecialAbility)).Id;
+        }
+
+
 
 
         public override bool RespondsToDie(bool wasSacrifice, PlayableCard killer)

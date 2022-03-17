@@ -11,6 +11,7 @@ namespace boneSigils.cards
 		{
 			string name = "Void_Bone_Lord";
 			string displayName = "The Bone Lord";
+			string description = "The Lord of Bones has decided to get his hands dirty this time.";
 			int baseAttack = 7;
 			int baseHealth = 7;
 			int bloodCost = 2;
@@ -28,11 +29,7 @@ namespace boneSigils.cards
 
 			List<Trait> Traits = new List<Trait>();
 			Traits.Add(Trait.Undead);
-
-			List<SpecialTriggeredAbility> specialAbilities = new List<SpecialTriggeredAbility>();
-
-			List<CardAppearanceBehaviour.Appearance> appearanceBehaviour = new List<CardAppearanceBehaviour.Appearance>();
-			appearanceBehaviour.Add(CardAppearanceBehaviour.Appearance.RareCardBackground);
+			Traits.Add(Trait.Goat);
 
 			Texture2D DefaultTexture = SigilUtils.GetTextureFromPath("Artwork/void_horn.png");
 			Texture2D eTexture = SigilUtils.GetTextureFromPath("Artwork/void_horn_e.png");
@@ -53,6 +50,8 @@ namespace boneSigils.cards
 				boneCost: boneCost,
 				energyCost: energyCost
 				);
+			newCard.description = description;
+			newCard.appearanceBehaviour.Add(CardAppearanceBehaviour.Appearance.RareCardBackground);
 			CardManager.Add(newCard);
 		}
 	}

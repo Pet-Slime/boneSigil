@@ -13,6 +13,7 @@ namespace boneSigils.cards
 		{
 			string name = "void_Ray_Torpedo";
 			string displayName = "Torpedo Ray";
+			string description = "A ray that uses electromatism to sting and stun prey.";
 			int baseAttack = 3;
 			int baseHealth = 3;
 			int bloodCost = 2;
@@ -55,6 +56,7 @@ namespace boneSigils.cards
 				boneCost: boneCost,
 				energyCost: energyCost
 				);
+			newCard.description = description;
 			CardManager.Add(newCard);
 		}
 	}

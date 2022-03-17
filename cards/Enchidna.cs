@@ -11,8 +11,9 @@ namespace boneSigils.cards
 
 		public static void AddCard()
 		{
-			string name = "void_Crab_Coco";
-			string displayName = "Coconut Crab";
+			string name = "void_Enchidna";
+			string displayName = "Enchidna";
+			string description = "One of the few mammals to use Electroreception.";
 			int baseAttack = 2;
 			int baseHealth = 4;
 			int bloodCost = 2;
@@ -61,6 +62,7 @@ namespace boneSigils.cards
 				boneCost: boneCost,
 				energyCost: energyCost
 				);
+			newCard.description = description;
 			CardManager.Add(newCard);
 		}
 	}

@@ -13,6 +13,7 @@ namespace boneSigils.cards
 		{
 			string name = "Void_Axolotl";
 			string displayName = "Undead Axolotl";
+			string description = "Undead here? How... Her world must be leaking in...";
 			int baseAttack = 0;
 			int baseHealth = 1;
 			int bloodCost = 0;
@@ -65,7 +66,7 @@ namespace boneSigils.cards
 				boneCost: boneCost,
 				energyCost: energyCost
 				);
-
+			newCard.description = description;
 			CardManager.Add(newCard);
 		}
 	}

@@ -37,8 +37,9 @@ namespace boneSigils
 		{
 			get
 			{
-				CardInfo result = CardLoader.GetCardByName("Void_Wasp");
-				return result;
+				CardInfo cardByName = CardLoader.GetCardByName("void_Wasp_Swarm");
+				cardByName.Mods.AddRange(base.Card.temporaryMods);
+				return cardByName;
 			}
 		}
 

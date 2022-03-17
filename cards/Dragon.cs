@@ -11,6 +11,7 @@ namespace boneSigils.cards
 		{
 			string name = "void_Dragon";
 			string displayName = "Komodo Dragon";
+			string description = "The largest and toughest of the reptiles, with a poisonous bite that can kill anything.";
 			int baseAttack = 3;
 			int baseHealth = 5;
 			int bloodCost = 1;
@@ -49,6 +50,7 @@ namespace boneSigils.cards
 				boneCost: boneCost,
 				energyCost: energyCost
 				);
+			newCard.description = description;
 			CardManager.Add(newCard);
 		}
 	}

@@ -12,6 +12,7 @@ namespace boneSigils.cards
 		{
 			string name = "Void_Bear";
 			string displayName = "Kodiak";
+			string description = "A bear that is an expert scavanger and fisher.";
 			int baseAttack = 3;
 			int baseHealth = 6;
 			int bloodCost = 1;
@@ -52,6 +53,7 @@ namespace boneSigils.cards
 				boneCost: boneCost,
 				energyCost: energyCost
 				);
+			newCard.description = description;
 			CardManager.Add(newCard);
 		}
 	}

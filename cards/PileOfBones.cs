@@ -11,6 +11,7 @@ namespace boneSigils.cards
 		{
 			string name = "void_PileOfBones";
 			string displayName = "Pile Of Bones";
+			string description = "aaa";
 			int baseAttack = 0;
 			int baseHealth = 1;
 			int bloodCost = 0;
@@ -49,6 +50,7 @@ namespace boneSigils.cards
 				boneCost: boneCost,
 				energyCost: energyCost
 				);
+			newCard.description = description;
 			newCard.SetTerrain();
 			CardManager.Add(newCard);
 		}

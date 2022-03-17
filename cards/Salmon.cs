@@ -12,6 +12,7 @@ namespace boneSigils.cards
 		{
 			string name = "void_Salmon";
 			string displayName = "Undead Salmon";
+			string description = "Undead here . . . how?";
 			int baseAttack = 3;
 			int baseHealth = 3;
 			int bloodCost = 2;
@@ -49,6 +50,7 @@ namespace boneSigils.cards
 				boneCost: boneCost,
 				energyCost: energyCost
 				);
+			newCard.description = description;
 			CardManager.Add(newCard);
 		}
 	}

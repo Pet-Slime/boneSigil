@@ -11,6 +11,7 @@ namespace boneSigils.cards
 		{
 			string name = "void_Giraffe";
 			string displayName = "Giraffe";
+			string description = "A herbivore that loves to chew on bones.";
 			int baseAttack = 1;
 			int baseHealth = 6;
 			int bloodCost = 0;
@@ -48,6 +49,7 @@ namespace boneSigils.cards
 				boneCost: boneCost,
 				energyCost: energyCost
 				);
+			newCard.description = description;
 			CardManager.Add(newCard);
 		}
 	}

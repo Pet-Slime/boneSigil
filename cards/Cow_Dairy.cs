@@ -10,8 +10,9 @@ namespace boneSigils.cards
 		public static readonly Ability CustomAbility1 = InscryptionAPI.Guid.GuidManager.GetEnumValue<Ability>("extraVoid.inscryption.voidSigils", "Nutritious");
 		public static void AddCard()
 		{
-			string name = "Void_Cow_Dairy";
+			string name = "void_Cow_Dairy";
 			string displayName = "Dairy Cow";
+			string description = "A cow fit for slaughter.";
 			int baseAttack = 0;
 			int baseHealth = 3;
 			int bloodCost = 0;
@@ -33,8 +34,6 @@ namespace boneSigils.cards
 			List<SpecialTriggeredAbility> specialAbilities = new List<SpecialTriggeredAbility>();
 			specialAbilities.Add(DairyCowSpecialAbility.specialAbility);
 
-			List<CardAppearanceBehaviour.Appearance> appearanceBehaviour = new List<CardAppearanceBehaviour.Appearance>();
-			appearanceBehaviour.Add(CardAppearanceBehaviour.Appearance.RareCardBackground);
 
 			Texture2D DefaultTexture = SigilUtils.GetTextureFromPath("Artwork/Void_Dairy_Cow.png");
 			Texture2D eTexture = SigilUtils.GetTextureFromPath("Artwork/Void_Dairy_Cow_e.png");
@@ -56,9 +55,9 @@ namespace boneSigils.cards
 				energyCost: energyCost
 				);
 			newCard.AddSpecialAbilities(DairyCowSpecialAbility.specialAbility);
-			newCard.SetIceCube("Void_Cow_Skul");
-			newCard.SetRare();
-
+			newCard.SetIceCube("void_Cow_Skul");
+			newCard.appearanceBehaviour.Add(CardAppearanceBehaviour.Appearance.RareCardBackground);
+			newCard.description = description;
 			CardManager.Add(newCard);
 		}
 	}

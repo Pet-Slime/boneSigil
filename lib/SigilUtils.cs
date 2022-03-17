@@ -82,26 +82,27 @@ namespace boneSigils
 			.SetPixelPortrait(texture_pixel)
 			;
 
-			for (int index = 0; index > cardMetaCategories.Count; index++)
+			for (int index = 0; index < cardMetaCategories.Count; index++)
 			{
-				cardinfo.metaCategories.Add(cardMetaCategories[index]);
+				cardinfo.AddMetaCategories(cardMetaCategories[index]);
 			}
 
-			for (int index = 0; index > tribes.Count; index++)
+			for (int index = 0; index < tribes.Count; index++)
 			{
-				cardinfo.tribes.Add(tribes[index]);
+				cardinfo.AddTribes(tribes[index]);
 			}
 
-			for (int index = 0; index > traits.Count; index++)
+			for (int index = 0; index < traits.Count; index++)
 			{
-				cardinfo.traits.Add(traits[index]);
+				cardinfo.AddTraits(traits[index]);
 			}
 
-			for (int index = 0; index > abilities.Count; index++)
+			for (int index = 0; index < abilities.Count; index++)
 			{
-				cardinfo.DefaultAbilities.Add(abilities[index]);
+				cardinfo.AddAbilities(abilities[index]);
 			}
 			cardinfo.temple = CardTemple.Nature;
+			cardinfo.cardComplexity = CardComplexity.Intermediate;
 			cardinfo.cost = bloodCost;
 			cardinfo.bonesCost = boneCost;
 			cardinfo.energyCost = energyCost;

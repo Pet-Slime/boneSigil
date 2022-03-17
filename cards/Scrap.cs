@@ -11,6 +11,7 @@ namespace boneSigils.cards
 		{
 			string name = "void_Scrap";
 			string displayName = "Scrap";
+			string description = "Junk left behind by the Trapper.";
 			int baseAttack = 0;
 			int baseHealth = 2;
 			int bloodCost = 0;
@@ -51,6 +52,7 @@ namespace boneSigils.cards
 				energyCost: energyCost
 				);
 			newCard.SetTerrain();
+			newCard.description = description;
 			CardManager.Add(newCard);
 		}
 	}

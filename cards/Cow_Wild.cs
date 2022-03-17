@@ -12,6 +12,7 @@ namespace boneSigils.cards
 		{
 			string name = "void_Cow_Wild";
 			string displayName = "Charging Bull";
+			string description = "You don't want to be infront of this bull.";
 			int baseAttack = 4;
 			int baseHealth = 5;
 			int bloodCost = 0;
@@ -53,7 +54,8 @@ namespace boneSigils.cards
 				boneCost: boneCost,
 				energyCost: energyCost
 				);
-			newCard.SetIceCube("Void_Cow_Skul");
+			newCard.SetIceCube("void_Cow_Skul");
+			newCard.description = description;
 			CardManager.Add(newCard);
 		}
 	}

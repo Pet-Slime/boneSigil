@@ -26,6 +26,7 @@ namespace boneSigils.cards
 		{
 			string name = "Void_Leaf_Ant";
 			string displayName = "Armored Ant";
+			string description = "A leaf cutter ant that has a mineral shell and lives in the trees.";
 			int baseAttack = 0;
 			int baseHealth = 4;
 			int bloodCost = 1;
@@ -70,11 +71,9 @@ namespace boneSigils.cards
 				boneCost: boneCost,
 				energyCost: energyCost
 				);
-
 			newCard.specialStatIcon = SpecialStatIcon.Ants;
 			newCard.specialAbilities.Add(SpecialTriggeredAbility.Ant);
-
-
+			newCard.description = description;
 			CardManager.Add(newCard);
 		}
 	}

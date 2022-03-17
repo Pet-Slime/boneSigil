@@ -10,8 +10,9 @@ namespace boneSigils.cards
 		public static readonly Ability CustomAbility1 = InscryptionAPI.Guid.GuidManager.GetEnumValue<Ability>("extraVoid.inscryption.voidSigils", "Pathetic Sacrifice");
 		public static void AddCard()
 		{
-			string name = "Void_Cow_Skul";
+			string name = "void_Cow_Skul";
 			string displayName = "Cow Skeleton";
+			string description = "Not much left.";
 			int baseAttack = 0;
 			int baseHealth = 3;
 			int bloodCost = 0;
@@ -52,7 +53,7 @@ namespace boneSigils.cards
 				boneCost: boneCost,
 				energyCost: energyCost
 				);
-
+			newCard.description = description;
 			CardManager.Add(newCard);
 		}
 	}

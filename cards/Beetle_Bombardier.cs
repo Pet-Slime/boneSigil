@@ -12,6 +12,7 @@ namespace boneSigils.cards
 		{
 			string name = "Void_Beetle_Bombardier";
 			string displayName = "Bombardier Beetle";
+			string description = "A beetle that shoots artillier goop, at foes and allies alike...";
 			int baseAttack = 2;
 			int baseHealth = 4;
 			int bloodCost = 0;
@@ -53,6 +54,7 @@ namespace boneSigils.cards
 				boneCost: boneCost,
 				energyCost: energyCost
 				);
+			newCard.description = description;
 			CardManager.Add(newCard);
 		}
 	}

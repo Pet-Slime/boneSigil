@@ -12,10 +12,11 @@ namespace boneSigils.cards
 		{
 			string name = "void_Wasp_Swarm";
 			string displayName = "Wasp Swarm";
+			string description = "aaa";
 			int baseAttack = 2;
 			int baseHealth = 3;
-			int bloodCost = 2;
-			int boneCost = 6;
+			int bloodCost = 0;
+			int boneCost = 7;
 			int energyCost = 0;
 
 			List<CardMetaCategory> metaCategories = new List<CardMetaCategory>();
@@ -27,6 +28,7 @@ namespace boneSigils.cards
 
 			List<Ability> Abilities = new List<Ability>();
 			Abilities.Add(ability_drawwasp.ability);
+			Abilities.Add(CustomAbility1);
 
 			List<Trait> Traits = new List<Trait>();
 
@@ -49,6 +51,7 @@ namespace boneSigils.cards
 				boneCost: boneCost,
 				energyCost: energyCost
 				);
+			newCard.description = description;
 			newCard.SetTail("void_Wasp_Swarm");
 			CardManager.Add(newCard);
 		}

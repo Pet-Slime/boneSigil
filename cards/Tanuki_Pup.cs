@@ -11,6 +11,7 @@ namespace boneSigils.cards
 		{
 			string name = "Void_Tanuki_pup";
 			string displayName = "Tanuki Pup";
+			string description = "A young Tanuki, scavenging for bones.";
 			int baseAttack = 0;
 			int baseHealth = 1;
 			int bloodCost = 0;
@@ -58,6 +59,7 @@ namespace boneSigils.cards
 				boneCost: boneCost,
 				energyCost: energyCost
 				);
+			newCard.description = description;
 			newCard.SetEvolve("void_Tanuki", 3);
 			CardManager.Add(newCard);
 		}

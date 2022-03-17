@@ -11,6 +11,7 @@ namespace boneSigils.cards
 		{
 			string name = "void_Egg";
 			string displayName = "Vulture Egg";
+			string description = "An egg of a vulture, left among rocks.";
 			int baseAttack = 0;
 			int baseHealth = 3;
 			int bloodCost = 0;
@@ -49,6 +50,7 @@ namespace boneSigils.cards
 				energyCost: energyCost
 				);
 			newCard.SetEvolve("Void_Vulture", 2);
+			newCard.description = description;
 			CardManager.Add(newCard);
 		}
 	}

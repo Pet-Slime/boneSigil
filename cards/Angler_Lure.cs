@@ -24,6 +24,7 @@ namespace boneSigils.cards
 		{
 			string name = "Void_Angler_Lure";
 			string displayName = "Broken Lure";
+			string description = "A Lure pulled from an angler.";
 			int baseAttack = 0;
 			int baseHealth = 2;
 			int bloodCost = 0;
@@ -63,6 +64,7 @@ namespace boneSigils.cards
 				boneCost: boneCost,
 				energyCost: energyCost
 				);
+			newCard.description = description;
 			CardManager.Add(newCard);
 		}
 	}

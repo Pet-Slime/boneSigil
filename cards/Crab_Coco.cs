@@ -12,6 +12,7 @@ namespace boneSigils.cards
 		{
 			string name = "void_Crab_Coco";
 			string displayName = "Coconut Crab";
+			string description = "The Coconut crab has a thick shell, and sharp claws to boot.";
 			int baseAttack = 1;
 			int baseHealth = 4;
 			int bloodCost = 1;
@@ -49,7 +50,8 @@ namespace boneSigils.cards
 				boneCost: boneCost,
 				energyCost: energyCost
 				);
-			newCard.SetTail("void_crab_leg");
+			newCard.SetTail("void_Crab_Leg");
+			newCard.description = description;
 			CardManager.Add(newCard);
 		}
 	}

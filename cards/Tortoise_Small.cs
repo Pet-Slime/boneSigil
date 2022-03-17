@@ -12,6 +12,7 @@ namespace boneSigils.cards
 		{
 			string name = "void_Tortoise_Small";
 			string displayName = "Spotted Tortoise";
+			string description = "Small, yet tough. It seeks out bones to suckle on to help get minerals it lacks.";
 			int baseAttack = 1;
 			int baseHealth = 3;
 			int bloodCost = 1;
@@ -50,6 +51,7 @@ namespace boneSigils.cards
 				boneCost: boneCost,
 				energyCost: energyCost
 				);
+			newCard.description = description;
 			CardManager.Add(newCard);
 		}
 	}

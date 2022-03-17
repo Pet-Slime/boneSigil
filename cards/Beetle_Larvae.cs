@@ -10,7 +10,8 @@ namespace boneSigils.cards
 		public static void AddCard()
 		{
 			string name = "void_Beetle_Larva";
-			string displayName = "Beetle Larva";
+			string displayName = "A monsterously sized larvae, and a tasty one to boot!";
+			string description = "aaa";
 			int baseAttack = 1;
 			int baseHealth = 3;
 			int bloodCost = 0;
@@ -52,6 +53,7 @@ namespace boneSigils.cards
 				boneCost: boneCost,
 				energyCost: energyCost
 				);
+			newCard.description = description;
 			CardManager.Add(newCard);
 		}
 	}

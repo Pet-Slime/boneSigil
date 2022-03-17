@@ -12,6 +12,7 @@ namespace boneSigils.cards
 		{
 			string name = "void_Vulture";
 			string displayName = "Bearded Vulture";
+			string description = "A Vulture that consumes bone.";
 			int baseAttack = 0;
 			int baseHealth = 5;
 			int bloodCost = 0;
@@ -54,6 +55,7 @@ namespace boneSigils.cards
 				boneCost: boneCost,
 				energyCost: energyCost
 				);
+			newCard.description = description;
 			newCard.specialStatIcon = SpecialStatIcon.Bones;
 			newCard.specialAbilities.Add(SpecialTriggeredAbility.Lammergeier);
 			CardManager.Add(newCard);

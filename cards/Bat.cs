@@ -13,6 +13,7 @@ namespace boneSigils.cards
 		{
 			string name = "void_Bat";
 			string displayName = "Spectral Bat";
+			string description = "Rarely seen, this bat haunts the shadows.";
 			int baseAttack = 4;
 			int baseHealth = 5;
 			int bloodCost = 1;
@@ -55,6 +56,7 @@ namespace boneSigils.cards
 				boneCost: boneCost,
 				energyCost: energyCost
 				);
+			newCard.description = description;
 			CardManager.Add(newCard);
 		}
 	}

@@ -12,6 +12,7 @@ namespace boneSigils.cards
 		{
 			string name = "void_tanuki_mythical";
 			string displayName = "Mythical Tanuki";
+			string description = "The crafty tanuki, who can steal anything from any beast.";
 			int baseAttack = 2;
 			int baseHealth = 5;
 			int bloodCost = 0;
@@ -49,6 +50,7 @@ namespace boneSigils.cards
 				boneCost: boneCost,
 				energyCost: energyCost
 				);
+			newCard.description = description;
 			CardManager.Add(newCard);
 		}
 	}

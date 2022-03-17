@@ -11,6 +11,7 @@ namespace boneSigils.cards
 		{
 			string name = "Void_Jade_Serpent";
 			string displayName = "Jade Serpent";
+			string description = "A serpent who's scales shimmer like jade.";
 			int baseAttack = 3;
 			int baseHealth = 1;
 			int bloodCost = 0;
@@ -49,6 +50,7 @@ namespace boneSigils.cards
 				boneCost: boneCost,
 				energyCost: energyCost
 				);
+			newCard.description = description;
 			CardManager.Add(newCard);
 		}
 	}

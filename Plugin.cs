@@ -4,6 +4,7 @@ using DiskCardGame;
 using HarmonyLib;
 using boneSigils.cards;
 using BepInEx.Configuration;
+using InscryptionAPI.Card;
 
 
 namespace boneSigils
@@ -21,7 +22,7 @@ namespace boneSigils
 		public const string StarterdeckGUID = "zorro.inscryption.infiniscryption.sidedecks";
 		public const string PluginGuid = "extraVoid.inscryption.void_bone_pack";
 		private const string PluginName = "Void Bone Pack";
-		private const string PluginVersion = "2.2.0";
+		private const string PluginVersion = "3.0.0";
 
 		public static string Directory;
 		internal static ManualLogSource Log;
@@ -60,6 +61,11 @@ namespace boneSigils
 			AddDrawWasp();
 			AddPupate();
 			AddSigilsToBook();
+			MurderOfCrowsSpecialAbility.specialAbility = SpecialTriggeredAbilityManager.Add(Plugin.PluginGuid, "Crow Murder", typeof(MurderOfCrowsSpecialAbility)).Id;
+			MurderOfCrowsSpecialAbility.specialAbility = SpecialTriggeredAbilityManager.Add(Plugin.PluginGuid, "Crow Murder", typeof(MurderOfCrowsSpecialAbility)).Id;
+			DairyCowSpecialAbility.specialAbility = SpecialTriggeredAbilityManager.Add(Plugin.PluginGuid, "Fresh Steak", typeof(DairyCowSpecialAbility)).Id;
+
+
 
 			//Cards
 			Angler.AddCard();
@@ -74,7 +80,7 @@ namespace boneSigils
 			Beetle_Rhino.AddCard();
 			Beetle_Scarab.AddCard();
 			Bone_Lord.AddCard();
-			Burrow.AddCard();
+			Mole.AddCard();
 			Cow_Dairy.AddCard();
 			Cow_Mad.AddCard();
 			Cow_Skul.AddCard();
@@ -114,38 +120,33 @@ namespace boneSigils
 			Wolverine.AddCard();
 		}
 
-		[HarmonyPatch(typeof(LoadingScreenManager), "LoadGameData")]
-		public class LoadingScreenManager_LoadGameData
-		{
-			[HarmonyPostfix]
-			public static void Postfix()
+		private void Start()
+        {
+			if (configVanillaTweaks.Value)
 			{
-				if (configVanillaTweaks.Value)
-				{
-					Vanilla_Tweaks.AddCard();
-				}
+				Log.LogMessage("Vanilla config fired 1");
+				Vanilla_Tweaks.AddCard();
+			}
+			if (configPointCostMode.Value)
+			{
+				Point_Cost_Mode.AddCard();
+			}
+			//Encounters
 
-				if (configPointCostMode.Value)
-				{
-					Point_Cost_Mode.AddCard();
-				}
-				//Encounters
-
-				if (configBeetleRush.Value)
-				{
-				}
-				if (configBullRush.Value)
-				{
-				}
-				if (configCrabRush.Value)
-				{
-				}
-				if (configReptileKing.Value)
-				{
-				}
-				if (configBeaverStall.Value)
-				{
-				}
+			if (configBeetleRush.Value)
+			{
+			}
+			if (configBullRush.Value)
+			{
+			}
+			if (configCrabRush.Value)
+			{
+			}
+			if (configReptileKing.Value)
+			{
+			}
+			if (configBeaverStall.Value)
+			{
 			}
 		}
 	}
