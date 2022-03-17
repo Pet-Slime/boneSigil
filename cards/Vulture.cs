@@ -2,6 +2,7 @@
 using DiskCardGame;
 using UnityEngine;
 using APIPlugin;
+using InscryptionAPI.Card;
 
 namespace boneSigils.cards
 {
@@ -9,6 +10,13 @@ namespace boneSigils.cards
 	{
 		public static void AddCard()
 		{
+			string name = "void_Vulture";
+			string displayName = "Bearded Vulture";
+			int baseAttack = 0;
+			int baseHealth = 5;
+			int bloodCost = 0;
+			int boneCost = 9;
+			int energyCost = 0;
 
 			List<CardMetaCategory> metaCategories = new List<CardMetaCategory>();
 			metaCategories.Add(CardMetaCategory.ChoiceNode);
@@ -23,58 +31,32 @@ namespace boneSigils.cards
 			List<Trait> Traits = new List<Trait>();
 			Traits.Add(Trait.KillsSurvivors);
 
-			List<AbilityIdentifier> customAbilities = new List<AbilityIdentifier>();
-
 			List<SpecialTriggeredAbility> specialAbilities = new List<SpecialTriggeredAbility>();
 			specialAbilities.Add(SpecialTriggeredAbility.Lammergeier);
 
-			List<CardAppearanceBehaviour.Appearance> appearanceBehaviour = new List<CardAppearanceBehaviour.Appearance>();
 
 			Texture2D DefaultTexture = SigilUtils.GetTextureFromPath("Artwork/Void_Vulture.png");
-
 			Texture2D eTexture = SigilUtils.GetTextureFromPath("Artwork/Void_Vulture_e.png");
 
-			IceCubeIdentifier iceCubeId = null;
-			EvolveIdentifier evolveId = null;
-			TailIdentifier tail = null;
-
-			NewCard.Add(name: "Void_Vulture",
-				displayedName: "Bearded Vulture",
-				baseAttack: 0,
-				baseHealth: 4,
-				metaCategories,
-				cardComplexity: CardComplexity.Advanced,
-				temple: CardTemple.Nature,
-				description: "A Vulture that consumes bone.",
-				hideAttackAndHealth: false,
-				bloodCost: 0,
-				bonesCost: 9,
-				energyCost: 0,
-				gemsCost: null,
-				specialStatIcon: SpecialStatIcon.Bones,
-				Tribes,
-				Traits,
-				specialAbilities,
-				Abilities,
-				customAbilities,
-				specialAbilitiesIdsParam: null,
-				evolveParams: null,
-				defaultEvolutionName: null,
-				tailParams: null,
-				iceCubeParams: null,
-				flipPortraitForStrafe: false,
-				onePerDeck: false,
-				appearanceBehaviour,
-				DefaultTexture,
-				altTex: null,
-				titleGraphic: null,
-				pixelTex: null,
-				eTexture,
-				animatedPortrait: null,
-				decals: null,
-				evolveId,
-				iceCubeId,
-				tail);
+			CardInfo newCard = SigilUtils.CreateCardWithDefaultSettings(
+				InternalName: name,
+				DisplayName: displayName,
+				attack: baseAttack,
+				health: baseHealth,
+				texture_base: DefaultTexture,
+				texture_emission: eTexture,
+				texture_pixel: null,
+				cardMetaCategories: metaCategories,
+				tribes: Tribes,
+				traits: Traits,
+				abilities: Abilities,
+				bloodCost: bloodCost,
+				boneCost: boneCost,
+				energyCost: energyCost
+				);
+			newCard.specialStatIcon = SpecialStatIcon.Bones;
+			newCard.specialAbilities.Add(SpecialTriggeredAbility.Lammergeier);
+			CardManager.Add(newCard);
 		}
 	}
 }

@@ -10,26 +10,22 @@ namespace boneSigils
 {
 	public partial class Plugin
 	{
-		private NewAbility AddPupate()
+		private void AddPupate()
 		{
 			// setup ability
 			const string rulebookName = "Pupate";
 			const string rulebookDescription = "[creature] will become a random beetle after 3 turns.";
-			// const string TextureFile = "Artwork/void_pathetic.png";
-
-			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, true, -1);
-			info.canStack = false;
-
-			Texture2D tex = SigilUtils.LoadTextureFromResource(Resources.ability_pupate_3);
-
-			var abIds = SigilUtils.GetAbilityId(info.rulebookName);
-			
-			NewAbility newAbility = new NewAbility(info, typeof(ability_Pupate), tex, abIds);
+			const string LearnDialogue = "What Beetle will it turn into?";
+			Texture2D tex_a1 = SigilUtils.LoadTextureFromResource(Resources.ability_pupate_3);
+			Texture2D tex_a2 = SigilUtils.LoadTextureFromResource(Resources.ability_pupate_3);
+			int powerlevel = -2;
+			bool LeshyUsable = false;
+			bool part1Shops = true;
+			bool canStack = false;
 
 			// set ability to behaviour class
-			ability_Pupate.ability = newAbility.ability;
-
-			return newAbility;
+			ability_Pupate.ability = SigilUtils.CreateAbilityWithDefaultSettings(rulebookName, rulebookDescription, typeof(ability_Pupate), tex_a1, tex_a2, LearnDialogue,
+																					true, powerlevel, LeshyUsable, part1Shops, canStack).ability;
 		}
 	}
 

@@ -21,7 +21,7 @@ namespace boneSigils
 		public const string StarterdeckGUID = "zorro.inscryption.infiniscryption.sidedecks";
 		public const string PluginGuid = "extraVoid.inscryption.void_bone_pack";
 		private const string PluginName = "Void Bone Pack";
-		private const string PluginVersion = "2.1.0";
+		private const string PluginVersion = "2.2.0";
 
 		public static string Directory;
 		internal static ManualLogSource Log;
@@ -60,8 +60,6 @@ namespace boneSigils
 			AddDrawWasp();
 			AddPupate();
 			AddSigilsToBook();
-			DairyCowSpecialAbility.AddSteakAbility();
-			MurderOfCrowsSpecialAbility.AddMurderAbility();
 
 			//Cards
 			Angler.AddCard();
@@ -98,6 +96,7 @@ namespace boneSigils
 			Ruby_Creature.AddCard();
 			Salmon.AddCard();
 			Scrap.AddCard();
+			Urchin_Sea.AddCard();
 			Serpent_Jade.AddCard();
 			Steak.AddCard();
 			Stinkbug.AddCard();
@@ -134,23 +133,18 @@ namespace boneSigils
 
 				if (configBeetleRush.Value)
 				{
-					boneSigils.Encounters.BeetleRush.AddEncounter();
 				}
 				if (configBullRush.Value)
 				{
-					boneSigils.Encounters.Bulls.AddEncounter();
 				}
 				if (configCrabRush.Value)
 				{
-					boneSigils.Encounters.Crabs.AddEncounter();
 				}
 				if (configReptileKing.Value)
 				{
-					boneSigils.Encounters.ReptileKing.AddEncounter();
 				}
 				if (configBeaverStall.Value)
 				{
-					boneSigils.Encounters.BeaverStall.AddEncounter();
 				}
 			}
 		}

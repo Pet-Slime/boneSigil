@@ -1,5 +1,4 @@
 ﻿using DiskCardGame;
-using APIPlugin;
 
 namespace boneSigils.cards
 {
@@ -150,6 +149,11 @@ namespace boneSigils.cards
 			card.bonesCost = PowerLevel - Plugin.configPointCostBonus.Value - (card.BloodCost * 4);
 
 			card = cards.Find((CardInfo x) => x.name == "Void_Salmon");
+			//Subtract 1 from the power level of a card, as every card gets 1 free health, but power level includes it.
+			PowerLevel = card.PowerLevel - 1;
+			card.bonesCost = PowerLevel - Plugin.configPointCostBonus.Value - (card.BloodCost * 4);
+
+			card = cards.Find((CardInfo x) => x.name == "void_Sea_Urchin");
 			//Subtract 1 from the power level of a card, as every card gets 1 free health, but power level includes it.
 			PowerLevel = card.PowerLevel - 1;
 			card.bonesCost = PowerLevel - Plugin.configPointCostBonus.Value - (card.BloodCost * 4);

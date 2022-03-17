@@ -1,14 +1,22 @@
 ﻿using System.Collections.Generic;
 using DiskCardGame;
 using UnityEngine;
-using APIPlugin;
+using InscryptionAPI.Card;
 
 namespace boneSigils.cards
 {
 	public static class Crab_fiddler
 	{
+		public static readonly Ability CustomAbility1 = InscryptionAPI.Guid.GuidManager.GetEnumValue<Ability>("extraVoid.inscryption.voidSigils", "Thick Shell");
 		public static void AddCard()
 		{
+			string name = "void_Crab_Fiddler";
+			string displayName = "Fiddler Crab";
+			int baseAttack = 2;
+			int baseHealth = 3;
+			int bloodCost = 1;
+			int boneCost = 6;
+			int energyCost = 0;
 
 			List<CardMetaCategory> metaCategories = new List<CardMetaCategory>();
 			metaCategories.Add(CardMetaCategory.TraderOffer);
@@ -18,61 +26,35 @@ namespace boneSigils.cards
 
 			List<Ability> Abilities = new List<Ability>();
 			Abilities.Add(Ability.SwapStats);
+			Abilities.Add(CustomAbility1);
 
 			List<Trait> Traits = new List<Trait>();
-
-			List<AbilityIdentifier> customAbilities = new List<AbilityIdentifier>();
-			customAbilities.Add(AbilityIdentifier.GetID("extraVoid.inscryption.voidSigils", "Thick Shell"));
 
 			List<SpecialTriggeredAbility> specialAbilities = new List<SpecialTriggeredAbility>();
 
 			List<CardAppearanceBehaviour.Appearance> appearanceBehaviour = new List<CardAppearanceBehaviour.Appearance>();
 
 			Texture2D DefaultTexture = SigilUtils.GetTextureFromPath("Artwork/Void_Crab_Fiddler.png");
-
 			Texture2D eTexture = SigilUtils.GetTextureFromPath("Artwork/Void_Crab_Fiddler_e.png");
 
-			IceCubeIdentifier iceCubeId = null;
-			EvolveIdentifier evolveId = null;
-			TailIdentifier tail = new TailIdentifier("void_crab_leg");
-
-			NewCard.Add(name: "Void_Crab_Fiddler",
-				displayedName: "Fiddler Crab",
-				baseAttack: 2,
-				baseHealth: 3,
-				metaCategories,
-				cardComplexity: CardComplexity.Intermediate,
-				temple: CardTemple.Nature,
-				description: "A mean crab with a large descrutive claw",
-				hideAttackAndHealth: false,
-				bloodCost: 1,
-				bonesCost: 6,
-				energyCost: 0,
-				gemsCost: null,
-				specialStatIcon: SpecialStatIcon.None,
-				Tribes,
-				Traits,
-				specialAbilities,
-				Abilities,
-				customAbilities,
-				specialAbilitiesIdsParam: null,
-				evolveParams: null,
-				defaultEvolutionName: null,
-				tailParams: null,
-				iceCubeParams: null,
-				flipPortraitForStrafe: false,
-				onePerDeck: false,
-				appearanceBehaviour,
-				DefaultTexture,
-				altTex: null,
-				titleGraphic: null,
-				pixelTex: null,
-				eTexture,
-				animatedPortrait: null,
-				decals: null,
-				evolveId,
-				iceCubeId,
-				tail);
+			CardInfo newCard = SigilUtils.CreateCardWithDefaultSettings(
+				InternalName: name,
+				DisplayName: displayName,
+				attack: baseAttack,
+				health: baseHealth,
+				texture_base: DefaultTexture,
+				texture_emission: eTexture,
+				texture_pixel: null,
+				cardMetaCategories: metaCategories,
+				tribes: Tribes,
+				traits: Traits,
+				abilities: Abilities,
+				bloodCost: bloodCost,
+				boneCost: boneCost,
+				energyCost: energyCost
+				);
+			newCard.SetTail("void_crab_leg");
+			CardManager.Add(newCard);
 		}
 	}
 }

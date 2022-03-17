@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using DiskCardGame;
 using UnityEngine;
-using APIPlugin;
+using InscryptionAPI.Card;
 
 namespace boneSigils.cards
 {
@@ -9,8 +9,13 @@ namespace boneSigils.cards
 	{
 		public static void AddCard()
 		{
-
-			int cost = 0;
+			string name = "Void_Tanuki_pup";
+			string displayName = "Tanuki Pup";
+			int baseAttack = 0;
+			int baseHealth = 1;
+			int bloodCost = 0;
+			int boneCost = 0;
+			int energyCost = 0;
 
 			List<CardMetaCategory> metaCategories = new List<CardMetaCategory>();
 			if (!BepInEx.Bootstrap.Chainloader.PluginInfos.ContainsKey(Plugin.StarterdeckGUID))
@@ -31,55 +36,30 @@ namespace boneSigils.cards
 			Abilities.Add(Ability.BoneDigger);
 			Abilities.Add(Ability.Evolve);
 
-			List<AbilityIdentifier> customAbilities = new List<AbilityIdentifier>();
-
-			List<CardAppearanceBehaviour.Appearance> appearanceBehaviour = new List<CardAppearanceBehaviour.Appearance>();
-
-			IceCubeIdentifier iceCubeId = new IceCubeIdentifier("Void_Tanuki_pup");
+			List<Trait> Traits = new List<Trait>();
 
 			Texture2D DefaultTexture = SigilUtils.GetTextureFromPath("Artwork/Void_Tanuki_Pup.png");
-
 			Texture2D pixelTexture = SigilUtils.GetTextureFromPath("Artwork/pixelportrait_tanuki.png");
-
 			Texture2D eTexture = SigilUtils.GetTextureFromPath("Artwork/Void_Tanuki_Pup_e.png");
 
-			NewCard.Add(name: "Void_Tanuki_pup",
-				displayedName: "Tanuki Pup",
-				baseAttack: 0,
-				baseHealth: 1,
-				metaCategories,
-				cardComplexity: CardComplexity.Simple,
-				temple: CardTemple.Nature,
-				description: "A young Tanuki, scavenging for bones.",
-				hideAttackAndHealth: false,
-				bloodCost: 0,
-				bonesCost: cost,
-				energyCost: 0,
-				gemsCost: null,
-				specialStatIcon: SpecialStatIcon.None,
-				Tribes,
-				traits: new List<Trait>() { (Trait)5103 },
-				specialAbilities: null,
-				Abilities,
-				customAbilities,
-				specialAbilitiesIdsParam: null,
-				evolveParams: null,
-				defaultEvolutionName: null,
-				tailParams: null,
-				iceCubeParams: null,
-				flipPortraitForStrafe: false,
-				onePerDeck: false,
-				appearanceBehaviour: null,
-				DefaultTexture,
-				altTex: null,
-				titleGraphic: null,
-				pixelTexture,
-				eTexture,
-				animatedPortrait: null,
-				decals: null,
-				evolveId: new EvolveIdentifier("Void_Tanuki", 3, null),
-				iceCubeId,
-				tailId: null);
+			CardInfo newCard = SigilUtils.CreateCardWithDefaultSettings(
+				InternalName: name,
+				DisplayName: displayName,
+				attack: baseAttack,
+				health: baseHealth,
+				texture_base: DefaultTexture,
+				texture_emission: eTexture,
+				texture_pixel: pixelTexture,
+				cardMetaCategories: metaCategories,
+				tribes: Tribes,
+				traits: Traits,
+				abilities: Abilities,
+				bloodCost: bloodCost,
+				boneCost: boneCost,
+				energyCost: energyCost
+				);
+			newCard.SetEvolve("void_Tanuki", 3);
+			CardManager.Add(newCard);
 		}
 	}
 }

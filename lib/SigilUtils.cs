@@ -1,36 +1,111 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
-using APIPlugin;
 using BepInEx;
 using DiskCardGame;
 using UnityEngine;
+using InscryptionAPI.Card;
 using static System.IO.File;
 
 namespace boneSigils
 {
 	public class SigilUtils
 	{
-		public static AbilityInfo CreateInfoWithDefaultSettings(
-			string rulebookName, string rulebookDescription, bool withDialogue = false, int powerLevel = 0
+		public static AbilityInfo CreateAbilityWithDefaultSettings(
+			string rulebookName, string rulebookDescription, Type behavior, Texture2D text_a1, Texture2D text_a2,
+			string LearnDialogue, bool withDialogue = false, int powerLevel = 0, bool leshyUsable = false, bool part1Modular = true, bool stack = false
 		)
 		{
-			AbilityInfo info = ScriptableObject.CreateInstance<AbilityInfo>();
-			info.powerLevel = powerLevel;
-			info.rulebookName = rulebookName;
-			info.rulebookDescription = rulebookDescription;
-			info.metaCategories = new List<AbilityMetaCategory>()
-			{
-				AbilityMetaCategory.Part1Modular, AbilityMetaCategory.Part1Rulebook
-			};
-
+			AbilityInfo createdAbilityInfo = AbilityManager.New(
+				boneSigils.Plugin.PluginGuid,
+				rulebookName,
+				rulebookDescription,
+				behavior,
+				text_a1
+			)
+			// This specifies the icon for the ability if it exists in Part 2.
+			.SetPixelAbilityIcon(text_a2)
+			;
+			// This sets up the learned Dialog event
 			if (withDialogue)
 			{
-				info.abilityLearnedDialogue = SetAbilityInfoDialogue(
-					rulebookDescription.Replace("[creature]", "a card bearing this sigil")
-				);
+				createdAbilityInfo.abilityLearnedDialogue = SetAbilityInfoDialogue(LearnDialogue);
+			}
+			// How powerful the ability is
+			createdAbilityInfo.powerLevel = powerLevel;
+			// Can it show up on totems for leshy?
+			createdAbilityInfo.opponentUsable = leshyUsable;
+			// If true, allows in shops and in totems. If false, just the rule book
+			if (part1Modular)
+			{
+				createdAbilityInfo.metaCategories = new List<AbilityMetaCategory>() { AbilityMetaCategory.Part1Modular, AbilityMetaCategory.Part1Rulebook };
+			}
+			else
+			{
+				createdAbilityInfo.metaCategories = new List<AbilityMetaCategory>() { AbilityMetaCategory.Part1Rulebook };
+			}
+			// Does the ability stack?
+			createdAbilityInfo.canStack = stack;
+			return createdAbilityInfo;
+		}
+
+		public static CardInfo CreateCardWithDefaultSettings(
+			string InternalName, string DisplayName, int attack, int health, Texture2D texture_base, Texture2D texture_emission,
+			List<CardMetaCategory> cardMetaCategories, List<Tribe> tribes, List<Trait> traits, List<Ability> abilities, Texture2D texture_pixel = null, int bloodCost = 0, int boneCost = 0, int energyCost = 0
+		)
+		{
+			if (texture_pixel == null)
+            {
+				texture_pixel = SigilUtils.GetTextureFromPath("Artwork/pixelportrait_blank.png");
+			}
+			// This builds our card information.
+			CardInfo cardinfo = CardManager.New(
+			// Card internal name.
+			InternalName,
+
+			// Card display name.
+			DisplayName,
+
+			// Attack.
+			attack,
+
+			// Health.
+			health,
+
+			// Descryption.
+			description: "A puddle that errods all that touches it.",
+
+			// Card ID Prefix
+			modPrefix: "void"
+			)
+			.SetPortrait(texture_base, texture_emission)
+			.SetPixelPortrait(texture_pixel)
+			;
+
+			for (int index = 0; index > cardMetaCategories.Count; index++)
+			{
+				cardinfo.metaCategories.Add(cardMetaCategories[index]);
 			}
 
-			return info;
+			for (int index = 0; index > tribes.Count; index++)
+			{
+				cardinfo.tribes.Add(tribes[index]);
+			}
+
+			for (int index = 0; index > traits.Count; index++)
+			{
+				cardinfo.traits.Add(traits[index]);
+			}
+
+			for (int index = 0; index > abilities.Count; index++)
+			{
+				cardinfo.DefaultAbilities.Add(abilities[index]);
+			}
+			cardinfo.temple = CardTemple.Nature;
+			cardinfo.cost = bloodCost;
+			cardinfo.bonesCost = boneCost;
+			cardinfo.energyCost = energyCost;
+			return cardinfo;
 		}
 
 		public static DialogueEvent.LineSet SetAbilityInfoDialogue(string dialogue)
@@ -61,11 +136,6 @@ namespace boneSigils
 			var texture = new Texture2D(2, 2);
 			texture.LoadImage(resourceFile);
 			return texture;
-		}
-
-		public static AbilityIdentifier GetAbilityId(string rulebookName)
-		{
-			return AbilityIdentifier.GetID(boneSigils.Plugin.PluginGuid, rulebookName);
 		}
 
 		public static string GetFullPathOfFile(string fileToLookFor)

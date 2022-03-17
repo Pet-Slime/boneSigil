@@ -1,10 +1,4 @@
-﻿using System.Collections;
-using APIPlugin;
-using DiskCardGame;
-using UnityEngine;
-using System;
-using System.Collections.Generic;
-using Resources = boneSigils.Artwork.Resources;
+﻿using DiskCardGame;
 
 namespace boneSigils
 {

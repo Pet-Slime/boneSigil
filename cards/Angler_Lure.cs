@@ -1,7 +1,20 @@
-﻿using System.Collections.Generic;
+﻿using BepInEx.Logging;
+using System;
+using System.Reflection;
+using HarmonyLib;
+using BepInEx;
+using System.Collections;
+using System.Collections.Generic;
+using System.IO;
 using DiskCardGame;
 using UnityEngine;
-using APIPlugin;
+using InscryptionAPI;
+using InscryptionAPI.Saves;
+using InscryptionAPI.Card;
+using InscryptionAPI.Ascension;
+using InscryptionAPI.Helpers;
+using InscryptionAPI.Encounters;
+using System.Linq;
 
 namespace boneSigils.cards
 {
@@ -9,6 +22,13 @@ namespace boneSigils.cards
 	{
 		public static void AddCard()
 		{
+			string name = "Void_Angler_Lure";
+			string displayName = "Broken Lure";
+			int baseAttack = 0;
+			int baseHealth = 2;
+			int bloodCost = 0;
+			int boneCost = 0;
+			int energyCost = 0;
 
 			List<CardMetaCategory> metaCategories = new List<CardMetaCategory>();
 
@@ -18,58 +38,32 @@ namespace boneSigils.cards
 
 			List<Trait> Traits = new List<Trait>();
 
-			List<AbilityIdentifier> customAbilities = new List<AbilityIdentifier>();
-			customAbilities.Add(AbilityIdentifier.GetID("extraVoid.inscryption.voidSigils", "Lure"));
 
 			List<SpecialTriggeredAbility> specialAbilities = new List<SpecialTriggeredAbility>();
 
 			List<CardAppearanceBehaviour.Appearance> appearanceBehaviour = new List<CardAppearanceBehaviour.Appearance>();
 
 			Texture2D DefaultTexture = SigilUtils.GetTextureFromPath("Artwork/void_angler_light.png");
-
 			Texture2D eTexture = SigilUtils.GetTextureFromPath("Artwork/void_angler_light_e.png");
+			Texture2D pTexture = SigilUtils.GetTextureFromPath("Artwork/pixelportrait_blank.png");
 
-			IceCubeIdentifier iceCubeId = null;
-
-			TailIdentifier tail = null;
-
-			NewCard.Add(name: "Void_Angler_Lure",
-				displayedName: "Broken Lure",
-				baseAttack: 0,
-				baseHealth: 2,
-				metaCategories,
-				cardComplexity: CardComplexity.Simple,
-				temple: CardTemple.Nature,
-				description: "A Lure pulled from an angler",
-				hideAttackAndHealth: false,
-				bloodCost: 0,
-				bonesCost: 0,
-				energyCost: 0,
-				gemsCost: null,
-				specialStatIcon: SpecialStatIcon.None,
-				Tribes,
-				Traits,
-				specialAbilities,
-				Abilities,
-				customAbilities,
-				specialAbilitiesIdsParam: null,
-				evolveParams: null,
-				defaultEvolutionName: null,
-				tailParams: null,
-				iceCubeParams: null,
-				flipPortraitForStrafe: false,
-				onePerDeck: false,
-				appearanceBehaviour,
-				DefaultTexture,
-				altTex: null,
-				titleGraphic: null,
-				pixelTex: null,
-				eTexture,
-				animatedPortrait: null,
-				decals: null,
-				evolveId: null,
-				iceCubeId,
-				tail);
+			CardInfo newCard = SigilUtils.CreateCardWithDefaultSettings(
+				InternalName: name,
+				DisplayName: displayName,
+				attack: baseAttack,
+				health: baseHealth,
+				texture_base: DefaultTexture,
+				texture_emission: eTexture,
+				texture_pixel: pTexture,
+				cardMetaCategories: metaCategories,
+				tribes: Tribes,
+				traits: Traits,
+				abilities: Abilities,
+				bloodCost: bloodCost,
+				boneCost: boneCost,
+				energyCost: energyCost
+				);
+			CardManager.Add(newCard);
 		}
 	}
 }

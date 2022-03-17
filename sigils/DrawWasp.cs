@@ -8,25 +8,22 @@ namespace boneSigils
 {
 	public partial class Plugin
 	{
-		private NewAbility AddDrawWasp()
+		private void AddDrawWasp()
 		{
 			// setup ability
 			const string rulebookName = "Draw Wasp";
 			const string rulebookDescription = "[creature] draws a wasp swarm when played";
-			// const string TextureFile = "Artwork/void_pathetic.png";
-
-			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, true, 0);
-
-			Texture2D tex = SigilUtils.LoadTextureFromResource(Resources.ability_drawwasp);
-
-			var abIds = SigilUtils.GetAbilityId(info.rulebookName);
-			
-			NewAbility newAbility = new NewAbility(info, typeof(ability_drawwasp), tex, abIds);
+			const string LearnDialogue = "Where there is one, there is many.";
+			Texture2D tex_a1 = SigilUtils.LoadTextureFromResource(Resources.ability_drawwasp);
+			Texture2D tex_a2 = SigilUtils.LoadTextureFromResource(Resources.ability_drawwasp);
+			int powerlevel = -2;
+			bool LeshyUsable = false;
+			bool part1Shops = true;
+			bool canStack = false;
 
 			// set ability to behaviour class
-			ability_drawwasp.ability = newAbility.ability;
-
-			return newAbility;
+			ability_drawwasp.ability = SigilUtils.CreateAbilityWithDefaultSettings(rulebookName, rulebookDescription, typeof(ability_drawwasp), tex_a1, tex_a2, LearnDialogue,
+																					true, powerlevel, LeshyUsable, part1Shops, canStack).ability;
 		}
 	}
 

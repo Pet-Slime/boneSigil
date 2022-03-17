@@ -1,14 +1,22 @@
 ﻿using System.Collections.Generic;
 using DiskCardGame;
 using UnityEngine;
-using APIPlugin;
+using InscryptionAPI.Card;
 
 namespace boneSigils.cards
 {
 	public static class Beetle_Rhino
 	{
+		public static readonly Ability CustomAbility1 = InscryptionAPI.Guid.GuidManager.GetEnumValue<Ability>("extraVoid.inscryption.voidSigils", "Ram");
 		public static void AddCard()
 		{
+			string name = "Void_Rhino_beetle";
+			string displayName = "Rhino Beetle";
+			int baseAttack = 2;
+			int baseHealth = 4;
+			int bloodCost = 0;
+			int boneCost = 7;
+			int energyCost = 0;
 
 			List<CardMetaCategory> metaCategories = new List<CardMetaCategory>();
 			metaCategories.Add(CardMetaCategory.TraderOffer);
@@ -21,58 +29,30 @@ namespace boneSigils.cards
 
 			List<Trait> Traits = new List<Trait>();
 
-			List<AbilityIdentifier> customAbilities = new List<AbilityIdentifier>();
-			customAbilities.Add(AbilityIdentifier.GetID("extraVoid.inscryption.voidSigils", "Ram"));
-
 			List<SpecialTriggeredAbility> specialAbilities = new List<SpecialTriggeredAbility>();
 
 			List<CardAppearanceBehaviour.Appearance> appearanceBehaviour = new List<CardAppearanceBehaviour.Appearance>();
 
 			Texture2D DefaultTexture = SigilUtils.GetTextureFromPath("Artwork/Void_Rino_beetle.png");
-
 			Texture2D eTexture = SigilUtils.GetTextureFromPath("Artwork/Void_Rino_beetle_e.png");
 
-			IceCubeIdentifier iceCubeId = null;
-
-			TailIdentifier tail = null;
-
-			NewCard.Add(name: "Void_Rino_beetle",
-				displayedName: "Rhino Beetle",
-				baseAttack: 2,
-				baseHealth: 4,
-				metaCategories,
-				cardComplexity: CardComplexity.Intermediate,
-				temple: CardTemple.Nature,
-				description: "A large insect that can push more than it's weight with the horn it has.",
-				hideAttackAndHealth: false,
-				bloodCost: 0,
-				bonesCost: 6,
-				energyCost: 0,
-				gemsCost: null,
-				specialStatIcon: SpecialStatIcon.None,
-				Tribes,
-				Traits,
-				specialAbilities,
-				Abilities,
-				customAbilities,
-				specialAbilitiesIdsParam: null,
-				evolveParams: null,
-				defaultEvolutionName: null,
-				tailParams: null,
-				iceCubeParams: null,
-				flipPortraitForStrafe: false,
-				onePerDeck: false,
-				appearanceBehaviour,
-				DefaultTexture,
-				altTex: null,
-				titleGraphic: null,
-				pixelTex: null,
-				eTexture,
-				animatedPortrait: null,
-				decals: null,
-				evolveId: null,
-				iceCubeId,
-				tail);
+			CardInfo newCard = SigilUtils.CreateCardWithDefaultSettings(
+				InternalName: name,
+				DisplayName: displayName,
+				attack: baseAttack,
+				health: baseHealth,
+				texture_base: DefaultTexture,
+				texture_emission: eTexture,
+				texture_pixel: null,
+				cardMetaCategories: metaCategories,
+				tribes: Tribes,
+				traits: Traits,
+				abilities: Abilities,
+				bloodCost: bloodCost,
+				boneCost: boneCost,
+				energyCost: energyCost
+				);
+			CardManager.Add(newCard);
 		}
 	}
 }

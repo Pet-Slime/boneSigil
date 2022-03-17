@@ -1,23 +1,32 @@
 ﻿using System.Collections.Generic;
 using DiskCardGame;
 using UnityEngine;
-using APIPlugin;
+using InscryptionAPI.Card;
 
 namespace boneSigils.cards
 {
 	public static class Enchidna
 	{
+		public static readonly Ability CustomAbility1 = InscryptionAPI.Guid.GuidManager.GetEnumValue<Ability>("extraVoid.inscryption.voidSigils", "Electric");
+
 		public static void AddCard()
 		{
-			var bloodcost = 2;
-			var energycost = 0;
+			string name = "void_Crab_Coco";
+			string displayName = "Coconut Crab";
+			int baseAttack = 2;
+			int baseHealth = 4;
+			int bloodCost = 2;
+			int boneCost = 4;
+			int energyCost = 0;
+
 			if (BepInEx.Bootstrap.Chainloader.PluginInfos.ContainsKey("extraVoid.inscryption.LifeCost"))
 			{
 				Plugin.Log.LogMessage("Found Life cost API, Adjusting Enchidna's Cost");
 
-				bloodcost = 0;
-				energycost = -8;
+				bloodCost = 0;
+				energyCost = -8;
 			}
+
 			List<CardMetaCategory> metaCategories = new List<CardMetaCategory>();
 			metaCategories.Add(CardMetaCategory.TraderOffer);
 			metaCategories.Add(CardMetaCategory.ChoiceNode);
@@ -29,58 +38,30 @@ namespace boneSigils.cards
 
 			List<Trait> Traits = new List<Trait>();
 
-			List<AbilityIdentifier> customAbilities = new List<AbilityIdentifier>();
-			customAbilities.Add(AbilityIdentifier.GetID("extraVoid.inscryption.voidSigils", "Electric"));
-
 			List<SpecialTriggeredAbility> specialAbilities = new List<SpecialTriggeredAbility>();
 
 			List<CardAppearanceBehaviour.Appearance> appearanceBehaviour = new List<CardAppearanceBehaviour.Appearance>();
 
 			Texture2D DefaultTexture = SigilUtils.GetTextureFromPath("Artwork/void_enchidna.png");
-
 			Texture2D eTexture = SigilUtils.GetTextureFromPath("Artwork/void_enchidna_e.png");
 
-			IceCubeIdentifier iceCubeId = null;
-
-			TailIdentifier tail = null;
-
-			NewCard.Add(name: "Void_Enchidna",
-				displayedName: "Enchidna",
-				baseAttack: 2,
-				baseHealth: 4,
-				metaCategories,
-				cardComplexity: CardComplexity.Simple,
-				temple: CardTemple.Nature,
-				description: "One of the few mammals to use Electroreception.",
-				hideAttackAndHealth: false,
-				bloodCost: bloodcost,
-				bonesCost: 3,
-				energyCost: energycost,
-				gemsCost: null,
-				specialStatIcon: SpecialStatIcon.None,
-				Tribes,
-				Traits,
-				specialAbilities,
-				Abilities,
-				customAbilities,
-				specialAbilitiesIdsParam: null,
-				evolveParams: null,
-				defaultEvolutionName: null,
-				tailParams: null,
-				iceCubeParams: null,
-				flipPortraitForStrafe: false,
-				onePerDeck: false,
-				appearanceBehaviour,
-				DefaultTexture,
-				altTex: null,
-				titleGraphic: null,
-				pixelTex: null,
-				eTexture,
-				animatedPortrait: null,
-				decals: null,
-				evolveId: null,
-				iceCubeId,
-				tail);
+			CardInfo newCard = SigilUtils.CreateCardWithDefaultSettings(
+				InternalName: name,
+				DisplayName: displayName,
+				attack: baseAttack,
+				health: baseHealth,
+				texture_base: DefaultTexture,
+				texture_emission: eTexture,
+				texture_pixel: null,
+				cardMetaCategories: metaCategories,
+				tribes: Tribes,
+				traits: Traits,
+				abilities: Abilities,
+				bloodCost: bloodCost,
+				boneCost: boneCost,
+				energyCost: energyCost
+				);
+			CardManager.Add(newCard);
 		}
 	}
 }

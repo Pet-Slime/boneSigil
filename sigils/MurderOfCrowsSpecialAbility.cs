@@ -4,31 +4,21 @@ using System.Linq;
 using APIPlugin;
 using DiskCardGame;
 using UnityEngine;
-using Resources = boneSigils.Artwork.Resources;
+using InscryptionAPI.Card;
 
 namespace boneSigils
 {
     public class MurderOfCrowsSpecialAbility : SpecialCardBehaviour
-    {
-        public SpecialTriggeredAbility SpecialAbility => specialAbility;
-        public static SpecialTriggeredAbility specialAbility;
+	{
+		public SpecialTriggeredAbility SpecialAbility => specialAbility;
 
-        public static void AddMurderAbility()
-        {
-            StatIconInfo iconInfo = new StatIconInfo();
-            iconInfo.rulebookName = "Murder of Crows";
-            iconInfo.rulebookDescription = "Turns nearly all cards other than itself into a pile of bones. Leaves Giant, Terrian, Pelts, and Pathatic Sacrifices.";
-            iconInfo.iconType = SpecialStatIcon.None;
-            iconInfo.iconGraphic = SigilUtils.LoadTextureFromResource(Resources.void_feather);
-            iconInfo.metaCategories = new List<AbilityMetaCategory> { AbilityMetaCategory.Part1Modular, AbilityMetaCategory.Part1Rulebook };
+		public static SpecialTriggeredAbility specialAbility;
 
-            SpecialAbilityIdentifier identifier = SpecialAbilityIdentifier.GetID(Plugin.PluginGuid, "MurderOfCrowsSpecialAbility");
+		public readonly static SpecialTriggeredAbility TestSpecialAbility = SpecialTriggeredAbilityManager.Add(Plugin.PluginGuid, "Crow Murder", typeof(MurderOfCrowsSpecialAbility)).Id;
 
-            NewSpecialAbility newSpecialAbility = new NewSpecialAbility(typeof(MurderOfCrowsSpecialAbility), identifier, iconInfo);
-            specialAbility = newSpecialAbility.specialTriggeredAbility;
-        }
 
-        public override bool RespondsToResolveOnBoard()
+
+		public override bool RespondsToResolveOnBoard()
         {
             return true;
         }

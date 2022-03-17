@@ -1,14 +1,23 @@
 ﻿using System.Collections.Generic;
 using DiskCardGame;
 using UnityEngine;
-using APIPlugin;
+using InscryptionAPI.Card;
 
 namespace boneSigils.cards
 {
 	public static class Axolotl
 	{
+		public static readonly Ability CustomAbility = InscryptionAPI.Guid.GuidManager.GetEnumValue<Ability>("extraVoid.inscryption.voidSigils", "Pathetic Sacrifice");
+
 		public static void AddCard()
 		{
+			string name = "Void_Axolotl";
+			string displayName = "Undead Axolotl";
+			int baseAttack = 0;
+			int baseHealth = 1;
+			int bloodCost = 0;
+			int boneCost = 0;
+			int energyCost = 0;
 
 			List<CardMetaCategory> metaCategories = new List<CardMetaCategory>();
 			if (!BepInEx.Bootstrap.Chainloader.PluginInfos.ContainsKey(Plugin.StarterdeckGUID))
@@ -26,67 +35,38 @@ namespace boneSigils.cards
 			Tribes.Add(Tribe.Reptile);
 
 			List<Ability> Abilities = new List<Ability>();
+			Abilities.Add(CustomAbility);
+			Abilities.Add(Ability.QuadrupleBones);
 
 			List<Trait> Traits = new List<Trait> { (Trait)5103 };
 			Traits.Add(Trait.Undead);
-
-			List<AbilityIdentifier> customAbilities = new List<AbilityIdentifier>();
-
-			customAbilities.Add(AbilityIdentifier.GetID("org.memez4life.inscryption.customsigils", "Bone prince 3"));
-			customAbilities.Add(AbilityIdentifier.GetID("extraVoid.inscryption.voidSigils", "Pathetic Sacrifice"));
 
 			List<SpecialTriggeredAbility> specialAbilities = new List<SpecialTriggeredAbility>();
 
 			List<CardAppearanceBehaviour.Appearance> appearanceBehaviour = new List<CardAppearanceBehaviour.Appearance>();
 
 			Texture2D DefaultTexture = SigilUtils.GetTextureFromPath("Artwork/void_undeadAxolotle.png");
-
 			Texture2D pixelTexture = SigilUtils.GetTextureFromPath("Artwork/pixelportrait_axol.png");
 			Texture2D eTexture = SigilUtils.GetTextureFromPath("Artwork/void_undeadAxolotle_e.png");
 
-			IceCubeIdentifier iceCubeId = null;
+			CardInfo newCard = SigilUtils.CreateCardWithDefaultSettings(
+				InternalName: name,
+				DisplayName: displayName,
+				attack: baseAttack,
+				health: baseHealth,
+				texture_base: DefaultTexture,
+				texture_emission: eTexture,
+				texture_pixel: pixelTexture,
+				cardMetaCategories: metaCategories,
+				tribes: Tribes,
+				traits: Traits,
+				abilities: Abilities,
+				bloodCost: bloodCost,
+				boneCost: boneCost,
+				energyCost: energyCost
+				);
 
-			TailIdentifier tail = null;
-
-			NewCard.Add(name: "Void_Axolotl",
-				displayedName: "Undead Axolotl",
-				baseAttack: 0,
-				baseHealth: 1,
-				metaCategories,
-				cardComplexity: CardComplexity.Simple,
-				temple: CardTemple.Nature,
-				description: "Undead here? How... Her world must be leaking in...",
-				hideAttackAndHealth: false,
-				bloodCost: 0,
-				bonesCost: 0,
-				energyCost: 0,
-				gemsCost: null,
-				specialStatIcon: SpecialStatIcon.None,
-				Tribes,
-				Traits,
-				specialAbilities,
-				Abilities,
-				customAbilities,
-				specialAbilitiesIdsParam: null,
-				evolveParams: null,
-				defaultEvolutionName: null,
-				tailParams: null,
-				iceCubeParams: null,
-				flipPortraitForStrafe: false,
-				onePerDeck: false,
-				appearanceBehaviour,
-				DefaultTexture,
-				altTex: null,
-				titleGraphic: null,
-				pixelTex: pixelTexture,
-				eTexture,
-				animatedPortrait: null,
-				decals: null,
-				evolveId: null,
-				iceCubeId,
-				tail);
-
-
+			CardManager.Add(newCard);
 		}
 	}
 }
