@@ -16,7 +16,7 @@ namespace boneSigils
 			const string LearnDialogue = "Where there is one, there is many.";
 			Texture2D tex_a1 = SigilUtils.LoadTextureFromResource(Resources.ability_drawwasp);
 			Texture2D tex_a2 = SigilUtils.LoadTextureFromResource(Resources.ability_drawwasp);
-			int powerlevel = -2;
+			int powerlevel = -3;
 			bool LeshyUsable = false;
 			bool part1Shops = true;
 			bool canStack = false;

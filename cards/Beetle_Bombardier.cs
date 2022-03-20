@@ -10,7 +10,7 @@ namespace boneSigils.cards
 		public static readonly Ability CustomAbility1 = InscryptionAPI.Guid.GuidManager.GetEnumValue<Ability>("extraVoid.inscryption.voidSigils", "Bombardier");
 		public static void AddCard()
 		{
-			string name = "Void_Beetle_Bombardier";
+			string name = "void_Beetle_Bombardier";
 			string displayName = "Bombardier Beetle";
 			string description = "A beetle that shoots artillier goop, at foes and allies alike...";
 			int baseAttack = 2;
@@ -55,7 +55,7 @@ namespace boneSigils.cards
 				energyCost: energyCost
 				);
 			newCard.description = description;
-			CardManager.Add(newCard);
+			CardManager.Add("void", newCard);
 		}
 	}
 }

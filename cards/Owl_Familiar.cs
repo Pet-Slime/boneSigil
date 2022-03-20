@@ -28,10 +28,13 @@ namespace boneSigils.cards
 			Tribes.Add(Tribe.Bird);
 
 			List<Ability> Abilities = new List<Ability>();
+			Abilities.Add(CustomAbility1);
+			Abilities.Add(CustomAbility2);
 
 			List<Trait> Traits = new List<Trait>();
 
 			Texture2D DefaultTexture = SigilUtils.GetTextureFromPath("Artwork/Void_Owl_Familiar.png");
+			Texture2D pixelTexture = SigilUtils.GetTextureFromPath("Artwork/pixelportrait_owl_familiar.png");
 			Texture2D eTexture = SigilUtils.GetTextureFromPath("Artwork/Void_Owl_Familiar_e.png");
 
 			CardInfo newCard = SigilUtils.CreateCardWithDefaultSettings(
@@ -41,7 +44,7 @@ namespace boneSigils.cards
 				health: baseHealth,
 				texture_base: DefaultTexture,
 				texture_emission: eTexture,
-				texture_pixel: null,
+				texture_pixel: pixelTexture,
 				cardMetaCategories: metaCategories,
 				tribes: Tribes,
 				traits: Traits,
@@ -51,7 +54,7 @@ namespace boneSigils.cards
 				energyCost: energyCost
 				);
 			newCard.description = description;
-			CardManager.Add(newCard);
+			CardManager.Add("void", newCard);
 		}
 	}
 }

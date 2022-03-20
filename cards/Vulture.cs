@@ -58,7 +58,7 @@ namespace boneSigils.cards
 			newCard.description = description;
 			newCard.specialStatIcon = SpecialStatIcon.Bones;
 			newCard.specialAbilities.Add(SpecialTriggeredAbility.Lammergeier);
-			CardManager.Add(newCard);
+			CardManager.Add("void", newCard);
 		}
 	}
 }

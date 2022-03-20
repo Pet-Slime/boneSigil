@@ -1,20 +1,7 @@
-﻿using BepInEx.Logging;
-using System;
-using System.Reflection;
-using HarmonyLib;
-using BepInEx;
-using System.Collections;
-using System.Collections.Generic;
-using System.IO;
+﻿using System.Collections.Generic;
 using DiskCardGame;
 using UnityEngine;
-using InscryptionAPI;
-using InscryptionAPI.Saves;
 using InscryptionAPI.Card;
-using InscryptionAPI.Ascension;
-using InscryptionAPI.Helpers;
-using InscryptionAPI.Encounters;
-using System.Linq;
 
 namespace boneSigils.cards
 {
@@ -24,7 +11,7 @@ namespace boneSigils.cards
 
 		public static void AddCard()
 		{
-			string name = "Void_Leaf_Ant";
+			string name = "void_Leaf_Ant";
 			string displayName = "Armored Ant";
 			string description = "A leaf cutter ant that has a mineral shell and lives in the trees.";
 			int baseAttack = 0;
@@ -74,7 +61,7 @@ namespace boneSigils.cards
 			newCard.specialStatIcon = SpecialStatIcon.Ants;
 			newCard.specialAbilities.Add(SpecialTriggeredAbility.Ant);
 			newCard.description = description;
-			CardManager.Add(newCard);
+			CardManager.Add("void", newCard);
 		}
 	}
 }

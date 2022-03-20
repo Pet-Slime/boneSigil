@@ -12,9 +12,9 @@ namespace boneSigils.cards
 			string name = "void_Ruby_Creature";
 			string displayName = "Vulpecula";
 			string description = "A lost little canine, who's fur shines like stars, looking for home.";
-			int baseAttack = 3;
-			int baseHealth = 3;
-			int bloodCost = 2;
+			int baseAttack = 2;
+			int baseHealth = 2;
+			int bloodCost = 0;
 			int boneCost = 6;
 			int energyCost = 0;
 
@@ -56,7 +56,7 @@ namespace boneSigils.cards
 				energyCost: energyCost
 				);
 			newCard.description = description;
-			CardManager.Add(newCard);
+			CardManager.Add("void", newCard);
 		}
 	}
 }

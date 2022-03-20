@@ -54,49 +54,27 @@ namespace boneSigils
 			List<CardMetaCategory> cardMetaCategories, List<Tribe> tribes, List<Trait> traits, List<Ability> abilities, Texture2D texture_pixel = null, int bloodCost = 0, int boneCost = 0, int energyCost = 0
 		)
 		{
-			if (texture_pixel == null)
-            {
-				texture_pixel = SigilUtils.GetTextureFromPath("Artwork/pixelportrait_blank.png");
-			}
-			// This builds our card information.
 			CardInfo cardinfo = CardManager.New(
-			// Card internal name.
+			modPrefix: "void",
 			InternalName,
-
-			// Card display name.
 			DisplayName,
-
-			// Attack.
 			attack,
-
-			// Health.
 			health,
-
-			// Descryption.
-			description: "A puddle that errods all that touches it.",
-
-			// Card ID Prefix
-			modPrefix: "void"
-			)
-			.SetPortrait(texture_base, texture_emission)
-			.SetPixelPortrait(texture_pixel)
-			;
-
-			for (int index = 0; index < cardMetaCategories.Count; index++)
+			description: "A puddle that errods all that touches it."
+			);
+			cardinfo.SetPortrait(texture_base, texture_emission);
+			if (texture_pixel == null)
 			{
-				cardinfo.AddMetaCategories(cardMetaCategories[index]);
-			}
-
-			for (int index = 0; index < tribes.Count; index++)
+				texture_pixel = SigilUtils.GetTextureFromPath("Artwork/pixelportrait_blank.png");
+				cardinfo.SetPixelPortrait(texture_pixel);
+			} else
 			{
-				cardinfo.AddTribes(tribes[index]);
+				cardinfo.SetPixelPortrait(texture_pixel);
 			}
-
-			for (int index = 0; index < traits.Count; index++)
-			{
-				cardinfo.AddTraits(traits[index]);
-			}
-
+			cardinfo.SetPixelPortrait(texture_pixel);
+			cardinfo.metaCategories = cardMetaCategories;
+			cardinfo.tribes = tribes;
+			cardinfo.traits = traits;
 			for (int index = 0; index < abilities.Count; index++)
 			{
 				cardinfo.AddAbilities(abilities[index]);

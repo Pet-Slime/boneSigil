@@ -22,7 +22,7 @@ namespace boneSigils.cards
 
 			if (BepInEx.Bootstrap.Chainloader.PluginInfos.ContainsKey("extraVoid.inscryption.LifeCost"))
 			{
-				Plugin.Log.LogMessage("Found Life cost API, Adjusting Enchidna's Cost");
+				Plugin.Log.LogMessage("Found Life cost API, Adjusting Enchidna's Cost from blood to money");
 
 				bloodCost = 0;
 				energyCost = -8;
@@ -36,6 +36,7 @@ namespace boneSigils.cards
 
 			List<Ability> Abilities = new List<Ability>();
 			Abilities.Add(Ability.Sharp);
+			Abilities.Add(CustomAbility1);
 
 			List<Trait> Traits = new List<Trait>();
 
@@ -63,7 +64,7 @@ namespace boneSigils.cards
 				energyCost: energyCost
 				);
 			newCard.description = description;
-			CardManager.Add(newCard);
+			CardManager.Add("void", newCard);
 		}
 	}
 }

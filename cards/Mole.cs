@@ -14,7 +14,7 @@ namespace boneSigils.cards
 			string displayName = "Strange Mole";
 			string description = "Another one of the trapper's toys.";
 			int baseAttack = 1;
-			int baseHealth = 5;
+			int baseHealth = 3;
 			int bloodCost = 0;
 			int boneCost = 6;
 			int energyCost = 0;
@@ -26,6 +26,7 @@ namespace boneSigils.cards
 
 			List<Ability> Abilities = new List<Ability>();
 			Abilities.Add(Ability.WhackAMole);
+			Abilities.Add(CustomAbility1);
 
 			List<Trait> Traits = new List<Trait>();
 			Traits.Add(Trait.Uncuttable);
@@ -33,10 +34,8 @@ namespace boneSigils.cards
 
 			List<SpecialTriggeredAbility> specialAbilities = new List<SpecialTriggeredAbility>();
 
-			List<CardAppearanceBehaviour.Appearance> appearanceBehaviour = new List<CardAppearanceBehaviour.Appearance>();
-			appearanceBehaviour.Add(CardAppearanceBehaviour.Appearance.TerrainBackground);
-
 			Texture2D DefaultTexture = SigilUtils.GetTextureFromPath("Artwork/void_burrow.png");
+			Texture2D pixelTexture = SigilUtils.GetTextureFromPath("Artwork/pixelportrait_strange_mole.png");
 			Texture2D eTexture = SigilUtils.GetTextureFromPath("Artwork/void_burrow_e.png");
 
 			CardInfo newCard = SigilUtils.CreateCardWithDefaultSettings(
@@ -46,7 +45,7 @@ namespace boneSigils.cards
 				health: baseHealth,
 				texture_base: DefaultTexture,
 				texture_emission: eTexture,
-				texture_pixel: null,
+				texture_pixel: pixelTexture,
 				cardMetaCategories: metaCategories,
 				tribes: Tribes,
 				traits: Traits,
@@ -56,8 +55,9 @@ namespace boneSigils.cards
 				energyCost: energyCost
 				);
 			newCard.description = description;
-			newCard.SetTail("Void_Scrap");
-			CardManager.Add(newCard);
+			newCard.appearanceBehaviour.Add(CardAppearanceBehaviour.Appearance.TerrainBackground);
+			newCard.SetTail("void_Scrap");
+			CardManager.Add("void", newCard);
 		}
 	}
 }

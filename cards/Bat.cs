@@ -7,7 +7,6 @@ namespace boneSigils.cards
 {
 	public static class Bat
 	{
-		public static readonly Ability CustomAbility1 = InscryptionAPI.Guid.GuidManager.GetEnumValue<Ability>("extraVoid.inscryption.voidSigils", "Grazing");
 		public static readonly Ability CustomAbility2 = InscryptionAPI.Guid.GuidManager.GetEnumValue<Ability>("extraVoid.inscryption.voidSigils", "Possessor");
 		public static void AddCard()
 		{
@@ -27,7 +26,6 @@ namespace boneSigils.cards
 			List<Tribe> Tribes = new List<Tribe>();
 
 			List<Ability> Abilities = new List<Ability>();
-			Abilities.Add(CustomAbility1);
 			Abilities.Add(CustomAbility2);
 
 			List<Trait> Traits = new List<Trait>();
@@ -57,7 +55,7 @@ namespace boneSigils.cards
 				energyCost: energyCost
 				);
 			newCard.description = description;
-			CardManager.Add(newCard);
+			CardManager.Add("void", newCard);
 		}
 	}
 }

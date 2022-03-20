@@ -53,7 +53,7 @@ namespace boneSigils.cards
 			newCard.AddSpecialAbilities(MurderOfCrowsSpecialAbility.specialAbility);
 			newCard.appearanceBehaviour.Add(CardAppearanceBehaviour.Appearance.RareCardBackground);
 			newCard.description = description;
-			CardManager.Add(newCard);
+			CardManager.Add("void", newCard);
 		}
 	}
 }

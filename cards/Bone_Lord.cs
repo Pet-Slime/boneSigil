@@ -9,7 +9,7 @@ namespace boneSigils.cards
 	{
 		public static void AddCard()
 		{
-			string name = "Void_Bone_Lord";
+			string name = "void_Bone_Lord";
 			string displayName = "The Bone Lord";
 			string description = "The Lord of Bones has decided to get his hands dirty this time.";
 			int baseAttack = 7;
@@ -52,7 +52,7 @@ namespace boneSigils.cards
 				);
 			newCard.description = description;
 			newCard.appearanceBehaviour.Add(CardAppearanceBehaviour.Appearance.RareCardBackground);
-			CardManager.Add(newCard);
+			CardManager.Add("void", newCard);
 		}
 	}
 }

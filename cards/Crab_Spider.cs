@@ -27,6 +27,7 @@ namespace boneSigils.cards
 
 			List<Ability> Abilities = new List<Ability>();
 			Abilities.Add(Ability.TailOnHit);
+			Abilities.Add(CustomAbility1);
 
 			List<Trait> Traits = new List<Trait>();
 
@@ -51,7 +52,7 @@ namespace boneSigils.cards
 				);
 			newCard.SetTail("void_Crab_Leg");
 			newCard.description = description;
-			CardManager.Add(newCard);
+			CardManager.Add("void", newCard);
 		}
 	}
 }

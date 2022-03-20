@@ -12,7 +12,7 @@ namespace boneSigils.cards
 		{
 			string name = "void_Wasp_Swarm";
 			string displayName = "Wasp Swarm";
-			string description = "aaa";
+			string description = "Where there is one, there is many.";
 			int baseAttack = 2;
 			int baseHealth = 3;
 			int bloodCost = 0;
@@ -53,7 +53,8 @@ namespace boneSigils.cards
 				);
 			newCard.description = description;
 			newCard.SetTail("void_Wasp_Swarm");
-			CardManager.Add(newCard);
+			newCard.defaultEvolutionName = "Monstrous";
+			CardManager.Add("void", newCard);
 		}
 	}
 }

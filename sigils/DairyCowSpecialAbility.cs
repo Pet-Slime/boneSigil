@@ -27,7 +27,7 @@ namespace boneSigils
         public override IEnumerator OnDie(bool wasSacrifice, PlayableCard killer)
         {
             yield return new WaitForSeconds(0.35f);
-            yield return Singleton<CardSpawner>.Instance.SpawnCardToHand(CardLoader.GetCardByName("Void_Steak"), null, 0.25f, null);
+            yield return Singleton<CardSpawner>.Instance.SpawnCardToHand(CardLoader.GetCardByName("void_Steak"), null, 0.25f, null);
             yield return new WaitForSeconds(0.35f);
             yield break;
         }

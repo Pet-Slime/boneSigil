@@ -17,7 +17,7 @@ namespace boneSigils.cards
 			int baseAttack = 3;
 			int baseHealth = 3;
 			int bloodCost = 2;
-			int boneCost = 6;
+			int boneCost = 4;
 			int energyCost = 0;
 			if (BepInEx.Bootstrap.Chainloader.PluginInfos.ContainsKey("extraVoid.inscryption.LifeCost"))
 			{
@@ -57,7 +57,7 @@ namespace boneSigils.cards
 				energyCost: energyCost
 				);
 			newCard.description = description;
-			CardManager.Add(newCard);
+			CardManager.Add("void", newCard);
 		}
 	}
 }

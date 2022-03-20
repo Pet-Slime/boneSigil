@@ -27,7 +27,7 @@ namespace boneSigils.cards
 
 			List<Ability> Abilities = new List<Ability>();
 			Abilities.Add(Ability.Evolve);
-			Abilities.Add(Ability.BoneDigger);
+			Abilities.Add(Ability.OpponentBones);
 
 			List<Trait> Traits = new List<Trait>();
 
@@ -52,7 +52,7 @@ namespace boneSigils.cards
 				);
 			newCard.description = description;
 			newCard.SetEvolve("void_Tanuki_Mythical", 2);
-			CardManager.Add(newCard);
+			CardManager.Add("void", newCard);
 		}
 	}
 }

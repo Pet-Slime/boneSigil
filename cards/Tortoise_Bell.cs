@@ -57,7 +57,7 @@ namespace boneSigils.cards
 			newCard.appearanceBehaviour.Add(CardAppearanceBehaviour.Appearance.GoldEmission);
 			newCard.specialStatIcon = SpecialStatIcon.Bell;
 			newCard.specialAbilities.Add(SpecialTriggeredAbility.BellProximity);
-			CardManager.Add(newCard);
+			CardManager.Add("void", newCard);
 		}
 	}
 }

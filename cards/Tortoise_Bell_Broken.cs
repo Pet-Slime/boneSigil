@@ -28,8 +28,10 @@ namespace boneSigils.cards
 			Abilities.Add(Ability.DeathShield);
 
 			List<Trait> Traits = new List<Trait>();
+			Traits.Add(Trait.Terrain);
 
 			Texture2D DefaultTexture = SigilUtils.GetTextureFromPath("Artwork/Void_Tortoise_Bell_Broken.png");
+			Texture2D pixelTexture = SigilUtils.GetTextureFromPath("Artwork/pixelportrait_bell_turtle.png");
 			Texture2D eTexture = SigilUtils.GetTextureFromPath("Artwork/Void_Tortoise_Bell_Broken_e.png");
 
 			CardInfo newCard = SigilUtils.CreateCardWithDefaultSettings(
@@ -39,7 +41,7 @@ namespace boneSigils.cards
 				health: baseHealth,
 				texture_base: DefaultTexture,
 				texture_emission: eTexture,
-				texture_pixel: null,
+				texture_pixel: pixelTexture,
 				cardMetaCategories: metaCategories,
 				tribes: Tribes,
 				traits: Traits,
@@ -49,8 +51,9 @@ namespace boneSigils.cards
 				energyCost: energyCost
 				);
 			newCard.description = description;
+			newCard.appearanceBehaviour.Add(CardAppearanceBehaviour.Appearance.TerrainBackground);
 			newCard.SetEvolve("void_Tortoise_Bell", 1, null);
-			CardManager.Add(newCard);
+			CardManager.Add("void", newCard);
 		}
 	}
 }

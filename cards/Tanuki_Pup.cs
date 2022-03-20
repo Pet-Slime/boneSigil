@@ -9,7 +9,7 @@ namespace boneSigils.cards
 	{
 		public static void AddCard()
 		{
-			string name = "Void_Tanuki_pup";
+			string name = "void_Tanuki_pup";
 			string displayName = "Tanuki Pup";
 			string description = "A young Tanuki, scavenging for bones.";
 			int baseAttack = 0;
@@ -34,10 +34,10 @@ namespace boneSigils.cards
 			Tribes.Add(Tribe.Canine);
 
 			List<Ability> Abilities = new List<Ability>();
-			Abilities.Add(Ability.BoneDigger);
+			Abilities.Add(Ability.OpponentBones);
 			Abilities.Add(Ability.Evolve);
 
-			List<Trait> Traits = new List<Trait>();
+			List<Trait> Traits = new List<Trait> { (Trait)5103 };
 
 			Texture2D DefaultTexture = SigilUtils.GetTextureFromPath("Artwork/Void_Tanuki_Pup.png");
 			Texture2D pixelTexture = SigilUtils.GetTextureFromPath("Artwork/pixelportrait_tanuki.png");
@@ -60,8 +60,8 @@ namespace boneSigils.cards
 				energyCost: energyCost
 				);
 			newCard.description = description;
-			newCard.SetEvolve("void_Tanuki", 3);
-			CardManager.Add(newCard);
+			newCard.SetEvolve("void_Tanuki", 1);
+			CardManager.Add("void", newCard);
 		}
 	}
 }

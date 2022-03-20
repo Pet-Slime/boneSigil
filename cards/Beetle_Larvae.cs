@@ -10,8 +10,8 @@ namespace boneSigils.cards
 		public static void AddCard()
 		{
 			string name = "void_Beetle_Larva";
-			string displayName = "A monsterously sized larvae, and a tasty one to boot!";
-			string description = "aaa";
+			string displayName = "Beetle Larva";
+			string description = "A monsterously sized larvae, and a tasty one to boot!";
 			int baseAttack = 1;
 			int baseHealth = 3;
 			int bloodCost = 0;
@@ -35,6 +35,7 @@ namespace boneSigils.cards
 			List<CardAppearanceBehaviour.Appearance> appearanceBehaviour = new List<CardAppearanceBehaviour.Appearance>();
 
 			Texture2D DefaultTexture = SigilUtils.GetTextureFromPath("Artwork/void_beetle_larva.png");
+			Texture2D pixelTexture = SigilUtils.GetTextureFromPath("Artwork/pixelportrait_beetle_larvae.png");
 			Texture2D eTexture = SigilUtils.GetTextureFromPath("Artwork/void_beetle_larva_e.png");
 
 			CardInfo newCard = SigilUtils.CreateCardWithDefaultSettings(
@@ -44,7 +45,7 @@ namespace boneSigils.cards
 				health: baseHealth,
 				texture_base: DefaultTexture,
 				texture_emission: eTexture,
-				texture_pixel: null,
+				texture_pixel: pixelTexture,
 				cardMetaCategories: metaCategories,
 				tribes: Tribes,
 				traits: Traits,
@@ -54,7 +55,7 @@ namespace boneSigils.cards
 				energyCost: energyCost
 				);
 			newCard.description = description;
-			CardManager.Add(newCard);
+			CardManager.Add("void", newCard);
 		}
 	}
 }

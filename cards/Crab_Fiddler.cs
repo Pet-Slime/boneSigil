@@ -14,7 +14,7 @@ namespace boneSigils.cards
 			string displayName = "Fiddler Crab";
 			string description = "A mean crab with a large descrutive claw.";
 			int baseAttack = 2;
-			int baseHealth = 3;
+			int baseHealth = 2;
 			int bloodCost = 1;
 			int boneCost = 6;
 			int energyCost = 0;
@@ -56,7 +56,7 @@ namespace boneSigils.cards
 				);
 			newCard.SetTail("void_Crab_Leg");
 			newCard.description = description;
-			CardManager.Add(newCard);
+			CardManager.Add("void", newCard);
 		}
 	}
 }

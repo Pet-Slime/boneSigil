@@ -1,20 +1,7 @@
-﻿using BepInEx.Logging;
-using System;
-using System.Reflection;
-using HarmonyLib;
-using BepInEx;
-using System.Collections;
-using System.Collections.Generic;
-using System.IO;
+﻿using System.Collections.Generic;
 using DiskCardGame;
 using UnityEngine;
-using InscryptionAPI;
-using InscryptionAPI.Saves;
 using InscryptionAPI.Card;
-using InscryptionAPI.Ascension;
-using InscryptionAPI.Helpers;
-using InscryptionAPI.Encounters;
-using System.Linq;
 
 namespace boneSigils.cards
 {
@@ -25,7 +12,7 @@ namespace boneSigils.cards
 
 		public static void AddCard()
 		{
-			string name = "Void_Angler";
+			string name = "void_Angler";
 			string displayName = "Black Seadevil";
 			string description = "A light in the dark ocean, it isn't friendly.";
 			int baseAttack = 2;
@@ -71,8 +58,8 @@ namespace boneSigils.cards
 				energyCost: energyCost
 				);
 			newCard.description = description;
-			newCard.SetTail("Void_Angler_Lure", SigilUtils.GetTextureFromPath("Artwork/void_angler_alt.png"));
-			CardManager.Add(newCard);
+			newCard.SetTail("void_Angler_Lure", SigilUtils.GetTextureFromPath("Artwork/void_angler_alt.png"));
+			CardManager.Add("void", newCard);
 		}
 	}
 }

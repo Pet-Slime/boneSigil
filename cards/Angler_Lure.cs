@@ -1,20 +1,7 @@
-﻿using BepInEx.Logging;
-using System;
-using System.Reflection;
-using HarmonyLib;
-using BepInEx;
-using System.Collections;
-using System.Collections.Generic;
-using System.IO;
+﻿using System.Collections.Generic;
 using DiskCardGame;
 using UnityEngine;
-using InscryptionAPI;
-using InscryptionAPI.Saves;
 using InscryptionAPI.Card;
-using InscryptionAPI.Ascension;
-using InscryptionAPI.Helpers;
-using InscryptionAPI.Encounters;
-using System.Linq;
 
 namespace boneSigils.cards
 {
@@ -22,7 +9,7 @@ namespace boneSigils.cards
 	{
 		public static void AddCard()
 		{
-			string name = "Void_Angler_Lure";
+			string name = "void_Angler_Lure";
 			string displayName = "Broken Lure";
 			string description = "A Lure pulled from an angler.";
 			int baseAttack = 0;
@@ -65,7 +52,7 @@ namespace boneSigils.cards
 				energyCost: energyCost
 				);
 			newCard.description = description;
-			CardManager.Add(newCard);
+			CardManager.Add("void", newCard);
 		}
 	}
 }

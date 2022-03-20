@@ -10,7 +10,7 @@ namespace boneSigils.cards
 		public static readonly Ability CustomAbility1 = InscryptionAPI.Guid.GuidManager.GetEnumValue<Ability>("extraVoid.inscryption.voidSigils", "Lure");
 		public static void AddCard()
 		{
-			string name = "Void_Bear";
+			string name = "void_Bear";
 			string displayName = "Kodiak";
 			string description = "A bear that is an expert scavanger and fisher.";
 			int baseAttack = 3;
@@ -26,6 +26,7 @@ namespace boneSigils.cards
 			List<Tribe> Tribes = new List<Tribe>();
 
 			List<Ability> Abilities = new List<Ability>();
+			Abilities.Add(CustomAbility1);
 
 			List<Trait> Traits = new List<Trait>();
 			Traits.Add(Trait.Bear);
@@ -54,7 +55,7 @@ namespace boneSigils.cards
 				energyCost: energyCost
 				);
 			newCard.description = description;
-			CardManager.Add(newCard);
+			CardManager.Add("void", newCard);
 		}
 	}
 }

@@ -7,14 +7,13 @@ namespace boneSigils.cards
 {
 	public static class Cow_Dairy
 	{
-		public static readonly Ability CustomAbility1 = InscryptionAPI.Guid.GuidManager.GetEnumValue<Ability>("extraVoid.inscryption.voidSigils", "Nutritious");
 		public static void AddCard()
 		{
 			string name = "void_Cow_Dairy";
 			string displayName = "Dairy Cow";
 			string description = "A cow fit for slaughter.";
 			int baseAttack = 0;
-			int baseHealth = 3;
+			int baseHealth = 2;
 			int bloodCost = 0;
 			int boneCost = 4;
 			int energyCost = 0;
@@ -58,7 +57,7 @@ namespace boneSigils.cards
 			newCard.SetIceCube("void_Cow_Skul");
 			newCard.appearanceBehaviour.Add(CardAppearanceBehaviour.Appearance.RareCardBackground);
 			newCard.description = description;
-			CardManager.Add(newCard);
+			CardManager.Add("void", newCard);
 		}
 	}
 }

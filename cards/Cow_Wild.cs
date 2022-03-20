@@ -31,10 +31,6 @@ namespace boneSigils.cards
 
 			List<Trait> Traits = new List<Trait>();
 
-
-			List<SpecialTriggeredAbility> specialAbilities = new List<SpecialTriggeredAbility>();
-			List<CardAppearanceBehaviour.Appearance> appearanceBehaviour = new List<CardAppearanceBehaviour.Appearance>();
-
 			Texture2D DefaultTexture = SigilUtils.GetTextureFromPath("Artwork/void_cow_wild.png");
 			Texture2D eTexture = SigilUtils.GetTextureFromPath("Artwork/void_cow_wild_e.png");
 
@@ -56,7 +52,7 @@ namespace boneSigils.cards
 				);
 			newCard.SetIceCube("void_Cow_Skul");
 			newCard.description = description;
-			CardManager.Add(newCard);
+			CardManager.Add("void", newCard);
 		}
 	}
 }

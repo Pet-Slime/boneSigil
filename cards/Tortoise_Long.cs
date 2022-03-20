@@ -7,14 +7,14 @@ namespace boneSigils.cards
 {
 	public static class Tortoise_Long
 	{
-		public static readonly Ability CustomAbility1 = InscryptionAPI.Guid.GuidManager.GetEnumValue<Ability>("extraVoid.inscryption.voidSigils", "Thick Shell");
+		public static readonly Ability CustomAbility1 = InscryptionAPI.Guid.GuidManager.GetEnumValue<Ability>("extraVoid.inscryption.voidSigils", "Electric");
 		public static void AddCard()
 		{
 			string name = "void_Tortoise_Long";
 			string displayName = "Giant Tortoise";
 			string description = "A giant tortoise, with a neck that could stretch.";
-			int baseAttack = 2;
-			int baseHealth = 8;
+			int baseAttack = 1;
+			int baseHealth = 7;
 			int bloodCost = 1;
 			int boneCost = 9;
 			int energyCost = 0;
@@ -29,6 +29,10 @@ namespace boneSigils.cards
 			List<Ability> Abilities = new List<Ability>();
 			Abilities.Add(Ability.Reach);
 			Abilities.Add(CustomAbility1);
+
+
+			bloodCost = 0;
+			boneCost = 0;
 
 			List<Trait> Traits = new List<Trait>();
 
@@ -52,7 +56,7 @@ namespace boneSigils.cards
 				energyCost: energyCost
 				);
 			newCard.description = description;
-			CardManager.Add(newCard);
+			CardManager.Add("void", newCard);
 		}
 	}
 }

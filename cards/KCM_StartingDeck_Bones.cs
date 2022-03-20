@@ -1,12 +1,10 @@
 ﻿using HarmonyLib;
 using DiskCardGame;
-using InscryptionAPI.Saves;
-using System.Linq;
-using System;
-using System.Collections.Generic;
+using InscryptionAPI.Card;
 using UnityEngine;
 using InscryptionAPI.Ascension;
 using InscryptionAPI.Helpers;
+using Resources = boneSigils.Artwork.Resources;
 
 
 namespace boneSigils.cards
@@ -16,6 +14,24 @@ namespace boneSigils.cards
         public static void AddStartingDeck()
         {
 
+
+            Texture2D tex_a1 = SigilUtils.LoadTextureFromResource(Resources.void_KCM_starter_PureBone);
+            Texture2D tex_a2 = SigilUtils.LoadTextureFromResource(Resources.void_KCM_starter_TrapperToys);
+
+            StarterDeckInfo PureBone = ScriptableObject.CreateInstance<StarterDeckInfo>();
+            PureBone.title = "Pure Bone";
+            PureBone.iconSprite = TextureHelper.ConvertTexture(tex_a1, TextureHelper.SpriteType.StarterDeckIcon);
+            PureBone.cards = new() { CardLoader.GetCardByName("void_Axolotl"), CardLoader.GetCardByName("void_Beetle_Larva"), CardLoader.GetCardByName("void_Owl_Familiar") };
+
+            StarterDeckManager.Add(Plugin.PluginGuid, PureBone);
+
+
+            StarterDeckInfo TrapperToys = ScriptableObject.CreateInstance<StarterDeckInfo>();
+            TrapperToys.title = "Trapper's Toys";
+            TrapperToys.iconSprite = TextureHelper.ConvertTexture(tex_a2, TextureHelper.SpriteType.StarterDeckIcon);
+            TrapperToys.cards = new() { CardLoader.GetCardByName("TrapFrog"), CardLoader.GetCardByName("void_Mole"), CardLoader.GetCardByName("void_Tortoise_Bell_Broken") };
+
+            StarterDeckManager.Add(Plugin.PluginGuid, TrapperToys);
         }
     }
 }

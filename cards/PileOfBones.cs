@@ -52,7 +52,7 @@ namespace boneSigils.cards
 				);
 			newCard.description = description;
 			newCard.SetTerrain();
-			CardManager.Add(newCard);
+			CardManager.Add("void", newCard);
 		}
 	}
 }

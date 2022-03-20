@@ -17,8 +17,8 @@ namespace boneSigils
 			const string rulebookDescription = "[creature] will become a random beetle after 3 turns.";
 			const string LearnDialogue = "What Beetle will it turn into?";
 			Texture2D tex_a1 = SigilUtils.LoadTextureFromResource(Resources.ability_pupate_3);
-			Texture2D tex_a2 = SigilUtils.LoadTextureFromResource(Resources.ability_pupate_3);
-			int powerlevel = -2;
+			Texture2D tex_a2 = SigilUtils.LoadTextureFromResource(Resources.ability_pupate_3_a2);
+			int powerlevel = -3;
 			bool LeshyUsable = false;
 			bool part1Shops = true;
 			bool canStack = false;

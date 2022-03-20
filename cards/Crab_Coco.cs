@@ -14,7 +14,7 @@ namespace boneSigils.cards
 			string displayName = "Coconut Crab";
 			string description = "The Coconut crab has a thick shell, and sharp claws to boot.";
 			int baseAttack = 1;
-			int baseHealth = 4;
+			int baseHealth = 3;
 			int bloodCost = 1;
 			int boneCost = 6;
 			int energyCost = 0;
@@ -52,7 +52,7 @@ namespace boneSigils.cards
 				);
 			newCard.SetTail("void_Crab_Leg");
 			newCard.description = description;
-			CardManager.Add(newCard);
+			CardManager.Add("void", newCard);
 		}
 	}
 }

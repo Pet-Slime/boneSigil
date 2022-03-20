@@ -103,9 +103,39 @@ namespace boneSigils.Artwork {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
+        internal static byte[] ability_pupate_3_a2 {
+            get {
+                object obj = ResourceManager.GetObject("ability_pupate_3_a2", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
         internal static byte[] void_feather {
             get {
                 object obj = ResourceManager.GetObject("void_feather", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] void_KCM_starter_PureBone {
+            get {
+                object obj = ResourceManager.GetObject("void_KCM_starter_PureBone", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] void_KCM_starter_TrapperToys {
+            get {
+                object obj = ResourceManager.GetObject("void_KCM_starter_TrapperToys", resourceCulture);
                 return ((byte[])(obj));
             }
         }

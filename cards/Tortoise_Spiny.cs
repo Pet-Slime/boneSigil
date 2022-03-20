@@ -14,9 +14,9 @@ namespace boneSigils.cards
 			string displayName = "Spiny Turtle";
 			string description = "A hard shell with spikes to boot.";
 			int baseAttack = 1;
-			int baseHealth = 6;
+			int baseHealth = 5;
 			int bloodCost = 1;
-			int boneCost = 6;
+			int boneCost = 5;
 			int energyCost = 0;
 
 			List<CardMetaCategory> metaCategories = new List<CardMetaCategory>();
@@ -52,7 +52,7 @@ namespace boneSigils.cards
 				energyCost: energyCost
 				);
 			newCard.description = description;
-			CardManager.Add(newCard);
+			CardManager.Add("void", newCard);
 		}
 	}
 }

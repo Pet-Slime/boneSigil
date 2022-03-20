@@ -51,7 +51,7 @@ namespace boneSigils.cards
 				);
 			newCard.SetEvolve("Void_Vulture", 2);
 			newCard.description = description;
-			CardManager.Add(newCard);
+			CardManager.Add("void", newCard);
 		}
 	}
 }

@@ -28,6 +28,7 @@ namespace boneSigils.cards
 
 			List<Ability> Abilities = new List<Ability>();
 			Abilities.Add(Ability.Evolve);
+			Abilities.Add(CustomAbility1);
 
 			List<Trait> Traits = new List<Trait>();
 
@@ -57,7 +58,7 @@ namespace boneSigils.cards
 			newCard.SetIceCube("void_Cow_Skul");
 			newCard.SetEvolve("void_Cow_Skul", 2);
 			newCard.description = description;
-			CardManager.Add(newCard);
+			CardManager.Add("void", newCard);
 		}
 	}
 }

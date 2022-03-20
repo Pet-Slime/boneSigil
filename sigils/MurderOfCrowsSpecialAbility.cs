@@ -12,7 +12,6 @@ namespace boneSigils
 
 		public static SpecialTriggeredAbility specialAbility;
 
-		public readonly static SpecialTriggeredAbility TestSpecialAbility = SpecialTriggeredAbilityManager.Add(Plugin.PluginGuid, "Crow Murder", typeof(MurderOfCrowsSpecialAbility)).Id;
 
 
 

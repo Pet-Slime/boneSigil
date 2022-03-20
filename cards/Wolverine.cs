@@ -14,7 +14,7 @@ namespace boneSigils.cards
 			string displayName = "Hungry Wolverine";
 			string description = "Tenacious creatures, that can help you find bones.";
 			int baseAttack = 0;
-			int baseHealth = 4;
+			int baseHealth = 3;
 			int bloodCost = 0;
 			int boneCost = 4;
 			int energyCost = 0;
@@ -27,6 +27,7 @@ namespace boneSigils.cards
 
 			List<Ability> Abilities = new List<Ability>();
 			Abilities.Add(Ability.BoneDigger);
+			Abilities.Add(CustomAbility1);
 
 			List<Trait> Traits = new List<Trait>();
 			Traits.Add(Trait.KillsSurvivors);
@@ -55,7 +56,7 @@ namespace boneSigils.cards
 				energyCost: energyCost
 				);
 			newCard.description = description;
-			CardManager.Add(newCard);
+			CardManager.Add("void", newCard);
 		}
 	}
 }

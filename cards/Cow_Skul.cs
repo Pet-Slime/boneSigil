@@ -14,7 +14,7 @@ namespace boneSigils.cards
 			string displayName = "Cow Skeleton";
 			string description = "Not much left.";
 			int baseAttack = 0;
-			int baseHealth = 3;
+			int baseHealth = 2;
 			int bloodCost = 0;
 			int boneCost = 0;
 			int energyCost = 0;
@@ -25,14 +25,11 @@ namespace boneSigils.cards
 			Tribes.Add(Tribe.Hooved);
 
 			List<Ability> Abilities = new List<Ability>();
+			Abilities.Add(CustomAbility1);
 
 			List<Trait> Traits = new List<Trait>();
 			Traits.Add(Trait.Terrain);
 			Traits.Add(Trait.Undead);
-
-			List<SpecialTriggeredAbility> specialAbilities = new List<SpecialTriggeredAbility>();
-
-			List<CardAppearanceBehaviour.Appearance> appearanceBehaviour = new List<CardAppearanceBehaviour.Appearance>();
 
 			Texture2D DefaultTexture = SigilUtils.GetTextureFromPath("Artwork/Void_Cow_Skul.png");
 			Texture2D eTexture = SigilUtils.GetTextureFromPath("Artwork/Void_Cow_Skul_e.png");
@@ -54,7 +51,7 @@ namespace boneSigils.cards
 				energyCost: energyCost
 				);
 			newCard.description = description;
-			CardManager.Add(newCard);
+			CardManager.Add("void", newCard);
 		}
 	}
 }

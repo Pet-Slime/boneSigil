@@ -8,7 +8,6 @@ namespace boneSigils.cards
 	public static class Wolf
 	{
 		public static readonly Ability CustomAbility1 = InscryptionAPI.Guid.GuidManager.GetEnumValue<Ability>("extraVoid.inscryption.voidSigils", "Tribal Tutor");
-		public static readonly Ability CustomAbility2 = InscryptionAPI.Guid.GuidManager.GetEnumValue<Ability>("extraVoid.inscryption.voidSigils", "Tribe Attack");
 		public static void AddCard()
 		{
 			string name = "void_Wolf";
@@ -28,6 +27,7 @@ namespace boneSigils.cards
 			Tribes.Add(Tribe.Canine);
 
 			List<Ability> Abilities = new List<Ability>();
+			Abilities.Add(CustomAbility1);
 
 			List<Trait> Traits = new List<Trait>();
 
@@ -55,7 +55,7 @@ namespace boneSigils.cards
 				energyCost: energyCost
 				);
 			newCard.description = description;
-			CardManager.Add(newCard);
+			CardManager.Add("void", newCard);
 		}
 	}
 }

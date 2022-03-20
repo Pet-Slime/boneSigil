@@ -11,7 +11,7 @@ namespace boneSigils.cards
 
 		public static void AddCard()
 		{
-			string name = "Void_Axolotl";
+			string name = "void_Axolotl";
 			string displayName = "Undead Axolotl";
 			string description = "Undead here? How... Her world must be leaking in...";
 			int baseAttack = 0;
@@ -67,7 +67,7 @@ namespace boneSigils.cards
 				energyCost: energyCost
 				);
 			newCard.description = description;
-			CardManager.Add(newCard);
+			CardManager.Add("void", newCard);
 		}
 	}
 }

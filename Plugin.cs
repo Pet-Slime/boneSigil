@@ -5,7 +5,7 @@ using HarmonyLib;
 using boneSigils.cards;
 using BepInEx.Configuration;
 using InscryptionAPI.Card;
-
+using System;
 
 namespace boneSigils
 {
@@ -61,7 +61,6 @@ namespace boneSigils
 			AddDrawWasp();
 			AddPupate();
 			AddSigilsToBook();
-			MurderOfCrowsSpecialAbility.specialAbility = SpecialTriggeredAbilityManager.Add(Plugin.PluginGuid, "Crow Murder", typeof(MurderOfCrowsSpecialAbility)).Id;
 			MurderOfCrowsSpecialAbility.specialAbility = SpecialTriggeredAbilityManager.Add(Plugin.PluginGuid, "Crow Murder", typeof(MurderOfCrowsSpecialAbility)).Id;
 			DairyCowSpecialAbility.specialAbility = SpecialTriggeredAbilityManager.Add(Plugin.PluginGuid, "Fresh Steak", typeof(DairyCowSpecialAbility)).Id;
 
@@ -131,6 +130,12 @@ namespace boneSigils
 			{
 				Point_Cost_Mode.AddCard();
 			}
+
+			KCM_StartingDeck_Bones.AddStartingDeck();
+
+			Vanilla_Tweaks.TryCreatePack();
+
+
 			//Encounters
 
 			if (configBeetleRush.Value)

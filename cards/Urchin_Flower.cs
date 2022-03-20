@@ -5,17 +5,18 @@ using InscryptionAPI.Card;
 
 namespace boneSigils.cards
 {
-	public static class Serpent_Jade
+	public static class Urchin_Flower
 	{
+		public static readonly Ability CustomAbility1 = InscryptionAPI.Guid.GuidManager.GetEnumValue<Ability>("extraVoid.inscryption.voidSigils", "Deadly Waters");
 		public static void AddCard()
 		{
-			string name = "void_Jade_Serpent";
-			string displayName = "Jade Serpent";
-			string description = "A serpent who's scales shimmer like jade.";
-			int baseAttack = 3;
+			string name = "void_Urchin_Flower";
+			string displayName = "Flower Urchin";
+			string description = "Becareful where you step when going over water.";
+			int baseAttack = 1;
 			int baseHealth = 1;
 			int bloodCost = 0;
-			int boneCost = 6;
+			int boneCost = 7;
 			int energyCost = 0;
 
 			List<CardMetaCategory> metaCategories = new List<CardMetaCategory>();
@@ -23,16 +24,15 @@ namespace boneSigils.cards
 			metaCategories.Add(CardMetaCategory.ChoiceNode);
 
 			List<Tribe> Tribes = new List<Tribe>();
-			Tribes.Add(Tribe.Reptile);
 
 			List<Ability> Abilities = new List<Ability>();
-			Abilities.Add(Ability.GainGemGreen);
+			Abilities.Add(CustomAbility1);
+			Abilities.Add(Ability.Submerge);
 
 			List<Trait> Traits = new List<Trait>();
-			Traits.Add(Trait.Gem);
 
-			Texture2D DefaultTexture = SigilUtils.GetTextureFromPath("Artwork/Void_Jade_Serpent.png");
-			Texture2D eTexture = SigilUtils.GetTextureFromPath("Artwork/Void_Jade_Serpent_e.png");
+			Texture2D DefaultTexture = SigilUtils.GetTextureFromPath("Artwork/void_urchin_flower.png");
+			Texture2D eTexture = SigilUtils.GetTextureFromPath("Artwork/void_urchin_flower_e.png");
 
 			CardInfo newCard = SigilUtils.CreateCardWithDefaultSettings(
 				InternalName: name,

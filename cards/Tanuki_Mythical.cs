@@ -10,7 +10,7 @@ namespace boneSigils.cards
 		public static readonly Ability CustomAbility1 = InscryptionAPI.Guid.GuidManager.GetEnumValue<Ability>("extraVoid.inscryption.voidSigils", "Thief");
 		public static void AddCard()
 		{
-			string name = "void_tanuki_mythical";
+			string name = "void_Tanuki_Mythical";
 			string displayName = "Mythical Tanuki";
 			string description = "The crafty tanuki, who can steal anything from any beast.";
 			int baseAttack = 2;
@@ -27,7 +27,8 @@ namespace boneSigils.cards
 			Tribes.Add(Tribe.Canine);
 
 			List<Ability> Abilities = new List<Ability>();
-			Abilities.Add(Ability.BoneDigger);
+			Abilities.Add(Ability.OpponentBones);
+			Abilities.Add(CustomAbility1);
 
 			List<Trait> Traits = new List<Trait>();
 
@@ -51,7 +52,7 @@ namespace boneSigils.cards
 				energyCost: energyCost
 				);
 			newCard.description = description;
-			CardManager.Add(newCard);
+			CardManager.Add("void", newCard);
 		}
 	}
 }

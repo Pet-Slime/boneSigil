@@ -130,8 +130,17 @@
   <data name="ability_pupate_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>ability_pupate_3.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="ability_pupate_3_a2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>ability_pupate_3_a2.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="void_feather" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>void_feather.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="void_KCM_starter_PureBone" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\void_KCM_starter_PureBone.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="void_KCM_starter_TrapperToys" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\void_KCM_starter_TrapperToys.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="void_steak_ability" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>void_steak_ability.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
