@@ -16,9 +16,6 @@ namespace boneSigils
             SpecialTriggeredAbility DairySpecialAbility = SpecialTriggeredAbilityManager.Add(Plugin.PluginGuid, "Fresh Steak", typeof(DairyCowSpecialAbility)).Id;
         }
 
-
-
-
         public override bool RespondsToDie(bool wasSacrifice, PlayableCard killer)
         {
             return base.PlayableCard.OnBoard;

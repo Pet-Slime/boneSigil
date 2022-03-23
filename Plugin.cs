@@ -101,7 +101,6 @@ namespace boneSigils
 			Ruby_Creature.AddCard();
 			Salmon.AddCard();
 			Scrap.AddCard();
-			Urchin_Sea.AddCard();
 			Serpent_Jade.AddCard();
 			Steak.AddCard();
 			Stinkbug.AddCard();
@@ -113,6 +112,9 @@ namespace boneSigils
 			Tortoise_Long.AddCard();
 			Tortoise_Small.AddCard();
 			Tortoise_Spiny.AddCard();
+			Urchin_Flower.AddCard();
+			Urchin_LongSpine.AddCard();
+			Urchin_Sea.AddCard();
 			Vulture.AddCard();
 			WaspSwarm.AddCard();
 			Wolf.AddCard();
@@ -140,18 +142,23 @@ namespace boneSigils
 
 			if (configBeetleRush.Value)
 			{
+				Encounters.BeetleRush.AddEncounter();
 			}
 			if (configBullRush.Value)
 			{
+				Encounters.Bulls.AddEncounter();
 			}
 			if (configCrabRush.Value)
 			{
+				Encounters.Crabs.AddEncounter();
 			}
 			if (configReptileKing.Value)
 			{
+				Encounters.ReptileKing.AddEncounter();
 			}
 			if (configBeaverStall.Value)
 			{
+				boneSigils.Encounters.BeaverStall.AddEncounter();
 			}
 		}
 	}

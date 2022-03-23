@@ -10,7 +10,7 @@ namespace boneSigils.cards
 		public static readonly Ability CustomAbility1 = InscryptionAPI.Guid.GuidManager.GetEnumValue<Ability>("extraVoid.inscryption.voidSigils", "Ram");
 		public static void AddCard()
 		{
-			string name = "Void_Rhino_beetle";
+			string name = "void_Rhino_beetle";
 			string displayName = "Rhino Beetle";
 			string description = "A large insect that can push more than it's weight with the horn it has.";
 			int baseAttack = 2;

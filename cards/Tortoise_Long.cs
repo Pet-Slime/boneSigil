@@ -7,7 +7,7 @@ namespace boneSigils.cards
 {
 	public static class Tortoise_Long
 	{
-		public static readonly Ability CustomAbility1 = InscryptionAPI.Guid.GuidManager.GetEnumValue<Ability>("extraVoid.inscryption.voidSigils", "Electric");
+		public static readonly Ability CustomAbility1 = InscryptionAPI.Guid.GuidManager.GetEnumValue<Ability>("extraVoid.inscryption.voidSigils", "Thick Shell");
 		public static void AddCard()
 		{
 			string name = "void_Tortoise_Long";

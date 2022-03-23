@@ -2,11 +2,13 @@
 using DiskCardGame;
 using UnityEngine;
 using InscryptionAPI.Card;
+using InscryptionAPI.Guid;
 
 namespace boneSigils.cards
 {
 	public static class Tanuki_Pup
 	{
+		public static readonly CardMetaCategory SIDE_DECK_CATEGORY = GuidManager.GetEnumValue<CardMetaCategory>("zorro.inscryption.infiniscryption.sidedecks", "SideDeck");
 		public static void AddCard()
 		{
 			string name = "void_Tanuki_pup";
@@ -28,6 +30,7 @@ namespace boneSigils.cards
 			} else
 			{
 				Plugin.Log.LogMessage("Found side decks, removing tanuki pups from the default pools");
+				metaCategories.Add(SIDE_DECK_CATEGORY);
 			}
 
 			List<Tribe> Tribes = new List<Tribe>();
@@ -37,7 +40,7 @@ namespace boneSigils.cards
 			Abilities.Add(Ability.OpponentBones);
 			Abilities.Add(Ability.Evolve);
 
-			List<Trait> Traits = new List<Trait> { (Trait)5103 };
+			List<Trait> Traits = new List<Trait>();
 
 			Texture2D DefaultTexture = SigilUtils.GetTextureFromPath("Artwork/Void_Tanuki_Pup.png");
 			Texture2D pixelTexture = SigilUtils.GetTextureFromPath("Artwork/pixelportrait_tanuki.png");
@@ -60,7 +63,7 @@ namespace boneSigils.cards
 				energyCost: energyCost
 				);
 			newCard.description = description;
-			newCard.SetEvolve("void_Tanuki", 1);
+			newCard.SetEvolve("void_Tanuki", 3);
 			CardManager.Add("void", newCard);
 		}
 	}
