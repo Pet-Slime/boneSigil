@@ -49,7 +49,7 @@ namespace boneSigils.Encounters
             List<EncounterBlueprintData.CardBlueprint> turn_2 = new List<EncounterBlueprintData.CardBlueprint>();
             turn_2.Add(new EncounterBlueprintData.CardBlueprint
             {
-                card = CardLoader.GetCardByName("void_crab_leg"),
+                card = CardLoader.GetCardByName("void_Crab_Leg"),
                 difficultyReplace = true,
                 difficultyReq = 18,
                 replacement = CardLoader.GetCardByName("void_Crab_Fiddler"),
@@ -57,7 +57,7 @@ namespace boneSigils.Encounters
             });
             turn_2.Add(new EncounterBlueprintData.CardBlueprint
             {
-                card = CardLoader.GetCardByName("void_crab_leg"),
+                card = CardLoader.GetCardByName("void_Crab_Leg"),
                 difficultyReplace = true,
                 difficultyReq = 13,
                 replacement = CardLoader.GetCardByName("void_Crab_Coco"),
@@ -69,7 +69,7 @@ namespace boneSigils.Encounters
             List<EncounterBlueprintData.CardBlueprint> turn_4 = new List<EncounterBlueprintData.CardBlueprint>();
             turn_4.Add(new EncounterBlueprintData.CardBlueprint
             {
-                card = CardLoader.GetCardByName("void_crab_leg"),
+                card = CardLoader.GetCardByName("void_Crab_Leg"),
                 difficultyReplace = true,
                 difficultyReq = 18,
                 replacement = CardLoader.GetCardByName("void_Crab_Fiddler"),

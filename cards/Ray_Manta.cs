@@ -5,35 +5,33 @@ using InscryptionAPI.Card;
 
 namespace boneSigils.cards
 {
-	public static class Tortoise_Long
+	public static class Ray_Manta
 	{
-		public static readonly Ability CustomAbility1 = InscryptionAPI.Guid.GuidManager.GetEnumValue<Ability>("extraVoid.inscryption.voidSigils", "Thick Shell");
+		public static readonly Ability CustomAbility1 = InscryptionAPI.Guid.GuidManager.GetEnumValue<Ability>("extraVoid.inscryption.voidSigils", "Turbulent Waters");
 		public static void AddCard()
 		{
-			string name = "void_Tortoise_Long";
-			string displayName = "Giant Tortoise";
-			string description = "A giant tortoise, with a neck that could stretch.";
+			string name = "void_Ray_Manta";
+			string displayName = "Manta Ray";
+			string description = "The largest of the rays, they swim together in circles, causing rough waters for other aquatic life.";
 			int baseAttack = 1;
-			int baseHealth = 7;
-			int bloodCost = 1;
-			int boneCost = 9;
+			int baseHealth = 2;
+			int bloodCost = 0;
+			int boneCost = 6;
 			int energyCost = 0;
-
 			List<CardMetaCategory> metaCategories = new List<CardMetaCategory>();
-			metaCategories.Add(CardMetaCategory.ChoiceNode);
 			metaCategories.Add(CardMetaCategory.TraderOffer);
+			metaCategories.Add(CardMetaCategory.ChoiceNode);
 
 			List<Tribe> Tribes = new List<Tribe>();
-			Tribes.Add(Tribe.Reptile);
 
 			List<Ability> Abilities = new List<Ability>();
-			Abilities.Add(Ability.Reach);
 			Abilities.Add(CustomAbility1);
+			Abilities.Add(Ability.Submerge);
 
 			List<Trait> Traits = new List<Trait>();
 
-			Texture2D DefaultTexture = SigilUtils.GetTextureFromPath("Artwork/void_tortoise_long.png");
-			Texture2D eTexture = SigilUtils.GetTextureFromPath("Artwork/void_tortoise_long_e.png");
+			Texture2D DefaultTexture = SigilUtils.GetTextureFromPath("Artwork/void_ray_manta.png");
+			Texture2D eTexture = SigilUtils.GetTextureFromPath("Artwork/void_ray_manta_e.png");
 
 			CardInfo newCard = SigilUtils.CreateCardWithDefaultSettings(
 				InternalName: name,

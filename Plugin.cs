@@ -15,6 +15,7 @@ namespace boneSigils
 	[BepInDependency(StarterdeckGUID, BepInDependency.DependencyFlags.SoftDependency)]
 	[BepInDependency("extraVoid.inscryption.LifeCost", BepInDependency.DependencyFlags.SoftDependency)]
 	[BepInDependency("org.memez4life.inscryption.customsigils", BepInDependency.DependencyFlags.SoftDependency)]
+
 	public partial class Plugin : BaseUnityPlugin
 	{
 		public const string APIGUID = "cyantist.inscryption.api";
@@ -97,6 +98,7 @@ namespace boneSigils
 			Owl_Familiar.AddCard();
 			PileOfBones.AddCard();
 			Rabbit.AddCard();
+			Ray_Manta.AddCard();
 			Ray_Torpedo.AddCard();
 			Ruby_Creature.AddCard();
 			Salmon.AddCard();
