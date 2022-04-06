@@ -5,18 +5,20 @@ using InscryptionAPI.Card;
 
 namespace boneSigils.cards
 {
-	public static class Crab_Spider
+	public static class Mouse_Scared
 	{
-		public static readonly Ability CustomAbility1 = InscryptionAPI.Guid.GuidManager.GetEnumValue<Ability>("extraVoid.inscryption.voidSigils", "Thick Shell");
+
+		public static readonly Ability CustomAbility = InscryptionAPI.Guid.GuidManager.GetEnumValue<Ability>("extraVoid.inscryption.voidSigils", "Stampede");
+
 		public static void AddCard()
 		{
-			string name = "void_Crab_Spider";
-			string displayName = "Spider Crab";
-			string description = "A crab with long, easy to grab legs.";
-			int baseAttack = 2;
-			int baseHealth = 2;
-			int bloodCost = 1;
-			int boneCost = 6;
+			string name = "void_Scared_Mouse";
+			string displayName = "Scared Mouse";
+			string description = "A frightened mouse, causing a panic. What's the worse it can do?";
+			int baseAttack = 0;
+			int baseHealth = 1;
+			int bloodCost = 0;
+			int boneCost = 4;
 			int energyCost = 0;
 
 			List<CardMetaCategory> metaCategories = new List<CardMetaCategory>();
@@ -26,13 +28,12 @@ namespace boneSigils.cards
 			List<Tribe> Tribes = new List<Tribe>();
 
 			List<Ability> Abilities = new List<Ability>();
-			Abilities.Add(Ability.TailOnHit);
-			Abilities.Add(CustomAbility1);
+			Abilities.Add(CustomAbility);
 
 			List<Trait> Traits = new List<Trait>();
 
-			Texture2D DefaultTexture = SigilUtils.GetTextureFromPath("Artwork/Void_Crab_Spider.png");
-			Texture2D eTexture = SigilUtils.GetTextureFromPath("Artwork/Void_Crab_Spider_e.png");
+			Texture2D DefaultTexture = SigilUtils.GetTextureFromPath("Artwork/void_Scared_Mouse.png");
+			Texture2D eTexture = SigilUtils.GetTextureFromPath("Artwork/void_Scared_Mouse_e.png");
 
 			CardInfo newCard = SigilUtils.CreateCardWithDefaultSettings(
 				InternalName: name,
@@ -50,7 +51,6 @@ namespace boneSigils.cards
 				boneCost: boneCost,
 				energyCost: energyCost
 				);
-			newCard.SetTail("void_Crab_Leg", null, null);
 			newCard.description = description;
 			CardManager.Add("void", newCard);
 		}

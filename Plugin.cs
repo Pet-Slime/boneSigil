@@ -6,6 +6,7 @@ using boneSigils.cards;
 using BepInEx.Configuration;
 using InscryptionAPI.Card;
 using System;
+using UnityEngine;
 
 namespace boneSigils
 {
@@ -93,6 +94,7 @@ namespace boneSigils
 			Egg.AddCard();
 			Enchidna.AddCard();
 			Giraffe.AddCard();
+			Mouse_Scared.AddCard();
 			Mantis_Shrimp.AddCard();
 			MurderOfCrows.AddCard();
 			Owl_Familiar.AddCard();

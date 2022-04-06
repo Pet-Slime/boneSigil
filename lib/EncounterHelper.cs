@@ -14,9 +14,7 @@ namespace boneSigils
         public static EncounterBlueprintData BuildBlueprint(string name, List<Tribe> tribes, List<Ability> redundant, bool regionLocked, int minDifficulty, int maxDifficulty,
             List<CardInfo> randomReplacementCards, List<List<EncounterBlueprintData.CardBlueprint>> blueprintTurns)
         {
-
-
-                var blueprint = ScriptableObject.CreateInstance<EncounterBlueprintData>();
+            var blueprint = ScriptableObject.CreateInstance<EncounterBlueprintData>();
             blueprint.name = name;
             blueprint.regionSpecific = regionLocked;
             blueprint.SetDifficulty(minDifficulty, maxDifficulty);
@@ -50,6 +48,21 @@ namespace boneSigils
             return region;
         }
 
+
+        public static EncounterBlueprintData GetBlueprintData(string EncounterName)
+        {
+            EncounterBlueprintData Encounter = InscryptionAPI.Encounters.EncounterManager.BaseGameEncounters[0];
+
+            for (var index = 0; index < InscryptionAPI.Encounters.EncounterManager.BaseGameEncounters.Count; index++)
+            {
+                if (InscryptionAPI.Encounters.EncounterManager.BaseGameEncounters[index].name == EncounterName)
+                {
+                    Encounter = InscryptionAPI.Encounters.EncounterManager.BaseGameEncounters[index];
+                }
+            }
+
+            return Encounter;
+        }
 
 
         public static List<CardInfo> AddRandomCards(string turn1 = "none", string turn2 = "none", string turn3 = "none", string turn4 = "none", string turn5 = "none", string turn6 = "none", string turn7 = "none", string turn8 = "none", string turn9 = "none")

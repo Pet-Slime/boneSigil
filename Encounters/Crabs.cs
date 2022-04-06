@@ -88,11 +88,13 @@ namespace boneSigils.Encounters
             turns.Add(turn_5);
 
             var encounter = boneSigils.EncounterHelper.BuildBlueprint(name, dominate, redundant, regionLocked, 0, 30, randomReplacements, turns);
-
+            CarbEncounter = encounter;
             EncounterManager.Add(encounter);
 
             InscryptionAPI.Regions.RegionExtensions.AddEncounters(EncounterHelper.GetRegionData(regionName), encounter);
 
         }
+
+        public static EncounterBlueprintData CarbEncounter;
     }
 }

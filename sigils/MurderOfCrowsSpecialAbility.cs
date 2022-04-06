@@ -29,8 +29,7 @@ namespace boneSigils
 			List<CardSlot> PLCards = Singleton<BoardManager>.Instance.GetSlots(true);
 			crows.Anim.StrongNegationEffect();
 			crows.Anim.PlaySacrificeParticles();
-			int num;
-			for (int i = 0; i < OPCards.Count; i = num + 1)
+			for (int i = 0; i < OPCards.Count; i++)
 			{
 				bool flag = OPCards[i].Card != null;
 				if (flag)
@@ -49,7 +48,7 @@ namespace boneSigils
 						bool flag3 = slot.Card == null;
 						if (flag3)
 						{
-							PlayableCard murdered = CardSpawner.SpawnPlayableCard(CardLoader.GetCardByName("Void_PileOfBones"));
+							PlayableCard murdered = CardSpawner.SpawnPlayableCard(CardLoader.GetCardByName("void_PileOfBones"));
 							yield return Singleton<BoardManager>.Instance.ResolveCardOnBoard(murdered, slot, 0.1f, null, true);
 							murdered = null;
 						}
@@ -57,9 +56,8 @@ namespace boneSigils
 					target = null;
 					slot = null;
 				}
-				num = i;
 			}
-			for (int j = 0; j < PLCards.Count; j = num + 1)
+			for (int j = 0; j < PLCards.Count; j++)
 			{
 				bool flag4 = PLCards[j].Card != null;
 				if (flag4)
@@ -78,7 +76,7 @@ namespace boneSigils
 						bool flag6 = slot2.Card == null;
 						if (flag6)
 						{
-							PlayableCard murdered2 = CardSpawner.SpawnPlayableCard(CardLoader.GetCardByName("Void_PileOfBones"));
+							PlayableCard murdered2 = CardSpawner.SpawnPlayableCard(CardLoader.GetCardByName("void_PileOfBones"));
 							yield return Singleton<BoardManager>.Instance.ResolveCardOnBoard(murdered2, slot2, 0.1f, null, true);
 							murdered2 = null;
 						}
@@ -86,7 +84,6 @@ namespace boneSigils
 					target2 = null;
 					slot2 = null;
 				}
-				num = j;
 			}
 			yield return new WaitForSeconds(0.2f);
 			Singleton<ViewManager>.Instance.Controller.LockState = ViewLockState.Unlocked;

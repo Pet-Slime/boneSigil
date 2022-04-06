@@ -47,10 +47,10 @@ namespace boneSigils
 		{
 			List<string> list = new List<string>
 			{
-			"Void_Beetle",
-			"Void_Beetle_Bombardier",
-			"Void_Rino_beetle",
-			"Void_Scarab_Jewel"
+			"void_Beetle_Carrion",
+			"void_Rhino_beetle",
+			"void_Scarab_Jewel",
+			"void_Beetle_Bombardier"
 			};
 
 			if (count == 0)

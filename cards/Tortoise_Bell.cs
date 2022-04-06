@@ -53,8 +53,8 @@ namespace boneSigils.cards
 			newCard.description = description;
 			newCard.SetIceCube("void_Tortoise_Bell_Broken");
 			newCard.SetTail("void_Scrap", tailTexture);
-			newCard.SetTerrain();
 			newCard.appearanceBehaviour.Add(CardAppearanceBehaviour.Appearance.GoldEmission);
+			newCard.appearanceBehaviour.Add(CardAppearanceBehaviour.Appearance.TerrainBackground);
 			newCard.specialStatIcon = SpecialStatIcon.Bell;
 			newCard.specialAbilities.Add(SpecialTriggeredAbility.BellProximity);
 			CardManager.Add("void", newCard);
