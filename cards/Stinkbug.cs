@@ -2,77 +2,44 @@
 using DiskCardGame;
 using UnityEngine;
 using APIPlugin;
+using boneSigils.Managers;
+using InscryptionAPI.Card;
+using InscryptionAPI.Guid;
 
 namespace boneSigils.cards
 {
-	public static class Stinkbug
-	{
-		public static void AddCard()
-		{
-
-			List<CardMetaCategory> metaCategories = new List<CardMetaCategory>();
-			metaCategories.Add(CardMetaCategory.ChoiceNode);
-			metaCategories.Add(CardMetaCategory.TraderOffer);
-
-			List<Tribe> Tribes = new List<Tribe>();
-			Tribes.Add(Tribe.Insect);
-
-			List<Ability> Abilities = new List<Ability>();
-			Abilities.Add(Ability.DebuffEnemy);
-
-			List<Trait> Traits = new List<Trait>();
-
-			List<AbilityIdentifier> customAbilities = new List<AbilityIdentifier>();
-
-			List<SpecialTriggeredAbility> specialAbilities = new List<SpecialTriggeredAbility>();
-
-			List<CardAppearanceBehaviour.Appearance> appearanceBehaviour = new List<CardAppearanceBehaviour.Appearance>();
-
-			Texture2D DefaultTexture = SigilUtils.GetTextureFromPath("Artwork/void_stinkbug.png");
-
-			Texture2D eTexture = SigilUtils.GetTextureFromPath("Artwork/void_stinkbug_e.png");
-
-			IceCubeIdentifier iceCubeId = null;
-			EvolveIdentifier evolveId = null;
-			TailIdentifier tail = null;
-
-			NewCard.Add(name: "void_stinkbug",
-				displayedName: "Stinkbug",
-				baseAttack: 1,
-				baseHealth: 2,
-				metaCategories,
-				cardComplexity: CardComplexity.Simple,
-				temple: CardTemple.Nature,
-				description: "An insect that causes attacks to be be weakened.",
-				hideAttackAndHealth: false,
-				bloodCost: 0,
-				bonesCost: 2,
-				energyCost: 0,
-				gemsCost: null,
-				specialStatIcon: SpecialStatIcon.None,
-				Tribes,
-				Traits,
-				specialAbilities,
-				Abilities,
-				customAbilities,
-				specialAbilitiesIdsParam: null,
-				evolveParams: null,
-				defaultEvolutionName: null,
-				tailParams: null,
-				iceCubeParams: null,
-				flipPortraitForStrafe: false,
-				onePerDeck: false,
-				appearanceBehaviour,
-				DefaultTexture,
-				altTex: null,
-				titleGraphic: null,
-				pixelTex: null,
-				eTexture,
-				animatedPortrait: null,
-				decals: null,
-				evolveId,
-				iceCubeId,
-				tail);
-		}
-	}
+    public static class Stinkbug
+    {
+        // Token: 0x0600007B RID: 123 RVA: 0x00006FC8 File Offset: 0x000051C8
+        public static void AddCard()
+        {
+            string internalName = "void_Stinkbug";
+            string displayName = "Stinkbug";
+            string description = "A stinkbug.";
+            int attack = 1;
+            int health = 2;
+            int bloodCost = 0;
+            int boneCost = 3;
+            int energyCost = 0;
+            List<CardMetaCategory> list = new List<CardMetaCategory>
+            {
+                0,
+                (CardMetaCategory)1
+            };
+            List<Tribe> list2 = new List<Tribe>
+            {
+                (Tribe)6
+            };
+            List<Ability> list3 = new List<Ability>
+            {
+                (Ability)83
+            };
+            List<Trait> traits = new List<Trait>();
+            Texture2D textureFromPath = SigilUtils.GetTextureFromPath("Artwork/void_stinkbug.png");
+            Texture2D textureFromPath2 = SigilUtils.GetTextureFromPath("Artwork/void_stinkbug_e.png");
+            CardInfo cardInfo = SigilUtils.CreateCardWithDefaultSettings(internalName, displayName, attack, health, textureFromPath, textureFromPath2, list, list2, traits, list3, null, bloodCost, boneCost, energyCost);
+            cardInfo.description = description;
+            CardManager.Add("void", cardInfo);
+        }
+    }
 }

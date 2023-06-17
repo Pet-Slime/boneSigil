@@ -2,78 +2,36 @@
 using DiskCardGame;
 using UnityEngine;
 using APIPlugin;
+using boneSigils.Managers;
+using InscryptionAPI.Card;
 
 namespace boneSigils.cards
 {
-	public static class Giraffe
-	{
-		public static void AddCard()
-		{
-
-			List<CardMetaCategory> metaCategories = new List<CardMetaCategory>();
-			metaCategories.Add(CardMetaCategory.TraderOffer);
-			metaCategories.Add(CardMetaCategory.ChoiceNode);
-
-			List<Tribe> Tribes = new List<Tribe>();
-			Tribes.Add(Tribe.Hooved);
-
-			List<Ability> Abilities = new List<Ability>();
-			Abilities.Add(Ability.Strafe);
-
-			List<Trait> Traits = new List<Trait>();
-
-			List<AbilityIdentifier> customAbilities = new List<AbilityIdentifier>();
-
-			List<SpecialTriggeredAbility> specialAbilities = new List<SpecialTriggeredAbility>();
-
-			List<CardAppearanceBehaviour.Appearance> appearanceBehaviour = new List<CardAppearanceBehaviour.Appearance>();
-
-			Texture2D DefaultTexture = SigilUtils.GetTextureFromPath("Artwork/void_giraffe.png");
-
-			Texture2D eTexture = SigilUtils.GetTextureFromPath("Artwork/void_giraffe_e.png");
-
-			IceCubeIdentifier iceCubeId = null;
-			EvolveIdentifier evolveId = null;
-			TailIdentifier tail = null;
-
-			NewCard.Add(name: "void_giraffe",
-				displayedName: "Giraffe",
-				baseAttack: 1,
-				baseHealth: 6,
-				metaCategories,
-				cardComplexity: CardComplexity.Intermediate,
-				temple: CardTemple.Nature,
-				description: "A herbivore that loves to chew on bones",
-				hideAttackAndHealth: false,
-				bloodCost: 0,
-				bonesCost: 6,
-				energyCost: 0,
-				gemsCost: null,
-				specialStatIcon: SpecialStatIcon.None,
-				Tribes,
-				Traits,
-				specialAbilities,
-				Abilities,
-				customAbilities,
-				specialAbilitiesIdsParam: null,
-				evolveParams: null,
-				defaultEvolutionName: null,
-				tailParams: null,
-				iceCubeParams: null,
-				flipPortraitForStrafe: false,
-				onePerDeck: false,
-				appearanceBehaviour,
-				DefaultTexture,
-				altTex: null,
-				titleGraphic: null,
-				pixelTex: null,
-				eTexture,
-				animatedPortrait: null,
-				decals: null,
-				evolveId,
-				iceCubeId,
-				tail);
-
-		}
-	}
+    public static class Giraffe
+    {
+        public static void AddCard()
+        {
+            string internalName = "void_Giraffe";
+            string displayName = "Giraffe";
+            string description = "A herbivore that loves to chew on bones.";
+            int attack = 1;
+            int health = 5;
+            int bloodCost = 0;
+            int boneCost = 6;
+            int energyCost = 0;
+            List<CardMetaCategory> list = new List<CardMetaCategory>();
+            list.Add((CardMetaCategory)1);
+            list.Add(0);
+            List<Tribe> list2 = new List<Tribe>();
+            list2.Add((Tribe)4);
+            List<Ability> list3 = new List<Ability>();
+            list3.Add((Ability)3);
+            List<Trait> traits = new List<Trait>();
+            Texture2D textureFromPath = SigilUtils.GetTextureFromPath("Artwork/void_giraffe.png");
+            Texture2D textureFromPath2 = SigilUtils.GetTextureFromPath("Artwork/void_giraffe_e.png");
+            CardInfo cardInfo = SigilUtils.CreateCardWithDefaultSettings(internalName, displayName, attack, health, textureFromPath, textureFromPath2, list, list2, traits, list3, null, bloodCost, boneCost, energyCost);
+            cardInfo.description = description;
+            CardManager.Add("void", cardInfo);
+        }
+    }
 }

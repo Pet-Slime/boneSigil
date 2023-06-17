@@ -2,78 +2,44 @@
 using DiskCardGame;
 using UnityEngine;
 using APIPlugin;
+using boneSigils.Managers;
+using InscryptionAPI.Card;
 
 namespace boneSigils.cards
 {
-	public static class Cow_Dairy
-	{
-		public static void AddCard()
-		{
-
-			List<CardMetaCategory> metaCategories = new List<CardMetaCategory>();
-			metaCategories.Add(CardMetaCategory.Rare);
-
-			List<Tribe> Tribes = new List<Tribe>();
-			Tribes.Add(Tribe.Hooved);
-
-			List<Ability> Abilities = new List<Ability>();
-			Abilities.Add(Ability.TripleBlood);
-
-			List<Trait> Traits = new List<Trait>();
-			Traits.Add(Trait.Goat);
-
-			List<AbilityIdentifier> customAbilities = new List<AbilityIdentifier>();
-			customAbilities.Add(AbilityIdentifier.GetID("extraVoid.inscryption.voidSigils", "Nutritious"));
-
-			List<SpecialTriggeredAbility> specialAbilities = new List<SpecialTriggeredAbility>();
-			specialAbilities.Add(DairyCowSpecialAbility.specialAbility);
-
-			List<CardAppearanceBehaviour.Appearance> appearanceBehaviour = new List<CardAppearanceBehaviour.Appearance>();
-			appearanceBehaviour.Add(CardAppearanceBehaviour.Appearance.RareCardBackground);
-
-			Texture2D DefaultTexture = SigilUtils.GetTextureFromPath("Artwork/Void_Dairy_Cow.png");
-
-			Texture2D eTexture = SigilUtils.GetTextureFromPath("Artwork/Void_Dairy_Cow_e.png");
-
-			IceCubeIdentifier iceCubeId = new IceCubeIdentifier("Void_Cow_Skul");
-
-			NewCard.Add(name: "void_dairy_cow",
-				displayedName: "Cow",
-				baseAttack: 0,
-				baseHealth: 3,
-				metaCategories,
-				cardComplexity: CardComplexity.Simple,
-				temple: CardTemple.Nature,
-				description: "A cow fit for slaughter",
-				hideAttackAndHealth: false,
-				bloodCost: 0,
-				bonesCost: 3,
-				energyCost: 0,
-				gemsCost: null,
-				specialStatIcon: SpecialStatIcon.None,
-				Tribes,
-				Traits,
-				specialAbilities,
-				Abilities,
-				customAbilities,
-				specialAbilitiesIdsParam: null,
-				evolveParams: null,
-				defaultEvolutionName: null,
-				tailParams: null,
-				iceCubeParams: null,
-				flipPortraitForStrafe: false,
-				onePerDeck: false,
-				appearanceBehaviour,
-				DefaultTexture,
-				altTex: null,
-				titleGraphic: null,
-				pixelTex: null,
-				eTexture,
-				animatedPortrait: null,
-				decals: null,
-				evolveId: null,
-				iceCubeId,
-				tailId: null);
-		}
-	}
+    public static class Cow_Dairy
+    {
+        public static void AddCard()
+        {
+            string internalName = "void_Cow_Dairy";
+            string displayName = "Dairy Cow";
+            string description = "A cow fit for slaughter.";
+            int attack = 0;
+            int health = 2;
+            int bloodCost = 0;
+            int boneCost = 4;
+            int energyCost = 0;
+            List<CardMetaCategory> list = new List<CardMetaCategory>();
+            list.Add((CardMetaCategory)3);
+            List<Tribe> list2 = new List<Tribe>();
+            list2.Add((Tribe)4);
+            List<Ability> list3 = new List<Ability>();
+            list3.Add((Ability)22);
+            List<Trait> list4 = new List<Trait>();
+            list4.Add((Trait)20);
+            List<SpecialTriggeredAbility> list5 = new List<SpecialTriggeredAbility>();
+            list5.Add(DairyCowSpecialAbility.specialAbility);
+            Texture2D textureFromPath = SigilUtils.GetTextureFromPath("Artwork/Void_Dairy_Cow.png");
+            Texture2D textureFromPath2 = SigilUtils.GetTextureFromPath("Artwork/Void_Dairy_Cow_e.png");
+            CardInfo cardInfo = SigilUtils.CreateCardWithDefaultSettings(internalName, displayName, attack, health, textureFromPath, textureFromPath2, list, list2, list4, list3, null, bloodCost, boneCost, energyCost);
+            CardExtensions.AddSpecialAbilities(cardInfo, new SpecialTriggeredAbility[]
+            {
+                DairyCowSpecialAbility.specialAbility
+            });
+            CardExtensions.SetIceCube(cardInfo, "void_Cow_Skul", null);
+            cardInfo.appearanceBehaviour.Add((CardAppearanceBehaviour.Appearance)7);
+            cardInfo.description = description;
+            CardManager.Add("void", cardInfo);
+        }
+    }
 }

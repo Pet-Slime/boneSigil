@@ -2,70 +2,37 @@
 using DiskCardGame;
 using UnityEngine;
 using APIPlugin;
+using boneSigils.Managers;
+using InscryptionAPI.Card;
 
 namespace boneSigils.cards
 {
-	public static class PileOfBones
-	{
-		public static void AddCard()
-		{
-
-			List<CardMetaCategory> metaCategories = new List<CardMetaCategory>();
-
-			List<Tribe> Tribes = new List<Tribe>();
-
-			List<Ability> Abilities = new List<Ability>();
-			Abilities.Add(Ability.QuadrupleBones);
-
-			List<AbilityIdentifier> customAbilities = new List<AbilityIdentifier>();
-
-			List<Trait> Traits = new List<Trait>();
-			Traits.Add(Trait.Terrain);
-
-			List<CardAppearanceBehaviour.Appearance> appearanceBehaviour = new List<CardAppearanceBehaviour.Appearance>();
-			appearanceBehaviour.Add(CardAppearanceBehaviour.Appearance.TerrainBackground);
-
-			Texture2D DefaultTexture = SigilUtils.GetTextureFromPath("Artwork/Void_pileofbones.png");
-
-			Texture2D eTexture = SigilUtils.GetTextureFromPath("Artwork/Void_pileofbones.png");
-
-			NewCard.Add(name: "Void_PileOfBones",
-				displayedName: "Pile Of Bones",
-				baseAttack: 0,
-				baseHealth: 1,
-				metaCategories,
-				cardComplexity: CardComplexity.Simple,
-				temple: CardTemple.Nature,
-				description: "What is left after a murder",
-				hideAttackAndHealth: false,
-				bloodCost: 0,
-				bonesCost: 0,
-				energyCost: 0,
-				gemsCost: null,
-				specialStatIcon: SpecialStatIcon.None,
-				Tribes,
-				Traits,
-				specialAbilities: null,
-				Abilities,
-				customAbilities,
-				specialAbilitiesIdsParam: null,
-				evolveParams: null,
-				defaultEvolutionName: null,
-				tailParams: null,
-				iceCubeParams: null,
-				flipPortraitForStrafe: false,
-				onePerDeck: false,
-				appearanceBehaviour,
-				DefaultTexture,
-				altTex: null,
-				titleGraphic: null,
-				pixelTex: null,
-				eTexture,
-				animatedPortrait: null,
-				decals: null,
-				evolveId: null,
-				iceCubeId: null,
-				tailId: null);
-		}
-	}
+    public static class PileOfBones
+    {
+        public static void AddCard()
+        {
+            string internalName = "void_PileOfBones";
+            string displayName = "Pile Of Bones";
+            string description = "aaa";
+            int attack = 0;
+            int health = 1;
+            int bloodCost = 0;
+            int boneCost = 0;
+            int energyCost = 0;
+            List<CardMetaCategory> cardMetaCategories = new List<CardMetaCategory>();
+            List<Tribe> tribes = new List<Tribe>();
+            List<Ability> list = new List<Ability>();
+            list.Add((Ability)12);
+            List<Trait> list2 = new List<Trait>();
+            list2.Add((Trait)12);
+            List<CardAppearanceBehaviour.Appearance> list3 = new List<CardAppearanceBehaviour.Appearance>();
+            list3.Add((CardAppearanceBehaviour.Appearance)2);
+            Texture2D textureFromPath = SigilUtils.GetTextureFromPath("Artwork/Void_pileofbones.png");
+            Texture2D textureFromPath2 = SigilUtils.GetTextureFromPath("Artwork/Void_pileofbones.png");
+            CardInfo cardInfo = SigilUtils.CreateCardWithDefaultSettings(internalName, displayName, attack, health, textureFromPath, textureFromPath2, cardMetaCategories, tribes, list2, list, null, bloodCost, boneCost, energyCost);
+            cardInfo.description = description;
+            CardExtensions.SetTerrain(cardInfo);
+            CardManager.Add("void", cardInfo);
+        }
+    }
 }

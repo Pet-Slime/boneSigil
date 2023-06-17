@@ -2,78 +2,41 @@
 using DiskCardGame;
 using UnityEngine;
 using APIPlugin;
+using boneSigils.Managers;
+using InscryptionAPI.Card;
+using InscryptionAPI.Guid;
 
 namespace boneSigils.cards
 {
-	public static class Tanuki_Mythical
-	{
-		public static void AddCard()
-		{
+    public static class Tanuki_Mythical
+    {
+        public static void AddCard()
+        {
+            string internalName = "void_Tanuki_Mythical";
+            string displayName = "Mythical Tanuki";
+            string description = "The crafty tanuki, who can steal anything from any beast.";
+            int attack = 2;
+            int health = 5;
+            int bloodCost = 0;
+            int boneCost = 8;
+            int energyCost = 0;
+            List<CardMetaCategory> list = new List<CardMetaCategory>();
+            list.Add(0);
+            list.Add((CardMetaCategory)1);
+            List<Tribe> list2 = new List<Tribe>();
+            list2.Add((Tribe)3);
+            List<Ability> list3 = new List<Ability>();
+            list3.Add((Ability)101);
+            list3.Add(Tanuki_Mythical.CustomAbility1);
+            List<Trait> traits = new List<Trait>();
+            Texture2D textureFromPath = SigilUtils.GetTextureFromPath("Artwork/void_tanuki_mythical.png");
+            Texture2D textureFromPath2 = SigilUtils.GetTextureFromPath("Artwork/void_tanuki_mythical_e.png");
+            CardInfo cardInfo = SigilUtils.CreateCardWithDefaultSettings(internalName, displayName, attack, health, textureFromPath, textureFromPath2, list, list2, traits, list3, null, bloodCost, boneCost, energyCost);
+            cardInfo.description = description;
+            CardManager.Add("void", cardInfo);
+        }
 
-			List<CardMetaCategory> metaCategories = new List<CardMetaCategory>();
-			metaCategories.Add(CardMetaCategory.ChoiceNode);
-			metaCategories.Add(CardMetaCategory.TraderOffer);
-
-			List<Tribe> Tribes = new List<Tribe>();
-			Tribes.Add(Tribe.Canine);
-
-			List<Ability> Abilities = new List<Ability>();
-			Abilities.Add(Ability.BoneDigger);
-
-			List<Trait> Traits = new List<Trait>();
-
-			List<AbilityIdentifier> customAbilities = new List<AbilityIdentifier>();
-			customAbilities.Add(AbilityIdentifier.GetID("extraVoid.inscryption.voidSigils", "Thief"));
-
-			List<SpecialTriggeredAbility> specialAbilities = new List<SpecialTriggeredAbility>();
-
-			List<CardAppearanceBehaviour.Appearance> appearanceBehaviour = new List<CardAppearanceBehaviour.Appearance>();
-
-			Texture2D DefaultTexture = SigilUtils.GetTextureFromPath("Artwork/void_tanuki_mythical.png");
-
-			Texture2D eTexture = SigilUtils.GetTextureFromPath("Artwork/void_tanuki_mythical_e.png");
-
-			IceCubeIdentifier iceCubeId = null;
-			EvolveIdentifier evolveId = null;
-			TailIdentifier tail = null;
-
-			NewCard.Add(name: "void_tanuki_mythical",
-				displayedName: "Mythical Tanuki",
-				baseAttack: 2,
-				baseHealth: 3,
-				metaCategories,
-				cardComplexity: CardComplexity.Advanced,
-				temple: CardTemple.Nature,
-				description: "The crafty Tanuki, scavenging for it's next meal.",
-				hideAttackAndHealth: false,
-				bloodCost: 0,
-				bonesCost: 8,
-				energyCost: 0,
-				gemsCost: null,
-				specialStatIcon: SpecialStatIcon.None,
-				Tribes,
-				Traits,
-				specialAbilities,
-				Abilities,
-				customAbilities,
-				specialAbilitiesIdsParam: null,
-				evolveParams: null,
-				defaultEvolutionName: null,
-				tailParams: null,
-				iceCubeParams: null,
-				flipPortraitForStrafe: false,
-				onePerDeck: false,
-				appearanceBehaviour,
-				DefaultTexture,
-				altTex: null,
-				titleGraphic: null,
-				pixelTex: null,
-				eTexture,
-				animatedPortrait: null,
-				decals: null,
-				evolveId,
-				iceCubeId,
-				tail);
-		}
-	}
+        // Token: 0x04000034 RID: 52
+        public static readonly Ability CustomAbility1 = GuidManager.GetEnumValue<Ability>("extraVoid.inscryption.voidSigils", "Thief");
+    }
 }

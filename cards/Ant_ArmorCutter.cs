@@ -2,80 +2,48 @@
 using DiskCardGame;
 using UnityEngine;
 using APIPlugin;
+using boneSigils.Managers;
+using InscryptionAPI.Card;
+using InscryptionAPI.Guid;
 
 namespace boneSigils.cards
 {
-	public static class Ant_ArmorCutter
-	{
-		public static void AddCard()
-		{
+    public static class Ant_ArmorCutter
+    {
+        // Token: 0x0600003C RID: 60 RVA: 0x0000423C File Offset: 0x0000243C
+        public static void AddCard()
+        {
+            string internalName = "void_Leaf_Ant";
+            string displayName = "Armored Ant";
+            string description = "A leaf cutter ant that has a mineral shell and lives in the trees.";
+            int attack = 0;
+            int health = 4;
+            int bloodCost = 1;
+            int boneCost = 3;
+            int energyCost = 0;
+            List<CardMetaCategory> list = new List<CardMetaCategory>();
+            list.Add((CardMetaCategory)1);
+            list.Add(0);
+            List<Tribe> list2 = new List<Tribe>();
+            list2.Add((Tribe)6);
+            List<Ability> list3 = new List<Ability>();
+            list3.Add((Ability)23);
+            list3.Add(Ant_ArmorCutter.CustomAbility);
+            List<Trait> list4 = new List<Trait>();
+            list4.Add((Trait)11);
+            List<SpecialTriggeredAbility> list5 = new List<SpecialTriggeredAbility>();
+            list5.Add((SpecialTriggeredAbility)6);
+            List<CardAppearanceBehaviour.Appearance> list6 = new List<CardAppearanceBehaviour.Appearance>();
+            Texture2D textureFromPath = SigilUtils.GetTextureFromPath("Artwork/Void_Leaf_Ant.png");
+            Texture2D textureFromPath2 = SigilUtils.GetTextureFromPath("Artwork/Void_Leaf_Ant_e.png");
+            CardInfo cardInfo = SigilUtils.CreateCardWithDefaultSettings(internalName, displayName, attack, health, textureFromPath, textureFromPath2, list, list2, list4, list3, null, bloodCost, boneCost, energyCost);
+            cardInfo.SetStatIcon(SpecialStatIcon.Ants);
+            cardInfo.SetSpecialAbilities(SpecialTriggeredAbility.Ant);
+            cardInfo.description = description;
+            CardManager.Add("void", cardInfo);
+        }
 
-			List<CardMetaCategory> metaCategories = new List<CardMetaCategory>();
-			metaCategories.Add(CardMetaCategory.TraderOffer);
-			metaCategories.Add(CardMetaCategory.ChoiceNode);
-
-			List<Tribe> Tribes = new List<Tribe>();
-			Tribes.Add(Tribe.Insect);
-
-			List<Ability> Abilities = new List<Ability>();
-			Abilities.Add(Ability.Reach);
-
-			List<Trait> Traits = new List<Trait>();
-			Traits.Add(Trait.Ant);
-
-			List<AbilityIdentifier> customAbilities = new List<AbilityIdentifier>();
-			customAbilities.Add(AbilityIdentifier.GetID("extraVoid.inscryption.voidSigils", "Thick Shell"));
-
-			List<SpecialTriggeredAbility> specialAbilities = new List<SpecialTriggeredAbility>();
-			specialAbilities.Add(SpecialTriggeredAbility.Ant);
-
-			List<CardAppearanceBehaviour.Appearance> appearanceBehaviour = new List<CardAppearanceBehaviour.Appearance>();
-
-			Texture2D DefaultTexture = SigilUtils.GetTextureFromPath("Artwork/Void_Leaf_Ant.png");
-
-			Texture2D eTexture = SigilUtils.GetTextureFromPath("Artwork/Void_Leaf_Ant_e.png");
-
-			IceCubeIdentifier iceCubeId = null;
-			EvolveIdentifier evolveId = null;
-			TailIdentifier tail = null;
-
-			NewCard.Add(name: "Void_Leaf_Ant",
-				displayedName: "Armored Ant",
-				baseAttack: 0,
-				baseHealth: 4,
-				metaCategories,
-				cardComplexity: CardComplexity.Intermediate,
-				temple: CardTemple.Nature,
-				description: "A leaf cutter ant that has a mineral shell and lives in the trees.",
-				hideAttackAndHealth: false,
-				bloodCost: 1,
-				bonesCost: 3,
-				energyCost: 0,
-				gemsCost: null,
-				specialStatIcon: SpecialStatIcon.Ants,
-				Tribes,
-				Traits,
-				specialAbilities,
-				Abilities,
-				customAbilities,
-				specialAbilitiesIdsParam: null,
-				evolveParams: null,
-				defaultEvolutionName: null,
-				tailParams: null,
-				iceCubeParams: null,
-				flipPortraitForStrafe: false,
-				onePerDeck: false,
-				appearanceBehaviour,
-				DefaultTexture,
-				altTex: null,
-				titleGraphic: null,
-				pixelTex: null,
-				eTexture,
-				animatedPortrait: null,
-				decals: null,
-				evolveId,
-				iceCubeId,
-				tail);
-		}
-	}
+        // Token: 0x0400001A RID: 26
+        public static readonly Ability CustomAbility = GuidManager.GetEnumValue<Ability>("extraVoid.inscryption.voidSigils", "Thick Shell");
+    }
 }

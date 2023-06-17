@@ -1,33 +1,24 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
 using DiskCardGame;
-using System.IO;
-using APIPlugin;
+using InscryptionAPI.Card;
 using UnityEngine;
-using Resources = boneSigils.Artwork.Resources;
 
 namespace boneSigils
 {
     public class DairyCowSpecialAbility : SpecialCardBehaviour
     {
-        public SpecialTriggeredAbility SpecialAbility => specialAbility;
-        public static SpecialTriggeredAbility specialAbility;
-
-
-        public static void AddSteakAbility()
+        public SpecialTriggeredAbility SpecialAbility
         {
-            StatIconInfo iconInfo = new StatIconInfo();
-            iconInfo.rulebookName = "Steak";
-            iconInfo.rulebookDescription = "Leaves behind Steak when killed";
-            iconInfo.iconType = SpecialStatIcon.None;
-            iconInfo.iconGraphic = SigilUtils.LoadTextureFromResource(Resources.void_steak_ability);
-            iconInfo.metaCategories = new List<AbilityMetaCategory> { AbilityMetaCategory.Part1Modular, AbilityMetaCategory.Part1Rulebook };
+            get
+            {
+                return DairyCowSpecialAbility.specialAbility;
+            }
+        }
 
-            SpecialAbilityIdentifier identifier = SpecialAbilityIdentifier.GetID(Plugin.PluginGuid, "DairyCowSpecialAbility");
-
-            NewSpecialAbility newSpecialAbility = new NewSpecialAbility(typeof(DairyCowSpecialAbility), identifier, iconInfo);
-            specialAbility = newSpecialAbility.specialTriggeredAbility;        
+        public static void addDairySpecial()
+        {
+            SpecialTriggeredAbility id = SpecialTriggeredAbilityManager.Add("extraVoid.inscryption.void_bone_pack", "Fresh Steak", typeof(DairyCowSpecialAbility)).Id;
         }
 
         public override bool RespondsToDie(bool wasSacrifice, PlayableCard killer)
@@ -38,10 +29,11 @@ namespace boneSigils
         public override IEnumerator OnDie(bool wasSacrifice, PlayableCard killer)
         {
             yield return new WaitForSeconds(0.35f);
-            yield return Singleton<CardSpawner>.Instance.SpawnCardToHand(CardLoader.GetCardByName("Void_Steak"), null, 0.25f, null);
+            yield return Singleton<CardSpawner>.Instance.SpawnCardToHand(CardLoader.GetCardByName("void_Steak"), null, 0.25f, null);
             yield return new WaitForSeconds(0.35f);
             yield break;
         }
-        
-        }
+
+        public static SpecialTriggeredAbility specialAbility;
+    }
 }

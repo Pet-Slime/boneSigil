@@ -2,74 +2,48 @@
 using DiskCardGame;
 using UnityEngine;
 using APIPlugin;
+using boneSigils.Managers;
+using InscryptionAPI.Card;
+using InscryptionAPI.Guid;
 
 namespace boneSigils.cards
 {
-	public static class WaspSwarm
-	{
-		public static void AddCard()
-		{
+    public static class WaspSwarm
+    {
+        public static void AddCard()
+        {
+            string internalName = "void_Wasp_Swarm";
+            string displayName = "Wasp Swarm";
+            string description = "Where there is one, there is many.";
+            int attack = 2;
+            int health = 3;
+            int bloodCost = 0;
+            int boneCost = 7;
+            int energyCost = 0;
+            List<CardMetaCategory> list = new List<CardMetaCategory>
+            {
+                0,
+                (CardMetaCategory)1
+            };
+            List<Tribe> list2 = new List<Tribe>
+            {
+                (Tribe)6
+            };
+            List<Ability> list3 = new List<Ability>
+            {
+                ability_drawwasp.ability,
+                WaspSwarm.CustomAbility1
+            };
+            List<Trait> traits = new List<Trait>();
+            Texture2D textureFromPath = SigilUtils.GetTextureFromPath("Artwork/Void_Wasp.png");
+            Texture2D textureFromPath2 = SigilUtils.GetTextureFromPath("Artwork/Void_Wasp_e.png");
+            CardInfo cardInfo = SigilUtils.CreateCardWithDefaultSettings(internalName, displayName, attack, health, textureFromPath, textureFromPath2, list, list2, traits, list3, null, bloodCost, boneCost, energyCost);
+            cardInfo.description = description;
+            CardExtensions.SetTail(cardInfo, "void_Wasp_Swarm", null);
+            cardInfo.defaultEvolutionName = "Monstrous";
+            CardManager.Add("void", cardInfo);
+        }
 
-			List<CardMetaCategory> metaCategories = new List<CardMetaCategory>();
-			metaCategories.Add(CardMetaCategory.ChoiceNode);
-			metaCategories.Add(CardMetaCategory.TraderOffer);
-
-			List<Tribe> Tribes = new List<Tribe>();
-			Tribes.Add(Tribe.Insect);
-
-			List<Ability> Abilities = new List<Ability>();
-			Abilities.Add(ability_drawwasp.ability);
-
-			List<AbilityIdentifier> customAbilities = new List<AbilityIdentifier>();
-			customAbilities.Add(AbilityIdentifier.GetID("extraVoid.inscryption.voidSigils", "Multi-Strike"));
-
-			List<CardAppearanceBehaviour.Appearance> appearanceBehaviour = new List<CardAppearanceBehaviour.Appearance>();
-
-			Texture2D DefaultTexture = SigilUtils.GetTextureFromPath("Artwork/Void_Wasp.png");
-
-			Texture2D eTexture = SigilUtils.GetTextureFromPath("Artwork/Void_Wasp_e.png");
-
-			IceCubeIdentifier iceCubeId = null;
-			EvolveIdentifier evolveId = null;
-			TailIdentifier tail = new TailIdentifier("Void_Wasp", null);
-
-			NewCard.Add(name: "Void_Wasp",
-				displayedName: "Wasp Swarm",
-				baseAttack: 2,
-				baseHealth: 3,
-				metaCategories,
-				cardComplexity: CardComplexity.Advanced,
-				temple: CardTemple.Nature,
-				description: "Where there is one, there is more",
-				hideAttackAndHealth: false,
-				bloodCost: 0,
-				bonesCost: 7,
-				energyCost: 0,
-				gemsCost: null,
-				specialStatIcon: SpecialStatIcon.None,
-				Tribes,
-				traits: null,
-				specialAbilities: null,
-				Abilities,
-				customAbilities,
-				specialAbilitiesIdsParam: null,
-				evolveParams: null,
-				defaultEvolutionName: "Monstrous",
-				tailParams: null,
-				iceCubeParams: null,
-				flipPortraitForStrafe: false,
-				onePerDeck: false,
-				appearanceBehaviour: null,
-				DefaultTexture,
-				altTex: null,
-				titleGraphic: null,
-				pixelTex: null,
-				eTexture,
-				animatedPortrait: null,
-				decals: null,
-				evolveId,
-				iceCubeId,
-				tail);
-		}
-	}
+        public static readonly Ability CustomAbility1 = GuidManager.GetEnumValue<Ability>("extraVoid.inscryption.voidSigils", "Multi-Strike");
+    }
 }

@@ -20,7 +20,7 @@ namespace boneSigils
 				AbilityInfo info = ability[index];
 				if (info.ability == Ability.BoneDigger)
 				{
-					info.powerLevel = -2;
+					info.powerLevel = -1;
 				}
 			}
 		}

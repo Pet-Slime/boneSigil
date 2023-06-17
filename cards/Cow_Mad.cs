@@ -2,78 +2,44 @@
 using DiskCardGame;
 using UnityEngine;
 using APIPlugin;
+using boneSigils.Managers;
+using InscryptionAPI.Card;
+using InscryptionAPI.Guid;
 
 namespace boneSigils.cards
 {
-	public static class Cow_Mad
-	{
-		public static void AddCard()
-		{
+    public static class Cow_Mad
+    {
+        public static void AddCard()
+        {
+            string internalName = "void_Cow_Mad";
+            string displayName = "The Dying Bull";
+            string description = "The Mad Bull, out for bones with not much time left.";
+            int attack = 3;
+            int health = 4;
+            int bloodCost = 0;
+            int boneCost = 5;
+            int energyCost = 0;
+            List<CardMetaCategory> list = new List<CardMetaCategory>();
+            list.Add((CardMetaCategory)1);
+            list.Add(0);
+            List<Tribe> list2 = new List<Tribe>();
+            list2.Add((Tribe)4);
+            List<Ability> list3 = new List<Ability>();
+            list3.Add((Ability)5);
+            list3.Add(Cow_Mad.CustomAbility1);
+            List<Trait> traits = new List<Trait>();
+            List<SpecialTriggeredAbility> list4 = new List<SpecialTriggeredAbility>();
+            List<CardAppearanceBehaviour.Appearance> list5 = new List<CardAppearanceBehaviour.Appearance>();
+            Texture2D textureFromPath = SigilUtils.GetTextureFromPath("Artwork/void_cow_mad.png");
+            Texture2D textureFromPath2 = SigilUtils.GetTextureFromPath("Artwork/void_cow_mad_e.png");
+            CardInfo cardInfo = SigilUtils.CreateCardWithDefaultSettings(internalName, displayName, attack, health, textureFromPath, textureFromPath2, list, list2, traits, list3, null, bloodCost, boneCost, energyCost);
+            CardExtensions.SetIceCube(cardInfo, "void_Cow_Skul", null);
+            CardExtensions.SetEvolve(cardInfo, "void_Cow_Skul", 2, null);
+            cardInfo.description = description;
+            CardManager.Add("void", cardInfo);
+        }
 
-			List<CardMetaCategory> metaCategories = new List<CardMetaCategory>();
-			metaCategories.Add(CardMetaCategory.TraderOffer);
-			metaCategories.Add(CardMetaCategory.ChoiceNode);
-
-			List<Tribe> Tribes = new List<Tribe>();
-			Tribes.Add(Tribe.Hooved);
-
-			List<Ability> Abilities = new List<Ability>();
-			Abilities.Add(Ability.Evolve);
-
-			List<Trait> Traits = new List<Trait>();
-
-			List<AbilityIdentifier> customAbilities = new List<AbilityIdentifier>();
-			customAbilities.Add(AbilityIdentifier.GetID("extraVoid.inscryption.voidSigils", "Blight"));
-
-			List<SpecialTriggeredAbility> specialAbilities = new List<SpecialTriggeredAbility>();
-
-			List<CardAppearanceBehaviour.Appearance> appearanceBehaviour = new List<CardAppearanceBehaviour.Appearance>();
-
-			Texture2D DefaultTexture = SigilUtils.GetTextureFromPath("Artwork/void_cow_mad.png");
-
-			Texture2D eTexture = SigilUtils.GetTextureFromPath("Artwork/void_cow_mad_e.png");
-
-			IceCubeIdentifier iceCubeId = new IceCubeIdentifier("Void_Cow_Skul");
-			EvolveIdentifier evolveId = new EvolveIdentifier("Void_Cow_Skul", 2);
-			TailIdentifier tail = null;
-
-			NewCard.Add(name: "void_cow_mad",
-				displayedName: "The Dying Bull",
-				baseAttack: 3,
-				baseHealth: 4,
-				metaCategories,
-				cardComplexity: CardComplexity.Intermediate,
-				temple: CardTemple.Nature,
-				description: "The Mad Bull, out for bones with not much time left.",
-				hideAttackAndHealth: false,
-				bloodCost: 0,
-				bonesCost: 5,
-				energyCost: 0,
-				gemsCost: null,
-				specialStatIcon: SpecialStatIcon.None,
-				Tribes,
-				Traits,
-				specialAbilities,
-				Abilities,
-				customAbilities,
-				specialAbilitiesIdsParam: null,
-				evolveParams: null,
-				defaultEvolutionName: null,
-				tailParams: null,
-				iceCubeParams: null,
-				flipPortraitForStrafe: false,
-				onePerDeck: false,
-				appearanceBehaviour,
-				DefaultTexture,
-				altTex: null,
-				titleGraphic: null,
-				pixelTex: null,
-				eTexture,
-				animatedPortrait: null,
-				decals: null,
-				evolveId,
-				iceCubeId,
-				tail);
-		}
-	}
+        public static readonly Ability CustomAbility1 = GuidManager.GetEnumValue<Ability>("extraVoid.inscryption.voidSigils", "Blight");
+    }
 }

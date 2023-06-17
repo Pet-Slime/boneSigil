@@ -1,43 +1,32 @@
 ﻿using System.Collections.Generic;
 using DiskCardGame;
 using APIPlugin;
+using InscryptionAPI.Encounters;
+using InscryptionAPI.Regions;
+using boneSigils.Managers;
 
 namespace boneSigils.Encounters
 {
     internal class ReptileKing
     {
-		public static void AddEncounter()
-		{
-            //Name of the encounter
+        // Token: 0x06000037 RID: 55 RVA: 0x00003C4C File Offset: 0x00001E4C
+        public static void AddEncounter()
+        {
             string name = "ReptileKing";
-
-            //Vanilla region names are: Forest, Wetlands, and Alpine
             string regionName = "Wetlands";
-
-            //What is the most common tribe?
-            List<Tribe> dominate = new List<Tribe>();
-            dominate.Add(Tribe.Reptile);
-
-            //Are any abilities redundent? Thus shouldnt be used on a totem
-            List<Ability> redundant = new List<Ability>();
-
-            //Is this encounter locked to a region?
+            List<Tribe> list = new List<Tribe>();
+            list.Add(DiskCardGame.Tribe.Reptile);
+            List<Ability> list2 = new List<Ability>();
+            list2.Add((Ability)4);
             bool regionLocked = true;
-
-            //Add random Replacements
-            List<CardInfo> randomReplacements = EncounterUtil.AddRandomCards("Skink", "Snapper", "Bullfrog");
-
-            List<EncounterBlueprintData.TurnModBlueprint> difficultyMod = new List<EncounterBlueprintData.TurnModBlueprint>();
-
-            //Encounter by turns
-            List<List<EncounterBlueprintData.CardBlueprint>> turns = new List<List<EncounterBlueprintData.CardBlueprint>>();
-
-            List<EncounterBlueprintData.CardBlueprint> turn_1 = new List<EncounterBlueprintData.CardBlueprint>();
-            turn_1.Add(new EncounterBlueprintData.CardBlueprint
+            List<CardInfo> randomReplacementCards = EncounterHelper.AddRandomCards("Skink", "Snapper", "Bullfrog", "none", "none", "none", "none", "none", "none");
+            List<List<EncounterBlueprintData.CardBlueprint>> list3 = new List<List<EncounterBlueprintData.CardBlueprint>>();
+            List<EncounterBlueprintData.CardBlueprint> list4 = new List<EncounterBlueprintData.CardBlueprint>();
+            list4.Add(new EncounterBlueprintData.CardBlueprint
             {
                 card = CardLoader.GetCardByName("Geck")
             });
-            turn_1.Add(new EncounterBlueprintData.CardBlueprint
+            list4.Add(new EncounterBlueprintData.CardBlueprint
             {
                 card = CardLoader.GetCardByName("Geck"),
                 difficultyReplace = true,
@@ -45,9 +34,8 @@ namespace boneSigils.Encounters
                 replacement = CardLoader.GetCardByName("Rattler"),
                 randomReplaceChance = 25
             });
-
-            List<EncounterBlueprintData.CardBlueprint> turn_2 = new List<EncounterBlueprintData.CardBlueprint>();
-            turn_2.Add(new EncounterBlueprintData.CardBlueprint
+            List<EncounterBlueprintData.CardBlueprint> list5 = new List<EncounterBlueprintData.CardBlueprint>();
+            list5.Add(new EncounterBlueprintData.CardBlueprint
             {
                 card = CardLoader.GetCardByName("Geck"),
                 difficultyReplace = true,
@@ -55,7 +43,7 @@ namespace boneSigils.Encounters
                 replacement = CardLoader.GetCardByName("Adder"),
                 randomReplaceChance = 25
             });
-            turn_2.Add(new EncounterBlueprintData.CardBlueprint
+            list5.Add(new EncounterBlueprintData.CardBlueprint
             {
                 card = CardLoader.GetCardByName("Geck"),
                 difficultyReplace = true,
@@ -63,29 +51,22 @@ namespace boneSigils.Encounters
                 replacement = CardLoader.GetCardByName("Adder"),
                 randomReplaceChance = 25
             });
-
-            List<EncounterBlueprintData.CardBlueprint> turn_3 = new List<EncounterBlueprintData.CardBlueprint>();
-            turn_3.Add(new EncounterBlueprintData.CardBlueprint
+            List<EncounterBlueprintData.CardBlueprint> list6 = new List<EncounterBlueprintData.CardBlueprint>();
+            list6.Add(new EncounterBlueprintData.CardBlueprint
             {
-                card = CardLoader.GetCardByName("Void_Dragon")
+                card = CardLoader.GetCardByName("void_Dragon")
             });
-
-            List<EncounterBlueprintData.CardBlueprint> turn_4 = new List<EncounterBlueprintData.CardBlueprint>();
-            turn_4.Add(new EncounterBlueprintData.CardBlueprint
-            {
-                card = CardLoader.GetCardByName("Geck")
-            }); 
-            turn_4.Add(new EncounterBlueprintData.CardBlueprint
+            List<EncounterBlueprintData.CardBlueprint> list7 = new List<EncounterBlueprintData.CardBlueprint>();
+            list7.Add(new EncounterBlueprintData.CardBlueprint
             {
                 card = CardLoader.GetCardByName("Geck"),
                 difficultyReplace = true,
                 difficultyReq = 13,
-                replacement = CardLoader.GetCardByName("Void_Coco_Crab"),
+                replacement = CardLoader.GetCardByName("void_Jade_Serpent"),
                 randomReplaceChance = 25
             });
-
-            List<EncounterBlueprintData.CardBlueprint> turn_5 = new List<EncounterBlueprintData.CardBlueprint>();
-            turn_5.Add(new EncounterBlueprintData.CardBlueprint
+            List<EncounterBlueprintData.CardBlueprint> list8 = new List<EncounterBlueprintData.CardBlueprint>();
+            list8.Add(new EncounterBlueprintData.CardBlueprint
             {
                 card = CardLoader.GetCardByName("Geck"),
                 difficultyReplace = true,
@@ -93,7 +74,7 @@ namespace boneSigils.Encounters
                 replacement = CardLoader.GetCardByName("Adder"),
                 randomReplaceChance = 25
             });
-            turn_5.Add(new EncounterBlueprintData.CardBlueprint
+            list8.Add(new EncounterBlueprintData.CardBlueprint
             {
                 card = CardLoader.GetCardByName("Geck"),
                 difficultyReplace = true,
@@ -101,17 +82,13 @@ namespace boneSigils.Encounters
                 replacement = CardLoader.GetCardByName("Rattler"),
                 randomReplaceChance = 25
             });
-            List<EncounterBlueprintData.CardBlueprint> turn_6 = new List<EncounterBlueprintData.CardBlueprint>();
-            turn_6.Add(new EncounterBlueprintData.CardBlueprint
+            List<EncounterBlueprintData.CardBlueprint> list9 = new List<EncounterBlueprintData.CardBlueprint>();
+            list9.Add(new EncounterBlueprintData.CardBlueprint
             {
-                card = CardLoader.GetCardByName("Void_Dragon")
+                card = CardLoader.GetCardByName("void_Dragon")
             });
-            List<EncounterBlueprintData.CardBlueprint> turn_7 = new List<EncounterBlueprintData.CardBlueprint>();
-            turn_7.Add(new EncounterBlueprintData.CardBlueprint
-            {
-                card = CardLoader.GetCardByName("Geck")
-            });
-            turn_7.Add(new EncounterBlueprintData.CardBlueprint
+            List<EncounterBlueprintData.CardBlueprint> list10 = new List<EncounterBlueprintData.CardBlueprint>();
+            list10.Add(new EncounterBlueprintData.CardBlueprint
             {
                 card = CardLoader.GetCardByName("Geck"),
                 difficultyReplace = true,
@@ -119,8 +96,8 @@ namespace boneSigils.Encounters
                 replacement = CardLoader.GetCardByName("Adder"),
                 randomReplaceChance = 25
             });
-            List<EncounterBlueprintData.CardBlueprint> turn_8 = new List<EncounterBlueprintData.CardBlueprint>();
-            turn_8.Add(new EncounterBlueprintData.CardBlueprint
+            List<EncounterBlueprintData.CardBlueprint> list11 = new List<EncounterBlueprintData.CardBlueprint>();
+            list11.Add(new EncounterBlueprintData.CardBlueprint
             {
                 card = CardLoader.GetCardByName("Geck"),
                 difficultyReplace = true,
@@ -128,7 +105,7 @@ namespace boneSigils.Encounters
                 replacement = CardLoader.GetCardByName("Rattler"),
                 randomReplaceChance = 25
             });
-            turn_8.Add(new EncounterBlueprintData.CardBlueprint
+            list11.Add(new EncounterBlueprintData.CardBlueprint
             {
                 card = CardLoader.GetCardByName("Geck"),
                 difficultyReplace = true,
@@ -136,38 +113,26 @@ namespace boneSigils.Encounters
                 replacement = CardLoader.GetCardByName("Rattler"),
                 randomReplaceChance = 25
             });
-            List<EncounterBlueprintData.CardBlueprint> turn_9 = new List<EncounterBlueprintData.CardBlueprint>();
-            turn_9.Add(new EncounterBlueprintData.CardBlueprint
+            List<EncounterBlueprintData.CardBlueprint> list12 = new List<EncounterBlueprintData.CardBlueprint>();
+            list12.Add(new EncounterBlueprintData.CardBlueprint
             {
-                card = CardLoader.GetCardByName("Void_Dragon")
+                card = CardLoader.GetCardByName("void_Dragon")
             });
-            turns.Add(turn_1);
-            turns.Add(turn_2);
-            turns.Add(turn_3);
-            turns.Add(turn_4);
-            turns.Add(turn_5);
-            turns.Add(turn_6);
-            turns.Add(turn_7);
-            turns.Add(turn_8);
-            turns.Add(turn_9);
-
-            NewEncounter.Add(
-                       name,
-                       regionName,
-                       difficultyMod,
-                       dominate,
-                       redundant,
-                       unlockedCardPrerequisites: null,
-                       regionLocked,
-                       minDifficulty: 1,
-                       maxDifficulty: 30,
-                       randomReplacements,
-                       turns,
-                       regular: true,
-                       bossPrep: false,
-                       oldPreviewDifficulty: 0);
+            list3.Add(list4);
+            list3.Add(list5);
+            list3.Add(list6);
+            list3.Add(list7);
+            list3.Add(list8);
+            list3.Add(list9);
+            list3.Add(list10);
+            list3.Add(list11);
+            list3.Add(list12);
+            EncounterBlueprintData encounterBlueprintData = EncounterHelper.BuildBlueprint(name, list, list2, regionLocked, 0, 30, randomReplacementCards, list3);
+            EncounterManager.Add(encounterBlueprintData);
+            RegionExtensions.AddEncounters(EncounterHelper.GetRegionData(regionName), new EncounterBlueprintData[]
+            {
+                encounterBlueprintData
+            });
         }
-
-        
-	}
+    }
 }

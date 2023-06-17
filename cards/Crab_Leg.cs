@@ -2,74 +2,38 @@
 using DiskCardGame;
 using UnityEngine;
 using APIPlugin;
+using boneSigils.Managers;
+using InscryptionAPI.Card;
+using InscryptionAPI.Guid;
 
 namespace boneSigils.cards
 {
-	public static class Crab_Leg
-	{
-		public static void AddCard()
-		{
+    public static class Crab_Leg
+    {
+        // Token: 0x06000058 RID: 88 RVA: 0x00005140 File Offset: 0x00003340
+        public static void AddCard()
+        {
+            string internalName = "void_Crab_Leg";
+            string displayName = "Crab Leg";
+            string description = "The leg of a crab.";
+            int attack = 0;
+            int health = 2;
+            int bloodCost = 0;
+            int boneCost = 0;
+            int energyCost = 0;
+            List<CardMetaCategory> cardMetaCategories = new List<CardMetaCategory>();
+            List<Tribe> tribes = new List<Tribe>();
+            List<Ability> list = new List<Ability>();
+            list.Add(Crab_Leg.CustomAbility1);
+            List<Trait> traits = new List<Trait>();
+            Texture2D textureFromPath = SigilUtils.GetTextureFromPath("Artwork/void_crab_leg.png");
+            Texture2D textureFromPath2 = SigilUtils.GetTextureFromPath("Artwork/void_crab_leg_e.png");
+            CardInfo cardInfo = SigilUtils.CreateCardWithDefaultSettings(internalName, displayName, attack, health, textureFromPath, textureFromPath2, cardMetaCategories, tribes, traits, list, null, bloodCost, boneCost, energyCost);
+            cardInfo.description = description;
+            CardManager.Add("void", cardInfo);
+        }
 
-			List<CardMetaCategory> metaCategories = new List<CardMetaCategory>();
-
-			List<Tribe> Tribes = new List<Tribe>();
-
-			List<Ability> Abilities = new List<Ability>();
-
-			List<Trait> Traits = new List<Trait>();
-
-			List<AbilityIdentifier> customAbilities = new List<AbilityIdentifier>();
-			customAbilities.Add(AbilityIdentifier.GetID("extraVoid.inscryption.voidSigils", "Nutritious"));
-
-			List<SpecialTriggeredAbility> specialAbilities = new List<SpecialTriggeredAbility>();
-
-			List<CardAppearanceBehaviour.Appearance> appearanceBehaviour = new List<CardAppearanceBehaviour.Appearance>();
-
-			Texture2D DefaultTexture = SigilUtils.GetTextureFromPath("Artwork/void_crab_leg.png");
-
-			Texture2D eTexture = SigilUtils.GetTextureFromPath("Artwork/void_crab_leg_e.png");
-
-			IceCubeIdentifier iceCubeId = null;
-			EvolveIdentifier evolveId = null;
-			TailIdentifier tail = null;
-
-			NewCard.Add(name: "void_crab_leg",
-				displayedName: "Crab Leg",
-				baseAttack: 0,
-				baseHealth: 2,
-				metaCategories,
-				cardComplexity: CardComplexity.Intermediate,
-				temple: CardTemple.Nature,
-				description: "Yummy",
-				hideAttackAndHealth: false,
-				bloodCost: 0,
-				bonesCost: 0,
-				energyCost: 0,
-				gemsCost: null,
-				specialStatIcon: SpecialStatIcon.None,
-				Tribes,
-				Traits,
-				specialAbilities,
-				Abilities,
-				customAbilities,
-				specialAbilitiesIdsParam: null,
-				evolveParams: null,
-				defaultEvolutionName: null,
-				tailParams: null,
-				iceCubeParams: null,
-				flipPortraitForStrafe: false,
-				onePerDeck: false,
-				appearanceBehaviour,
-				DefaultTexture,
-				altTex: null,
-				titleGraphic: null,
-				pixelTex: null,
-				eTexture,
-				animatedPortrait: null,
-				decals: null,
-				evolveId,
-				iceCubeId,
-				tail);
-		}
-	}
+        // Token: 0x04000026 RID: 38
+        public static readonly Ability CustomAbility1 = GuidManager.GetEnumValue<Ability>("extraVoid.inscryption.voidSigils", "Nutritious");
+    }
 }

@@ -2,76 +2,41 @@
 using DiskCardGame;
 using UnityEngine;
 using APIPlugin;
+using boneSigils.Managers;
+using InscryptionAPI.Card;
 
 namespace boneSigils.cards
 {
-	public static class MurderOfCrows
-	{
-		public static void AddCard()
-		{
-
-			List<CardMetaCategory> metaCategories = new List<CardMetaCategory>();
-			metaCategories.Add(CardMetaCategory.Rare);
-
-			List<Tribe> Tribes = new List<Tribe>();
-			Tribes.Add(Tribe.Bird);
-
-			List<Ability> Abilities = new List<Ability>();
-			Abilities.Add(Ability.Flying);
-
-			List<Trait> Traits = new List<Trait>();
-
-			List<GemType> gemCost = new List<GemType>();
-
-			List<AbilityIdentifier> customAbilities = new List<AbilityIdentifier>();
-
-			List<SpecialTriggeredAbility> specialAbilities = new List<SpecialTriggeredAbility>();
-			specialAbilities.Add(MurderOfCrowsSpecialAbility.specialAbility);
-
-			List<CardAppearanceBehaviour.Appearance> appearanceBehaviour = new List<CardAppearanceBehaviour.Appearance>();
-			appearanceBehaviour.Add(CardAppearanceBehaviour.Appearance.RareCardBackground);
-
-			Texture2D DefaultTexture = SigilUtils.GetTextureFromPath("Artwork/Void_Murder_of_Crows.png");
-
-			Texture2D eTexture = SigilUtils.GetTextureFromPath("Artwork/Void_Murder_of_Crows_e.png");
-
-			NewCard.Add(name: "void_murder_of_crows",
-				displayedName: "Murder of Crows",
-				baseAttack: 2,
-				baseHealth: 3,
-				metaCategories,
-				cardComplexity: CardComplexity.Advanced,
-				temple: CardTemple.Nature,
-				description: "A flock of black clouds swam and then leave, with the only thing remaining are bones",
-				hideAttackAndHealth: false,
-				bloodCost: 0,
-				bonesCost: 6,
-				energyCost: 0,
-				gemCost,
-				specialStatIcon: SpecialStatIcon.None,
-				Tribes,
-				Traits,
-				specialAbilities,
-				Abilities,
-				customAbilities,
-				specialAbilitiesIdsParam: null,
-				evolveParams: null,
-				defaultEvolutionName: null,
-				tailParams: null,
-				iceCubeParams: null,
-				flipPortraitForStrafe: false,
-				onePerDeck: false,
-				appearanceBehaviour,
-				DefaultTexture,
-				altTex: null,
-				titleGraphic: null,
-				pixelTex: null,
-				eTexture,
-				animatedPortrait: null,
-				decals: null,
-				evolveId: null,
-				iceCubeId: null,
-				tailId: null);
-		}
-	}
+    public static class MurderOfCrows
+    {
+        public static void AddCard()
+        {
+            string internalName = "void_Crows_Murder";
+            string displayName = "Murder of Crows";
+            string description = "A flock of black clouds swam and then leave, with the only thing remaining are bones.";
+            int attack = 2;
+            int health = 3;
+            int bloodCost = 0;
+            int boneCost = 6;
+            int energyCost = 0;
+            List<CardMetaCategory> list = new List<CardMetaCategory>();
+            list.Add((CardMetaCategory)3);
+            List<Tribe> list2 = new List<Tribe>();
+            list2.Add((Tribe)2);
+            List<Ability> list3 = new List<Ability>();
+            list3.Add((Ability)19);
+            List<Trait> traits = new List<Trait>();
+            List<GemType> list4 = new List<GemType>();
+            Texture2D textureFromPath = SigilUtils.GetTextureFromPath("Artwork/Void_Murder_of_Crows.png");
+            Texture2D textureFromPath2 = SigilUtils.GetTextureFromPath("Artwork/Void_Murder_of_Crows_e.png");
+            CardInfo cardInfo = SigilUtils.CreateCardWithDefaultSettings(internalName, displayName, attack, health, textureFromPath, textureFromPath2, list, list2, traits, list3, null, bloodCost, boneCost, energyCost);
+            CardExtensions.AddSpecialAbilities(cardInfo, new SpecialTriggeredAbility[]
+            {
+                MurderOfCrowsSpecialAbility.specialAbility
+            });
+            cardInfo.appearanceBehaviour.Add((CardAppearanceBehaviour.Appearance)7);
+            cardInfo.description = description;
+            CardManager.Add("void", cardInfo);
+        }
+    }
 }

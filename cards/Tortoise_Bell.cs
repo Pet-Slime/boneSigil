@@ -2,81 +2,47 @@
 using DiskCardGame;
 using UnityEngine;
 using APIPlugin;
+using boneSigils.Managers;
+using InscryptionAPI.Card;
+using InscryptionAPI.Guid;
 
 namespace boneSigils.cards
 {
-	public static class Tortoise_Bell
-	{
-		public static void AddCard()
-		{
+    public static class Tortoise_Bell
+    {
+        // Token: 0x06000081 RID: 129 RVA: 0x00007380 File Offset: 0x00005580
+        public static void AddCard()
+        {
+            string internalName = "void_Tortoise_Bell";
+            string displayName = "Bell Turtle";
+            string description = "A gift from the trapper, made of clockwork and gold.";
+            int attack = 0;
+            int health = 3;
+            int bloodCost = 0;
+            int boneCost = 6;
+            int energyCost = 0;
+            List<CardMetaCategory> list = new List<CardMetaCategory>();
+            list.Add((CardMetaCategory)1);
+            List<Tribe> list2 = new List<Tribe>();
+            list2.Add((Tribe)5);
+            List<Ability> list3 = new List<Ability>();
+            list3.Add(Tortoise_Bell.CustomAbility1);
+            List<Trait> traits = new List<Trait>();
+            Texture2D textureFromPath = SigilUtils.GetTextureFromPath("Artwork/Void_Tortoise_Bell.png");
+            Texture2D textureFromPath2 = SigilUtils.GetTextureFromPath("Artwork/Void_Tortoise_Bell_e.png");
+            Texture2D textureFromPath3 = SigilUtils.GetTextureFromPath("Artwork/Void_Tortoise_Bell_alt.png");
+            CardInfo cardInfo = SigilUtils.CreateCardWithDefaultSettings(internalName, displayName, attack, health, textureFromPath, textureFromPath2, list, list2, traits, list3, null, bloodCost, boneCost, energyCost);
+            cardInfo.description = description;
+            CardExtensions.SetIceCube(cardInfo, "void_Tortoise_Bell_Broken", null);
+            CardExtensions.SetTail(cardInfo, "void_Scrap", textureFromPath3, null, null);
+            CardExtensions.SetTerrain(cardInfo);
+            cardInfo.appearanceBehaviour.Add((CardAppearanceBehaviour.Appearance)6);
+            cardInfo.SetStatIcon((SpecialStatIcon)4);
+            cardInfo.SetSpecialAbilities(SpecialTriggeredAbility.BellProximity);
+            CardManager.Add("void", cardInfo);
+        }
 
-			List<CardMetaCategory> metaCategories = new List<CardMetaCategory>();
-			metaCategories.Add(CardMetaCategory.TraderOffer);
-
-			List<Tribe> Tribes = new List<Tribe>();
-			Tribes.Add(Tribe.Reptile);
-
-			List<Ability> Abilities = new List<Ability>();
-
-			List<Trait> Traits = new List<Trait>();
-
-			List<AbilityIdentifier> customAbilities = new List<AbilityIdentifier>();
-			customAbilities.Add(AbilityIdentifier.GetID("extraVoid.inscryption.voidSigils", "Resistant"));
-
-			List<SpecialTriggeredAbility> specialAbilities = new List<SpecialTriggeredAbility>();
-			specialAbilities.Add(SpecialTriggeredAbility.BellProximity);
-
-			List<CardAppearanceBehaviour.Appearance> appearanceBehaviour = new List<CardAppearanceBehaviour.Appearance>();
-			appearanceBehaviour.Add(CardAppearanceBehaviour.Appearance.GoldEmission);
-			appearanceBehaviour.Add(CardAppearanceBehaviour.Appearance.TerrainBackground);
-
-			Texture2D DefaultTexture = SigilUtils.GetTextureFromPath("Artwork/Void_Tortoise_Bell.png");
-
-			Texture2D eTexture = SigilUtils.GetTextureFromPath("Artwork/Void_Tortoise_Bell_e.png");
-
-			IceCubeIdentifier iceCubeId = new IceCubeIdentifier("Void_Tortoise_Bell_Broken", null);
-
-
-			Texture2D tailTexture = SigilUtils.GetTextureFromPath("Artwork/Void_Tortoise_Bell_alt.png");
-			TailIdentifier tail = new TailIdentifier("Void_Scrap", tailTexture, null);
-
-			NewCard.Add(name: "Void_Tortoise_Bell",
-				displayedName: "Bell Turtle",
-				baseAttack: 0,
-				baseHealth: 3,
-				metaCategories,
-				cardComplexity: CardComplexity.Simple,
-				temple: CardTemple.Nature,
-				description: "A gift from the trapper, made of clockwork and gold.",
-				hideAttackAndHealth: false,
-				bloodCost: 0,
-				bonesCost: 5,
-				energyCost: 0,
-				gemsCost: null,
-				specialStatIcon: SpecialStatIcon.Bell,
-				Tribes,
-				Traits,
-				specialAbilities,
-				Abilities,
-				customAbilities,
-				specialAbilitiesIdsParam: null,
-				evolveParams: null,
-				defaultEvolutionName: null,
-				tailParams: null,
-				iceCubeParams: null,
-				flipPortraitForStrafe: false,
-				onePerDeck: false,
-				appearanceBehaviour,
-				DefaultTexture,
-				altTex: null,
-				titleGraphic: null,
-				pixelTex: null,
-				eTexture,
-				animatedPortrait: null,
-				decals: null,
-				evolveId: null,
-				iceCubeId,
-				tail);
-		}
-	}
+        // Token: 0x04000036 RID: 54
+        public static readonly Ability CustomAbility1 = GuidManager.GetEnumValue<Ability>("extraVoid.inscryption.voidSigils", "Resistant");
+    }
 }

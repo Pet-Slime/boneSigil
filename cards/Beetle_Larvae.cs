@@ -2,78 +2,47 @@
 using DiskCardGame;
 using UnityEngine;
 using APIPlugin;
+using boneSigils.Managers;
+using InscryptionAPI.Card;
 
 namespace boneSigils.cards
 {
-	public static class Beetle_Larvae
+    public static class Beetle_Larvae
+    {
 
-	{
-		public static void AddCard()
-		{
-
-			List<CardMetaCategory> metaCategories = new List<CardMetaCategory>();
-			metaCategories.Add(CardMetaCategory.TraderOffer);
-			metaCategories.Add(CardMetaCategory.ChoiceNode);
-
-			List<Tribe> Tribes = new List<Tribe>();
-			Tribes.Add(Tribe.Insect);
-
-			List<Ability> Abilities = new List<Ability>();
-			Abilities.Add(boneSigils.ability_Pupate.ability);
-
-			List<Trait> Traits = new List<Trait>();
-
-			List<AbilityIdentifier> customAbilities = new List<AbilityIdentifier>();
-
-			List<SpecialTriggeredAbility> specialAbilities = new List<SpecialTriggeredAbility>();
-
-			List<CardAppearanceBehaviour.Appearance> appearanceBehaviour = new List<CardAppearanceBehaviour.Appearance>();
-
-			Texture2D DefaultTexture = SigilUtils.GetTextureFromPath("Artwork/void_beetle_larva.png");
-
-			Texture2D eTexture = SigilUtils.GetTextureFromPath("Artwork/void_beetle_larva_e.png");
-
-			IceCubeIdentifier iceCubeId = null;
-
-			TailIdentifier tail = null;
-
-			NewCard.Add(name: "void_beetle_larva",
-				displayedName: "Beetle Larva",
-				baseAttack: 1,
-				baseHealth: 3,
-				metaCategories,
-				cardComplexity: CardComplexity.Simple,
-				temple: CardTemple.Nature,
-				description: "A monsterously sized larvae, and a tasty one to boot!",
-				hideAttackAndHealth: false,
-				bloodCost: 0,
-				bonesCost: 3,
-				energyCost: 0,
-				gemsCost: null,
-				specialStatIcon: SpecialStatIcon.None,
-				Tribes,
-				Traits,
-				specialAbilities,
-				Abilities,
-				customAbilities,
-				specialAbilitiesIdsParam: null,
-				evolveParams: null,
-				defaultEvolutionName: "Overgrown",
-				tailParams: null,
-				iceCubeParams: null,
-				flipPortraitForStrafe: false,
-				onePerDeck: false,
-				appearanceBehaviour,
-				DefaultTexture,
-				altTex: null,
-				titleGraphic: null,
-				pixelTex: null,
-				eTexture,
-				animatedPortrait: null,
-				decals: null,
-				evolveId: null,
-				iceCubeId,
-				tail);
-		}
-	}
+        public static void AddCard()
+        {
+            string text = "void_Beetle_Larva";
+            string text2 = "Beetle Larva";
+            string description = "A monsterously sized larvae, and a tasty one to boot!";
+            int num = 1;
+            int num2 = 3;
+            int bloodCost = 0;
+            int boneCost = 3;
+            int energyCost = 0;
+            List<CardMetaCategory> list = new List<CardMetaCategory>();
+            list.Add((CardMetaCategory)1);
+            list.Add(0);
+            List<Tribe> list2 = new List<Tribe>();
+            list2.Add((Tribe)6);
+            List<Ability> list3 = new List<Ability>();
+            list3.Add(ability_Pupate.ability);
+            List<Trait> traits = new List<Trait>();
+            List<SpecialTriggeredAbility> list4 = new List<SpecialTriggeredAbility>();
+            List<CardAppearanceBehaviour.Appearance> list5 = new List<CardAppearanceBehaviour.Appearance>();
+            Texture2D textureFromPath = SigilUtils.GetTextureFromPath("Artwork/void_beetle_larva.png");
+            Texture2D textureFromPath2 = SigilUtils.GetTextureFromPath("Artwork/pixelportrait_beetle_larvae.png");
+            Texture2D textureFromPath3 = SigilUtils.GetTextureFromPath("Artwork/void_beetle_larva_e.png");
+            string internalName = text;
+            string displayName = text2;
+            int attack = num;
+            int health = num2;
+            Texture2D texture_base = textureFromPath;
+            Texture2D texture_emission = textureFromPath3;
+            Texture2D texture_pixel = textureFromPath2;
+            CardInfo cardInfo = SigilUtils.CreateCardWithDefaultSettings(internalName, displayName, attack, health, texture_base, texture_emission, list, list2, traits, list3, texture_pixel, bloodCost, boneCost, energyCost);
+            cardInfo.description = description;
+            CardManager.Add("void", cardInfo);
+        }
+    }
 }

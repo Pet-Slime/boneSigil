@@ -2,78 +2,41 @@
 using DiskCardGame;
 using UnityEngine;
 using APIPlugin;
+using boneSigils.Managers;
+using InscryptionAPI.Card;
+using InscryptionAPI.Guid;
 
 namespace boneSigils.cards
 {
-	public static class Bat
-	{
-		public static void AddCard()
-		{
+    public static class Bat
+    {
+        public static void AddCard()
+        {
+            string internalName = "void_Bat";
+            string displayName = "Spectral Bat";
+            string description = "Rarely seen, this bat haunts the shadows.";
+            int attack = 4;
+            int health = 5;
+            int bloodCost = 1;
+            int boneCost = 7;
+            int energyCost = 0;
+            List<CardMetaCategory> list = new List<CardMetaCategory>();
+            list.Add((CardMetaCategory)1);
+            list.Add(0);
+            List<Tribe> tribes = new List<Tribe>();
+            List<Ability> list2 = new List<Ability>();
+            list2.Add(Bat.CustomAbility2);
+            List<Trait> list3 = new List<Trait>();
+            list3.Add((Trait)10);
+            List<SpecialTriggeredAbility> list4 = new List<SpecialTriggeredAbility>();
+            List<CardAppearanceBehaviour.Appearance> list5 = new List<CardAppearanceBehaviour.Appearance>();
+            Texture2D textureFromPath = SigilUtils.GetTextureFromPath("Artwork/Void_Bat.png");
+            Texture2D textureFromPath2 = SigilUtils.GetTextureFromPath("Artwork/Void_Bat_e.png");
+            CardInfo cardInfo = SigilUtils.CreateCardWithDefaultSettings(internalName, displayName, attack, health, textureFromPath, textureFromPath2, list, tribes, list3, list2, null, bloodCost, boneCost, energyCost);
+            cardInfo.description = description;
+            CardManager.Add("void", cardInfo);
+        }
 
-			List<CardMetaCategory> metaCategories = new List<CardMetaCategory>();
-			metaCategories.Add(CardMetaCategory.TraderOffer);
-			metaCategories.Add(CardMetaCategory.ChoiceNode);
-
-			List<Tribe> Tribes = new List<Tribe>();
-
-			List<Ability> Abilities = new List<Ability>();
-
-			List<Trait> Traits = new List<Trait>();
-			Traits.Add(Trait.Blind);
-
-			List<AbilityIdentifier> customAbilities = new List<AbilityIdentifier>();
-			customAbilities.Add(AbilityIdentifier.GetID("extraVoid.inscryption.voidSigils", "Grazing"));
-			customAbilities.Add(AbilityIdentifier.GetID("extraVoid.inscryption.voidSigils", "Possessor"));
-
-			List<SpecialTriggeredAbility> specialAbilities = new List<SpecialTriggeredAbility>();
-
-			List<CardAppearanceBehaviour.Appearance> appearanceBehaviour = new List<CardAppearanceBehaviour.Appearance>();
-
-			Texture2D DefaultTexture = SigilUtils.GetTextureFromPath("Artwork/Void_Bat.png");
-
-			Texture2D eTexture = SigilUtils.GetTextureFromPath("Artwork/Void_Bat_e.png");
-
-			IceCubeIdentifier iceCubeId = null;
-
-			TailIdentifier tail = null;
-
-			NewCard.Add(name: "Void_Bat",
-				displayedName: "Spectral Bat",
-				baseAttack: 4,
-				baseHealth: 5,
-				metaCategories,
-				cardComplexity: CardComplexity.Advanced,
-				temple: CardTemple.Nature,
-				description: "Rarely seen, this bat haunts the shadows.",
-				hideAttackAndHealth: false,
-				bloodCost: 1,
-				bonesCost: 7,
-				energyCost: 0,
-				gemsCost: null,
-				specialStatIcon: SpecialStatIcon.None,
-				Tribes,
-				Traits,
-				specialAbilities,
-				Abilities,
-				customAbilities,
-				specialAbilitiesIdsParam: null,
-				evolveParams: null,
-				defaultEvolutionName: null,
-				tailParams: null,
-				iceCubeParams: null,
-				flipPortraitForStrafe: false,
-				onePerDeck: false,
-				appearanceBehaviour,
-				DefaultTexture,
-				altTex: null,
-				titleGraphic: null,
-				pixelTex: null,
-				eTexture,
-				animatedPortrait: null,
-				decals: null,
-				evolveId: null,
-				iceCubeId,
-				tail);
-		}
-	}
+        public static readonly Ability CustomAbility2 = GuidManager.GetEnumValue<Ability>("extraVoid.inscryption.voidSigils", "Possessor");
+    }
 }

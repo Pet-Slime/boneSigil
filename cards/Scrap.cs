@@ -2,73 +2,37 @@
 using DiskCardGame;
 using UnityEngine;
 using APIPlugin;
+using boneSigils.Managers;
+using InscryptionAPI.Card;
 
 namespace boneSigils.cards
 {
-	public static class Scrap
-	{
-		public static void AddCard()
-		{
-
-			List<CardMetaCategory> metaCategories = new List<CardMetaCategory>();
-
-			List<Tribe> Tribes = new List<Tribe>();
-
-			List<Ability> Abilities = new List<Ability>();
-
-			List<Trait> Traits = new List<Trait>();
-			Traits.Add(Trait.Terrain);
-
-			List<AbilityIdentifier> customAbilities = new List<AbilityIdentifier>();
-
-			List<SpecialTriggeredAbility> specialAbilities = new List<SpecialTriggeredAbility>();
-
-			List<CardAppearanceBehaviour.Appearance> appearanceBehaviour = new List<CardAppearanceBehaviour.Appearance>();
-			appearanceBehaviour.Add(CardAppearanceBehaviour.Appearance.TerrainBackground);
-
-			Texture2D DefaultTexture = SigilUtils.GetTextureFromPath("Artwork/Void_Screws.png");
-
-			Texture2D eTexture = SigilUtils.GetTextureFromPath("Artwork/Void_Screws.png");
-
-			IceCubeIdentifier iceCubeId = null;
-
-			NewCard.Add(name: "Void_Scrap",
-				displayedName: "Scrap",
-				baseAttack: 0,
-				baseHealth: 2,
-				metaCategories,
-				cardComplexity: CardComplexity.Simple,
-				temple: CardTemple.Nature,
-				description: "Junk left behind",
-				hideAttackAndHealth: false,
-				bloodCost: 0,
-				bonesCost: 0,
-				energyCost: 0,
-				gemsCost: null,
-				specialStatIcon: SpecialStatIcon.None,
-				Tribes,
-				Traits,
-				specialAbilities,
-				Abilities,
-				customAbilities,
-				specialAbilitiesIdsParam: null,
-				evolveParams: null,
-				defaultEvolutionName: null,
-				tailParams: null,
-				iceCubeParams: null,
-				flipPortraitForStrafe: false,
-				onePerDeck: false,
-				appearanceBehaviour,
-				DefaultTexture,
-				altTex: null,
-				titleGraphic: null,
-				pixelTex: null,
-				eTexture,
-				animatedPortrait: null,
-				decals: null,
-				evolveId: null,
-				iceCubeId,
-				tailId: null);
-		}
-	}
+    public static class Scrap
+    {
+        public static void AddCard()
+        {
+            string internalName = "void_Scrap";
+            string displayName = "Scrap";
+            string description = "Junk left behind by the Trapper.";
+            int attack = 0;
+            int health = 2;
+            int bloodCost = 0;
+            int boneCost = 0;
+            int energyCost = 0;
+            List<CardMetaCategory> cardMetaCategories = new List<CardMetaCategory>();
+            List<Tribe> tribes = new List<Tribe>();
+            List<Ability> abilities = new List<Ability>();
+            List<Trait> list = new List<Trait>();
+            list.Add((Trait)12);
+            List<SpecialTriggeredAbility> list2 = new List<SpecialTriggeredAbility>();
+            List<CardAppearanceBehaviour.Appearance> list3 = new List<CardAppearanceBehaviour.Appearance>();
+            list3.Add((CardAppearanceBehaviour.Appearance)2);
+            Texture2D textureFromPath = SigilUtils.GetTextureFromPath("Artwork/Void_Screws.png");
+            Texture2D textureFromPath2 = SigilUtils.GetTextureFromPath("Artwork/Void_Screws.png");
+            CardInfo cardInfo = SigilUtils.CreateCardWithDefaultSettings(internalName, displayName, attack, health, textureFromPath, textureFromPath2, cardMetaCategories, tribes, list, abilities, null, bloodCost, boneCost, energyCost);
+            CardExtensions.SetTerrain(cardInfo);
+            cardInfo.description = description;
+            CardManager.Add("void", cardInfo);
+        }
+    }
 }

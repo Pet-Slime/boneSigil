@@ -5,32 +5,23 @@ using UnityEngine;
 using System;
 using System.Collections.Generic;
 using Resources = boneSigils.Artwork.Resources;
+using InscryptionAPI.Card;
+using boneSigils.Managers;
 
 namespace boneSigils
 {
-	public partial class Plugin
+    public partial class Plugin
 	{
-		private NewAbility AddPupate()
+		private void AddPupate()
 		{
-			// setup ability
-			const string rulebookName = "Pupate";
-			const string rulebookDescription = "[creature] will become a random beetle after 3 turns.";
-			// const string TextureFile = "Artwork/void_pathetic.png";
-
-			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, true, -1);
-			info.canStack = false;
-
-			Texture2D tex = SigilUtils.LoadTextureFromResource(Resources.ability_pupate_3);
-
-			var abIds = SigilUtils.GetAbilityId(info.rulebookName);
-			
-			NewAbility newAbility = new NewAbility(info, typeof(ability_Pupate), tex, abIds);
-
-			// set ability to behaviour class
-			ability_Pupate.ability = newAbility.ability;
-
-			return newAbility;
-		}
+            Texture2D text_a = SigilUtils.LoadTextureFromResource(Resources.ability_pupate_3);
+            Texture2D text_a2 = SigilUtils.LoadTextureFromResource(Resources.ability_pupate_3_a2);
+            int powerLevel = -3;
+            bool leshyUsable = false;
+            bool part1Modular = true;
+            bool stack = false;
+            ability_Pupate.ability = SigilUtils.CreateAbilityWithDefaultSettings("Pupate", "[creature] will become a random beetle after 3 turns.", typeof(ability_Pupate), text_a, text_a2, "What Beetle will it turn into?", true, powerLevel, leshyUsable, part1Modular, stack).ability;
+        }
 	}
 
 	public class ability_Pupate : AbilityBehaviour

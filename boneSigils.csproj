@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <Description>a sigil I needed for my bone pack mod</Description>
@@ -20,6 +20,7 @@
     <PackageReference Include="BepInEx.Core" Version="5.4.16" />
     <PackageReference Include="BepInEx.PluginInfoProps" Version="1.1.0" />
     <PackageReference Include="UnityEngine.Modules" Version="2019.4.24" IncludeAssets="compile" />
+	<PackageReference Include="Inscryption.GameLibs" Version="0.30.0-r.0" />
   </ItemGroup>
 
   <ItemGroup Condition="'$(TargetFramework.TrimEnd(`0123456789`))' == 'net'">
@@ -27,14 +28,26 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Reference Include="API">
-      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Inscryption\BepInEx\plugins\API_dev-API\API_KCM.dll</HintPath>
+    <Reference Include="Infiniscryption.PackManager">
+      <HintPath>..\..\..\AppData\Roaming\r2modmanPlus-local\Inscryption\profiles\Test\BepInEx\plugins\Infiniscryption-Pack_Management_API\Infiniscryption.PackManager.dll</HintPath>
+      <Private>False</Private>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="Assembly-CSharp">
-      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Inscryption\Inscryption_Data\Managed\Assembly-CSharp.dll</HintPath>
+    <Reference Include="InscryptionAPI">
+      <HintPath>..\..\..\AppData\Roaming\r2modmanPlus-local\Inscryption\profiles\Test\BepInEx\plugins\API_dev-API\InscryptionAPI.dll</HintPath>
     </Reference>
     <Reference Include="Sirenix.Serialization">
-      <HintPath>lib\Sirenix.Serialization.dll</HintPath>
+      <HintPath>..\AllTheSigils\lib\Sirenix.Serialization.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>..\AllTheSigils\lib\UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>..\AllTheSigils\lib\UnityEngine.CoreModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.InputLegacyModule">
+      <HintPath>..\AllTheSigils\lib\UnityEngine.InputLegacyModule.dll</HintPath>
     </Reference>
   </ItemGroup>
 
@@ -56,7 +69,7 @@
   <Target Name="CopyDLLs" AfterTargets="Build">
     <Message Text="Executing CopyDLLs task" Importance="High" />
 
-    <Copy SourceFiles="$(TargetDir)$(ProjectName).dll;" DestinationFolder="C:\Program Files (x86)\Steam\steamapps\common\Inscryption\BepInEx\plugins\Bone Pack\plugins" />
+    <Copy SourceFiles="$(TargetDir)$(ProjectName).dll;" DestinationFolder="C:\Users\gravi\AppData\Roaming\r2modmanPlus-local\Inscryption\profiles\Test\BepInEx\plugins\Void_Slime-Void_Bone_Pack" />
     
     <Copy Condition="Exists('C:\DEVELOPER\InscryptionMods\lib\')" SourceFiles="$(TargetDir)$(ProjectName).dll" DestinationFolder="C:\DEVELOPER\InscryptionMods\lib\" />
 

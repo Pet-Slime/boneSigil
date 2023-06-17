@@ -2,78 +2,45 @@
 using DiskCardGame;
 using UnityEngine;
 using APIPlugin;
+using boneSigils.Managers;
+using InscryptionAPI.Card;
+using InscryptionAPI.Guid;
 
 namespace boneSigils.cards
 {
-	public static class Tortoise_Spiny
-	{
-		public static void AddCard()
-		{
-
-			List<CardMetaCategory> metaCategories = new List<CardMetaCategory>();
-			metaCategories.Add(CardMetaCategory.ChoiceNode);
-			metaCategories.Add(CardMetaCategory.TraderOffer);
-
-			List<Tribe> Tribes = new List<Tribe>();
-			Tribes.Add(Tribe.Reptile);
-
-			List<Ability> Abilities = new List<Ability>();
-			Abilities.Add(Ability.Sharp);
-
-			List<Trait> Traits = new List<Trait>();
-
-			List<AbilityIdentifier> customAbilities = new List<AbilityIdentifier>();
-			customAbilities.Add(AbilityIdentifier.GetID("extraVoid.inscryption.voidSigils", "Thick Shell"));
-
-			List<SpecialTriggeredAbility> specialAbilities = new List<SpecialTriggeredAbility>();
-
-			List<CardAppearanceBehaviour.Appearance> appearanceBehaviour = new List<CardAppearanceBehaviour.Appearance>();
-
-			Texture2D DefaultTexture = SigilUtils.GetTextureFromPath("Artwork/Void_tortoise_spiny.png");
-
-			Texture2D eTexture = SigilUtils.GetTextureFromPath("Artwork/Void_tortoise_spiny_e.png");
-
-			IceCubeIdentifier iceCubeId = null;
-			EvolveIdentifier evolveId = null;
-			TailIdentifier tail = null;
-
-			NewCard.Add(name: "Void_tortoise_spiny",
-				displayedName: "Spiny Turtle",
-				baseAttack: 1,
-				baseHealth: 6,
-				metaCategories,
-				cardComplexity: CardComplexity.Simple,
-				temple: CardTemple.Nature,
-				description: "A hard shell with spikes to boot.",
-				hideAttackAndHealth: false,
-				bloodCost: 1,
-				bonesCost: 6,
-				energyCost: 0,
-				gemsCost: null,
-				specialStatIcon: SpecialStatIcon.None,
-				Tribes,
-				Traits,
-				specialAbilities,
-				Abilities,
-				customAbilities,
-				specialAbilitiesIdsParam: null,
-				evolveParams: null,
-				defaultEvolutionName: null,
-				tailParams: null,
-				iceCubeParams: null,
-				flipPortraitForStrafe: false,
-				onePerDeck: false,
-				appearanceBehaviour,
-				DefaultTexture,
-				altTex: null,
-				titleGraphic: null,
-				pixelTex: null,
-				eTexture,
-				animatedPortrait: null,
-				decals: null,
-				evolveId,
-				iceCubeId,
-				tail);
-		}
-	}
+    public static class Tortoise_Spiny
+    {
+        public static void AddCard()
+        {
+            string internalName = "void_Tortoise_Spiny";
+            string displayName = "Spiny Turtle";
+            string description = "A hard shell with spikes to boot.";
+            int attack = 1;
+            int health = 5;
+            int bloodCost = 1;
+            int boneCost = 5;
+            int energyCost = 0;
+            List<CardMetaCategory> list = new List<CardMetaCategory>
+            {
+                0,
+                (CardMetaCategory)1
+            };
+            List<Tribe> list2 = new List<Tribe>
+            {
+                (Tribe)5
+            };
+            List<Ability> list3 = new List<Ability>
+            {
+                (Ability)15,
+                Tortoise_Spiny.CustomAbility1
+            };
+            List<Trait> traits = new List<Trait>();
+            Texture2D textureFromPath = SigilUtils.GetTextureFromPath("Artwork/Void_tortoise_spiny.png");
+            Texture2D textureFromPath2 = SigilUtils.GetTextureFromPath("Artwork/Void_tortoise_spiny_e.png");
+            CardInfo cardInfo = SigilUtils.CreateCardWithDefaultSettings(internalName, displayName, attack, health, textureFromPath, textureFromPath2, list, list2, traits, list3, null, bloodCost, boneCost, energyCost);
+            cardInfo.description = description;
+            CardManager.Add("void", cardInfo);
+        }
+        public static readonly Ability CustomAbility1 = GuidManager.GetEnumValue<Ability>("extraVoid.inscryption.voidSigils", "Thick Shell");
+    }
 }

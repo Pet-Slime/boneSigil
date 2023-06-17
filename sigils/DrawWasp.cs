@@ -1,62 +1,63 @@
 ﻿using System.Collections;
 using APIPlugin;
+using boneSigils.Managers;
 using DiskCardGame;
+using InscryptionAPI.Card;
 using UnityEngine;
 using Resources = boneSigils.Artwork.Resources;
 
 namespace boneSigils
 {
-	public partial class Plugin
+    public partial class Plugin
 	{
-		private NewAbility AddDrawWasp()
+		private void AddDrawWasp()
 		{
-			// setup ability
-			const string rulebookName = "Draw Wasp";
-			const string rulebookDescription = "[creature] draws a wasp swarm when played";
-			// const string TextureFile = "Artwork/void_pathetic.png";
+            Texture2D text_a = SigilUtils.LoadTextureFromResource(Resources.ability_drawwasp);
+            Texture2D text_a2 = SigilUtils.LoadTextureFromResource(Resources.ability_drawwasp);
+            int powerLevel = -3;
+            bool leshyUsable = false;
+            bool part1Modular = true;
+            bool stack = false;
+            ability_drawwasp.ability = SigilUtils.CreateAbilityWithDefaultSettings("Draw Wasp", "[creature] draws a wasp swarm when played", typeof(ability_drawwasp), text_a, text_a2, "Where there is one, there is many.", true, powerLevel, leshyUsable, part1Modular, stack).ability;
 
-			AbilityInfo info = SigilUtils.CreateInfoWithDefaultSettings(rulebookName, rulebookDescription, true, 0);
 
-			Texture2D tex = SigilUtils.LoadTextureFromResource(Resources.ability_drawwasp);
-
-			var abIds = SigilUtils.GetAbilityId(info.rulebookName);
-			
-			NewAbility newAbility = new NewAbility(info, typeof(ability_drawwasp), tex, abIds);
-
-			// set ability to behaviour class
-			ability_drawwasp.ability = newAbility.ability;
-
-			return newAbility;
 		}
 	}
 
-	public class ability_drawwasp : DrawCreatedCard
-	{
-		public override Ability Ability => ability;
+    public class ability_drawwasp : DrawCreatedCard
+    {
+        public override Ability Ability
+        {
+            get
+            {
+                return ability_drawwasp.ability;
+            }
+        }
+        public override CardInfo CardToDraw
+        {
+            get
+            {
+                CardInfo cardByName = CardLoader.GetCardByName("void_Wasp_Swarm");
+                cardByName.Mods.AddRange(base.Card.TemporaryMods);
+                return cardByName;
+            }
+        }
 
-		public static Ability ability;
+        public override bool RespondsToResolveOnBoard()
+        {
+            return true;
+        }
 
-		public override CardInfo CardToDraw
-		{
-			get
-			{
-				CardInfo result = CardLoader.GetCardByName("Void_Wasp");
-				return result;
-			}
-		}
 
-		public override bool RespondsToResolveOnBoard()
-		{
-			return true;
-		}
+        public override IEnumerator OnResolveOnBoard()
+        {
+            yield return base.PreSuccessfulTriggerSequence();
+            yield return base.CreateDrawnCard();
+            yield return base.LearnAbility(0.5f);
+            yield break;
+        }
 
-		public override IEnumerator OnResolveOnBoard()
-		{
-			yield return base.PreSuccessfulTriggerSequence();
-			yield return base.CreateDrawnCard();
-			yield return base.LearnAbility(0.5f);
-			yield break;
-		}
 
-	}
+        public static Ability ability;
+    }
 }

@@ -2,85 +2,51 @@
 using DiskCardGame;
 using UnityEngine;
 using APIPlugin;
+using boneSigils.Managers;
+using BepInEx.Bootstrap;
+using InscryptionAPI.Card;
+using InscryptionAPI.Guid;
 
 namespace boneSigils.cards
 {
-	public static class Enchidna
-	{
-		public static void AddCard()
-		{
-			var bloodcost = 2;
-			var energycost = 0;
-			if (BepInEx.Bootstrap.Chainloader.PluginInfos.ContainsKey("extraVoid.inscryption.LifeCost"))
-			{
-				Plugin.Log.LogMessage("Found Life cost API, Adjusting Enchidna's Cost");
+    public static class Enchidna
+    {
+        // Token: 0x0600005E RID: 94 RVA: 0x00005474 File Offset: 0x00003674
+        public static void AddCard()
+        {
+            string internalName = "void_Enchidna";
+            string displayName = "Enchidna";
+            string description = "One of the few mammals to use Electroreception.";
+            int attack = 2;
+            int health = 4;
+            int bloodCost = 2;
+            int boneCost = 4;
+            int energyCost = 0;
+            bool flag = Chainloader.PluginInfos.ContainsKey("extraVoid.inscryption.LifeCost");
+            if (flag)
+            {
+                Plugin.Log.LogMessage("Found Life cost API, Adjusting Enchidna's Cost from blood to money");
+                bloodCost = 0;
+                energyCost = -8;
+            }
+            List<CardMetaCategory> list = new List<CardMetaCategory>();
+            list.Add((CardMetaCategory)1);
+            list.Add(0);
+            List<Tribe> tribes = new List<Tribe>();
+            List<Ability> list2 = new List<Ability>();
+            list2.Add((Ability)15);
+            list2.Add(Enchidna.CustomAbility1);
+            List<Trait> traits = new List<Trait>();
+            List<SpecialTriggeredAbility> list3 = new List<SpecialTriggeredAbility>();
+            List<CardAppearanceBehaviour.Appearance> list4 = new List<CardAppearanceBehaviour.Appearance>();
+            Texture2D textureFromPath = SigilUtils.GetTextureFromPath("Artwork/void_enchidna.png");
+            Texture2D textureFromPath2 = SigilUtils.GetTextureFromPath("Artwork/void_enchidna_e.png");
+            CardInfo cardInfo = SigilUtils.CreateCardWithDefaultSettings(internalName, displayName, attack, health, textureFromPath, textureFromPath2, list, tribes, traits, list2, null, bloodCost, boneCost, energyCost);
+            cardInfo.description = description;
+            CardManager.Add("void", cardInfo);
+        }
 
-				bloodcost = 0;
-				energycost = -8;
-			}
-			List<CardMetaCategory> metaCategories = new List<CardMetaCategory>();
-			metaCategories.Add(CardMetaCategory.TraderOffer);
-			metaCategories.Add(CardMetaCategory.ChoiceNode);
-
-			List<Tribe> Tribes = new List<Tribe>();
-
-			List<Ability> Abilities = new List<Ability>();
-			Abilities.Add(Ability.Sharp);
-
-			List<Trait> Traits = new List<Trait>();
-
-			List<AbilityIdentifier> customAbilities = new List<AbilityIdentifier>();
-			customAbilities.Add(AbilityIdentifier.GetID("extraVoid.inscryption.voidSigils", "Electric"));
-
-			List<SpecialTriggeredAbility> specialAbilities = new List<SpecialTriggeredAbility>();
-
-			List<CardAppearanceBehaviour.Appearance> appearanceBehaviour = new List<CardAppearanceBehaviour.Appearance>();
-
-			Texture2D DefaultTexture = SigilUtils.GetTextureFromPath("Artwork/void_enchidna.png");
-
-			Texture2D eTexture = SigilUtils.GetTextureFromPath("Artwork/void_enchidna_e.png");
-
-			IceCubeIdentifier iceCubeId = null;
-
-			TailIdentifier tail = null;
-
-			NewCard.Add(name: "Void_Enchidna",
-				displayedName: "Enchidna",
-				baseAttack: 2,
-				baseHealth: 4,
-				metaCategories,
-				cardComplexity: CardComplexity.Simple,
-				temple: CardTemple.Nature,
-				description: "One of the few mammals to use Electroreception.",
-				hideAttackAndHealth: false,
-				bloodCost: bloodcost,
-				bonesCost: 3,
-				energyCost: energycost,
-				gemsCost: null,
-				specialStatIcon: SpecialStatIcon.None,
-				Tribes,
-				Traits,
-				specialAbilities,
-				Abilities,
-				customAbilities,
-				specialAbilitiesIdsParam: null,
-				evolveParams: null,
-				defaultEvolutionName: null,
-				tailParams: null,
-				iceCubeParams: null,
-				flipPortraitForStrafe: false,
-				onePerDeck: false,
-				appearanceBehaviour,
-				DefaultTexture,
-				altTex: null,
-				titleGraphic: null,
-				pixelTex: null,
-				eTexture,
-				animatedPortrait: null,
-				decals: null,
-				evolveId: null,
-				iceCubeId,
-				tail);
-		}
-	}
+        // Token: 0x04000028 RID: 40
+        public static readonly Ability CustomAbility1 = GuidManager.GetEnumValue<Ability>("extraVoid.inscryption.voidSigils", "Electric");
+    }
 }

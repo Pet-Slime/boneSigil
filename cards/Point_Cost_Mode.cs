@@ -1,5 +1,6 @@
 ﻿using DiskCardGame;
 using APIPlugin;
+using InscryptionAPI.Card;
 
 namespace boneSigils.cards
 {
@@ -14,207 +15,207 @@ namespace boneSigils.cards
 			card = cards.Find((CardInfo x) => x.name == "Void_Angler");
 			//Subtract 1 from the power level of a card, as every card gets 1 free health, but power level includes it.
 			PowerLevel = card.PowerLevel - 1;
-			card.bonesCost = PowerLevel - Plugin.configPointCostBonus.Value - (card.BloodCost * 4);
+			card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - (card.BloodCost * 4));
 	
 			card = cards.Find((CardInfo x) => x.name == "Void_Leaf_Ant");
 			//Subtract 1 from the power level of a card, as every card gets 1 free health, but power level includes it.
 			PowerLevel = card.PowerLevel - 1;
-			card.bonesCost = PowerLevel - Plugin.configPointCostBonus.Value - (card.BloodCost * 4);
-	
-			card = cards.Find((CardInfo x) => x.name == "Void_Bat");
-			//Subtract 1 from the power level of a card, as every card gets 1 free health, but power level includes it.
-			PowerLevel = card.PowerLevel - 1;
-			card.bonesCost = PowerLevel - Plugin.configPointCostBonus.Value - (card.BloodCost * 4);
+            card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - (card.BloodCost * 4));
 
-			card = cards.Find((CardInfo x) => x.name == "Void_Bear");
+            card = cards.Find((CardInfo x) => x.name == "Void_Bat");
 			//Subtract 1 from the power level of a card, as every card gets 1 free health, but power level includes it.
 			PowerLevel = card.PowerLevel - 1;
-			card.bonesCost = PowerLevel - Plugin.configPointCostBonus.Value - (card.BloodCost * 4);
+            card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - (card.BloodCost * 4));
 
-			card = cards.Find((CardInfo x) => x.name == "Void_Beetle_Bombardier");
+            card = cards.Find((CardInfo x) => x.name == "Void_Bear");
 			//Subtract 1 from the power level of a card, as every card gets 1 free health, but power level includes it.
 			PowerLevel = card.PowerLevel - 1;
-			card.bonesCost = PowerLevel - Plugin.configPointCostBonus.Value - (card.BloodCost * 4);
+            card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - (card.BloodCost * 4));
 
-			card = cards.Find((CardInfo x) => x.name == "Void_Beetle");
+            card = cards.Find((CardInfo x) => x.name == "Void_Beetle_Bombardier");
 			//Subtract 1 from the power level of a card, as every card gets 1 free health, but power level includes it.
 			PowerLevel = card.PowerLevel - 1;
-			card.bonesCost = PowerLevel - Plugin.configPointCostBonus.Value - (card.BloodCost * 4);
+            card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - (card.BloodCost * 4));
 
-			card = cards.Find((CardInfo x) => x.name == "void_beetle_larva");
+            card = cards.Find((CardInfo x) => x.name == "Void_Beetle");
 			//Subtract 1 from the power level of a card, as every card gets 1 free health, but power level includes it.
 			PowerLevel = card.PowerLevel - 1;
-			card.bonesCost = PowerLevel - Plugin.configPointCostBonus.Value - (card.BloodCost * 4);
+            card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - (card.BloodCost * 4));
 
-			card = cards.Find((CardInfo x) => x.name == "Void_Rino_beetle");
+            card = cards.Find((CardInfo x) => x.name == "void_beetle_larva");
 			//Subtract 1 from the power level of a card, as every card gets 1 free health, but power level includes it.
 			PowerLevel = card.PowerLevel - 1;
-			card.bonesCost = PowerLevel - Plugin.configPointCostBonus.Value - (card.BloodCost * 4);
+            card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - (card.BloodCost * 4));
 
-			card = cards.Find((CardInfo x) => x.name == "Void_Scarab_Jewel");
+            card = cards.Find((CardInfo x) => x.name == "Void_Rino_beetle");
 			//Subtract 1 from the power level of a card, as every card gets 1 free health, but power level includes it.
 			PowerLevel = card.PowerLevel - 1;
-			card.bonesCost = PowerLevel - Plugin.configPointCostBonus.Value - (card.BloodCost * 4);
+            card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - (card.BloodCost * 4));
 
-			card = cards.Find((CardInfo x) => x.name == "Void_Bone_Lord");
+            card = cards.Find((CardInfo x) => x.name == "Void_Scarab_Jewel");
 			//Subtract 1 from the power level of a card, as every card gets 1 free health, but power level includes it.
 			PowerLevel = card.PowerLevel - 1;
-			card.bonesCost = PowerLevel - Plugin.configPointCostBonus.Value - (card.BloodCost * 4);
+            card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - (card.BloodCost * 4));
 
-			card = cards.Find((CardInfo x) => x.name == "Void_burrow");
+            card = cards.Find((CardInfo x) => x.name == "Void_Bone_Lord");
 			//Subtract 1 from the power level of a card, as every card gets 1 free health, but power level includes it.
 			PowerLevel = card.PowerLevel - 1;
-			card.bonesCost = PowerLevel - Plugin.configPointCostBonus.Value - (card.BloodCost * 4);
+            card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - (card.BloodCost * 4));
 
-			card = cards.Find((CardInfo x) => x.name == "void_cow_mad");
+            card = cards.Find((CardInfo x) => x.name == "Void_burrow");
 			//Subtract 1 from the power level of a card, as every card gets 1 free health, but power level includes it.
 			PowerLevel = card.PowerLevel - 1;
-			card.bonesCost = PowerLevel - Plugin.configPointCostBonus.Value - (card.BloodCost * 4);
+            card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - (card.BloodCost * 4));
 
-			card = cards.Find((CardInfo x) => x.name == "void_cow_wild");
+            card = cards.Find((CardInfo x) => x.name == "void_cow_mad");
 			//Subtract 1 from the power level of a card, as every card gets 1 free health, but power level includes it.
 			PowerLevel = card.PowerLevel - 1;
-			card.bonesCost = PowerLevel - Plugin.configPointCostBonus.Value - (card.BloodCost * 4);
+            card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - (card.BloodCost * 4));
 
-			card = cards.Find((CardInfo x) => x.name == "Void_Coco_Crab");
+            card = cards.Find((CardInfo x) => x.name == "void_cow_wild");
 			//Subtract 1 from the power level of a card, as every card gets 1 free health, but power level includes it.
 			PowerLevel = card.PowerLevel - 1;
-			card.bonesCost = PowerLevel - Plugin.configPointCostBonus.Value - (card.BloodCost * 4);
+            card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - (card.BloodCost * 4));
 
-			card = cards.Find((CardInfo x) => x.name == "Void_Crab_Fiddler");
+            card = cards.Find((CardInfo x) => x.name == "Void_Coco_Crab");
 			//Subtract 1 from the power level of a card, as every card gets 1 free health, but power level includes it.
 			PowerLevel = card.PowerLevel - 1;
-			card.bonesCost = PowerLevel - Plugin.configPointCostBonus.Value - (card.BloodCost * 4);
+            card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - (card.BloodCost * 4));
 
-			card = cards.Find((CardInfo x) => x.name == "Void_Crab_Spider");
+            card = cards.Find((CardInfo x) => x.name == "Void_Crab_Fiddler");
 			//Subtract 1 from the power level of a card, as every card gets 1 free health, but power level includes it.
 			PowerLevel = card.PowerLevel - 1;
-			card.bonesCost = PowerLevel - Plugin.configPointCostBonus.Value - (card.BloodCost * 4);
+            card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - (card.BloodCost * 4));
 
-			card = cards.Find((CardInfo x) => x.name == "Void_Dragon");
+            card = cards.Find((CardInfo x) => x.name == "Void_Crab_Spider");
 			//Subtract 1 from the power level of a card, as every card gets 1 free health, but power level includes it.
 			PowerLevel = card.PowerLevel - 1;
-			card.bonesCost = PowerLevel - Plugin.configPointCostBonus.Value - (card.BloodCost * 4);
+            card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - (card.BloodCost * 4));
 
-			card = cards.Find((CardInfo x) => x.name == "void_egg");
+            card = cards.Find((CardInfo x) => x.name == "Void_Dragon");
 			//Subtract 1 from the power level of a card, as every card gets 1 free health, but power level includes it.
 			PowerLevel = card.PowerLevel - 1;
-			card.bonesCost = PowerLevel - Plugin.configPointCostBonus.Value - (card.BloodCost * 4);
- 
-			card = cards.Find((CardInfo x) => x.name == "Void_Enchidna");
+            card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - (card.BloodCost * 4));
+
+            card = cards.Find((CardInfo x) => x.name == "void_egg");
 			//Subtract 1 from the power level of a card, as every card gets 1 free health, but power level includes it.
 			PowerLevel = card.PowerLevel - 1;
-			card.bonesCost = PowerLevel - Plugin.configPointCostBonus.Value - (card.BloodCost * 4);
-			if (BepInEx.Bootstrap.Chainloader.PluginInfos.ContainsKey("extraVoid.inscryption.LifeCost"))
-			{
-				card.bonesCost = PowerLevel - Plugin.configPointCostBonus.Value - (card.BloodCost * 4) - 8;
-			}
+            card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - (card.BloodCost * 4));
+
+            card = cards.Find((CardInfo x) => x.name == "Void_Enchidna");
+			//Subtract 1 from the power level of a card, as every card gets 1 free health, but power level includes it.
+			PowerLevel = card.PowerLevel - 1;
+            card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - (card.BloodCost * 4));
+            if (BepInEx.Bootstrap.Chainloader.PluginInfos.ContainsKey("extraVoid.inscryption.LifeCost"))
+            {
+                card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - (card.BloodCost * 4)-8);
+            }
 
 			card = cards.Find((CardInfo x) => x.name == "void_giraffe");
 			//Subtract 1 from the power level of a card, as every card gets 1 free health, but power level includes it.
 			PowerLevel = card.PowerLevel - 1;
-			card.bonesCost = PowerLevel - Plugin.configPointCostBonus.Value - (card.BloodCost * 4);
+            card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - (card.BloodCost * 4));
 
-			card = cards.Find((CardInfo x) => x.name == "Void_Mantis_Shrimp");
+            card = cards.Find((CardInfo x) => x.name == "Void_Mantis_Shrimp");
 			//Subtract 1 from the power level of a card, as every card gets 1 free health, but power level includes it.
 			PowerLevel = card.PowerLevel - 1;
-			card.bonesCost = PowerLevel - Plugin.configPointCostBonus.Value - (card.BloodCost * 4);
+            card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - (card.BloodCost * 4));
 
-			card = cards.Find((CardInfo x) => x.name == "void_murder_of_crows");
+            card = cards.Find((CardInfo x) => x.name == "void_murder_of_crows");
 			//Subtract 1 from the power level of a card, as every card gets 1 free health, but power level includes it.
 			PowerLevel = card.PowerLevel - 1;
-			card.bonesCost = PowerLevel - Plugin.configPointCostBonus.Value - (card.BloodCost * 4);
+            card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - (card.BloodCost * 4));
 
-			card = cards.Find((CardInfo x) => x.name == "Void_Owl_Familiar");
+            card = cards.Find((CardInfo x) => x.name == "Void_Owl_Familiar");
 			//Subtract 1 from the power level of a card, as every card gets 1 free health, but power level includes it.
 			PowerLevel = card.PowerLevel - 1;
-			card.bonesCost = PowerLevel - Plugin.configPointCostBonus.Value - (card.BloodCost * 4);
+            card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - (card.BloodCost * 4));
 
-			card = cards.Find((CardInfo x) => x.name == "Void_Rabbit");
+            card = cards.Find((CardInfo x) => x.name == "Void_Rabbit");
 			//Subtract 1 from the power level of a card, as every card gets 1 free health, but power level includes it.
 			PowerLevel = card.PowerLevel - 1;
-			card.bonesCost = PowerLevel - Plugin.configPointCostBonus.Value - (card.BloodCost * 4);
+            card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - (card.BloodCost * 4));
 
-			card = cards.Find((CardInfo x) => x.name == "void_torpedoRay");
+            card = cards.Find((CardInfo x) => x.name == "void_torpedoRay");
 			//Subtract 1 from the power level of a card, as every card gets 1 free health, but power level includes it.
 			PowerLevel = card.PowerLevel - 1;
-			card.bonesCost = PowerLevel - Plugin.configPointCostBonus.Value - (card.BloodCost * 4);
-			if (BepInEx.Bootstrap.Chainloader.PluginInfos.ContainsKey("extraVoid.inscryption.LifeCost"))
-			{
-				card.bonesCost = PowerLevel - Plugin.configPointCostBonus.Value - (card.BloodCost * 4) - 8;
-			}
+            card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - (card.BloodCost * 4));
+            if (BepInEx.Bootstrap.Chainloader.PluginInfos.ContainsKey("extraVoid.inscryption.LifeCost"))
+            {
+                card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - (card.BloodCost * 4)-8);
+            }
 
 			card = cards.Find((CardInfo x) => x.name == "void_ruby_creature");
 			//Subtract 1 from the power level of a card, as every card gets 1 free health, but power level includes it.
 			PowerLevel = card.PowerLevel - 1;
-			card.bonesCost = PowerLevel - Plugin.configPointCostBonus.Value - (card.BloodCost * 4);
+            card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - (card.BloodCost * 4));
 
-			card = cards.Find((CardInfo x) => x.name == "Void_Salmon");
+            card = cards.Find((CardInfo x) => x.name == "Void_Salmon");
 			//Subtract 1 from the power level of a card, as every card gets 1 free health, but power level includes it.
 			PowerLevel = card.PowerLevel - 1;
-			card.bonesCost = PowerLevel - Plugin.configPointCostBonus.Value - (card.BloodCost * 4);
+            card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - (card.BloodCost * 4));
 
-			card = cards.Find((CardInfo x) => x.name == "Void_Jade_Serpent");
+            card = cards.Find((CardInfo x) => x.name == "Void_Jade_Serpent");
 			//Subtract 1 from the power level of a card, as every card gets 1 free health, but power level includes it.
 			PowerLevel = card.PowerLevel - 1;
-			card.bonesCost = PowerLevel - Plugin.configPointCostBonus.Value - (card.BloodCost * 4);
+            card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - (card.BloodCost * 4));
 
-			card = cards.Find((CardInfo x) => x.name == "Void_Tanuki");
+            card = cards.Find((CardInfo x) => x.name == "Void_Tanuki");
 			//Subtract 1 from the power level of a card, as every card gets 1 free health, but power level includes it.
 			PowerLevel = card.PowerLevel - 1;
-			card.bonesCost = PowerLevel - Plugin.configPointCostBonus.Value - (card.BloodCost * 4);
+            card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - (card.BloodCost * 4));
 
-			card = cards.Find((CardInfo x) => x.name == "void_tanuki_mythical");
+            card = cards.Find((CardInfo x) => x.name == "void_tanuki_mythical");
 			//Subtract 1 from the power level of a card, as every card gets 1 free health, but power level includes it.
 			PowerLevel = card.PowerLevel - 1;
-			card.bonesCost = PowerLevel - Plugin.configPointCostBonus.Value - (card.BloodCost * 4);
+            card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - (card.BloodCost * 4));
 
-			card = cards.Find((CardInfo x) => x.name == "Void_Tortoise_Bell");
+            card = cards.Find((CardInfo x) => x.name == "Void_Tortoise_Bell");
 			//Subtract 1 from the power level of a card, as every card gets 1 free health, but power level includes it.
 			PowerLevel = card.PowerLevel - 1;
-			card.bonesCost = PowerLevel - Plugin.configPointCostBonus.Value - (card.BloodCost * 4);
+            card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - (card.BloodCost * 4));
 
-			card = cards.Find((CardInfo x) => x.name == "Void_Tortoise_Bell_Broken");
+            card = cards.Find((CardInfo x) => x.name == "Void_Tortoise_Bell_Broken");
 			//Subtract 1 from the power level of a card, as every card gets 1 free health, but power level includes it.
 			PowerLevel = card.PowerLevel - 1;
-			card.bonesCost = PowerLevel - Plugin.configPointCostBonus.Value - (card.BloodCost * 4);
+            card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - (card.BloodCost * 4));
 
-			card = cards.Find((CardInfo x) => x.name == "void_tortoise_long");
+            card = cards.Find((CardInfo x) => x.name == "void_tortoise_long");
 			//Subtract 1 from the power level of a card, as every card gets 1 free health, but power level includes it.
 			PowerLevel = card.PowerLevel - 1;
-			card.bonesCost = PowerLevel - Plugin.configPointCostBonus.Value - (card.BloodCost * 4);
+            card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - (card.BloodCost * 4));
 
-			card = cards.Find((CardInfo x) => x.name == "Void_tortoise_small");
+            card = cards.Find((CardInfo x) => x.name == "Void_tortoise_small");
 			//Subtract 1 from the power level of a card, as every card gets 1 free health, but power level includes it.
 			PowerLevel = card.PowerLevel - 1;
-			card.bonesCost = PowerLevel - Plugin.configPointCostBonus.Value - (card.BloodCost * 4);
+            card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - (card.BloodCost * 4));
 
-			card = cards.Find((CardInfo x) => x.name == "Void_tortoise_spiny");
+            card = cards.Find((CardInfo x) => x.name == "Void_tortoise_spiny");
 			//Subtract 1 from the power level of a card, as every card gets 1 free health, but power level includes it.
 			PowerLevel = card.PowerLevel - 1;
-			card.bonesCost = PowerLevel - Plugin.configPointCostBonus.Value - (card.BloodCost * 4);
+            card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - (card.BloodCost * 4));
 
-			card = cards.Find((CardInfo x) => x.name == "Void_Vulture");
+            card = cards.Find((CardInfo x) => x.name == "Void_Vulture");
 			//Subtract 1 from the power level of a card, as every card gets 1 free health, but power level includes it.
 			PowerLevel = card.PowerLevel - 1;
-			card.bonesCost = PowerLevel - Plugin.configPointCostBonus.Value - (card.BloodCost * 4);
+            card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - (card.BloodCost * 4));
 
-			card = cards.Find((CardInfo x) => x.name == "Void_Wasp");
+            card = cards.Find((CardInfo x) => x.name == "Void_Wasp");
 			//Subtract 1 from the power level of a card, as every card gets 1 free health, but power level includes it.
 			PowerLevel = card.PowerLevel - 1;
-			card.bonesCost = PowerLevel - Plugin.configPointCostBonus.Value - (card.BloodCost * 4);
+            card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - (card.BloodCost * 4));
 
-			card = cards.Find((CardInfo x) => x.name == "Void_Wolf");
+            card = cards.Find((CardInfo x) => x.name == "Void_Wolf");
 			//Subtract 1 from the power level of a card, as every card gets 1 free health, but power level includes it.
 			Plugin.Log.LogWarning("Wolf Power level is: " + card.PowerLevel);
 			PowerLevel = card.PowerLevel - 1;
 			Plugin.Log.LogWarning("Wolf bone cost is: " + PowerLevel);
-			card.bonesCost = PowerLevel - Plugin.configPointCostBonus.Value - (card.BloodCost * 4);
+            card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - (card.BloodCost * 4));
 
-			card = cards.Find((CardInfo x) => x.name == "Void_Wolverine");
+            card = cards.Find((CardInfo x) => x.name == "Void_Wolverine");
 			//Subtract 1 from the power level of a card, as every card gets 1 free health, but power level includes it.
 			PowerLevel = card.PowerLevel - 1;
-			card.bonesCost = PowerLevel - Plugin.configPointCostBonus.Value - (card.BloodCost * 4);
-		}
+            card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - (card.BloodCost * 4));
+        }
 	}
 }

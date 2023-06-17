@@ -2,78 +2,37 @@
 using DiskCardGame;
 using UnityEngine;
 using APIPlugin;
+using boneSigils.Managers;
+using InscryptionAPI.Card;
 
 namespace boneSigils.cards
 {
-	public static class Serpent_Jade
-	{
-		public static void AddCard()
-		{
-
-			List<CardMetaCategory> metaCategories = new List<CardMetaCategory>();
-			metaCategories.Add(CardMetaCategory.TraderOffer);
-			metaCategories.Add(CardMetaCategory.ChoiceNode);
-
-			List<Tribe> Tribes = new List<Tribe>();
-			Tribes.Add(Tribe.Reptile);
-
-			List<Ability> Abilities = new List<Ability>();
-			Abilities.Add(Ability.GainGemGreen);
-
-			List<Trait> Traits = new List<Trait>();
-			Traits.Add(Trait.Gem);
-
-			List<AbilityIdentifier> customAbilities = new List<AbilityIdentifier>();
-
-			List<SpecialTriggeredAbility> specialAbilities = new List<SpecialTriggeredAbility>();
-
-			List<CardAppearanceBehaviour.Appearance> appearanceBehaviour = new List<CardAppearanceBehaviour.Appearance>();
-
-			Texture2D DefaultTexture = SigilUtils.GetTextureFromPath("Artwork/Void_Jade_Serpent.png");
-
-			Texture2D eTexture = SigilUtils.GetTextureFromPath("Artwork/Void_Jade_Serpent_e.png");
-
-			IceCubeIdentifier iceCubeId = null;
-			EvolveIdentifier evolveId = null;
-			TailIdentifier tail = null;
-
-			NewCard.Add(name: "Void_Jade_Serpent",
-				displayedName: "Jade Serpent",
-				baseAttack: 3,
-				baseHealth: 1,
-				metaCategories,
-				cardComplexity: CardComplexity.Intermediate,
-				temple: CardTemple.Nature,
-				description: "A snake who's scales shimmer like jade",
-				hideAttackAndHealth: false,
-				bloodCost: 0,
-				bonesCost: 6,
-				energyCost: 0,
-				gemsCost: null,
-				specialStatIcon: SpecialStatIcon.None,
-				Tribes,
-				Traits,
-				specialAbilities,
-				Abilities,
-				customAbilities,
-				specialAbilitiesIdsParam: null,
-				evolveParams: null,
-				defaultEvolutionName: null,
-				tailParams: null,
-				iceCubeParams: null,
-				flipPortraitForStrafe: false,
-				onePerDeck: false,
-				appearanceBehaviour,
-				DefaultTexture,
-				altTex: null,
-				titleGraphic: null,
-				pixelTex: null,
-				eTexture,
-				animatedPortrait: null,
-				decals: null,
-				evolveId,
-				iceCubeId,
-				tail);
-		}
-	}
+    public static class Serpent_Jade
+    {
+        public static void AddCard()
+        {
+            string internalName = "void_Jade_Serpent";
+            string displayName = "Jade Serpent";
+            string description = "A serpent who's scales shimmer like jade.";
+            int attack = 3;
+            int health = 1;
+            int bloodCost = 0;
+            int boneCost = 6;
+            int energyCost = 0;
+            List<CardMetaCategory> list = new List<CardMetaCategory>();
+            list.Add((CardMetaCategory)1);
+            list.Add(0);
+            List<Tribe> list2 = new List<Tribe>();
+            list2.Add((Tribe)5);
+            List<Ability> list3 = new List<Ability>();
+            list3.Add((Ability)37);
+            List<Trait> list4 = new List<Trait>();
+            list4.Add((Trait)17);
+            Texture2D textureFromPath = SigilUtils.GetTextureFromPath("Artwork/Void_Jade_Serpent.png");
+            Texture2D textureFromPath2 = SigilUtils.GetTextureFromPath("Artwork/Void_Jade_Serpent_e.png");
+            CardInfo cardInfo = SigilUtils.CreateCardWithDefaultSettings(internalName, displayName, attack, health, textureFromPath, textureFromPath2, list, list2, list4, list3, null, bloodCost, boneCost, energyCost);
+            cardInfo.description = description;
+            CardManager.Add("void", cardInfo);
+        }
+    }
 }
