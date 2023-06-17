@@ -16,7 +16,7 @@ namespace boneSigils.cards
 			int baseAttack = 1;
 			int baseHealth = 7;
 			int bloodCost = 1;
-			int boneCost = 9;
+			int boneCost = 7;
 			int energyCost = 0;
 
 			List<CardMetaCategory> metaCategories = new List<CardMetaCategory>();

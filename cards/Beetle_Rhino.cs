@@ -14,9 +14,9 @@ namespace boneSigils.cards
 			string displayName = "Rhino Beetle";
 			string description = "A large insect that can push more than it's weight with the horn it has.";
 			int baseAttack = 2;
-			int baseHealth = 4;
+			int baseHealth = 3;
 			int bloodCost = 0;
-			int boneCost = 7;
+			int boneCost = 8;
 			int energyCost = 0;
 
 			List<CardMetaCategory> metaCategories = new List<CardMetaCategory>();

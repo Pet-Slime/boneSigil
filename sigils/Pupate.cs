@@ -24,7 +24,7 @@ namespace boneSigils
 			bool canStack = false;
 
 			// set ability to behaviour class
-			ability_Pupate.ability = SigilUtils.CreateAbilityWithDefaultSettings(rulebookName, rulebookDescription, typeof(ability_Pupate), tex_a1, tex_a2, LearnDialogue,
+			ability_Pupate.ability = SigilUtils.CreateAbilityWithDefaultSettingsKCM(rulebookName, rulebookDescription, typeof(ability_Pupate), tex_a1, tex_a2, LearnDialogue,
 																					true, powerlevel, LeshyUsable, part1Shops, canStack).ability;
 		}
 	}

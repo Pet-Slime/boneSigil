@@ -52,7 +52,7 @@ namespace boneSigils.cards
 				energyCost: energyCost
 				);
 			newCard.description = description;
-			newCard.SetTail("void_Wasp_Swarm");
+			newCard.SetTail("void_Wasp_Swarm", null);
 			newCard.defaultEvolutionName = "Monstrous";
 			CardManager.Add("void", newCard);
 		}

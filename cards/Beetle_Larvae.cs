@@ -13,7 +13,7 @@ namespace boneSigils.cards
 			string displayName = "Beetle Larva";
 			string description = "A monsterously sized larvae, and a tasty one to boot!";
 			int baseAttack = 1;
-			int baseHealth = 3;
+			int baseHealth = 2;
 			int bloodCost = 0;
 			int boneCost = 3;
 			int energyCost = 0;

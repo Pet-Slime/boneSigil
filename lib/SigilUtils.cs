@@ -11,45 +11,36 @@ namespace boneSigils
 {
 	public class SigilUtils
 	{
-		public static AbilityInfo CreateAbilityWithDefaultSettings(
-			string rulebookName, string rulebookDescription, Type behavior, Texture2D text_a1, Texture2D text_a2,
-			string LearnDialogue, bool withDialogue = false, int powerLevel = 0, bool leshyUsable = false, bool part1Modular = true, bool stack = false
-		)
-		{
-			AbilityInfo createdAbilityInfo = AbilityManager.New(
-				boneSigils.Plugin.PluginGuid,
-				rulebookName,
-				rulebookDescription,
-				behavior,
-				text_a1
-			)
-			// This specifies the icon for the ability if it exists in Part 2.
-			.SetPixelAbilityIcon(text_a2)
-			;
-			// This sets up the learned Dialog event
-			if (withDialogue)
-			{
-				createdAbilityInfo.abilityLearnedDialogue = SetAbilityInfoDialogue(LearnDialogue);
-			}
-			// How powerful the ability is
-			createdAbilityInfo.powerLevel = powerLevel;
-			// Can it show up on totems for leshy?
-			createdAbilityInfo.opponentUsable = leshyUsable;
-			// If true, allows in shops and in totems. If false, just the rule book
-			if (part1Modular)
-			{
-				createdAbilityInfo.metaCategories = new List<AbilityMetaCategory>() { AbilityMetaCategory.Part1Modular, AbilityMetaCategory.Part1Rulebook };
-			}
-			else
-			{
-				createdAbilityInfo.metaCategories = new List<AbilityMetaCategory>() { AbilityMetaCategory.Part1Rulebook };
-			}
-			// Does the ability stack?
-			createdAbilityInfo.canStack = stack;
-			return createdAbilityInfo;
-		}
+        public static AbilityInfo CreateAbilityWithDefaultSettingsKCM(
+            string rulebookName, string rulebookDescription, Type behavior, Texture2D text_a1, Texture2D text_a2,
+            string LearnDialogue, bool withDialogue = false, int powerLevel = 0, bool leshyUsable = false, bool part1Modular = true, bool stack = false
+        )
+        {
+            AbilityInfo createdAbilityInfo = AbilityManager.New(
+                Plugin.PluginGuid,
+                rulebookName,
+                rulebookDescription,
+                behavior,
+                text_a1
+            );
+            createdAbilityInfo.SetPixelAbilityIcon(text_a2);
+            // This sets up the learned Dialog event
+            if (withDialogue) { createdAbilityInfo.abilityLearnedDialogue = SetAbilityInfoDialogue(LearnDialogue); }
+            // How powerful the ability is
+            createdAbilityInfo.powerLevel = powerLevel;
+            // Can it show up on totems for leshy?
+            createdAbilityInfo.opponentUsable = leshyUsable;
+            // If true, allows in shops and in totems. If false, just the rule book
+            if (part1Modular)
+            { createdAbilityInfo.metaCategories = new List<AbilityMetaCategory>() { AbilityMetaCategory.Part1Modular, AbilityMetaCategory.Part1Rulebook }; }
+            else
+            { createdAbilityInfo.metaCategories = new List<AbilityMetaCategory>() { AbilityMetaCategory.Part1Rulebook }; }
+            // Does the ability stack?
+            createdAbilityInfo.canStack = stack;
+            return createdAbilityInfo;
+        }
 
-		public static CardInfo CreateCardWithDefaultSettings(
+        public static CardInfo CreateCardWithDefaultSettings(
 			string InternalName, string DisplayName, int attack, int health, Texture2D texture_base, Texture2D texture_emission,
 			List<CardMetaCategory> cardMetaCategories, List<Tribe> tribes, List<Trait> traits, List<Ability> abilities, Texture2D texture_pixel = null, int bloodCost = 0, int boneCost = 0, int energyCost = 0
 		)
@@ -81,9 +72,9 @@ namespace boneSigils
 			}
 			cardinfo.temple = CardTemple.Nature;
 			cardinfo.cardComplexity = CardComplexity.Intermediate;
-			cardinfo.cost = bloodCost;
-			cardinfo.bonesCost = boneCost;
-			cardinfo.energyCost = energyCost;
+			cardinfo.SetBloodCost(bloodCost);
+			cardinfo.SetBonesCost(boneCost);
+			cardinfo.SetEnergyCost(energyCost);
 			return cardinfo;
 		}
 

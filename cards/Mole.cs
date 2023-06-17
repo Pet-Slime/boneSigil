@@ -11,7 +11,7 @@ namespace boneSigils.cards
 		public static void AddCard()
 		{
 			string name = "void_Mole";
-			string displayName = "Strange Mole";
+			string displayName = "Drill Mole";
 			string description = "Another one of the trapper's toys.";
 			int baseAttack = 1;
 			int baseHealth = 3;
@@ -56,7 +56,7 @@ namespace boneSigils.cards
 				);
 			newCard.description = description;
 			newCard.appearanceBehaviour.Add(CardAppearanceBehaviour.Appearance.TerrainBackground);
-			newCard.SetTail("void_Scrap");
+			newCard.SetTail("void_Scrap", null);
 			CardManager.Add("void", newCard);
 		}
 	}

@@ -13,10 +13,10 @@ namespace boneSigils.cards
 			string name = "void_Beetle_Carrion";
 			string displayName = "Carrion Beetle";
 			string description = "A hard shell and a taste of flesh, they can find any fresh corpse.";
-			int baseAttack = 2;
-			int baseHealth = 4;
+			int baseAttack = 1;
+			int baseHealth = 3;
 			int bloodCost = 0;
-			int boneCost = 7;
+			int boneCost = 8;
 			int energyCost = 0;
 
 			List<CardMetaCategory> metaCategories = new List<CardMetaCategory>();

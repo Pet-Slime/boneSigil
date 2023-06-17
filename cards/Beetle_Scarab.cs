@@ -13,9 +13,9 @@ namespace boneSigils.cards
 			string displayName = "Jeweled Scarab";
 			string description = "The blue jewel on it's back shines bright.";
 			int baseAttack = 1;
-			int baseHealth = 5;
+			int baseHealth = 6;
 			int bloodCost = 0;
-			int boneCost = 7;
+			int boneCost = 8;
 			int energyCost = 0;
 
 			List<CardMetaCategory> metaCategories = new List<CardMetaCategory>();

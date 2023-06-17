@@ -7,10 +7,11 @@ using BepInEx.Configuration;
 using InscryptionAPI.Card;
 using System;
 using UnityEngine;
+using boneSigils.Managers;
 
 namespace boneSigils
 {
-	[BepInPlugin(PluginGuid, PluginName, PluginVersion)]
+    [BepInPlugin(PluginGuid, PluginName, PluginVersion)]
 	[BepInDependency(APIGUID, BepInDependency.DependencyFlags.HardDependency)]
 	[BepInDependency(SigilGUID, BepInDependency.DependencyFlags.SoftDependency)]
 	[BepInDependency(StarterdeckGUID, BepInDependency.DependencyFlags.SoftDependency)]

@@ -16,7 +16,7 @@ namespace boneSigils.cards
 			int baseAttack = 2;
 			int baseHealth = 2;
 			int bloodCost = 1;
-			int boneCost = 6;
+			int boneCost = 4;
 			int energyCost = 0;
 
 			List<CardMetaCategory> metaCategories = new List<CardMetaCategory>();
@@ -50,7 +50,7 @@ namespace boneSigils.cards
 				boneCost: boneCost,
 				energyCost: energyCost
 				);
-			newCard.SetTail("void_Crab_Leg", null, null);
+			newCard.SetTail("void_Crab_Leg", null);
 			newCard.description = description;
 			CardManager.Add("void", newCard);
 		}

@@ -7,7 +7,7 @@ namespace boneSigils.cards
 {
 	public static class Urchin_Flower
 	{
-		public static readonly Ability CustomAbility1 = InscryptionAPI.Guid.GuidManager.GetEnumValue<Ability>("extraVoid.inscryption.voidSigils", "Deadly Waters");
+		public static readonly Ability CustomAbility1 = InscryptionAPI.Guid.GuidManager.GetEnumValue<Ability>("extraVoid.inscryption.voidSigils", "Low Tide");
 		public static void AddCard()
 		{
 			string name = "void_Urchin_Flower";

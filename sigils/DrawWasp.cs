@@ -13,8 +13,9 @@ namespace boneSigils
 			// setup ability
 			const string rulebookName = "Draw Wasp";
 			const string rulebookDescription = "[creature] draws a wasp swarm when played";
-			const string LearnDialogue = "Where there is one, there is many.";
-			Texture2D tex_a1 = SigilUtils.LoadTextureFromResource(Resources.ability_drawwasp);
+			const string LearnDialogue = "Where there is one, there is many."; 
+
+            Texture2D tex_a1 = SigilUtils.LoadTextureFromResource(Resources.ability_drawwasp);
 			Texture2D tex_a2 = SigilUtils.LoadTextureFromResource(Resources.ability_drawwasp);
 			int powerlevel = -3;
 			bool LeshyUsable = false;
@@ -22,7 +23,7 @@ namespace boneSigils
 			bool canStack = false;
 
 			// set ability to behaviour class
-			ability_drawwasp.ability = SigilUtils.CreateAbilityWithDefaultSettings(rulebookName, rulebookDescription, typeof(ability_drawwasp), tex_a1, tex_a2, LearnDialogue,
+			ability_drawwasp.ability = SigilUtils.CreateAbilityWithDefaultSettingsKCM(rulebookName, rulebookDescription, typeof(ability_drawwasp), tex_a1, tex_a2, LearnDialogue,
 																					true, powerlevel, LeshyUsable, part1Shops, canStack).ability;
 		}
 	}
@@ -38,7 +39,7 @@ namespace boneSigils
 			get
 			{
 				CardInfo cardByName = CardLoader.GetCardByName("void_Wasp_Swarm");
-				cardByName.Mods.AddRange(base.Card.temporaryMods);
+				cardByName.Mods.AddRange(base.Card.TemporaryMods);
 				return cardByName;
 			}
 		}

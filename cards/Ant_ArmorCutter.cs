@@ -58,8 +58,8 @@ namespace boneSigils.cards
 				boneCost: boneCost,
 				energyCost: energyCost
 				);
-			newCard.specialStatIcon = SpecialStatIcon.Ants;
-			newCard.specialAbilities.Add(SpecialTriggeredAbility.Ant);
+			newCard.SetStatIcon(SpecialStatIcon.Ants);
+			newCard.SetSpecialAbilities(SpecialTriggeredAbility.Ant);
 			newCard.description = description;
 			CardManager.Add("void", newCard);
 		}

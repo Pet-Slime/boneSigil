@@ -56,8 +56,8 @@ namespace boneSigils.cards
 				energyCost: energyCost
 				);
 			newCard.description = description;
-			newCard.specialStatIcon = SpecialStatIcon.Bones;
-			newCard.specialAbilities.Add(SpecialTriggeredAbility.Lammergeier);
+            newCard.SetStatIcon(SpecialStatIcon.Bones);
+            newCard.SetSpecialAbilities(SpecialTriggeredAbility.Lammergeier);
 			CardManager.Add("void", newCard);
 		}
 	}

@@ -7,7 +7,7 @@ using InscryptionAPI.Helpers;
 using Resources = boneSigils.Artwork.Resources;
 
 
-namespace boneSigils.cards
+namespace boneSigils.Managers
 {
     internal class KCM_StartingDeck_Bones
     {
@@ -20,7 +20,7 @@ namespace boneSigils.cards
 
             StarterDeckInfo PureBone = ScriptableObject.CreateInstance<StarterDeckInfo>();
             PureBone.title = "Pure Bone";
-            PureBone.iconSprite = TextureHelper.ConvertTexture(tex_a1, TextureHelper.SpriteType.StarterDeckIcon);
+            PureBone.iconSprite = tex_a1.ConvertTexture(TextureHelper.SpriteType.StarterDeckIcon);
             PureBone.cards = new() { CardLoader.GetCardByName("void_Axolotl"), CardLoader.GetCardByName("void_Beetle_Larva"), CardLoader.GetCardByName("void_Owl_Familiar") };
 
             StarterDeckManager.Add(Plugin.PluginGuid, PureBone);
@@ -28,7 +28,7 @@ namespace boneSigils.cards
 
             StarterDeckInfo TrapperToys = ScriptableObject.CreateInstance<StarterDeckInfo>();
             TrapperToys.title = "Trapper's Toys";
-            TrapperToys.iconSprite = TextureHelper.ConvertTexture(tex_a2, TextureHelper.SpriteType.StarterDeckIcon);
+            TrapperToys.iconSprite = tex_a2.ConvertTexture(TextureHelper.SpriteType.StarterDeckIcon);
             TrapperToys.cards = new() { CardLoader.GetCardByName("TrapFrog"), CardLoader.GetCardByName("void_Mole"), CardLoader.GetCardByName("void_Tortoise_Bell_Broken") };
 
             StarterDeckManager.Add(Plugin.PluginGuid, TrapperToys);
