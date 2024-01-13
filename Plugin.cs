@@ -63,6 +63,7 @@ namespace boneSigils
 			//Abilities
 			AddDrawWasp();
 			AddPupate();
+			AddMadCowDiseasee();
 			AddSigilsToBook();
 			MurderOfCrowsSpecialAbility.specialAbility = SpecialTriggeredAbilityManager.Add(Plugin.PluginGuid, "Crow Murder", typeof(MurderOfCrowsSpecialAbility)).Id;
 			DairyCowSpecialAbility.specialAbility = SpecialTriggeredAbilityManager.Add(Plugin.PluginGuid, "Fresh Steak", typeof(DairyCowSpecialAbility)).Id;
@@ -124,6 +125,10 @@ namespace boneSigils
 			WaspSwarm.AddCard();
 			Wolf.AddCard();
 			Wolverine.AddCard();
+
+			TestCard1.AddCard();
+			TestCard2.AddCard();
+			TestCard3.AddCard();
 		}
 
 		private void Start()
@@ -133,10 +138,10 @@ namespace boneSigils
 				Log.LogMessage("Vanilla config fired 1");
 				Vanilla_Tweaks.AddCard();
 			}
-			if (configPointCostMode.Value)
-			{
-				Point_Cost_Mode.AddCard();
-			}
+///			if (configPointCostMode.Value)
+///			{
+///				Point_Cost_Mode.AddCard();
+///			}
 
 			KCM_StartingDeck_Bones.AddStartingDeck();
 

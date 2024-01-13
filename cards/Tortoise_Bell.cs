@@ -30,9 +30,9 @@ namespace boneSigils.cards
 
 			List<Trait> Traits = new List<Trait>();
 
-			Texture2D DefaultTexture = SigilUtils.GetTextureFromPath("Artwork/Void_Tortoise_Bell.png");
-			Texture2D eTexture = SigilUtils.GetTextureFromPath("Artwork/Void_Tortoise_Bell_e.png");
-			Texture2D tailTexture = SigilUtils.GetTextureFromPath("Artwork/Void_Tortoise_Bell_alt.png");
+			Texture2D DefaultTexture = SigilUtils.GetTextureFromPath("Void_Tortoise_Bell.png");
+			Texture2D eTexture = SigilUtils.GetTextureFromPath("Void_Tortoise_Bell_e.png");
+			Texture2D tailTexture = SigilUtils.GetTextureFromPath("Void_Tortoise_Bell_alt.png");
 
 			CardInfo newCard = SigilUtils.CreateCardWithDefaultSettings(
 				InternalName: name,

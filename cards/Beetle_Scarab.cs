@@ -13,9 +13,9 @@ namespace boneSigils.cards
 			string displayName = "Jeweled Scarab";
 			string description = "The blue jewel on it's back shines bright.";
 			int baseAttack = 1;
-			int baseHealth = 6;
+			int baseHealth = 4;
 			int bloodCost = 0;
-			int boneCost = 8;
+			int boneCost = 6;
 			int energyCost = 0;
 
 			List<CardMetaCategory> metaCategories = new List<CardMetaCategory>();
@@ -32,8 +32,8 @@ namespace boneSigils.cards
 			List<Trait> Traits = new List<Trait>();
 			Traits.Add(Trait.Gem);
 
-			Texture2D DefaultTexture = SigilUtils.GetTextureFromPath("Artwork/void_scarab_jewel.png");
-			Texture2D eTexture = SigilUtils.GetTextureFromPath("Artwork/void_scarab_jewel_e.png");
+			Texture2D DefaultTexture = SigilUtils.GetTextureFromPath("void_scarab_jewel.png");
+			Texture2D eTexture = SigilUtils.GetTextureFromPath("void_scarab_jewel_e.png");
 
 			CardInfo newCard = SigilUtils.CreateCardWithDefaultSettings(
 				InternalName: name,

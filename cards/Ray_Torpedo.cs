@@ -37,8 +37,8 @@ namespace boneSigils.cards
 
 			List<Trait> Traits = new List<Trait>();
 
-			Texture2D DefaultTexture = SigilUtils.GetTextureFromPath("Artwork/void_torpedoRay.png");
-			Texture2D eTexture = SigilUtils.GetTextureFromPath("Artwork/void_torpedoRay_e.png");
+			Texture2D DefaultTexture = SigilUtils.GetTextureFromPath("void_torpedoRay.png");
+			Texture2D eTexture = SigilUtils.GetTextureFromPath("void_torpedoRay_e.png");
 
 			CardInfo newCard = SigilUtils.CreateCardWithDefaultSettings(
 				InternalName: name,

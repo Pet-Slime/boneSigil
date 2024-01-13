@@ -20,7 +20,7 @@ namespace boneSigils
 			Texture2D tex_a2 = SigilUtils.LoadTextureFromResource(Resources.ability_pupate_3_a2);
 			int powerlevel = -3;
 			bool LeshyUsable = false;
-			bool part1Shops = true;
+			bool part1Shops = false;
 			bool canStack = false;
 
 			// set ability to behaviour class
@@ -35,9 +35,9 @@ namespace boneSigils
 
 		public static Ability ability;
 
-		int count = 3;
+        private int numTurnsInPlay;
 
-		public override bool RespondsToUpkeep(bool playerUpkeep)
+        public override bool RespondsToUpkeep(bool playerUpkeep)
 		{
 			return base.Card.OpponentCard != playerUpkeep;
 		}
@@ -53,48 +53,35 @@ namespace boneSigils
 			"void_Beetle_Bombardier"
 			};
 
-			if (count == 0)
+            int num = 3;
+            this.numTurnsInPlay++;
+            int num2 = Mathf.Max(1, num - this.numTurnsInPlay);
+            base.Card.RenderInfo.OverrideAbilityIcon(this.Ability, SigilUtils.GetTextureFromPath("ability_pupate_" + num2.ToString() + ".png"));
+            base.Card.RenderCard();
+            if (this.numTurnsInPlay >= num)
             {
-				string cardName = list[UnityEngine.Random.Range(0, (list.Count))];
-				CardInfo cardinfo = CardLoader.GetCardByName(cardName);
-				bool evolveInheritsInfoMods = this.EvolveInheritsInfoMods;
-				if (this.EvolveInheritsInfoMods)
-				{
-					foreach (CardModificationInfo cardModificationInfo in base.Card.Info.Mods.FindAll((CardModificationInfo x) => !x.nonCopyable))
-					{
-						CardModificationInfo cardModificationInfo2 = (CardModificationInfo)cardModificationInfo.Clone();
-						if (cardModificationInfo2.HasAbility(Ability.Evolve))
-						{
-							cardModificationInfo2.abilities.Remove(Ability.Evolve);
-						}
-						cardinfo.Mods.Add(cardModificationInfo2);
-					}
-				}
-				yield return base.PreSuccessfulTriggerSequence();
-				yield return TransformIntoCard(cardinfo, new Action(this.RemoveTemporaryModsWithEvolve));
-				yield return new WaitForSeconds(this.PostTransformWait);
-				yield return base.LearnAbility(0.5f);
+                string cardName = list[UnityEngine.Random.Range(0, (list.Count))];
+                CardInfo cardinfo = CardLoader.GetCardByName(cardName);
+                if (this.EvolveInheritsInfoMods)
+                {
+                    foreach (CardModificationInfo cardModificationInfo in base.Card.Info.Mods.FindAll((CardModificationInfo x) => !x.nonCopyable))
+                    {
+                        CardModificationInfo cardModificationInfo2 = (CardModificationInfo)cardModificationInfo.Clone();
+                        if (cardModificationInfo2.HasAbility(Ability.Evolve))
+                        {
+                            cardModificationInfo2.abilities.Remove(Ability.Evolve);
+                        }
+                        cardinfo.Mods.Add(cardModificationInfo2);
+                    }
+                }
+                yield return base.PreSuccessfulTriggerSequence();
+                yield return base.Card.TransformIntoCard(cardinfo, new Action(this.RemoveTemporaryModsWithEvolve), null);
+                yield return new WaitForSeconds(this.PostTransformWait);
+                yield return base.LearnAbility(0.5f);
+                cardinfo = null;
+            }
 
-			} else
-            {
-
-				count--;
-
-				Texture2D tex1 = SigilUtils.LoadTextureFromResource(Resources.ability_pupate_2);
-
-				Texture2D tex2 = SigilUtils.LoadTextureFromResource(Resources.ability_pupate_1);
-
-				if (count == 2) {
-					base.Card.RenderInfo.OverrideAbilityIcon(ability_Pupate.ability, tex1);
-					base.Card.RenderCard();
-				}
-
-				if (count == 1) {
-					base.Card.RenderInfo.OverrideAbilityIcon(ability_Pupate.ability, tex2);
-					base.Card.RenderCard();
-				}	
-			}
-			yield break;
+            yield break;
 		}
 
 		protected virtual bool EvolveInheritsInfoMods

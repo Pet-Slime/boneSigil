@@ -13,7 +13,7 @@ namespace boneSigils.cards
 			string displayName = "Dairy Cow";
 			string description = "A cow fit for slaughter.";
 			int baseAttack = 0;
-			int baseHealth = 2;
+			int baseHealth = 1;
 			int bloodCost = 0;
 			int boneCost = 4;
 			int energyCost = 0;
@@ -34,8 +34,8 @@ namespace boneSigils.cards
 			specialAbilities.Add(DairyCowSpecialAbility.specialAbility);
 
 
-			Texture2D DefaultTexture = SigilUtils.GetTextureFromPath("Artwork/Void_Dairy_Cow.png");
-			Texture2D eTexture = SigilUtils.GetTextureFromPath("Artwork/Void_Dairy_Cow_e.png");
+			Texture2D DefaultTexture = SigilUtils.GetTextureFromPath("Void_Dairy_Cow.png");
+			Texture2D eTexture = SigilUtils.GetTextureFromPath("Void_Dairy_Cow_e.png");
 
 			CardInfo newCard = SigilUtils.CreateCardWithDefaultSettings(
 				InternalName: name,

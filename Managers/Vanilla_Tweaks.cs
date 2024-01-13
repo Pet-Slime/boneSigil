@@ -43,7 +43,7 @@ namespace boneSigils.Managers
 
 
             CardInfo card = CardManager.BaseGameCards.CardByName("TrapFrog");
-            card.SetPixelPortrait(SigilUtils.GetTextureFromPath("Artwork/pixelportrait_trap_frog.png").ConvertTexture(TextureHelper.SpriteType.PixelPortrait));
+            card.SetPixelPortrait(SigilUtils.GetTextureFromPath("pixelportrait_trap_frog.png").ConvertTexture(TextureHelper.SpriteType.PixelPortrait));
 
 #pragma warning disable IDE0059 // Unnecessary assignment of a value
             try

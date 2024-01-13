@@ -17,6 +17,7 @@ namespace boneSigils.Managers
 
             Texture2D tex_a1 = SigilUtils.LoadTextureFromResource(Resources.void_KCM_starter_PureBone);
             Texture2D tex_a2 = SigilUtils.LoadTextureFromResource(Resources.void_KCM_starter_TrapperToys);
+            Texture2D tex_a3 = SigilUtils.LoadTextureFromResource(Resources.void_KCM_starter_Activate);
 
             StarterDeckInfo PureBone = ScriptableObject.CreateInstance<StarterDeckInfo>();
             PureBone.title = "Pure Bone";
@@ -32,6 +33,13 @@ namespace boneSigils.Managers
             TrapperToys.cards = new() { CardLoader.GetCardByName("TrapFrog"), CardLoader.GetCardByName("void_Mole"), CardLoader.GetCardByName("void_Tortoise_Bell_Broken") };
 
             StarterDeckManager.Add(Plugin.PluginGuid, TrapperToys);
+
+            StarterDeckInfo BoneActivate = ScriptableObject.CreateInstance<StarterDeckInfo>();
+            BoneActivate.title = "Activate Bones";
+            BoneActivate.iconSprite = tex_a3.ConvertTexture(TextureHelper.SpriteType.StarterDeckIcon);
+            BoneActivate.cards = new() { CardLoader.GetCardByName("void_Camel"), CardLoader.GetCardByName("void_Barbet"), CardLoader.GetCardByName("void_Crow_Familiar") };
+
+            StarterDeckManager.Add(Plugin.PluginGuid, BoneActivate);
         }
     }
 }

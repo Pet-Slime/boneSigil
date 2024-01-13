@@ -73,6 +73,36 @@ namespace boneSigils.Artwork {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
+        internal static byte[] ability_MadCow_1 {
+            get {
+                object obj = ResourceManager.GetObject("ability_MadCow_1", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] ability_MadCow_2 {
+            get {
+                object obj = ResourceManager.GetObject("ability_MadCow_2", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] ability_MadCow_3 {
+            get {
+                object obj = ResourceManager.GetObject("ability_MadCow_3", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
         internal static byte[] ability_pupate_1 {
             get {
                 object obj = ResourceManager.GetObject("ability_pupate_1", resourceCulture);
@@ -116,6 +146,16 @@ namespace boneSigils.Artwork {
         internal static byte[] void_feather {
             get {
                 object obj = ResourceManager.GetObject("void_feather", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] void_KCM_starter_Activate {
+            get {
+                object obj = ResourceManager.GetObject("void_KCM_starter_Activate", resourceCulture);
                 return ((byte[])(obj));
             }
         }

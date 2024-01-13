@@ -31,8 +31,8 @@ namespace boneSigils.cards
 
 			List<GemType> gemCost = new List<GemType>();
 
-			Texture2D DefaultTexture = SigilUtils.GetTextureFromPath("Artwork/Void_Murder_of_Crows.png");
-			Texture2D eTexture = SigilUtils.GetTextureFromPath("Artwork/Void_Murder_of_Crows_e.png");
+			Texture2D DefaultTexture = SigilUtils.GetTextureFromPath("Void_Murder_of_Crows.png");
+			Texture2D eTexture = SigilUtils.GetTextureFromPath("Void_Murder_of_Crows_e.png");
 
 			CardInfo newCard = SigilUtils.CreateCardWithDefaultSettings(
 				InternalName: name,

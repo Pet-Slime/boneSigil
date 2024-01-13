@@ -121,6 +121,15 @@
   <data name="ability_drawwasp" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>ability_drawwasp.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="ability_MadCow_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>ability_MadCow_1.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ability_MadCow_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>ability_MadCow_2.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ability_MadCow_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>ability_MadCow_3.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="ability_pupate_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>ability_pupate_1.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -136,11 +145,14 @@
   <data name="void_feather" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>void_feather.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="void_KCM_starter_Activate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>void_KCM_starter_Activate.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="void_KCM_starter_PureBone" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\void_KCM_starter_PureBone.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>void_KCM_starter_PureBone.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="void_KCM_starter_TrapperToys" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\void_KCM_starter_TrapperToys.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>void_KCM_starter_TrapperToys.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="void_steak_ability" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>void_steak_ability.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>

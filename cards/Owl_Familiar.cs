@@ -33,9 +33,9 @@ namespace boneSigils.cards
 
 			List<Trait> Traits = new List<Trait>();
 
-			Texture2D DefaultTexture = SigilUtils.GetTextureFromPath("Artwork/Void_Owl_Familiar.png");
-			Texture2D pixelTexture = SigilUtils.GetTextureFromPath("Artwork/pixelportrait_owl_familiar.png");
-			Texture2D eTexture = SigilUtils.GetTextureFromPath("Artwork/Void_Owl_Familiar_e.png");
+			Texture2D DefaultTexture = SigilUtils.GetTextureFromPath("Void_Owl_Familiar.png");
+			Texture2D pixelTexture = SigilUtils.GetTextureFromPath("pixelportrait_owl_familiar.png");
+			Texture2D eTexture = SigilUtils.GetTextureFromPath("Void_Owl_Familiar_e.png");
 
 			CardInfo newCard = SigilUtils.CreateCardWithDefaultSettings(
 				InternalName: name,

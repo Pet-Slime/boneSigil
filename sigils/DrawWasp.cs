@@ -12,7 +12,7 @@ namespace boneSigils
 		{
 			// setup ability
 			const string rulebookName = "Draw Wasp";
-			const string rulebookDescription = "[creature] draws a wasp swarm when played";
+			const string rulebookDescription = "[creature] create a wasp swarm in your hand when played";
 			const string LearnDialogue = "Where there is one, there is many."; 
 
             Texture2D tex_a1 = SigilUtils.LoadTextureFromResource(Resources.ability_drawwasp);

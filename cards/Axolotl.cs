@@ -46,9 +46,9 @@ namespace boneSigils.cards
 
 			List<CardAppearanceBehaviour.Appearance> appearanceBehaviour = new List<CardAppearanceBehaviour.Appearance>();
 
-			Texture2D DefaultTexture = SigilUtils.GetTextureFromPath("Artwork/void_undeadAxolotle.png");
-			Texture2D pixelTexture = SigilUtils.GetTextureFromPath("Artwork/pixelportrait_axol.png");
-			Texture2D eTexture = SigilUtils.GetTextureFromPath("Artwork/void_undeadAxolotle_e.png");
+			Texture2D DefaultTexture = SigilUtils.GetTextureFromPath("void_undeadAxolotle.png");
+			Texture2D pixelTexture = SigilUtils.GetTextureFromPath("pixelportrait_axol.png");
+			Texture2D eTexture = SigilUtils.GetTextureFromPath("void_undeadAxolotle_e.png");
 
 			CardInfo newCard = SigilUtils.CreateCardWithDefaultSettings(
 				InternalName: name,

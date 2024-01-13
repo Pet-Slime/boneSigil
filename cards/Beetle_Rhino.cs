@@ -13,10 +13,10 @@ namespace boneSigils.cards
 			string name = "void_Rhino_beetle";
 			string displayName = "Rhino Beetle";
 			string description = "A large insect that can push more than it's weight with the horn it has.";
-			int baseAttack = 2;
-			int baseHealth = 3;
+			int baseAttack = 1;
+			int baseHealth = 4;
 			int bloodCost = 0;
-			int boneCost = 8;
+			int boneCost = 6;
 			int energyCost = 0;
 
 			List<CardMetaCategory> metaCategories = new List<CardMetaCategory>();
@@ -35,8 +35,8 @@ namespace boneSigils.cards
 
 			List<CardAppearanceBehaviour.Appearance> appearanceBehaviour = new List<CardAppearanceBehaviour.Appearance>();
 
-			Texture2D DefaultTexture = SigilUtils.GetTextureFromPath("Artwork/Void_Rino_beetle.png");
-			Texture2D eTexture = SigilUtils.GetTextureFromPath("Artwork/Void_Rino_beetle_e.png");
+			Texture2D DefaultTexture = SigilUtils.GetTextureFromPath("Void_Rino_beetle.png");
+			Texture2D eTexture = SigilUtils.GetTextureFromPath("Void_Rino_beetle_e.png");
 
 			CardInfo newCard = SigilUtils.CreateCardWithDefaultSettings(
 				InternalName: name,

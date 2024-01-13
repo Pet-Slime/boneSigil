@@ -13,10 +13,10 @@ namespace boneSigils.cards
 			string name = "void_Beetle_Bombardier";
 			string displayName = "Bombardier Beetle";
 			string description = "A beetle that shoots artillier goop, at foes and allies alike...";
-			int baseAttack = 2;
+			int baseAttack = 1;
 			int baseHealth = 4;
 			int bloodCost = 0;
-			int boneCost = 7;
+			int boneCost = 6;
 			int energyCost = 0;
 
 			List<CardMetaCategory> metaCategories = new List<CardMetaCategory>();
@@ -35,8 +35,8 @@ namespace boneSigils.cards
 
 			List<CardAppearanceBehaviour.Appearance> appearanceBehaviour = new List<CardAppearanceBehaviour.Appearance>();
 
-			Texture2D DefaultTexture = SigilUtils.GetTextureFromPath("Artwork/Void_Beetle_Bombardier.png");
-			Texture2D eTexture = SigilUtils.GetTextureFromPath("Artwork/Void_Beetle_Bombardier_e.png");
+			Texture2D DefaultTexture = SigilUtils.GetTextureFromPath("Void_Beetle_Bombardier.png");
+			Texture2D eTexture = SigilUtils.GetTextureFromPath("Void_Beetle_Bombardier_e.png");
 
 			CardInfo newCard = SigilUtils.CreateCardWithDefaultSettings(
 				InternalName: name,

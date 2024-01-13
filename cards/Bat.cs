@@ -14,9 +14,9 @@ namespace boneSigils.cards
 			string displayName = "Spectral Bat";
 			string description = "Rarely seen, this bat haunts the shadows.";
 			int baseAttack = 4;
-			int baseHealth = 5;
+			int baseHealth = 3;
 			int bloodCost = 1;
-			int boneCost = 7;
+			int boneCost = 5;
 			int energyCost = 0;
 
 			List<CardMetaCategory> metaCategories = new List<CardMetaCategory>();
@@ -35,8 +35,8 @@ namespace boneSigils.cards
 
 			List<CardAppearanceBehaviour.Appearance> appearanceBehaviour = new List<CardAppearanceBehaviour.Appearance>();
 
-			Texture2D DefaultTexture = SigilUtils.GetTextureFromPath("Artwork/Void_Bat.png");
-			Texture2D eTexture = SigilUtils.GetTextureFromPath("Artwork/Void_Bat_e.png");
+			Texture2D DefaultTexture = SigilUtils.GetTextureFromPath("Void_Bat.png");
+			Texture2D eTexture = SigilUtils.GetTextureFromPath("Void_Bat_e.png");
 
 			CardInfo newCard = SigilUtils.CreateCardWithDefaultSettings(
 				InternalName: name,

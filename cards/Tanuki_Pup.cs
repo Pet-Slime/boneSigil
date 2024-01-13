@@ -42,9 +42,9 @@ namespace boneSigils.cards
 
 			List<Trait> Traits = new List<Trait>();
 
-			Texture2D DefaultTexture = SigilUtils.GetTextureFromPath("Artwork/Void_Tanuki_Pup.png");
-			Texture2D pixelTexture = SigilUtils.GetTextureFromPath("Artwork/pixelportrait_tanuki.png");
-			Texture2D eTexture = SigilUtils.GetTextureFromPath("Artwork/Void_Tanuki_Pup_e.png");
+			Texture2D DefaultTexture = SigilUtils.GetTextureFromPath("Void_Tanuki_Pup.png");
+			Texture2D pixelTexture = SigilUtils.GetTextureFromPath("pixelportrait_tanuki.png");
+			Texture2D eTexture = SigilUtils.GetTextureFromPath("Void_Tanuki_Pup_e.png");
 
 			CardInfo newCard = SigilUtils.CreateCardWithDefaultSettings(
 				InternalName: name,
