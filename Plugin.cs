@@ -138,10 +138,7 @@ namespace boneSigils
 				Log.LogMessage("Vanilla config fired 1");
 				Vanilla_Tweaks.AddCard();
 			}
-///			if (configPointCostMode.Value)
-///			{
-///				Point_Cost_Mode.AddCard();
-///			}
+			
 
 			KCM_StartingDeck_Bones.AddStartingDeck();
 
@@ -170,6 +167,11 @@ namespace boneSigils
 			{
 				boneSigils.Encounters.BeaverStall.AddEncounter();
 			}
-		}
+
+            if (configPointCostMode.Value)
+            {
+                Point_Cost_Mode.AddCard();
+            }
+        }
 	}
 }

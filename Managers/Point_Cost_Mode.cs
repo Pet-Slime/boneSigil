@@ -1,5 +1,6 @@
 ﻿using DiskCardGame;
 using InscryptionAPI.Card;
+using System.Collections.Generic;
 
 namespace boneSigils.Managers
 {
@@ -7,219 +8,224 @@ namespace boneSigils.Managers
     {
         public static void AddCard()
         {
-            var cards = CardManager.AllCardsCopy;
-            CardInfo card;
-            int PowerLevel;
+            List<CardInfo> AllCards = ScriptableObjectLoader<CardInfo>.AllData;
+            for (int i = 0; i < AllCards.Count; i++)
+            {
+                CardInfo card = AllCards[i];
+                string name = card.name;
+                int PowerLevel;
 
-            card = cards.Find((x) => x.name == "Void_Angler");
-            //Subtract 1 from the power level of a card, as every card gets 1 free health, but power level includes it.
-            PowerLevel = card.PowerLevel - 1;
-            card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - card.BloodCost * 4);
+                switch (name)
+                {
+                    case "void_Angler":
+                        PowerLevel = card.PowerLevel - 1;
+                        card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - card.BloodCost * 4);
+                        break;
+                    case "void_Leaf_Ant":
+                        PowerLevel = card.PowerLevel - 1;
+                        card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - card.BloodCost * 4);
+                        break;
+                    case "void_Bat":
+                        PowerLevel = card.PowerLevel - 1;
+                        card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - card.BloodCost * 4);
+                        break;
+                    case "void_Bear":
+                        PowerLevel = card.PowerLevel - 1;
+                        card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - card.BloodCost * 4);
+                        break;
+                    case "void_Beetle_Bombardier":
+                        PowerLevel = card.PowerLevel - 1;
+                        card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - card.BloodCost * 4);
+                        break;
+                    case "void_Beetle_Carrion":
+                        PowerLevel = card.PowerLevel - 1;
+                        card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - card.BloodCost * 4);
+                        break;
+                    case "void_Beetle_Larva":
+                        PowerLevel = card.PowerLevel - 1;
+                        card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - card.BloodCost * 4);
+                        break;
+                    case "void_Beetle_Rhino":
+                        PowerLevel = card.PowerLevel - 1;
+                        card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - card.BloodCost * 4);
+                        break;
+                    case "void_Beetle_Scarab":
+                        PowerLevel = card.PowerLevel - 1;
+                        card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - card.BloodCost * 4);
+                        break;
+                    case "void_Bone_Lord":
+                        PowerLevel = card.PowerLevel - 1;
+                        card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - card.BloodCost * 4);
+                        break;
+                    case "void_Cow_Dairy":
+                        PowerLevel = card.PowerLevel - 1;
+                        card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - card.BloodCost * 4);
+                        break;
+                    case "void_Cow_Mad":
+                        PowerLevel = card.PowerLevel - 1;
+                        card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - card.BloodCost * 4);
+                        break;
+                    case "void_Cow_Wild":
+                        PowerLevel = card.PowerLevel - 1;
+                        card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - card.BloodCost * 4);
+                        break;
+                    case "void_Crab_Coco":
+                        PowerLevel = card.PowerLevel - 1;
+                        card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - card.BloodCost * 4);
+                        break;
+                    case "void_Crab_Fiddler":
+                        PowerLevel = card.PowerLevel - 1;
+                        card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - card.BloodCost * 4);
+                        break;
+                    case "void_Crab_Spider":
+                        PowerLevel = card.PowerLevel - 1;
+                        card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - card.BloodCost * 4);
+                        break;
+                    case "void_Dragon":
+                        PowerLevel = card.PowerLevel - 1;
+                        card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - card.BloodCost * 4);
+                        break;
 
-            card = cards.Find((x) => x.name == "Void_Leaf_Ant");
-            //Subtract 1 from the power level of a card, as every card gets 1 free health, but power level includes it.
-            PowerLevel = card.PowerLevel - 1;
-            card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - card.BloodCost * 4);
+                    case "void_Egg":
+                        PowerLevel = card.PowerLevel - 1;
+                        card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - card.BloodCost * 4);
+                        break;
+                    case "void_Enchidna":
+                        PowerLevel = card.PowerLevel - 1;
+                        card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - card.BloodCost * 4);
+                        if (BepInEx.Bootstrap.Chainloader.PluginInfos.ContainsKey("extraVoid.inscryption.LifeCost"))
+                        {
+                            card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - card.BloodCost * 4 - 8);
+                        }
+                        break;
+                    case "void_Giraffe":
+                        PowerLevel = card.PowerLevel - 1;
+                        card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - card.BloodCost * 4);
+                        break;
+                    case "void_Shrimp_Mantis":
+                        PowerLevel = card.PowerLevel - 1;
+                        card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - card.BloodCost * 4);
+                        break;
+                    case "void_Mole":
+                        PowerLevel = card.PowerLevel - 1;
+                        card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - card.BloodCost * 4);
+                        break;
+                    case "void_Scared_Mouse":
+                        PowerLevel = card.PowerLevel - 1;
+                        card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - card.BloodCost * 4);
+                        break;
+                    case "void_Crows_Murder":
+                        PowerLevel = card.PowerLevel - 1;
+                        card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - card.BloodCost * 4);
+                        break;
+                    case "void_Owl_Familiar":
+                        PowerLevel = card.PowerLevel - 1;
+                        card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - card.BloodCost * 4);
+                        break;
+                    case "void_Rabbit":
+                        PowerLevel = card.PowerLevel - 1;
+                        card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - card.BloodCost * 4);
+                        break;
 
- //          card = cards.Find((x) => x.name == "Void_Bat");
- //          //Subtract 1 from the power level of a card, as every card gets 1 free health, but power level includes it.
- //          PowerLevel = card.PowerLevel - 1;
- //          card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - card.BloodCost * 4);
- //
- //          card = cards.Find((x) => x.name == "Void_Bear");
- //          //Subtract 1 from the power level of a card, as every card gets 1 free health, but power level includes it.
- //          PowerLevel = card.PowerLevel - 1;
- //          card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - card.BloodCost * 4);
- //
- //          card = cards.Find((x) => x.name == "Void_Beetle_Bombardier");
- //          //Subtract 1 from the power level of a card, as every card gets 1 free health, but power level includes it.
- //          PowerLevel = card.PowerLevel - 1;
- //          card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - card.BloodCost * 4);
- //
- //          card = cards.Find((x) => x.name == "Void_Beetle");
- //          //Subtract 1 from the power level of a card, as every card gets 1 free health, but power level includes it.
- //          PowerLevel = card.PowerLevel - 1;
- //          card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - card.BloodCost * 4);
- //
- //          card = cards.Find((x) => x.name == "void_beetle_larva");
- //          //Subtract 1 from the power level of a card, as every card gets 1 free health, but power level includes it.
- //          PowerLevel = card.PowerLevel - 1;
- //          card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - card.BloodCost * 4);
- //
- //          card = cards.Find((x) => x.name == "Void_Rino_beetle");
- //          //Subtract 1 from the power level of a card, as every card gets 1 free health, but power level includes it.
- //          PowerLevel = card.PowerLevel - 1;
- //          card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - card.BloodCost * 4);
- //
- //          card = cards.Find((x) => x.name == "Void_Scarab_Jewel");
- //          //Subtract 1 from the power level of a card, as every card gets 1 free health, but power level includes it.
- //          PowerLevel = card.PowerLevel - 1;
- //          card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - card.BloodCost * 4);
- //
- //          card = cards.Find((x) => x.name == "Void_Bone_Lord");
- //          //Subtract 1 from the power level of a card, as every card gets 1 free health, but power level includes it.
- //          PowerLevel = card.PowerLevel - 1;
- //          card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - card.BloodCost * 4);
- //
- //          card = cards.Find((x) => x.name == "Void_burrow");
- //          //Subtract 1 from the power level of a card, as every card gets 1 free health, but power level includes it.
- //          PowerLevel = card.PowerLevel - 1;
- //          card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - card.BloodCost * 4);
- //
- //          card = cards.Find((x) => x.name == "void_cow_mad");
- //          //Subtract 1 from the power level of a card, as every card gets 1 free health, but power level includes it.
- //          PowerLevel = card.PowerLevel - 1;
- //          card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - card.BloodCost * 4);
- //
- //          card = cards.Find((x) => x.name == "void_cow_wild");
- //          //Subtract 1 from the power level of a card, as every card gets 1 free health, but power level includes it.
- //          PowerLevel = card.PowerLevel - 1;
- //          card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - card.BloodCost * 4);
- //
- //          card = cards.Find((x) => x.name == "Void_Coco_Crab");
- //          //Subtract 1 from the power level of a card, as every card gets 1 free health, but power level includes it.
- //          PowerLevel = card.PowerLevel - 1;
- //          card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - card.BloodCost * 4);
- //
- //          card = cards.Find((x) => x.name == "Void_Crab_Fiddler");
- //          //Subtract 1 from the power level of a card, as every card gets 1 free health, but power level includes it.
- //          PowerLevel = card.PowerLevel - 1;
- //          card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - card.BloodCost * 4);
- //
- //          card = cards.Find((x) => x.name == "Void_Crab_Spider");
- //          //Subtract 1 from the power level of a card, as every card gets 1 free health, but power level includes it.
- //          PowerLevel = card.PowerLevel - 1;
- //          card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - card.BloodCost * 4);
- //
- //          card = cards.Find((x) => x.name == "Void_Dragon");
- //          //Subtract 1 from the power level of a card, as every card gets 1 free health, but power level includes it.
- //          PowerLevel = card.PowerLevel - 1;
- //          card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - card.BloodCost * 4);
- //
- //          card = cards.Find((x) => x.name == "void_egg");
- //          //Subtract 1 from the power level of a card, as every card gets 1 free health, but power level includes it.
- //          PowerLevel = card.PowerLevel - 1;
- //          card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - card.BloodCost * 4);
- //
- //          card = cards.Find((x) => x.name == "Void_Enchidna");
- //          //Subtract 1 from the power level of a card, as every card gets 1 free health, but power level includes it.
- //          PowerLevel = card.PowerLevel - 1;
- //          card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - card.BloodCost * 4);
- //          if (BepInEx.Bootstrap.Chainloader.PluginInfos.ContainsKey("extraVoid.inscryption.LifeCost"))
- //          {
- //              card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - card.BloodCost * 4 - 8);
- //          }
- //
- //          card = cards.Find((x) => x.name == "void_giraffe");
- //          //Subtract 1 from the power level of a card, as every card gets 1 free health, but power level includes it.
- //          PowerLevel = card.PowerLevel - 1;
- //          card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - card.BloodCost * 4);
- //
- //          card = cards.Find((x) => x.name == "Void_Mantis_Shrimp");
- //          //Subtract 1 from the power level of a card, as every card gets 1 free health, but power level includes it.
- //          PowerLevel = card.PowerLevel - 1;
- //          card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - card.BloodCost * 4);
- //
- //          card = cards.Find((x) => x.name == "void_murder_of_crows");
- //          //Subtract 1 from the power level of a card, as every card gets 1 free health, but power level includes it.
- //          PowerLevel = card.PowerLevel - 1;
- //          card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - card.BloodCost * 4);
- //
- //          card = cards.Find((x) => x.name == "Void_Owl_Familiar");
- //          //Subtract 1 from the power level of a card, as every card gets 1 free health, but power level includes it.
- //          PowerLevel = card.PowerLevel - 1;
- //          card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - card.BloodCost * 4);
- //
- //          card = cards.Find((x) => x.name == "Void_Rabbit");
- //          //Subtract 1 from the power level of a card, as every card gets 1 free health, but power level includes it.
- //          PowerLevel = card.PowerLevel - 1;
- //          card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - card.BloodCost * 4);
- //
- //          card = cards.Find((x) => x.name == "void_torpedoRay");
- //          //Subtract 1 from the power level of a card, as every card gets 1 free health, but power level includes it.
- //          PowerLevel = card.PowerLevel - 1;
- //          card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - card.BloodCost * 4);
- //          if (BepInEx.Bootstrap.Chainloader.PluginInfos.ContainsKey("extraVoid.inscryption.LifeCost"))
- //          {
- //              card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - card.BloodCost * 4 - 8);
- //          }
- //
- //          card = cards.Find((x) => x.name == "void_ruby_creature");
- //          //Subtract 1 from the power level of a card, as every card gets 1 free health, but power level includes it.
- //          PowerLevel = card.PowerLevel - 1;
- //          card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - card.BloodCost * 4);
- //
- //          card = cards.Find((x) => x.name == "Void_Salmon");
- //          //Subtract 1 from the power level of a card, as every card gets 1 free health, but power level includes it.
- //          PowerLevel = card.PowerLevel - 1;
- //          card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - card.BloodCost * 4);
- //
- //          card = cards.Find((x) => x.name == "void_Sea_Urchin");
- //          //Subtract 1 from the power level of a card, as every card gets 1 free health, but power level includes it.
- //          PowerLevel = card.PowerLevel - 1;
- //          card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - card.BloodCost * 4);
- //
- //          card = cards.Find((x) => x.name == "Void_Jade_Serpent");
- //          //Subtract 1 from the power level of a card, as every card gets 1 free health, but power level includes it.
- //          PowerLevel = card.PowerLevel - 1;
- //          card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - card.BloodCost * 4);
- //
- //          card = cards.Find((x) => x.name == "Void_Tanuki");
- //          //Subtract 1 from the power level of a card, as every card gets 1 free health, but power level includes it.
- //          PowerLevel = card.PowerLevel - 1;
- //          card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - card.BloodCost * 4);
- //
- //          card = cards.Find((x) => x.name == "void_tanuki_mythical");
- //          //Subtract 1 from the power level of a card, as every card gets 1 free health, but power level includes it.
- //          PowerLevel = card.PowerLevel - 1;
- //          card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - card.BloodCost * 4);
- //
- //          card = cards.Find((x) => x.name == "Void_Tortoise_Bell");
- //          //Subtract 1 from the power level of a card, as every card gets 1 free health, but power level includes it.
- //          PowerLevel = card.PowerLevel - 1;
- //          card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - card.BloodCost * 4);
- //
- //          card = cards.Find((x) => x.name == "Void_Tortoise_Bell_Broken");
- //          //Subtract 1 from the power level of a card, as every card gets 1 free health, but power level includes it.
- //          PowerLevel = card.PowerLevel - 1;
- //          card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - card.BloodCost * 4);
- //
- //          card = cards.Find((x) => x.name == "void_tortoise_long");
- //          //Subtract 1 from the power level of a card, as every card gets 1 free health, but power level includes it.
- //          PowerLevel = card.PowerLevel - 1;
- //          card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - card.BloodCost * 4);
- //
- //          card = cards.Find((x) => x.name == "Void_tortoise_small");
- //          //Subtract 1 from the power level of a card, as every card gets 1 free health, but power level includes it.
- //          PowerLevel = card.PowerLevel - 1;
- //          card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - card.BloodCost * 4);
- //
- //          card = cards.Find((x) => x.name == "Void_tortoise_spiny");
- //          //Subtract 1 from the power level of a card, as every card gets 1 free health, but power level includes it.
- //          PowerLevel = card.PowerLevel - 1;
- //          card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - card.BloodCost * 4);
- //
- //          card = cards.Find((x) => x.name == "Void_Vulture");
- //          //Subtract 1 from the power level of a card, as every card gets 1 free health, but power level includes it.
- //          PowerLevel = card.PowerLevel - 1;
- //          card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - card.BloodCost * 4);
- //
- //          card = cards.Find((x) => x.name == "Void_Wasp");
- //          //Subtract 1 from the power level of a card, as every card gets 1 free health, but power level includes it.
- //          PowerLevel = card.PowerLevel - 1;
- //          card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - card.BloodCost * 4);
- //
- //          card = cards.Find((x) => x.name == "Void_Wolf");
- //          //Subtract 1 from the power level of a card, as every card gets 1 free health, but power level includes it.
- //          Plugin.Log.LogWarning("Wolf Power level is: " + card.PowerLevel);
- //          PowerLevel = card.PowerLevel - 1;
- //          Plugin.Log.LogWarning("Wolf bone cost is: " + PowerLevel);
- //          card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - card.BloodCost * 4);
- //
- //          card = cards.Find((x) => x.name == "Void_Wolverine");
- //          //Subtract 1 from the power level of a card, as every card gets 1 free health, but power level includes it.
- //          PowerLevel = card.PowerLevel - 1;
- //          card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - card.BloodCost * 4);
+                    case "void_Ray_Manta":
+                        PowerLevel = card.PowerLevel - 1;
+                        card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - card.BloodCost * 4);
+                        break;
+                    case "void_Ray_Torpedo":
+                        PowerLevel = card.PowerLevel - 1;
+                        card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - card.BloodCost * 4);
+                        if (BepInEx.Bootstrap.Chainloader.PluginInfos.ContainsKey("extraVoid.inscryption.LifeCost"))
+                        {
+                            card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - card.BloodCost * 4 - 8);
+                        }
+                        break;
+
+                    case "void_Ruby_Creature":
+                        PowerLevel = card.PowerLevel - 1;
+                        card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - card.BloodCost * 4);
+                        break;
+                    case "void_Salmon":
+                        PowerLevel = card.PowerLevel - 1;
+                        card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - card.BloodCost * 4);
+                        break;
+                    case "void_Jade_Serpent":
+                        PowerLevel = card.PowerLevel - 1;
+                        card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - card.BloodCost * 4);
+                        break;
+                    case "void_Stinkbug":
+                        PowerLevel = card.PowerLevel - 1;
+                        card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - card.BloodCost * 4);
+                        break;
+                    case "void_Tanuki":
+                        PowerLevel = card.PowerLevel - 1;
+                        card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - card.BloodCost * 4);
+                        break;
+                    case "void_Tanuki_Mythical":
+                        PowerLevel = card.PowerLevel - 1;
+                        card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - card.BloodCost * 4);
+                        break;
+                    case "void_Camel":
+                        PowerLevel = card.PowerLevel - 1;
+                        card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - card.BloodCost * 4);
+                        break;
+                    case "void_Crow_Familiar":
+                        PowerLevel = card.PowerLevel - 1;
+                        card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - card.BloodCost * 4);
+                        break;
+                    case "void_Barbet":
+                        PowerLevel = card.PowerLevel - 1;
+                        card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - card.BloodCost * 4);
+                        break;
+                    case "void_Tortoise_Bell":
+                        PowerLevel = card.PowerLevel - 1;
+                        card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - card.BloodCost * 4);
+                        break;
+                    case "void_Tortoise_Bell_Broken":
+                        PowerLevel = card.PowerLevel - 1;
+                        card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - card.BloodCost * 4);
+                        break;
+                    case "void_Tortoise_Long":
+                        PowerLevel = card.PowerLevel - 1;
+                        card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - card.BloodCost * 4);
+                        break;
+                    case "void_Tortoise_Small":
+                        PowerLevel = card.PowerLevel - 1;
+                        card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - card.BloodCost * 4);
+                        break;
+                    case "void_Tortoise_Spiny":
+                        PowerLevel = card.PowerLevel - 1;
+                        card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - card.BloodCost * 4);
+                        break;
+                    case "void_Urchin_Flower":
+                        PowerLevel = card.PowerLevel - 1;
+                        card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - card.BloodCost * 4);
+                        break;
+                    case "void_Urchin_LongSpine":
+                        PowerLevel = card.PowerLevel - 1;
+                        card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - card.BloodCost * 4);
+                        break;
+                    case "void_Urchin_Sea":
+                        PowerLevel = card.PowerLevel - 1;
+                        card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - card.BloodCost * 4);
+                        break;
+                    case "void_Vulture":
+                        PowerLevel = card.PowerLevel - 1;
+                        card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - card.BloodCost * 4);
+                        break;
+                    case "void_Wasp_Swarm":
+                        PowerLevel = card.PowerLevel - 1;
+                        card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - card.BloodCost * 4);
+                        break;
+                    case "void_Wolf":
+                        PowerLevel = card.PowerLevel - 1;
+                        card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - card.BloodCost * 4);
+                        break;
+                    case "void_Wolverine":
+                        PowerLevel = card.PowerLevel - 1;
+                        card.SetBonesCost(PowerLevel - Plugin.configPointCostBonus.Value - card.BloodCost * 4);
+                        break;
+                }
+            }
         }
     }
 }

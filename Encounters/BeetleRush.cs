@@ -42,27 +42,12 @@ namespace boneSigils.Encounters
                 replacement = CardLoader.GetCardByName("void_Scarab_Jewel"),
                 randomReplaceChance = 10
             });
-            turn_1.Add(new EncounterBlueprintData.CardBlueprint
-            {
-                card = CardLoader.GetCardByName("void_Beetle_Larva"),
-                difficultyReplace = true,
-                difficultyReq = 18,
-                replacement = CardLoader.GetCardByName("void_Rhino_beetle"),
-                randomReplaceChance = 10
-            });
+            
 
             List<EncounterBlueprintData.CardBlueprint> turn_2 = new List<EncounterBlueprintData.CardBlueprint>();
 
 
             List<EncounterBlueprintData.CardBlueprint> turn_3 = new List<EncounterBlueprintData.CardBlueprint>();
-            turn_3.Add(new EncounterBlueprintData.CardBlueprint
-            {
-                card = CardLoader.GetCardByName("void_Beetle_Larva"),
-                difficultyReplace = true,
-                difficultyReq = 13,
-                replacement = CardLoader.GetCardByName("void_Beetle_Bombardier"),
-                randomReplaceChance = 10
-            });
             turn_3.Add(new EncounterBlueprintData.CardBlueprint
             {
                 card = CardLoader.GetCardByName("void_Beetle_Larva"),
@@ -83,7 +68,14 @@ namespace boneSigils.Encounters
             });
 
             List<EncounterBlueprintData.CardBlueprint> turn_5 = new List<EncounterBlueprintData.CardBlueprint>();
- 
+            turn_5.Add(new EncounterBlueprintData.CardBlueprint
+            {
+                card = CardLoader.GetCardByName("void_Beetle_Larva"),
+                difficultyReplace = true,
+                difficultyReq = 18,
+                replacement = CardLoader.GetCardByName("void_Rhino_beetle"),
+                randomReplaceChance = 10
+            });
             List<EncounterBlueprintData.CardBlueprint> turn_6 = new List<EncounterBlueprintData.CardBlueprint>();
             turn_6.Add(new EncounterBlueprintData.CardBlueprint
             {

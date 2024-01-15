@@ -24,7 +24,7 @@ namespace boneSigils.Encounters
             redundant.Add(Ability.Submerge);
 
             //Is this encounter locked to a region?
-            bool regionLocked = false;
+            bool regionLocked = true;
 
             //Add random Replacements
             List<CardInfo> randomReplacements = EncounterHelper.AddRandomCards("void_Urchin_LongSpine", "void_Urchin_Flower", "void_Urchin_Sea", "void_Shrimp_Mantis");

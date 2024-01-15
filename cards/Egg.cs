@@ -49,7 +49,7 @@ namespace boneSigils.cards
 				boneCost: boneCost,
 				energyCost: energyCost
 				);
-			newCard.SetEvolve("Void_Vulture", 2);
+			newCard.SetEvolve("void_Vulture", 2);
 			newCard.description = description;
 			CardManager.Add("void", newCard);
 		}

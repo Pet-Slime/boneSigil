@@ -9,7 +9,7 @@ namespace boneSigils.cards
 	{
 		public static void AddCard()
 		{
-			string name = "void_Scarab_Jewel";
+			string name = "void_Beetle_Scarab";
 			string displayName = "Jeweled Scarab";
 			string description = "The blue jewel on it's back shines bright.";
 			int baseAttack = 1;

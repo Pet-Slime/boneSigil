@@ -56,19 +56,15 @@ namespace boneSigils.Encounters
                 replacement = CardLoader.GetCardByName("Adder"),
                 randomReplaceChance = 25
             });
-            turn_2.Add(new EncounterBlueprintData.CardBlueprint
-            {
-                card = CardLoader.GetCardByName("Geck"),
-                difficultyReplace = true,
-                difficultyReq = 18,
-                replacement = CardLoader.GetCardByName("Adder"),
-                randomReplaceChance = 25
-            });
 
             List<EncounterBlueprintData.CardBlueprint> turn_3 = new List<EncounterBlueprintData.CardBlueprint>();
             turn_3.Add(new EncounterBlueprintData.CardBlueprint
             {
-                card = CardLoader.GetCardByName("void_Dragon")
+                card = CardLoader.GetCardByName("Geck"),
+                difficultyReplace = true,
+                difficultyReq = 13,
+                replacement = CardLoader.GetCardByName("void_Dragon"),
+                randomReplaceChance = 25
             });
 
             List<EncounterBlueprintData.CardBlueprint> turn_4 = new List<EncounterBlueprintData.CardBlueprint>();
