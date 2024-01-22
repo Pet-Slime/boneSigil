@@ -15,7 +15,8 @@ namespace boneSigils
 	[BepInDependency(APIGUID, BepInDependency.DependencyFlags.HardDependency)]
 	[BepInDependency(SigilGUID, BepInDependency.DependencyFlags.SoftDependency)]
 	[BepInDependency(StarterdeckGUID, BepInDependency.DependencyFlags.SoftDependency)]
-	[BepInDependency("extraVoid.inscryption.LifeCost", BepInDependency.DependencyFlags.SoftDependency)]
+    [BepInDependency(TotemGUID, BepInDependency.DependencyFlags.SoftDependency)]
+    [BepInDependency("extraVoid.inscryption.LifeCost", BepInDependency.DependencyFlags.SoftDependency)]
 	[BepInDependency("org.memez4life.inscryption.customsigils", BepInDependency.DependencyFlags.SoftDependency)]
 
 	public partial class Plugin : BaseUnityPlugin
@@ -23,9 +24,10 @@ namespace boneSigils
 		public const string APIGUID = "cyantist.inscryption.api";
 		public const string SigilGUID = "extraVoid.inscryption.voidSigils";
 		public const string StarterdeckGUID = "zorro.inscryption.infiniscryption.sidedecks";
-		public const string PluginGuid = "extraVoid.inscryption.void_bone_pack";
+        public const string TotemGUID = "Lily.BOT";
+        public const string PluginGuid = "extraVoid.inscryption.void_bone_pack";
 		private const string PluginName = "Void Bone Pack";
-		private const string PluginVersion = "3.0.0";
+		private const string PluginVersion = "5.0.0";
 
 		public static string Directory;
 		internal static ManualLogSource Log;
@@ -110,10 +112,10 @@ namespace boneSigils
 			Serpent_Jade.AddCard();
 			Steak.AddCard();
 			Stinkbug.AddCard();
-			Tanuki.AddCard();
-			Tanuki_Mythical.AddCard();
-			Tanuki_Pup.AddCard();
-			Tortoise_Bell.AddCard();
+            Tanuki_Mythical.AddCard();
+            Tanuki.AddCard();
+            Tanuki_Pup.AddCard();
+            Tortoise_Bell.AddCard();
 			Tortoise_Bell_Broken.AddCard();
 			Tortoise_Long.AddCard();
 			Tortoise_Small.AddCard();
@@ -168,10 +170,6 @@ namespace boneSigils
 				boneSigils.Encounters.BeaverStall.AddEncounter();
 			}
 
-            if (configPointCostMode.Value)
-            {
-                Point_Cost_Mode.AddCard();
-            }
         }
 	}
 }

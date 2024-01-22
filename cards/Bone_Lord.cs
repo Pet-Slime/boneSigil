@@ -2,6 +2,7 @@
 using DiskCardGame;
 using UnityEngine;
 using InscryptionAPI.Card;
+using InscryptionAPI.Guid;
 
 namespace boneSigils.cards
 {
@@ -21,9 +22,14 @@ namespace boneSigils.cards
 			List<CardMetaCategory> metaCategories = new List<CardMetaCategory>();
 			metaCategories.Add(CardMetaCategory.Rare);
 
-			List<Tribe> Tribes = new List<Tribe>();
+			List<Tribe> Tribes = new List<Tribe>(); 
+			if (BepInEx.Bootstrap.Chainloader.PluginInfos.ContainsKey(Plugin.TotemGUID))
+            {
+                Plugin.Log.LogMessage("Lily Totems found, Bone Lord is now undead");
+                Tribes.Add(GuidManager.GetEnumValue<Tribe>("Lily.BOT", "undead"));
+            }
 
-			List<Ability> Abilities = new List<Ability>();
+            List<Ability> Abilities = new List<Ability>();
 			Abilities.Add(Ability.BoneDigger);
 			Abilities.Add(Ability.DrawCopyOnDeath);
 
@@ -31,8 +37,8 @@ namespace boneSigils.cards
 			Traits.Add(Trait.Undead);
 			Traits.Add(Trait.Goat);
 
-			Texture2D DefaultTexture = SigilUtils.GetTextureFromPath("void_horn.png");
-			Texture2D eTexture = SigilUtils.GetTextureFromPath("void_horn_e.png");
+			Texture2D DefaultTexture = SigilUtils.GetTextureFromPath("Artwork/void_horn.png");
+			Texture2D eTexture = SigilUtils.GetTextureFromPath("Artwork/void_horn_e.png");
 
 			CardInfo newCard = SigilUtils.CreateCardWithDefaultSettings(
 				InternalName: name,

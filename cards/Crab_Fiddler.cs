@@ -2,6 +2,7 @@
 using DiskCardGame;
 using UnityEngine;
 using InscryptionAPI.Card;
+using InscryptionAPI.Guid;
 
 namespace boneSigils.cards
 {
@@ -23,9 +24,14 @@ namespace boneSigils.cards
 			metaCategories.Add(CardMetaCategory.TraderOffer);
 			metaCategories.Add(CardMetaCategory.ChoiceNode);
 
-			List<Tribe> Tribes = new List<Tribe>();
+			List<Tribe> Tribes = new List<Tribe>(); 
+			if (BepInEx.Bootstrap.Chainloader.PluginInfos.ContainsKey(Plugin.TotemGUID))
+            {
+                Plugin.Log.LogMessage("Lily Totems found, Fiddler Crab is now aquatic");
+                Tribes.Add(GuidManager.GetEnumValue<Tribe>("Lily.BOT", "aquatic"));
+            }
 
-			List<Ability> Abilities = new List<Ability>();
+            List<Ability> Abilities = new List<Ability>();
 			Abilities.Add(Ability.SwapStats);
 			Abilities.Add(CustomAbility1);
 
@@ -35,8 +41,8 @@ namespace boneSigils.cards
 
 			List<CardAppearanceBehaviour.Appearance> appearanceBehaviour = new List<CardAppearanceBehaviour.Appearance>();
 
-			Texture2D DefaultTexture = SigilUtils.GetTextureFromPath("Void_Crab_Fiddler.png");
-			Texture2D eTexture = SigilUtils.GetTextureFromPath("Void_Crab_Fiddler_e.png");
+			Texture2D DefaultTexture = SigilUtils.GetTextureFromPath("Artwork/Void_Crab_Fiddler.png");
+			Texture2D eTexture = SigilUtils.GetTextureFromPath("Artwork/Void_Crab_Fiddler_e.png");
 
 			CardInfo newCard = SigilUtils.CreateCardWithDefaultSettings(
 				InternalName: name,

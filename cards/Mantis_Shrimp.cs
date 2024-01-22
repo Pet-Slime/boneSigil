@@ -2,6 +2,7 @@
 using DiskCardGame;
 using UnityEngine;
 using InscryptionAPI.Card;
+using InscryptionAPI.Guid;
 
 namespace boneSigils.cards
 {
@@ -24,15 +25,16 @@ namespace boneSigils.cards
 			metaCategories.Add(CardMetaCategory.ChoiceNode);
 
 			List<Tribe> Tribes = new List<Tribe>();
+            Tribes.Add(GuidManager.GetEnumValue<Tribe>("Lily.BOT", "aquatic"));
 
-			List<Ability> Abilities = new List<Ability>();
+            List<Ability> Abilities = new List<Ability>();
 			Abilities.Add(CustomAbility1);
 			Abilities.Add(CustomAbility1);
 
 			List<Trait> Traits = new List<Trait>();
 
-			Texture2D DefaultTexture = SigilUtils.GetTextureFromPath("Void_Mantis_Shrimp.png");
-			Texture2D eTexture = SigilUtils.GetTextureFromPath("Void_Mantis_Shrimp_e.png");
+			Texture2D DefaultTexture = SigilUtils.GetTextureFromPath("Artwork/Void_Mantis_Shrimp.png");
+			Texture2D eTexture = SigilUtils.GetTextureFromPath("Artwork/Void_Mantis_Shrimp_e.png");
 
 			CardInfo newCard = SigilUtils.CreateCardWithDefaultSettings(
 				InternalName: name,

@@ -48,15 +48,15 @@ namespace boneSigils
 			List<string> list = new List<string>
 			{
 			"void_Beetle_Carrion",
-			"void_Rhino_beetle",
-			"void_Scarab_Jewel",
+            "void_Beetle_Rhino",
+            "void_Beetle_Scarab",
 			"void_Beetle_Bombardier"
 			};
 
             int num = 3;
             this.numTurnsInPlay++;
             int num2 = Mathf.Max(1, num - this.numTurnsInPlay);
-            base.Card.RenderInfo.OverrideAbilityIcon(this.Ability, SigilUtils.GetTextureFromPath("ability_pupate_" + num2.ToString() + ".png"));
+            base.Card.RenderInfo.OverrideAbilityIcon(this.Ability, SigilUtils.GetTextureFromPath("Artwork/ability_pupate_" + num2.ToString() + ".png"));
             base.Card.RenderCard();
             if (this.numTurnsInPlay >= num)
             {

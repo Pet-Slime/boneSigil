@@ -34,9 +34,9 @@ namespace boneSigils.cards
 
 			List<SpecialTriggeredAbility> specialAbilities = new List<SpecialTriggeredAbility>();
 
-			Texture2D DefaultTexture = SigilUtils.GetTextureFromPath("void_mole.png");
-			Texture2D pixelTexture = SigilUtils.GetTextureFromPath("pixelportrait_void_mole.png");
-			Texture2D eTexture = SigilUtils.GetTextureFromPath("void_mole_e.png");
+			Texture2D DefaultTexture = SigilUtils.GetTextureFromPath("Artwork/void_mole.png");
+			Texture2D pixelTexture = SigilUtils.GetTextureFromPath("Artwork/pixelportrait_void_mole.png");
+			Texture2D eTexture = SigilUtils.GetTextureFromPath("Artwork/void_mole_e.png");
 
 			CardInfo newCard = SigilUtils.CreateCardWithDefaultSettings(
 				InternalName: name,

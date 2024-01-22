@@ -31,8 +31,8 @@ namespace boneSigils.cards
 			Traits.Add(Trait.Terrain);
 			Traits.Add(Trait.Undead);
 
-			Texture2D DefaultTexture = SigilUtils.GetTextureFromPath("Void_Cow_Skul.png");
-			Texture2D eTexture = SigilUtils.GetTextureFromPath("Void_Cow_Skul_e.png");
+			Texture2D DefaultTexture = SigilUtils.GetTextureFromPath("Artwork/Void_Cow_Skul.png");
+			Texture2D eTexture = SigilUtils.GetTextureFromPath("Artwork/Void_Cow_Skul_e.png");
 
 			CardInfo newCard = SigilUtils.CreateCardWithDefaultSettings(
 				InternalName: name,

@@ -32,8 +32,8 @@ namespace boneSigils.cards
 			List<CardAppearanceBehaviour.Appearance> appearanceBehaviour = new List<CardAppearanceBehaviour.Appearance>();
 			appearanceBehaviour.Add(CardAppearanceBehaviour.Appearance.TerrainBackground);
 
-			Texture2D DefaultTexture = SigilUtils.GetTextureFromPath("Void_Screws.png");
-			Texture2D eTexture = SigilUtils.GetTextureFromPath("Void_Screws.png");
+			Texture2D DefaultTexture = SigilUtils.GetTextureFromPath("Artwork/Void_Screws.png");
+			Texture2D eTexture = SigilUtils.GetTextureFromPath("Artwork/Void_Screws.png");
 
 			CardInfo newCard = SigilUtils.CreateCardWithDefaultSettings(
 				InternalName: name,

@@ -56,7 +56,7 @@ namespace boneSigils
 			cardinfo.SetPortrait(texture_base, texture_emission);
 			if (texture_pixel == null)
 			{
-				texture_pixel = SigilUtils.GetTextureFromPath("pixelportrait_blank.png");
+				texture_pixel = SigilUtils.GetTextureFromPath("Artwork/pixelportrait_blank.png");
 				cardinfo.SetPixelPortrait(texture_pixel);
 			} else
 			{

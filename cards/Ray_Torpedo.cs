@@ -2,6 +2,7 @@
 using DiskCardGame;
 using UnityEngine;
 using InscryptionAPI.Card;
+using InscryptionAPI.Guid;
 
 namespace boneSigils.cards
 {
@@ -30,15 +31,20 @@ namespace boneSigils.cards
 			metaCategories.Add(CardMetaCategory.ChoiceNode);
 
 			List<Tribe> Tribes = new List<Tribe>();
+            if (BepInEx.Bootstrap.Chainloader.PluginInfos.ContainsKey(Plugin.TotemGUID))
+            {
+                Plugin.Log.LogMessage("Lily Totems found, Torpedo Ray is now aquatic");
+                Tribes.Add(GuidManager.GetEnumValue<Tribe>("Lily.BOT", "aquatic"));
+            }
 
-			List<Ability> Abilities = new List<Ability>();
+            List<Ability> Abilities = new List<Ability>();
 			Abilities.Add(CustomAbility1);
 			Abilities.Add(CustomAbility2);
 
 			List<Trait> Traits = new List<Trait>();
 
-			Texture2D DefaultTexture = SigilUtils.GetTextureFromPath("void_torpedoRay.png");
-			Texture2D eTexture = SigilUtils.GetTextureFromPath("void_torpedoRay_e.png");
+			Texture2D DefaultTexture = SigilUtils.GetTextureFromPath("Artwork/void_torpedoRay.png");
+			Texture2D eTexture = SigilUtils.GetTextureFromPath("Artwork/void_torpedoRay_e.png");
 
 			CardInfo newCard = SigilUtils.CreateCardWithDefaultSettings(
 				InternalName: name,

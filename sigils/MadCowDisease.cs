@@ -49,7 +49,7 @@ namespace boneSigils
             int num = 2;
             this.numTurnsInPlay++;
             int num2 = Mathf.Max(1, num - this.numTurnsInPlay); 
-            base.Card.RenderInfo.OverrideAbilityIcon(this.Ability, SigilUtils.GetTextureFromPath("ability_MadCow_"+num2.ToString()+".png"));
+            base.Card.RenderInfo.OverrideAbilityIcon(this.Ability, SigilUtils.GetTextureFromPath("Artwork/ability_MadCow_"+num2.ToString()+".png"));
             base.Card.RenderCard();
             if (this.numTurnsInPlay >= num)
             {

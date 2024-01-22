@@ -31,8 +31,8 @@ namespace boneSigils.cards
 
 			List<Trait> Traits = new List<Trait>();
 
-			Texture2D DefaultTexture = SigilUtils.GetTextureFromPath("Void_Coco_Crab.png");
-			Texture2D eTexture = SigilUtils.GetTextureFromPath("Void_Coco_Crab_e.png");
+			Texture2D DefaultTexture = SigilUtils.GetTextureFromPath("Artwork/Void_Coco_Crab.png");
+			Texture2D eTexture = SigilUtils.GetTextureFromPath("Artwork/Void_Coco_Crab_e.png");
 
 			CardInfo newCard = SigilUtils.CreateCardWithDefaultSettings(
 				InternalName: name,

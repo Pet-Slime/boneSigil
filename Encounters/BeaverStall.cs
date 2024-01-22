@@ -116,7 +116,7 @@ namespace boneSigils.Encounters
             List<EncounterBlueprintData.CardBlueprint> turn_9 = new List<EncounterBlueprintData.CardBlueprint>();
             turn_9.Add(new EncounterBlueprintData.CardBlueprint
             {
-                card = CardLoader.GetCardByName("Dam"),
+                card = CardLoader.GetCardByName("void_Ruby_Creature"),
                 randomReplaceChance = 25
             });
             turns.Add(turn_1);

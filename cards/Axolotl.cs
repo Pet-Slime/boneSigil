@@ -2,6 +2,7 @@
 using DiskCardGame;
 using UnityEngine;
 using InscryptionAPI.Card;
+using InscryptionAPI.Guid;
 
 namespace boneSigils.cards
 {
@@ -33,9 +34,18 @@ namespace boneSigils.cards
 			}
 
 			List<Tribe> Tribes = new List<Tribe>();
-			Tribes.Add(Tribe.Reptile);
+            if (!BepInEx.Bootstrap.Chainloader.PluginInfos.ContainsKey(Plugin.TotemGUID))
+            {
+				Tribes.Add(Tribe.Reptile);
+            } else
+            {
+                Plugin.Log.LogMessage("Lily Totems found, Axolotl is now undead aquatic instead of reptile");
+                Tribes.Add(GuidManager.GetEnumValue<Tribe>("Lily.BOT", "undead"));
+                Tribes.Add(GuidManager.GetEnumValue<Tribe>("Lily.BOT", "aquatic"));
+            }
+            
 
-			List<Ability> Abilities = new List<Ability>();
+            List<Ability> Abilities = new List<Ability>();
 			Abilities.Add(CustomAbility);
 			Abilities.Add(Ability.QuadrupleBones);
 
@@ -46,9 +56,9 @@ namespace boneSigils.cards
 
 			List<CardAppearanceBehaviour.Appearance> appearanceBehaviour = new List<CardAppearanceBehaviour.Appearance>();
 
-			Texture2D DefaultTexture = SigilUtils.GetTextureFromPath("void_undeadAxolotle.png");
-			Texture2D pixelTexture = SigilUtils.GetTextureFromPath("pixelportrait_axol.png");
-			Texture2D eTexture = SigilUtils.GetTextureFromPath("void_undeadAxolotle_e.png");
+			Texture2D DefaultTexture = SigilUtils.GetTextureFromPath("Artwork/void_undeadAxolotle.png");
+			Texture2D pixelTexture = SigilUtils.GetTextureFromPath("Artwork/pixelportrait_axol.png");
+			Texture2D eTexture = SigilUtils.GetTextureFromPath("Artwork/void_undeadAxolotle_e.png");
 
 			CardInfo newCard = SigilUtils.CreateCardWithDefaultSettings(
 				InternalName: name,

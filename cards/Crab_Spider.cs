@@ -2,6 +2,7 @@
 using DiskCardGame;
 using UnityEngine;
 using InscryptionAPI.Card;
+using InscryptionAPI.Guid;
 
 namespace boneSigils.cards
 {
@@ -23,16 +24,21 @@ namespace boneSigils.cards
 			metaCategories.Add(CardMetaCategory.TraderOffer);
 			metaCategories.Add(CardMetaCategory.ChoiceNode);
 
-			List<Tribe> Tribes = new List<Tribe>();
+			List<Tribe> Tribes = new List<Tribe>(); 
+			if (BepInEx.Bootstrap.Chainloader.PluginInfos.ContainsKey(Plugin.TotemGUID))
+            {
+                Plugin.Log.LogMessage("Lily Totems found, Spider Crab is now aquatic");
+                Tribes.Add(GuidManager.GetEnumValue<Tribe>("Lily.BOT", "aquatic"));
+            }
 
-			List<Ability> Abilities = new List<Ability>();
+            List<Ability> Abilities = new List<Ability>();
 			Abilities.Add(Ability.TailOnHit);
 			Abilities.Add(CustomAbility1);
 
 			List<Trait> Traits = new List<Trait>();
 
-			Texture2D DefaultTexture = SigilUtils.GetTextureFromPath("Void_Crab_Spider.png");
-			Texture2D eTexture = SigilUtils.GetTextureFromPath("Void_Crab_Spider_e.png");
+			Texture2D DefaultTexture = SigilUtils.GetTextureFromPath("Artwork/Void_Crab_Spider.png");
+			Texture2D eTexture = SigilUtils.GetTextureFromPath("Artwork/Void_Crab_Spider_e.png");
 
 			CardInfo newCard = SigilUtils.CreateCardWithDefaultSettings(
 				InternalName: name,

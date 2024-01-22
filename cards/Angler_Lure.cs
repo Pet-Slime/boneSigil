@@ -2,6 +2,7 @@
 using DiskCardGame;
 using UnityEngine;
 using InscryptionAPI.Card;
+using InscryptionAPI.Guid;
 
 namespace boneSigils.cards
 {
@@ -21,8 +22,13 @@ namespace boneSigils.cards
 			List<CardMetaCategory> metaCategories = new List<CardMetaCategory>();
 
 			List<Tribe> Tribes = new List<Tribe>();
+            if (BepInEx.Bootstrap.Chainloader.PluginInfos.ContainsKey(Plugin.TotemGUID))
+            {
+                Plugin.Log.LogMessage("Lily Totems found, Angeler's Lure is now aquatic");
+                Tribes.Add(GuidManager.GetEnumValue<Tribe>("Lily.BOT", "aquatic"));
+            }
 
-			List<Ability> Abilities = new List<Ability>();
+            List<Ability> Abilities = new List<Ability>();
 
 			List<Trait> Traits = new List<Trait>();
 
@@ -31,9 +37,9 @@ namespace boneSigils.cards
 
 			List<CardAppearanceBehaviour.Appearance> appearanceBehaviour = new List<CardAppearanceBehaviour.Appearance>();
 
-			Texture2D DefaultTexture = SigilUtils.GetTextureFromPath("void_angler_light.png");
-			Texture2D eTexture = SigilUtils.GetTextureFromPath("void_angler_light_e.png");
-			Texture2D pTexture = SigilUtils.GetTextureFromPath("pixelportrait_blank.png");
+			Texture2D DefaultTexture = SigilUtils.GetTextureFromPath("Artwork/void_angler_light.png");
+			Texture2D eTexture = SigilUtils.GetTextureFromPath("Artwork/void_angler_light_e.png");
+			Texture2D pTexture = SigilUtils.GetTextureFromPath("Artwork/pixelportrait_blank.png");
 
 			CardInfo newCard = SigilUtils.CreateCardWithDefaultSettings(
 				InternalName: name,

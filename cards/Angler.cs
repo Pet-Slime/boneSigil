@@ -2,6 +2,7 @@
 using DiskCardGame;
 using UnityEngine;
 using InscryptionAPI.Card;
+using InscryptionAPI.Guid;
 
 namespace boneSigils.cards
 {
@@ -26,8 +27,13 @@ namespace boneSigils.cards
 			metaCategories.Add(CardMetaCategory.ChoiceNode);
 
 			List<Tribe> Tribes = new List<Tribe>();
+			if (BepInEx.Bootstrap.Chainloader.PluginInfos.ContainsKey(Plugin.TotemGUID))
+			{
+				Plugin.Log.LogMessage("Lily Totems found, Black Seadevil is now aquatic");
+				Tribes.Add(GuidManager.GetEnumValue<Tribe>("Lily.BOT", "aquatic"));
+			}
 
-			List<Ability> Abilities = new List<Ability>();
+            List<Ability> Abilities = new List<Ability>();
 			Abilities.Add(Ability.Submerge);
 			Abilities.Add(CustomAbility);
 
@@ -37,9 +43,9 @@ namespace boneSigils.cards
 
 			List<CardAppearanceBehaviour.Appearance> appearanceBehaviour = new List<CardAppearanceBehaviour.Appearance>();
 
-			Texture2D DefaultTexture = SigilUtils.GetTextureFromPath("Void_Angler.png");
-			Texture2D eTexture = SigilUtils.GetTextureFromPath("Void_Angler_e.png");
-			Texture2D pTexture = SigilUtils.GetTextureFromPath("pixelportrait_blank.png");
+			Texture2D DefaultTexture = SigilUtils.GetTextureFromPath("Artwork/Void_Angler.png");
+			Texture2D eTexture = SigilUtils.GetTextureFromPath("Artwork/Void_Angler_e.png");
+			Texture2D pTexture = SigilUtils.GetTextureFromPath("Artwork/pixelportrait_blank.png");
 
 			CardInfo newCard = SigilUtils.CreateCardWithDefaultSettings(
 				InternalName: name,
@@ -58,7 +64,7 @@ namespace boneSigils.cards
 				energyCost: energyCost
 				);
 			newCard.description = description;
-			newCard.SetTail("void_Angler_Lure", SigilUtils.GetTextureFromPath("void_angler_alt.png"));
+			newCard.SetTail("void_Angler_Lure", SigilUtils.GetTextureFromPath("Artwork/void_angler_alt.png"));
 			CardManager.Add("void", newCard);
 		}
 	}

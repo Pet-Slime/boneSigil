@@ -32,8 +32,8 @@ namespace boneSigils.cards
 			List<Trait> Traits = new List<Trait>();
 			Traits.Add(Trait.Gem);
 
-			Texture2D DefaultTexture = SigilUtils.GetTextureFromPath("void_scarab_jewel.png");
-			Texture2D eTexture = SigilUtils.GetTextureFromPath("void_scarab_jewel_e.png");
+			Texture2D DefaultTexture = SigilUtils.GetTextureFromPath("Artwork/void_scarab_jewel.png");
+			Texture2D eTexture = SigilUtils.GetTextureFromPath("Artwork/void_scarab_jewel_e.png");
 
 			CardInfo newCard = SigilUtils.CreateCardWithDefaultSettings(
 				InternalName: name,
