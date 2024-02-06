@@ -23,19 +23,19 @@ namespace boneSigils.cards
 			metaCategories.Add(CardMetaCategory.TraderOffer);
 			metaCategories.Add(CardMetaCategory.ChoiceNode);
 
-			List<Tribe> Tribes = new List<Tribe>();
-            Tribes.Add(GuidManager.GetEnumValue<Tribe>("Lily.BOT", "aquatic"));
+			List<Tribe> Tribes = new List<Tribe>(); 
+			if (BepInEx.Bootstrap.Chainloader.PluginInfos.ContainsKey(Plugin.TotemGUID))
+            {
+                Plugin.Log.LogMessage("Lily Totems found, Manta Ray is now aquatic");
+                Tribes.Add(GuidManager.GetEnumValue<Tribe>("Lily.BOT", "aquatic"));
+            }
 
             List<Ability> Abilities = new List<Ability>();
 			Abilities.Add(CustomAbility1);
 			Abilities.Add(Ability.Submerge);
 
 			List<Trait> Traits = new List<Trait>();
-            if (BepInEx.Bootstrap.Chainloader.PluginInfos.ContainsKey(Plugin.TotemGUID))
-            {
-                Plugin.Log.LogMessage("Lily Totems found, Manta Ray is now aquatic");
-                Tribes.Add(GuidManager.GetEnumValue<Tribe>("Lily.BOT", "aquatic"));
-            }
+            
 
             Texture2D DefaultTexture = SigilUtils.GetTextureFromPath("Artwork/void_ray_manta.png");
 			Texture2D eTexture = SigilUtils.GetTextureFromPath("Artwork/void_ray_manta_e.png");

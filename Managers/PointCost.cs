@@ -142,14 +142,18 @@ namespace boneSigils.Managers
                             case "void_Enchidna":
                                 PowerLevel = card.PowerLevel - 1;
                                 PointCost = PowerLevel - (Plugin.configPointCostBonus.Value * -1) - card.BloodCost * 4;
-                                CardCost = Math.Max(PointCost, 0);
-                                card.SetBonesCost(CardCost);
                                 if (BepInEx.Bootstrap.Chainloader.PluginInfos.ContainsKey("extraVoid.inscryption.LifeCost"))
                                 {
-                                    PointCost = PowerLevel - (Plugin.configPointCostBonus.Value * -1) - card.BloodCost * 4 - 8;
-                                    CardCost = Math.Max(PointCost, 0);
-                                    card.SetBonesCost(CardCost);
+                                    //This card has no blood cost if the Life Cost API is installed. So instead of subtracting bloodcost*4, we just subtract 8.
+                                    PointCost = PowerLevel - (Plugin.configPointCostBonus.Value * -1) - 8;
                                 }
+                                if (Plugin.configEnergyCosts.Value)
+                                {
+                                    //If this card is set to cost energy, subtract 4 bones from the cost
+                                    PointCost -= 4;
+                                }
+                                CardCost = Math.Max(PointCost, 0);
+                                card.SetBonesCost(CardCost);
                                 break;
                             case "void_Giraffe":
                                 PowerLevel = card.PowerLevel - 1;
@@ -203,14 +207,18 @@ namespace boneSigils.Managers
                             case "void_Ray_Torpedo":
                                 PowerLevel = card.PowerLevel - 1;
                                 PointCost = PowerLevel - (Plugin.configPointCostBonus.Value * -1) - card.BloodCost * 4;
-                                CardCost = Math.Max(PointCost, 0);
-                                card.SetBonesCost(CardCost);
                                 if (BepInEx.Bootstrap.Chainloader.PluginInfos.ContainsKey("extraVoid.inscryption.LifeCost"))
                                 {
-                                    PointCost = PowerLevel - (Plugin.configPointCostBonus.Value * -1) - card.BloodCost * 4 - 8;
-                                    CardCost = Math.Max(PointCost, 0);
-                                    card.SetBonesCost(CardCost);
+                                    //This card has no blood cost if the Life Cost API is installed. So instead of subtracting bloodcost*4, we just subtract 8.
+                                    PointCost = PowerLevel - (Plugin.configPointCostBonus.Value * -1) - 8;
                                 }
+                                if (Plugin.configEnergyCosts.Value)
+                                {
+                                    //If this card is set to cost energy, subtract 4 bones from the cost
+                                    PointCost -= 4;
+                                }
+                                CardCost = Math.Max(PointCost, 0);
+                                card.SetBonesCost(CardCost);
                                 break;
 
                             case "void_Ruby_Creature":

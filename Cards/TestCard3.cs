@@ -26,6 +26,7 @@ namespace boneSigils.cards
 			metaCategories.Add(CardMetaCategory.ChoiceNode);
 
 			List<Tribe> Tribes = new List<Tribe>();
+			Tribes.Add(Tribe.Canine);
 
 			List<Ability> Abilities = new List<Ability>();
 			Abilities.Add(CustomAbility);

@@ -40,7 +40,8 @@ namespace boneSigils
 		internal static ConfigEntry<bool> configReptileKing;
 		internal static ConfigEntry<bool> configBeaverStall;
 		internal static ConfigEntry<bool> configPointCostMode;
-		internal static ConfigEntry<int> configPointCostBonus;
+        internal static ConfigEntry<bool> configEnergyCosts;
+        internal static ConfigEntry<int> configPointCostBonus;
 
 
 		private void Awake()
@@ -55,8 +56,10 @@ namespace boneSigils
 			configPointCostMode = Config.Bind("Point Cost Mode", "Point Cost Mode", false, "Turn on to change the bone cost of every card to better follow the value the vanilla point system. This mod values blood at 4 points.");
 			configPointCostBonus = Config.Bind("Point Cost Mode", "Point Cost Bonus", 0, "Change the value here to make cards more or less expensive in point cost mode");
 
+            configEnergyCosts = Config.Bind("Cards", "Energy Costs", false, "Convert Enchidna and Torpedo Ray to use Energy and not Bones");
 
-			Log = base.Logger;
+
+            Log = base.Logger;
 			Directory = this.Info.Location.Replace("boneSigils.dll", "");
 
 			Harmony harmony = new(PluginGuid);

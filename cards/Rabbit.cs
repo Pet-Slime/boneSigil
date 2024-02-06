@@ -2,6 +2,7 @@
 using DiskCardGame;
 using UnityEngine;
 using InscryptionAPI.Card;
+using InscryptionAPI.Guid;
 
 namespace boneSigils.cards
 {
@@ -23,8 +24,13 @@ namespace boneSigils.cards
 			metaCategories.Add(CardMetaCategory.ChoiceNode);
 
 			List<Tribe> Tribes = new List<Tribe>();
+            if (BepInEx.Bootstrap.Chainloader.PluginInfos.ContainsKey(Plugin.TotemGUID))
+            {
+                Plugin.Log.LogMessage("Lily Totems found, Beast of Caerbannog is now rodent");
+                Tribes.Add(GuidManager.GetEnumValue<Tribe>("Lily.BOT", "rodent"));
+            }
 
-			List<Ability> Abilities = new List<Ability>();
+            List<Ability> Abilities = new List<Ability>();
 			Abilities.Add(Ability.Deathtouch);
 
 			List<Trait> Traits = new List<Trait>();

@@ -19,14 +19,11 @@ namespace boneSigils.cards
 			int bloodCost = 2;
 			int boneCost = 4;
 			int energyCost = 0;
-
-			if (BepInEx.Bootstrap.Chainloader.PluginInfos.ContainsKey("extraVoid.inscryption.LifeCost"))
+			if (Plugin.configEnergyCosts.Value)
 			{
-				Plugin.Log.LogMessage("Found Life cost API, Adjusting Enchidna's Cost from blood to money");
-
-				bloodCost = 0;
-				energyCost = -8;
-			}
+				boneCost = 0;
+				energyCost = 4;
+            }
 
 			List<CardMetaCategory> metaCategories = new List<CardMetaCategory>();
 			metaCategories.Add(CardMetaCategory.TraderOffer);
@@ -64,7 +61,13 @@ namespace boneSigils.cards
 				energyCost: energyCost
 				);
 			newCard.description = description;
-			CardManager.Add("void", newCard);
+            if (BepInEx.Bootstrap.Chainloader.PluginInfos.ContainsKey("extraVoid.inscryption.LifeCost"))
+            {
+                Plugin.Log.LogMessage("Found Life cost API, Adjusting Ray's Cost");
+                newCard.SetBloodCost(0);
+                newCard.SetExtendedProperty("LifeMoneyCost", 8);
+            }
+            CardManager.Add("void", newCard);
 		}
 	}
 }
