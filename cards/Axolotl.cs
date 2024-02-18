@@ -9,8 +9,9 @@ namespace boneSigils.cards
 	public static class Axolotl
 	{
 		public static readonly Ability CustomAbility = InscryptionAPI.Guid.GuidManager.GetEnumValue<Ability>("extraVoid.inscryption.voidSigils", "Pathetic Sacrifice");
+        public static readonly CardMetaCategory SIDE_DECK_CATEGORY = GuidManager.GetEnumValue<CardMetaCategory>("zorro.inscryption.infiniscryption.sidedecks", "SideDeck");
 
-		public static void AddCard()
+        public static void AddCard()
 		{
 			string name = "void_Axolotl";
 			string displayName = "Undead Axolotl";
@@ -31,7 +32,8 @@ namespace boneSigils.cards
 			else
 			{
 				Plugin.Log.LogMessage("Found side decks, removing Undead Axolotl from the default pools");
-			}
+                metaCategories.Add(SIDE_DECK_CATEGORY);
+            }
 
 			List<Tribe> Tribes = new List<Tribe>();
             if (!BepInEx.Bootstrap.Chainloader.PluginInfos.ContainsKey(Plugin.TotemGUID))
@@ -77,7 +79,8 @@ namespace boneSigils.cards
 				energyCost: energyCost
 				);
 			newCard.description = description;
-			CardManager.Add("void", newCard);
+            newCard.SetExtendedProperty("SideDeckValue", 5);
+            CardManager.Add("void", newCard);
 		}
 	}
 }

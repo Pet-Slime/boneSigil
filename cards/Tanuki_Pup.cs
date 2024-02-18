@@ -63,7 +63,8 @@ namespace boneSigils.cards
 				energyCost: energyCost
 				);
 			newCard.description = description;
-			newCard.SetEvolve("void_Tanuki", 2);
+            newCard.SetExtendedProperty("SideDeckValue", 5);
+            newCard.SetEvolve("void_Tanuki", 2);
 			CardManager.Add("void", newCard);
 		}
 	}
